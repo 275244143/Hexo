@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>验证技术博客@神秘人</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://275244143.github.io/"/>
+  <updated>2019-04-17T06:11:56.133Z</updated>
+  <id>https://275244143.github.io/</id>
+  
+  <author>
+    <name>神秘人</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UVM-Register-Model</title>
+    <link href="https://275244143.github.io/2019/04/17/UVM-Register-Model/"/>
+    <id>https://275244143.github.io/2019/04/17/UVM-Register-Model/</id>
+    <published>2019-04-17T06:03:12.000Z</published>
+    <updated>2019-04-17T06:11:56.133Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-UVM寄存器模型相关操作引起的一些关键变化&quot;&gt;&lt;a href=&quot;#1-UVM寄存器模型相关操作引起的一些关键变化&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>形式验证</title>
+    <link href="https://275244143.github.io/2019/04/17/%E5%BD%A2%E5%BC%8F%E9%AA%8C%E8%AF%81/"/>
+    <id>https://275244143.github.io/2019/04/17/形式验证/</id>
+    <published>2019-04-17T03:15:24.000Z</published>
+    <updated>2019-04-17T03:34:17.459Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-什么时候需要使用形式验证（Formal-Verification：FV）&quot;&gt;&lt;a href=&quot;#1-什么时候需要使用形式验证（Formal-Verification：FV）&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>QQ红包打赏,验证技术微信公众号，扫码即可，你的支持，就是技术的不断前进！</title>
+    <link href="https://275244143.github.io/2019/04/16/QQ%E7%BA%A2%E5%8C%85%E6%89%93%E8%B5%8F,%E9%AA%8C%E8%AF%81%E6%8A%80%E6%9C%AF%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%EF%BC%8C%E6%89%AB%E7%A0%81%E5%8D%B3%E5%8F%AF%EF%BC%8C%E4%BD%A0%E7%9A%84%E6%94%AF%E6%8C%81%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%8A%80%E6%9C%AF%E7%9A%84%E4%B8%8D%E6%96%AD%E5%89%8D%E8%BF%9B%EF%BC%81/"/>
+    <id>https://275244143.github.io/2019/04/16/QQ红包打赏,验证技术微信公众号，扫码即可，你的支持，就是技术的不断前进！/</id>
+    <published>2019-04-16T08:52:08.000Z</published>
+    <updated>2019-04-17T03:31:24.157Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;谢谢打赏&quot;&gt;&lt;a href=&quot;#谢谢打赏&quot; class=&quot;headerlink&quot; title=&quot;谢谢打赏&quot;&gt;&lt;/a&gt;谢谢打赏&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SystemVerilog语法释义</title>
+    <link href="https://275244143.github.io/2019/04/16/SystemVerilog%E8%AF%AD%E6%B3%95%E9%87%8A%E4%B9%89/"/>
+    <id>https://275244143.github.io/2019/04/16/SystemVerilog语法释义/</id>
+    <published>2019-04-16T08:08:43.000Z</published>
+    <updated>2019-04-16T08:39:51.861Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-浮点数转换&quot;&gt;&lt;a href=&quot;#1-浮点数转换&quot; class=&quot;headerlink&quot; title=&quot;1.浮点数转换&quot;&gt;&lt;/a&gt;1.浮点数转换&lt;/h2&gt;&lt;h3 id=&quot;ieee1800-2017解释：&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
