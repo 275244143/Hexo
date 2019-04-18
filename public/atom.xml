@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
-  <updated>2019-04-17T06:11:56.133Z</updated>
+  <updated>2019-04-18T01:19:17.885Z</updated>
   <id>https://275244143.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://275244143.github.io/2019/04/17/UVM-Register-Model/"/>
     <id>https://275244143.github.io/2019/04/17/UVM-Register-Model/</id>
     <published>2019-04-17T06:03:12.000Z</published>
-    <updated>2019-04-17T06:11:56.133Z</updated>
+    <updated>2019-04-18T01:19:17.885Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,12 @@
     
     </summary>
     
+      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="https://275244143.github.io/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
     
   </entry>
   
@@ -43,7 +49,7 @@
     <link href="https://275244143.github.io/2019/04/17/%E5%BD%A2%E5%BC%8F%E9%AA%8C%E8%AF%81/"/>
     <id>https://275244143.github.io/2019/04/17/形式验证/</id>
     <published>2019-04-17T03:15:24.000Z</published>
-    <updated>2019-04-17T03:34:17.459Z</updated>
+    <updated>2019-04-18T01:22:27.810Z</updated>
     
     <summary type="html">
     
@@ -57,6 +63,14 @@
     
     </summary>
     
+      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
+    
+      <category term="ABV" scheme="https://275244143.github.io/tags/ABV/"/>
+    
+      <category term="FV" scheme="https://275244143.github.io/tags/FV/"/>
     
   </entry>
   
@@ -87,7 +101,7 @@
     <link href="https://275244143.github.io/2019/04/16/SystemVerilog%E8%AF%AD%E6%B3%95%E9%87%8A%E4%B9%89/"/>
     <id>https://275244143.github.io/2019/04/16/SystemVerilog语法释义/</id>
     <published>2019-04-16T08:08:43.000Z</published>
-    <updated>2019-04-16T08:39:51.861Z</updated>
+    <updated>2019-04-18T01:26:08.153Z</updated>
     
     <summary type="html">
     
@@ -101,6 +115,12 @@
     
     </summary>
     
+      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="https://275244143.github.io/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
     
   </entry>
   

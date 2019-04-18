@@ -1,7 +1,8 @@
 ---
 title: SystemVerilog语法释义
 date: 2019-04-16 16:08:43
-tags:
+tags: [UVM,SystemVerilog]
+categories: 验证
 ---
 ## 1.浮点数转换
 

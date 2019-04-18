@@ -7,12 +7,12 @@ menu:
 - name: archives
   link: archives/
   icon: <i class="fas fa-archive"></i>
-# - name: categories
-#   link: categories/
-#   icon: <i class="fas fa-th-list"></i>
-# - name: tags
-#   link: tags/
-#   icon: <i class="fas fa-tags"></i>
+- name: categories
+  link: categories/
+  icon: <i class="fas fa-th-list"></i>
+- name: tags
+  link: tags/
+  icon: <i class="fas fa-tags"></i>
 # - name: about
 #   link: about/
 #   icon: <i class="fas fa-user-edit"></i>

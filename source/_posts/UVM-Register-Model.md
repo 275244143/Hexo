@@ -1,7 +1,8 @@
 ---
 title: UVM-Register-Model
 date: 2019-04-17 14:03:12
-tags:
+tags: [UVM,SystemVerilog]
+categories: 验证
 ---
 # 1.UVM寄存器模型相关操作引起的一些关键变化 #
 # **缩写词** #

@@ -11,6 +11,20 @@
         <content type="html"><![CDATA[<h1 id="1-UVM寄存器模型相关操作引起的一些关键变化"><a href="#1-UVM寄存器模型相关操作引起的一些关键变化" class="headerlink" title="1.UVM寄存器模型相关操作引起的一些关键变化"></a>1.UVM寄存器模型相关操作引起的一些关键变化</h1><h1 id="缩写词"><a href="#缩写词" class="headerlink" title="缩写词"></a><strong>缩写词</strong></h1><p>UMV –  Update Main Variable,<br>UMrV – Update Mirror Variable,<br>AP – Auto predict<br>RDR – Read DUT Register,<br>UDR – Update DUT Register,<br>RMV – Read Main Variable<br>FD – frontdoor,<br>BD – Backdoor,   <em>  – check if UVM_CHEK is used,   NA – Not Applicable</em></p><p><img src="https://github.com/275244143/picBed/blob/master/uvm-reg-access.jpg?raw=true" alt></p>]]></content>
       
       
+      <categories>
+          
+          <category> 验证 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> UVM </tag>
+            
+            <tag> SystemVerilog </tag>
+            
+        </tags>
       
     </entry>
     
@@ -24,6 +38,22 @@
         <content type="html"><![CDATA[<h2 id="1-什么时候需要使用形式验证（Formal-Verification：FV）"><a href="#1-什么时候需要使用形式验证（Formal-Verification：FV）" class="headerlink" title="1.什么时候需要使用形式验证（Formal Verification：FV）"></a>1.什么时候需要使用形式验证（Formal Verification：FV）</h2><p>1.1 <strong>FV FOR COMPLETE COVERAGE：</strong></p><pre><code>When you want to get complete coverage of design behaviors, consider using FV as your primary validation method.注释：    当你需要100%覆盖功能时。例如：32bit * 32bit 乘法器，需要每个数字都要进行cover。</code></pre><p>1.2 <strong>FV for Bug Hunting：</strong></p><pre><code>When you have a design with nontrivial logic and are worried that you will not be able to get sufficient coverage with simulation tests, think about FV as a supplement to simulation.注释：    担心无法获得足够的仿真测试覆盖时，可以考虑将FV作为补充，增强tapout信心。</code></pre><p>1.3 <strong>FV for Exploring Designs：</strong></p><pre><code>When you have a design where you can easily specify interesting states or outputs, but it is difficult or time-consuming to specify the sequence of inputs needed to get there, think about using FV.注释：    虽然设计简单，如一些MUX组合，但很难或费时地指定需要的输入序列，可以考虑使用FV。</code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> 验证 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SystemVerilog </tag>
+            
+            <tag> ABV </tag>
+            
+            <tag> FV </tag>
+            
+        </tags>
       
     </entry>
     
@@ -50,12 +80,48 @@
         <content type="html"><![CDATA[<h2 id="1-浮点数转换"><a href="#1-浮点数转换" class="headerlink" title="1.浮点数转换"></a>1.浮点数转换</h2><h3 id="ieee1800-2017解释："><a href="#ieee1800-2017解释：" class="headerlink" title="ieee1800-2017解释："></a>ieee1800-2017解释：</h3><pre><code>Real numbers shall be converted to integers by rounding the real number to the nearest integer, rather than by truncating it. Implicit conversion shall take place when a real number is assigned to an integer. If the fractional part of the real number is exactly 0.5, it shall be rounded away from zero.</code></pre><font color="red"><br>代码例子：<br><br>    int x_int;<br>    x_int = 2.4;//x_int –&gt; 2<br>    x_int = 2.5;//x_int –&gt; 3<br>    x_int = int’(2.5);//x_int –&gt; 2<br><br></font> <p>​    </p>]]></content>
       
       
+      <categories>
+          
+          <category> 验证 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> UVM </tag>
+            
+            <tag> SystemVerilog </tag>
+            
+        </tags>
       
     </entry>
     
     
   
   
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
     
   
 </search>
