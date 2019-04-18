@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>VCS Crash如何定位？</title>
+      <link href="/2019/04/18/VCS-Crash%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%EF%BC%9F/"/>
+      <url>/2019/04/18/VCS-Crash%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%EF%BC%9F/</url>
+      
+        <content type="html"><![CDATA[<font color="red"><br># 编译时Crash,按照如下步骤定位： #<br><br>1.vcs -gdb [options]<br><br>2.run<br><br>3.where<br></font> <font color="blue"><br># 运行Crash,按照如下步骤定位： #<br>回复@博主<br></font> ]]></content>
+      
+      
+      <categories>
+          
+          <category> 验证 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> EDA </tag>
+            
+            <tag> gdb </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>clocking块为什么能保证race free?</title>
       <link href="/2019/04/18/clocking%E5%9D%97%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E4%BF%9D%E8%AF%81race-free/"/>
       <url>/2019/04/18/clocking%E5%9D%97%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E4%BF%9D%E8%AF%81race-free/</url>
