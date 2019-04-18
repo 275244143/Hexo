@@ -30,9 +30,13 @@ favicon:
 
 # Must be an array.
 keywords:
-  - Life
-  - ARIA
-  - Hexo
+  - UVM
+  - SystemVerilog/Verilog
+  - ABV/FPV
+  - C/C++/SystemC
+  - Python/Perl/Shell/Tcl
+  - 验证
+  - IC/FPGA
 
 # https://creativecommons.org/licenses/
 # by | by-sa | by-nd | by-nc | by-nc-sa | by-nc-nd
