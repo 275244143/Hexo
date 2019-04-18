@@ -439,11 +439,9 @@
       <h2 id="1-浮点数转换"><a href="#1-浮点数转换" class="headerlink" title="1.浮点数转换"></a>1.浮点数转换</h2><h3 id="ieee1800-2017解释："><a href="#ieee1800-2017解释：" class="headerlink" title="ieee1800-2017解释："></a>ieee1800-2017解释：</h3><pre><code>Real numbers shall be converted to integers by rounding the real number to the nearest integer, rather than by truncating it. 
 Implicit conversion shall take place when a real number is assigned to an integer. 
 If the fractional part of the real number is exactly 0.5, it shall be rounded away from zero.
-</code></pre><font color="red"><br>代码例子：<br><br>    int x_int;<br>    x_int = 2.4;//x_int –&gt; 2<br>    x_int = 2.5;//x_int –&gt; 3<br>    x_int = int’(2.5);//x_int –&gt; 2<br><br></font> 
+</code></pre><font color="blue"><br>代码例子：<br><pre name="code" class="systemverilog"><br>int x_int;<br>x_int = 2.4;//x_int –&gt; 2<br>x_int = 2.5;//x_int –&gt; 3<br>x_int = int’(2.5);//x_int –&gt; 2<br></pre><br></font> 
 
-
-<p>​    </p>
-
+<h2 id="2-数据比特位快速反转"><a href="#2-数据比特位快速反转" class="headerlink" title="2.数据比特位快速反转"></a>2.数据比特位快速反转</h2><font color="blue"><br>代码例子：<br><pre name="code" class="systemverilog"><br>bit [15:0] x = 16’b0000_1011_0000_0011;<br>x= { &lt;&lt; {x} }; //x –&gt; 16’b1100_0000_1101_0000;<br></pre><br></font> 
       
     </main>
     <footer class="post-footer">
