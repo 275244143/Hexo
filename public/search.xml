@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>UVM寄存器模型中soft和hard reset有什么区别？</title>
+      <link href="/2019/04/18/UVM%E5%AF%84%E5%AD%98%E5%99%A8%E6%A8%A1%E5%9E%8B%E4%B8%ADsoft%E5%92%8Chard-reset%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/"/>
+      <url>/2019/04/18/UVM%E5%AF%84%E5%AD%98%E5%99%A8%E6%A8%A1%E5%9E%8B%E4%B8%ADsoft%E5%92%8Chard-reset%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-Kind-“HARD”-or-“SOFT”"><a href="#1-Kind-“HARD”-or-“SOFT”" class="headerlink" title="1.Kind = “HARD” or “SOFT”"></a>1.Kind = “HARD” or “SOFT”</h2><p>寄存器模型中复位操作这个到底有什么作用呢？源码如下：</p><font color="red"><br>代码例子：<br><pre name="code" class="systemverilog"><br>function void uvm_reg_xxx::reset(string kind = “HARD”);<br>    if (!m_reset.exists(kind))<br>          return;<br>    m_mirrored = m_reset[kind];<br>    m_desired  = m_mirrored;<br>    value      = m_mirrored;<br>    if (kind == “HARD”)<br>        m_written  = 0;<br>endfunction: reset<br></pre><br></font><br><font color="blue"><br>其实是作为特别处理用的，如果所有的寄存器都只有一个复位的时候默认一个HARD值统一复位。<br>如果某个寄存器需要特殊的复位，则可以重写该类中的reset（…）方法：<br>代码例子：<br><pre name="code" class="systemverilog"><br>class some_reg extends uvm_reg;<br>    …<br>    function void reset(string kind = “HARD”);<br>        if (kind != “SOFT”)<br>            super.reset(kind);<br>    endfunction<br><br>endclass<br></pre><br></font> ]]></content>
+      
+      
+      <categories>
+          
+          <category> 验证 </category>
+          
+          <category> UVM-RAL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> UVM </tag>
+            
+            <tag> SystemVerilog </tag>
+            
+            <tag> RAL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>UVM-Register-Model</title>
       <link href="/2019/04/17/UVM-Register-Model/"/>
       <url>/2019/04/17/UVM-Register-Model/</url>
