@@ -216,6 +216,8 @@ If the fractional part of the real number is exactly 0.5, it shall be rounded aw
 </code></pre><font color="blue"><br>代码例子：<br><pre name="code" class="systemverilog"><br>int x_int;<br>x_int = 2.4;//x_int –&gt; 2<br>x_int = 2.5;//x_int –&gt; 3<br>x_int = int’(2.5);//x_int –&gt; 2<br></pre><br></font> 
 
 <h2 id="2-数据比特位快速反转"><a href="#2-数据比特位快速反转" class="headerlink" title="2.数据比特位快速反转"></a>2.数据比特位快速反转</h2><font color="blue"><br>代码例子：<br><pre name="code" class="systemverilog"><br>bit [15:0] x = 16’b0000_1011_0000_0011;<br>x= { &lt;&lt; {x} }; //x –&gt; 16’b1100_0000_1101_0000;<br></pre><br></font> 
+
+<h2 id="3-super-super如何解决无法支持问题？"><a href="#3-super-super如何解决无法支持问题？" class="headerlink" title="3.super.super如何解决无法支持问题？"></a>3.super.super如何解决无法支持问题？</h2><font color="blue"><br>代码例子：<br><pre name="code" class="systemverilog"><br>module tb;<br><br>class A;<br>    virtual function void test();<br>        $display(“%m”);<br>    endfunction<br>endclass<br><br>class B extends A;<br>    virtual function void test();<br>        $display(“%m”);<br>    endfunction<br>endclass<br><br>class C extends B;<br>    virtual function void test();<br>        super.test();//Call B test()<br>        //super.super.test();//error!Can not support！<br>        //use follow<br>        A::test();//Call A test()<br>        $display(“%m”);<br>    endfunction<br>endclass<br><br>initial begin<br>    C cinst = new();<br>    cinst.test();<br>end<br><br>endmodule<br><br>仿真执行结果：<br>tb.B.test<br>tb.A.test<br>tb.C.test<br><br></pre><br></font> 
     </main>
     <footer class="post-footer">
       
@@ -360,7 +362,7 @@ If the fractional part of the real number is exactly 0.5, it shall be rounded aw
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-浮点数转换"><span class="toc-text">1.浮点数转换</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#ieee1800-2017解释："><span class="toc-text">ieee1800-2017解释：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-数据比特位快速反转"><span class="toc-text">2.数据比特位快速反转</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-浮点数转换"><span class="toc-text">1.浮点数转换</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#ieee1800-2017解释："><span class="toc-text">ieee1800-2017解释：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-数据比特位快速反转"><span class="toc-text">2.数据比特位快速反转</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-super-super如何解决无法支持问题？"><span class="toc-text">3.super.super如何解决无法支持问题？</span></a></li></ol></div>
     </div>
     
     

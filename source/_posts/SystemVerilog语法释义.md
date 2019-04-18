@@ -30,3 +30,46 @@ bit [15:0] x = 16'b0000_1011_0000_0011;
 x= { << {x} }; //x --> 16'b1100_0000_1101_0000;
 </pre>
 </font> 
+
+## 3.super.super如何解决无法支持问题？
+<font color=blue>
+代码例子：
+<pre name="code" class="systemverilog">  	
+module tb;
+
+class A;
+    virtual function void test();
+        $display("%m");
+    endfunction
+endclass
+
+class B extends A;
+    virtual function void test();
+        $display("%m");
+    endfunction
+endclass
+
+class C extends B;
+    virtual function void test();
+        super.test();//Call B test()
+        //super.super.test();//error!Can not support！
+        //use follow
+        A::test();//Call A test()
+        $display("%m");
+    endfunction
+endclass
+
+initial begin
+    C cinst = new();
+    cinst.test();
+end
+
+endmodule
+
+仿真执行结果：
+tb.B.test
+tb.A.test
+tb.C.test
+
+</pre>
+</font> 
