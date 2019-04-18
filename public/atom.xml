@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>验证技术博客@神秘人</title>
   
-  
+  <subtitle>人的智慧不用就会枯萎。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
