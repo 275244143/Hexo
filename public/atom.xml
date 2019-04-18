@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
-  <updated>2019-04-18T02:09:48.555Z</updated>
+  <updated>2019-04-18T09:27:52.019Z</updated>
   <id>https://275244143.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>clocking块为什么能保证race free?</title>
+    <link href="https://275244143.github.io/2019/04/18/clocking%E5%9D%97%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E4%BF%9D%E8%AF%81race-free/"/>
+    <id>https://275244143.github.io/2019/04/18/clocking块为什么能保证race-free/</id>
+    <published>2019-04-18T09:19:13.000Z</published>
+    <updated>2019-04-18T09:27:52.019Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;为啥要推荐使用clocking块？&quot;&gt;&lt;a href=&quot;#为啥要推荐使用clocking块？&quot; class=&quot;headerlink&quot; title=&quot;为啥要推荐使用clocking块？&quot;&gt;&lt;/a&gt;为啥要推荐使用clocking块？&lt;/h2&gt;&lt;font
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>UVM寄存器模型中soft和hard reset有什么区别？</title>

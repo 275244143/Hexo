@@ -178,6 +178,59 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://275244143.github.io/2019/04/18/clocking块为什么能保证race-free/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="神秘人">
+        <meta itemprop="description" content>
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/04/18/clocking块为什么能保证race-free/" itemprop="url">clocking块为什么能保证race free?</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-18T17:19:13+08:00">2019-04-18 17:19:13</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="为啥要推荐使用clocking块？"><a href="#为啥要推荐使用clocking块？" class="headerlink" title="为啥要推荐使用clocking块？"></a>为啥要推荐使用clocking块？</h2><font color="red"><br>代码例子：<br><pre name="code" class="systemverilog"><br><br>clocking cb @(negedge clk);<br>  input v;<br>endclocking<br><br>always @(cb) $display(cb.v);//采样old值<br><br>always @(negedge clk) $display(cb.v);//采样old or new值和仿真器相关。<br><br></pre><br><br>主要原因是clocking块中默认为1step采样，在clk下降沿发生时（@(cb)触发），数据已经采样了。<br>而第二条always语句直接(@(negedge clk))和（@(cb)）并发，所有就有race glitch。<br><br></font> 
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://275244143.github.io/2019/04/18/UVM寄存器模型中soft和hard-reset有什么区别？/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="神秘人">
@@ -503,7 +556,7 @@ If the fractional part of the real number is exactly 0.5, it shall be rounded aw
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">5</a></div>
+      <div><a href="/archives/">6</a></div>
     </div>
     
     

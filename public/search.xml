@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>clocking块为什么能保证race free?</title>
+      <link href="/2019/04/18/clocking%E5%9D%97%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E4%BF%9D%E8%AF%81race-free/"/>
+      <url>/2019/04/18/clocking%E5%9D%97%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E4%BF%9D%E8%AF%81race-free/</url>
+      
+        <content type="html"><![CDATA[<h2 id="为啥要推荐使用clocking块？"><a href="#为啥要推荐使用clocking块？" class="headerlink" title="为啥要推荐使用clocking块？"></a>为啥要推荐使用clocking块？</h2><font color="red"><br>代码例子：<br><pre name="code" class="systemverilog"><br><br>clocking cb @(negedge clk);<br>  input v;<br>endclocking<br><br>always @(cb) $display(cb.v);//采样old值<br><br>always @(negedge clk) $display(cb.v);//采样old or new值和仿真器相关。<br><br></pre><br><br>主要原因是clocking块中默认为1step采样，在clk下降沿发生时（@(cb)触发），数据已经采样了。<br>而第二条always语句直接(@(negedge clk))和（@(cb)）并发，所有就有race glitch。<br><br></font> ]]></content>
+      
+      
+      <categories>
+          
+          <category> 验证 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SystemVerilog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>UVM寄存器模型中soft和hard reset有什么区别？</title>
       <link href="/2019/04/18/UVM%E5%AF%84%E5%AD%98%E5%99%A8%E6%A8%A1%E5%9E%8B%E4%B8%ADsoft%E5%92%8Chard-reset%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/"/>
       <url>/2019/04/18/UVM%E5%AF%84%E5%AD%98%E5%99%A8%E6%A8%A1%E5%9E%8B%E4%B8%ADsoft%E5%92%8Chard-reset%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/</url>
