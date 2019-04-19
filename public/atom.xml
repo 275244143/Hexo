@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
-  <updated>2019-04-19T09:25:22.746Z</updated>
+  <updated>2019-04-19T11:18:13.345Z</updated>
   <id>https://275244143.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用synopsys uvmgen快速生成uvm环境</title>
+    <link href="https://275244143.github.io/2019/04/19/%E4%BD%BF%E7%94%A8synopsys%20uvmgen%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90uvm%E7%8E%AF%E5%A2%83/"/>
+    <id>https://275244143.github.io/2019/04/19/使用synopsys uvmgen快速生成uvm环境/</id>
+    <published>2019-04-19T11:09:00.000Z</published>
+    <updated>2019-04-19T11:18:13.345Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;通过vcs-uvmgen模板生成UVM环境&quot;&gt;&lt;a href=&quot;#通过vcs-uvmgen模板生成UVM环境&quot; class=&quot;headerlink&quot; title=&quot;通过vcs uvmgen模板生成UVM环境&quot;&gt;&lt;/a&gt;通过vcs
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="https://275244143.github.io/tags/UVM/"/>
+    
+      <category term="EDA" scheme="https://275244143.github.io/tags/EDA/"/>
+    
+      <category term="synopsys" scheme="https://275244143.github.io/tags/synopsys/"/>
+    
+  </entry>
   
   <entry>
     <title>常用脚本收集</title>

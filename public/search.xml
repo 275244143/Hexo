@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>使用synopsys uvmgen快速生成uvm环境</title>
+      <link href="/2019/04/19/%E4%BD%BF%E7%94%A8synopsys%20uvmgen%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90uvm%E7%8E%AF%E5%A2%83/"/>
+      <url>/2019/04/19/%E4%BD%BF%E7%94%A8synopsys%20uvmgen%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90uvm%E7%8E%AF%E5%A2%83/</url>
+      
+        <content type="html"><![CDATA[<h3 id="通过vcs-uvmgen模板生成UVM环境"><a href="#通过vcs-uvmgen模板生成UVM环境" class="headerlink" title="通过vcs uvmgen模板生成UVM环境"></a>通过vcs uvmgen模板生成UVM环境</h3><ul><li>命令行：<br><img src="/2019/04/19/使用synopsys uvmgen快速生成uvm环境/uvmgen1.png" alt="uvmgen-cmd"></li><li>树形结构：<br><img src="/2019/04/19/使用synopsys uvmgen快速生成uvm环境/uvmgen2.png" alt="uvmgen-tree"></li><li>代码样例：<br><img src="/2019/04/19/使用synopsys uvmgen快速生成uvm环境/uvmgen3.png" alt="uvmgen-demo"></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 验证 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> UVM </tag>
+            
+            <tag> EDA </tag>
+            
+            <tag> synopsys </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>常用脚本收集</title>
       <link href="/2019/04/19/%E5%B8%B8%E7%94%A8%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/"/>
       <url>/2019/04/19/%E5%B8%B8%E7%94%A8%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</url>
