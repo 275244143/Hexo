@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Layer-Sequence结构图</title>
+      <link href="/2019/04/19/Layer-Sequence%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
+      <url>/2019/04/19/Layer-Sequence%E7%BB%93%E6%9E%84%E5%9B%BE/</url>
+      
+        <content type="html"><![CDATA[<h3 id="UVM-Layer-Sequence结构图"><a href="#UVM-Layer-Sequence结构图" class="headerlink" title="UVM Layer Sequence结构图"></a>UVM Layer Sequence结构图</h3><p><img src="/2019/04/19/Layer-Sequence结构图/Layer-Sequence结构图.png" alt="Layer-Sequence结构图"></p><font color="blue"><br><br> 1.可以1:1，1：N，N:N进行堆叠。<br><br> 2.堆叠指针必须指向对应的sequencer。<br><br></font>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux 查找指定名称的进程并显示进程详细信息</title>
       <link href="/2019/04/19/Linux%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"/>
       <url>/2019/04/19/Linux%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</url>
