@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
-  <updated>2019-04-19T07:09:05.494Z</updated>
+  <updated>2019-04-19T07:23:29.325Z</updated>
   <id>https://275244143.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://275244143.github.io/2019/04/19/Layer-Sequence%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
     <id>https://275244143.github.io/2019/04/19/Layer-Sequence结构图/</id>
     <published>2019-04-19T06:53:55.000Z</published>
-    <updated>2019-04-19T07:09:05.494Z</updated>
+    <updated>2019-04-19T07:23:29.325Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,12 @@
     
     </summary>
     
+      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="https://275244143.github.io/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
     
   </entry>
   

@@ -11,6 +11,20 @@
         <content type="html"><![CDATA[<h3 id="UVM-Layer-Sequence结构图"><a href="#UVM-Layer-Sequence结构图" class="headerlink" title="UVM Layer Sequence结构图"></a>UVM Layer Sequence结构图</h3><p><img src="/2019/04/19/Layer-Sequence结构图/Layer-Sequence结构图.png" alt="Layer-Sequence结构图"></p><font color="blue"><br><br> 1.可以1:1，1：N，N:N进行堆叠。<br><br> 2.堆叠指针必须指向对应的sequencer。<br><br></font>]]></content>
       
       
+      <categories>
+          
+          <category> 验证 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> UVM </tag>
+            
+            <tag> SystemVerilog </tag>
+            
+        </tags>
       
     </entry>
     

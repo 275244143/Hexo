@@ -1,7 +1,8 @@
 title: Layer-Sequence结构图
 author: 神秘人
 date: 2019-04-19 14:53:55
-tags:
+tags: [UVM,SystemVerilog]
+categories: [ 验证]
 ---
 ### UVM Layer Sequence结构图
 
