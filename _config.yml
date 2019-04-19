@@ -112,3 +112,10 @@ shareto: true
 donate:
   enable: true 
   qqpay_qr: /img/qqpay.png
+
+# hexo-admin authentification
+admin:
+  username: 275244143@qq.com
+  password_hash: $2a$10$zgRXlOpDSNVcUL1bSOZI6.MQq76XQNweXkQYzYP22DUBWbdzdsbDS
+  secret: 275244143@qq.com
+  deployCommand: 'sh ./admin_script/hexo-generate.sh'
