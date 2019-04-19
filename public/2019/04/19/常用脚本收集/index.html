@@ -133,7 +133,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>clocking块为什么能保证race free? | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+    <title>常用脚本收集 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -177,7 +177,7 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://275244143.github.io/2019/04/18/clocking块为什么能保证race-free/">
+      <link itemprop="mainEntityOfPage" href="https://275244143.github.io/2019/04/19/常用脚本收集/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="神秘人">
        <meta itemprop="description" content="在人生中最艰难的是选择。">
@@ -188,11 +188,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">clocking块为什么能保证race free?</h1>
+      <h1 class="post-title" itemprop="name headline">常用脚本收集</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-18T17:19:13+08:00">2019-04-18 17:19:13</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-19T16:38:00+08:00">2019-04-19 16:38:00</time></span>
         </span>
         
         
@@ -201,7 +201,7 @@
         
         <span class="post-categories">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/脚本/" itemprop="url" rel="index"><span itemprop="name">脚本</span></a></span>
         </span>
         
         
@@ -210,14 +210,78 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h2 id="为啥要推荐使用clocking块？"><a href="#为啥要推荐使用clocking块？" class="headerlink" title="为啥要推荐使用clocking块？"></a>为啥要推荐使用clocking块？</h2><font color="red"><br>代码例子：<br><pre name="code" class="systemverilog"><br><br>clocking cb @(negedge clk);<br>  input v;<br>endclocking<br><br>always @(cb) $display(cb.v);//采样old值<br><br>always @(negedge clk) $display(cb.v);//采样old or new值和仿真器相关。<br><br></pre><br><br>主要原因是clocking块中默认为1step采样，在clk下降沿发生时（@(cb)触发），数据已经采样了。<br>而第二条always语句直接(@(negedge clk))和（@(cb)）并发，所以就有race glitch。<br><br></font> 
+      <h3 id="常用脚本收集"><a href="#常用脚本收集" class="headerlink" title="常用脚本收集"></a>常用脚本收集</h3><ul>
+<li><p>Sed</p>
+<ul>
+<li><p>直接对文本文件进行行替代操作</p>
+<figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'s/原字符串/新字符串/'</span> file<br>sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'s/原字符串/新字符串/g'</span> file<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>去掉 “行首” 带“@”的首字母@的行</p>
+<figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'s/^@//'</span> file<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在含有特定字符串的行前插入新行</p>
+<figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'/特定字符串/i 新行字符串'</span> file<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在含有特定字符串的行后插入新行</p>
+<figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'/特定字符串/a 新行字符串'</span> file<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>删除含有特定字符串的行</p>
+<figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'/字符串/d'</span> file<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>python</li>
+</ul>
+<hr>
+<ul>
+<li>Perl</li>
+</ul>
+<hr>
+<ul>
+<li><p>Shell</p>
+<ul>
+<li><p>列出所有目录使用量，并按大小排序。</p>
+<figure class="hljs highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">ls</span>|xargs du -<span class="hljs-keyword">h</span>|<span class="hljs-keyword">sort</span> -rn <br>#不递归下级目录使用du -<span class="hljs-keyword">sh</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看文件排除以#开关和空白行。</p>
+<figure class="hljs highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">egrep</span> -v <span class="hljs-string">"^#|^$"</span>  filename<br>sed <span class="hljs-string">'/#.*$/d; /^ *$/d'</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查删除空格和空行。</p>
+<figure class="hljs highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">sed</span> <span class="hljs-string">'/^$/d'</span> filename <span class="hljs-comment">#删除空行</span><br>sed <span class="hljs-string">'s/ //g'</span> filename<br>sed <span class="hljs-string">'s/[[:space:]]//g'</span> filename<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>删除#后的注释。</p>
+<figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'s/#.*$//g'</span> filename<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>删除空文件。</p>
+<figure class="hljs highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-built_in">find</span> / -<span class="hljs-built_in">type</span> f -<span class="hljs-built_in">size</span> <span class="hljs-number">0</span> -<span class="hljs-built_in">exec</span> rm -rf &#123;&#125; \;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查找进程pid并kill。</p>
+<figure class="hljs highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">pgrep nginx<span class="hljs-string">|xargs kill </span><br>pidof nginx<span class="hljs-string">|xargs kill</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>取当前IP地址。</p>
+<figure class="hljs highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">ifconfig</span> |awk -F<span class="hljs-string">"[ ]+|[:]"</span> <span class="hljs-string">'NR==2 &#123;print <span class="hljs-variable">$4</span>&#125;'</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>shell下新建文件夹并进入，以下加入bashrc。</p>
+<figure class="hljs highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">mkcd</span> ( )&#123;<br>   	<span class="hljs-attribute">mkdir</span> <span class="hljs-variable">$1</span><br>       cd <span class="hljs-variable">$1</span><br>   &#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>Kill整个进程树。</p>
+<figure class="hljs highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">pstree -ap <span class="hljs-number">10277</span>|grep -oP '[<span class="hljs-number">0</span><span class="hljs-number">-9</span>]&#123;<span class="hljs-number">4</span>,<span class="hljs-number">6</span>&#125;'|xargs kill <span class="hljs-number">-9</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>目录中大量文件删除。</p>
+<figure class="hljs highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">ls</span> | xargs <span class="hljs-keyword">rm</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
 
     </main>
     <footer class="post-footer">
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        <a class="post-tag button" href="/tags/脚本/" rel="tag"><i class="fas fa-tags"></i>脚本</a>
         
       </div>
       
@@ -246,12 +310,10 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2019/04/18/UVM寄存器模型中soft和hard-reset有什么区别？/" rel="next" title="UVM寄存器模型中soft和hard reset有什么区别？"><i class="fas fa-angle-left"></i><span class="nav-title">UVM寄存器模型中soft和hard reset有什么区别？</span></a>
+      <a href="/2019/04/19/Layer-Sequence结构图/" rel="next" title="Layer-Sequence结构图"><i class="fas fa-angle-left"></i><span class="nav-title">Layer-Sequence结构图</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2019/04/18/VCS-Crash如何定位？/" rel="prev" title="VCS Crash如何定位？"><span class="nav-title">VCS Crash如何定位？</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -358,7 +420,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#为啥要推荐使用clocking块？"><span class="toc-text">为啥要推荐使用clocking块？</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#常用脚本收集"><span class="toc-text">常用脚本收集</span></a></li></ol></div>
     </div>
     
     
