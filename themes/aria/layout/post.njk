@@ -40,6 +40,10 @@
           {% if loop.first %}<i class="far fa-folder-open"></i>{% else %}<i class="fas fa-angle-right"></i>{% endif %}<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
           {%- endfor %}
         </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">{{ wordcount(post.content) }}字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">{{ min2read(post.content) }}分</span>
         {% endif %}
         {% if page.comment !== false and theme.comment.enable %}
         {% if theme.comment.disqus_shortname %}

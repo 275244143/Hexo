@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
-  <updated>2019-04-19T11:18:13.345Z</updated>
+  <updated>2019-04-19T14:19:35.945Z</updated>
   <id>https://275244143.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://275244143.github.io/2019/04/19/%E4%BD%BF%E7%94%A8synopsys%20uvmgen%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90uvm%E7%8E%AF%E5%A2%83/"/>
     <id>https://275244143.github.io/2019/04/19/使用synopsys uvmgen快速生成uvm环境/</id>
     <published>2019-04-19T11:09:00.000Z</published>
-    <updated>2019-04-19T11:18:13.345Z</updated>
+    <updated>2019-04-19T14:19:35.945Z</updated>
     
     <summary type="html">
     
@@ -51,7 +51,7 @@
     <link href="https://275244143.github.io/2019/04/19/%E5%B8%B8%E7%94%A8%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/"/>
     <id>https://275244143.github.io/2019/04/19/常用脚本收集/</id>
     <published>2019-04-19T08:38:00.000Z</published>
-    <updated>2019-04-19T09:25:22.746Z</updated>
+    <updated>2019-04-19T14:19:35.952Z</updated>
     
     <summary type="html">
     
@@ -77,7 +77,7 @@
     <link href="https://275244143.github.io/2019/04/19/Layer-Sequence%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
     <id>https://275244143.github.io/2019/04/19/Layer-Sequence结构图/</id>
     <published>2019-04-19T06:53:55.000Z</published>
-    <updated>2019-04-19T07:23:29.325Z</updated>
+    <updated>2019-04-19T14:19:35.939Z</updated>
     
     <summary type="html">
     
@@ -105,7 +105,7 @@
     <link href="https://275244143.github.io/2019/04/19/Linux%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"/>
     <id>https://275244143.github.io/2019/04/19/Linux相关操作/</id>
     <published>2019-04-19T03:10:00.000Z</published>
-    <updated>2019-04-19T03:15:37.404Z</updated>
+    <updated>2019-04-19T14:19:35.944Z</updated>
     
     <summary type="html">
     
@@ -133,19 +133,11 @@
     <link href="https://275244143.github.io/2019/04/18/VCS-Crash%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%EF%BC%9F/"/>
     <id>https://275244143.github.io/2019/04/18/VCS-Crash如何定位？/</id>
     <published>2019-04-18T14:37:37.000Z</published>
-    <updated>2019-04-19T02:10:30.411Z</updated>
+    <updated>2019-04-20T06:07:28.951Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;font color=&quot;red&quot;&gt;&lt;br&gt;# 编译时Crash,按照如下步骤定位： #&lt;br&gt;&lt;br&gt;1.vcs -gdb [options]&lt;br&gt;&lt;br&gt;2.run&lt;br&gt;&lt;br&gt;3.where&lt;br&gt;&lt;/font&gt; 
-
-&lt;font color=&quot;blue&quot;&gt;&lt;br&gt;#
-        
-      
+      欢迎光临~
     
     </summary>
     
@@ -163,7 +155,7 @@
     <link href="https://275244143.github.io/2019/04/18/clocking%E5%9D%97%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E4%BF%9D%E8%AF%81race-free/"/>
     <id>https://275244143.github.io/2019/04/18/clocking块为什么能保证race-free/</id>
     <published>2019-04-18T09:19:13.000Z</published>
-    <updated>2019-04-18T09:30:22.663Z</updated>
+    <updated>2019-04-18T13:31:44.330Z</updated>
     
     <summary type="html">
     
@@ -189,7 +181,7 @@
     <link href="https://275244143.github.io/2019/04/18/UVM%E5%AF%84%E5%AD%98%E5%99%A8%E6%A8%A1%E5%9E%8B%E4%B8%ADsoft%E5%92%8Chard-reset%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/"/>
     <id>https://275244143.github.io/2019/04/18/UVM寄存器模型中soft和hard-reset有什么区别？/</id>
     <published>2019-04-18T01:39:46.000Z</published>
-    <updated>2019-04-18T02:09:48.555Z</updated>
+    <updated>2019-04-18T13:31:44.330Z</updated>
     
     <summary type="html">
     
@@ -221,7 +213,7 @@
     <link href="https://275244143.github.io/2019/04/17/UVM-Register-Model/"/>
     <id>https://275244143.github.io/2019/04/17/UVM-Register-Model/</id>
     <published>2019-04-17T06:03:12.000Z</published>
-    <updated>2019-04-18T01:19:17.885Z</updated>
+    <updated>2019-04-18T13:31:44.330Z</updated>
     
     <summary type="html">
     
@@ -249,7 +241,7 @@
     <link href="https://275244143.github.io/2019/04/17/%E5%BD%A2%E5%BC%8F%E9%AA%8C%E8%AF%81/"/>
     <id>https://275244143.github.io/2019/04/17/形式验证/</id>
     <published>2019-04-17T03:15:24.000Z</published>
-    <updated>2019-04-18T01:23:41.987Z</updated>
+    <updated>2019-04-18T13:31:44.346Z</updated>
     
     <summary type="html">
     
@@ -279,7 +271,7 @@
     <link href="https://275244143.github.io/2019/04/16/QQ%E7%BA%A2%E5%8C%85%E6%89%93%E8%B5%8F,%E9%AA%8C%E8%AF%81%E6%8A%80%E6%9C%AF%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%EF%BC%8C%E6%89%AB%E7%A0%81%E5%8D%B3%E5%8F%AF%EF%BC%8C%E4%BD%A0%E7%9A%84%E6%94%AF%E6%8C%81%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%8A%80%E6%9C%AF%E7%9A%84%E4%B8%8D%E6%96%AD%E5%89%8D%E8%BF%9B%EF%BC%81/"/>
     <id>https://275244143.github.io/2019/04/16/QQ红包打赏,验证技术微信公众号，扫码即可，你的支持，就是技术的不断前进！/</id>
     <published>2019-04-16T08:52:08.000Z</published>
-    <updated>2019-04-17T03:31:24.157Z</updated>
+    <updated>2019-04-17T14:33:32.023Z</updated>
     
     <summary type="html">
     
