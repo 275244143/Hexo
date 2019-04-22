@@ -1,5 +1,4 @@
 git add . -f
 git commit -m "update"
-git push -u master
 git push -u origin
 
