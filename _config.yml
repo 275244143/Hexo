@@ -98,6 +98,7 @@ feed:
 deploy:
   type: git
   repo: root@148.70.238.123:/home/ubuntu/blog.git
+  branch: master
 
 # 配置版权
 post_copyright:
