@@ -97,8 +97,7 @@ feed:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:275244143/275244143.github.io.git
-  branch: master
+  repo: root@148.70.238.123:blog.git
 
 # 配置版权
 post_copyright:
