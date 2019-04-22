@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
-  <updated>2019-04-22T03:27:21.366Z</updated>
+  <updated>2019-04-22T10:57:01.774Z</updated>
   <id>https://275244143.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>github回退代码到历史指定版本</title>
+    <link href="https://275244143.github.io/2019/04/22/github%E5%9B%9E%E9%80%80%E4%BB%A3%E7%A0%81%E5%88%B0%E5%8E%86%E5%8F%B2%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC/"/>
+    <id>https://275244143.github.io/2019/04/22/github回退代码到历史指定版本/</id>
+    <published>2019-04-22T10:51:16.000Z</published>
+    <updated>2019-04-22T10:57:01.774Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;前提是本地已经有了git的origin master库或者克隆需要回退的代码到本地。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查询历史对应不同版本的ID,用于回退使用。&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://275244143.github.io/categories/Linux/"/>
+    
+    
+      <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
+    
+      <category term="git" scheme="https://275244143.github.io/tags/git/"/>
+    
+      <category term="github" scheme="https://275244143.github.io/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>使用synopsys uvmgen快速生成uvm环境</title>

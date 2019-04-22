@@ -180,6 +180,83 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://275244143.github.io/2019/04/22/github回退代码到历史指定版本/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="神秘人">
+        <meta itemprop="description" content="在人生中最艰难的是选择。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/04/22/github回退代码到历史指定版本/" itemprop="url">github回退代码到历史指定版本</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-22T18:51:16+08:00">2019-04-22 18:51:16</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <ul>
+<li><p>前提是本地已经有了git的origin master库或者克隆需要回退的代码到本地。</p>
+</li>
+<li><p>查询历史对应不同版本的ID,用于回退使用。</p>
+<figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ git <span class="hljs-built_in">log</span> <span class="hljs-comment">--pretty=oneline</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>使用git log命令查看所有的历史版本，获取你git的某个历史版本的id。</p>
+<ul>
+<li>假设查到历史版本的id是fae6966548e3ae76cfa7f38a461c438cf75ba965。</li>
+</ul>
+</li>
+<li><p>恢复到历史版本。</p>
+<figure class="hljs highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard fae6966548e3ae76cfa7f38a461c438cf75ba965</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>把修改推到远程服务器。</p>
+<figure class="hljs highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-built_in">push</span> -f -u <span class="hljs-built_in">origin</span> master<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>重新更新本地代码。</p>
+<figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">git pull</span><br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/shell/" rel="tag"><i class="fas fa-tags"></i>shell</a>
+        
+        <a class="post-tag button" href="/tags/git/" rel="tag"><i class="fas fa-tags"></i>git</a>
+        
+        <a class="post-tag button" href="/tags/github/" rel="tag"><i class="fas fa-tags"></i>github</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://275244143.github.io/2019/04/19/使用synopsys uvmgen快速生成uvm环境/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="神秘人">
@@ -762,46 +839,6 @@
     </footer>
   </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://275244143.github.io/2019/04/16/QQ红包打赏,验证技术微信公众号，扫码即可，你的支持，就是技术的不断前进！/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="神秘人">
-        <meta itemprop="description" content="在人生中最艰难的是选择。">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="验证技术博客@神秘人">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/04/16/QQ红包打赏,验证技术微信公众号，扫码即可，你的支持，就是技术的不断前进！/" itemprop="url">QQ红包打赏,验证技术微信公众号，扫码即可，你的支持，就是技术的不断前进！</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-16T16:52:08+08:00">2019-04-16 16:52:08</time></span>
-        </span>
-        
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <h1 id="谢谢打赏"><a href="#谢谢打赏" class="headerlink" title="谢谢打赏"></a>谢谢打赏</h1><p><img src="https://github.com/275244143/picBed/blob/master/QQ%E5%9B%BE%E7%89%8720190416222833.png?raw=true" alt="QQ"></p>
-<h1 id="验证技术公众号（Ricky友情支持）"><a href="#验证技术公众号（Ricky友情支持）" class="headerlink" title="验证技术公众号（Ricky友情支持）"></a>验证技术公众号（Ricky友情支持）</h1><p><img src="https://github.com/275244143/picBed/blob/master/QQ%E5%9B%BE%E7%89%8720190416224606.jpg?raw=true" alt="WEBCHAT"></p>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
@@ -850,7 +887,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">11</a></div>
+      <div><a href="/archives/">12</a></div>
     </div>
     
     
@@ -864,7 +901,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">11</a></div>
+      <div><a href="/tags/">13</a></div>
     </div>
     
     

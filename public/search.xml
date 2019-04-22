@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>github回退代码到历史指定版本</title>
+      <link href="/2019/04/22/github%E5%9B%9E%E9%80%80%E4%BB%A3%E7%A0%81%E5%88%B0%E5%8E%86%E5%8F%B2%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC/"/>
+      <url>/2019/04/22/github%E5%9B%9E%E9%80%80%E4%BB%A3%E7%A0%81%E5%88%B0%E5%8E%86%E5%8F%B2%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>前提是本地已经有了git的origin master库或者克隆需要回退的代码到本地。</p></li><li><p>查询历史对应不同版本的ID,用于回退使用。</p><figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ git <span class="hljs-built_in">log</span> <span class="hljs-comment">--pretty=oneline</span><br></code></pre></td></tr></table></figure></li><li><p>使用git log命令查看所有的历史版本，获取你git的某个历史版本的id。</p><ul><li>假设查到历史版本的id是fae6966548e3ae76cfa7f38a461c438cf75ba965。</li></ul></li><li><p>恢复到历史版本。</p><figure class="hljs highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard fae6966548e3ae76cfa7f38a461c438cf75ba965</span><br></code></pre></td></tr></table></figure></li><li><p>把修改推到远程服务器。</p><figure class="hljs highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-built_in">push</span> -f -u <span class="hljs-built_in">origin</span> master<br></code></pre></td></tr></table></figure></li><li><p>重新更新本地代码。</p><figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">git pull</span><br></code></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> shell </tag>
+            
+            <tag> git </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用synopsys uvmgen快速生成uvm环境</title>
       <link href="/2019/04/19/%E4%BD%BF%E7%94%A8synopsys%20uvmgen%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90uvm%E7%8E%AF%E5%A2%83/"/>
       <url>/2019/04/19/%E4%BD%BF%E7%94%A8synopsys%20uvmgen%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90uvm%E7%8E%AF%E5%A2%83/</url>
@@ -116,7 +145,7 @@
       <link href="/2019/04/18/VCS-Crash%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%EF%BC%9F/"/>
       <url>/2019/04/18/VCS-Crash%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%EF%BC%9F/</url>
       
-        <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="~友情QQ红包，发送密码~" />    <label for="pass">~友情QQ红包，发送密码~</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">U2FsdGVkX19tG8+mlByo/TFuDZDiyDMbYXAdE3Z6wmJ1aW3WhqaMnfIDxZSm8Z/aT3plIei8+18Wyt2kNjQkWJC/2ypcGJxYF8bHJb+7OwSduK4K1RnUpq5GxOBVUqwJZpSEcbk5Gbb8yjwT9Lbitj7U9YV6Zlbol9lE/cemLReJ9bbFfR4Vo0XWnBf0xjvkvYf+u5T4B7eOFVOLAhXJYMwP9f9r/W1a3629BTdkU9/jjOKVN9tUw6BprClp/X7Fu+ZedVbBwEDThIBIDIiieuH0hrNB3omfud0hYz1+wENkv1EBG0dV7d2uJT/dmXOs4RjCh3r1g9kH2UkFewtM5ygY+9RHHhw5+vdnSxeKSgYjobpVbIyz1QtAUKw5E8HnjasF5U7jsycxaAyiofE/g1LJ5uj8sVzX9hVNM6a4jU7VhpRQfEAEeEu4CihL5m8kUsypqa5UNrIlh3dZpAT1rCAfva0zeTVdOulfCV5auEKJkDHIYXJ95UcLGjmstrC/3kScLQGuj/ljLxCoMZxbyIwh/iVIm3+6AwJZZNu5OeMGrI48bbt2kkygwEngMwiqdKBOZ56dde327CGvMd+4hQkqkj62bKfqoZRlX65Zp2N9wgZsdvVDCEUy/EjAPtqdYWmaBaAkUbOd9hQKwk55KE3jXItyFly/y+EyDsUrGyD/r1YjmFrZlTN+n8K2yk+k+prE383SO883F0vB4G66IjsYkDztmqanrn6feTsDtLPN3yIdEhY4t5W+3WCvU/uuhfEnoXwtVTO7TVIlCpN7Ex1mtEwDw7KkqtmWyu9FNhgBpqk6ajHNr82LJoiZ65ku+J1FuHHLYuh7KDFAawHPHYSOdWeCa/bFbJNBX3eEmsyHnt0aGpGXoYcvjD+waqe6</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+        <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="~友情QQ红包，发送密码~" />    <label for="pass">~友情QQ红包，发送密码~</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">U2FsdGVkX19AgQ8JXJqX7dv0q/8jnJ7PYnNK4LEHCSIS0zBeaq96DDdM7MSLjXosTGgy85xRVJ9u0U+LSgxA8a+h/ELS1NNUBJDG7Oo1Kd+UzNFBl6oYUpthLFXHN558nBKpsBwHMwUXZtq1oA9/x+u/zGQXF/qlDQTtOSijj9wnru+eQVhSrfFebOYweY2DnS8va4fCYvsWmILe5WOE33ybgO5yK4aAPpqfqP3f/zFgYYWwYw3Uypa+9HM9gbHwcrhgk7U+SWn3kzLazEdsK7ls/WfijjAj4BxvKv8qE8lN8uXRo4Fy2rUsa5xHMJleMhu4oslUixvxzhKJNH4/nwvfu80hJeLIzJYhTzA845M/ef0165PoHcoOwRgdKyruq34v0ikijtPX6ESDPJscfrjBuatkEjNp2rYr35DbZOA2leRrP/cjwMuxqAJvNu3R/Cixu8/xcO3Gjm/tv+RQfRP1iJhBBygHe3qYXYIj6Kowo3zJnOl5WPs8vUX7MlQ/azn/M6OQRXpue2cC6JPHJ/9fjQr/rlbE2I6l1+kFWoaxHukypAAsIBkkTVq/l1mfROVzQAZCuBwNqcnyHt8frNKuvMs3rBggvAHTL/tJPT9ABmOz5TO1s7Qgy/bS4wR8TsvWjZ29jdfsTipnTI4lnZGrSXGFs1G+EUNFEdma6PnTQXAwR05nInBzZfjdpX0c3rnpQYxP+ijFJYeBPgtmzRIDOQhqmr+QMDMQgDvDGeFJxEYo+IljVuixIPxOs4YO09RNGRLjWkTs3b2jBmZ9Zpxksqcn9eLjCu3zhXzNHXMd9NiEh9VPlznK0nfuKsJncG3VUcMMLAnchbDVSkyNCavqV1aXvNll6HNZBTm/br4nsAVu3TlPsWufM3QadCKD</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       
       
       <categories>
@@ -294,9 +323,9 @@
     
     
     <entry>
-      <title>有问必答</title>
-      <link href="/guessbook/index.html"/>
-      <url>/guessbook/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -305,9 +334,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>有问必答</title>
+      <link href="/guessbook/index.html"/>
+      <url>/guessbook/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
