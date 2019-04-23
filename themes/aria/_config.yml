@@ -13,6 +13,9 @@ menu:
 - name: tags
   link: tags/
   icon: <i class="fas fa-tags"></i>
+- name: hyperlink
+  link: hyperlink/
+  icon: <i class="fas fa-link"></i>
 - name: guessbook
   link: guessbook/
   icon: <i class="fas fa-user-edit"></i>

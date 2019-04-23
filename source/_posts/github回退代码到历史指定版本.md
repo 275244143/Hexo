@@ -13,7 +13,7 @@ categories:
 
 + 查询历史对应不同版本的ID,用于回退使用。
 ```
-	$ git log --pretty=oneline
+	git log --pretty=oneline
 ```
 + 使用git log命令查看所有的历史版本，获取你git的某个历史版本的id。
  * 假设查到历史版本的id是fae6966548e3ae76cfa7f38a461c438cf75ba965。
