@@ -42,11 +42,11 @@
       <category term="Linux" scheme="https://275244143.github.io/categories/Linux/"/>
     
     
-      <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
-    
       <category term="git" scheme="https://275244143.github.io/tags/git/"/>
     
       <category term="github" scheme="https://275244143.github.io/tags/github/"/>
+    
+      <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
     
   </entry>
   
@@ -156,9 +156,9 @@
       <category term="Linux" scheme="https://275244143.github.io/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://275244143.github.io/tags/Linux/"/>
-    
       <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
+    
+      <category term="Linux" scheme="https://275244143.github.io/tags/Linux/"/>
     
   </entry>
   

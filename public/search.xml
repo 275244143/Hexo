@@ -20,11 +20,11 @@
       
         <tags>
             
-            <tag> shell </tag>
-            
             <tag> git </tag>
             
             <tag> github </tag>
+            
+            <tag> shell </tag>
             
         </tags>
       
@@ -130,9 +130,9 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> shell </tag>
+            
+            <tag> Linux </tag>
             
         </tags>
       
@@ -145,7 +145,7 @@
       <link href="/2019/04/18/VCS-Crash%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%EF%BC%9F/"/>
       <url>/2019/04/18/VCS-Crash%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%EF%BC%9F/</url>
       
-        <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="~友情QQ红包，发送密码~" />    <label for="pass">~友情QQ红包，发送密码~</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">U2FsdGVkX18yxgWoqNMx/gcsFfr9KlikPKqsHcH1kHww9NoRxHNNzb1++oVqrh6b1QNbUQFEnz8hd/HzLzEVl/F2AISokomIFgwMMSAOA2J3k6os7yVO+ZKesaPqG3ZKuKIy2ejZy7NyPnuBM1CLuhir0P7/egbwde1pmuUydkUChdKdBSI6eZ0H4KKCTWdOwLcemyLUDjUe1XoX4ddMqpsqx0PcWLyVWj8tyEA6bNQk8Oar3U8HLTRRqkfMRr9vqL6meMLmVRm5LQPumxsJvnsSLOwnRaEF+aKtV2J07firdPyYNC/4c11L02B1IyCE+srcEmd8uAn3zw9WSPY1LhLs4D8oBB98KjDg08FST6+jKWrmz3O5ShFW4JuJTYs7xByt1daQ3FTv+xF53m577tVxldwBbOPoR3dNObr3eGilLzxc5ky4TsqlYfAZKTqCRfug+wUcAAcuapMLmSWTXTMUYblFMSlyDn9bBTRYJ7e/e0uQbzC/+qgGHCaw0oM0E8jITDfsx8TSAziqi0c9Vihc82zYkU8Z8sET4kLMSNQsi1pUProsQjA0HUytZbxo9UaVYqxermCML2OpOeitytaMffd54xgVFkylYsDIwZKf4WTy1nfOKxZ/luXok4+gIK6lS6Kzizt7A4pWaFecx7aNVKmsZ6zUEj7qGJMFGy1/MV/nroGhJMcdEk5n2KElUXyKFuOsoxeivASlMXhd1SisLvqMul4UFtFr8l1b2SOy5EDspPIddZzMF4rEtlEOw/h4KGJKFXf7GeK4RR1lQI0DnyI605NPwhvETKmUbfURgG8dR+sNw2PhbeAZ8Q0thBeSYdMBCmvL1e/fZ4IuyKV4EgK6+44ucoTFtNw/GtOIXCbcpmSj/8N7o0rdpYV0</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+        <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="~友情QQ红包，发送密码~" />    <label for="pass">~友情QQ红包，发送密码~</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">U2FsdGVkX18rYdpdLb8weQDC2ZczQt9KdlERSGtShOz62EsFssjSYluo2SSTTeQ3ipJyBLLTg4VoNBPI/ko+fSHHI7VpOAooP6IF+3Yse/zgcPjpBnDf7U7+OxJT4AazCa0eL7inQ3vL7V6ZwWcMZKLqNL20buwYa/o8bR3LEj+hsZylhPp/nHOJNUizvchXSRx4wOR/j2JlQw/paB70xjnc/lCmkYyjW0XG/JseoY/mpZO7t1mhqLVUn5UpEBCnWq71XX6+XsLwHWLT3vC1kZlGDiHkMY+IfW8CWyJ/utV9rjIupWQdxlD/mcY+git56gidLMOyAUsY330hKTLa+bzYZ0z28nqD96iKJH/OV5y2ajh6XWeSKPKZKBtHWHb4bt2+jvj98/InF4eLBg3l0sX3+85tY/zTR1mND24I68ywz5s9SU1WuaRRjjrGvTnRiG1dOuG/UlzhWvAlVG3gBxcrowsBd7GE4Ji+np4v/T5V3LmifJZ/lSJvIIyVdeoTmy7Caij80BlG8p7yA4OdtOI5nKsF+0R+Bq/8nsmYoL2WsMIlFOvc1bicq+Vo6etOV25Xx6lCBcIIuWQekxjPqqxg5lrR8xT6HEISbWtxpExY4USb7rcThvYPfg80NNdP3k8l7RJDXTtIjI1spb09wXKNjXxx1WU46KkqDShu51jIQXAX14ljZCKF/QgdZCnJRsqOS5YDKV0oNujpJzrqyV6TBXoJx9CUzFS7D9OoPzpD+we6SHdmK0s4kV74DR/Ze1yNbWJDqjgOwC1JIBc6PIAXDhhRcrxH+hXzhK+IQD1Aqnsckp3XKVWw636srx+XkM0JDoPCX8QJtoHQTQZ4m3jUOD1b6KSczYjuPqmGOsZBm5KWAUiUJs+2XE3lrHFH</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       
       
       <categories>
@@ -323,9 +323,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>有问必答</title>
+      <link href="/guessbook/index.html"/>
+      <url>/guessbook/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -334,9 +334,9 @@
     
     
     <entry>
-      <title>有问必答</title>
-      <link href="/guessbook/index.html"/>
-      <url>/guessbook/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -349,7 +349,7 @@
       <link href="/hyperlink/index.html"/>
       <url>/hyperlink/index.html</url>
       
-        <content type="html"><![CDATA[<ul><li>Git教程<br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="Git教程" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a></li><li>Python<br><a href="https://www.python.org/" title="Python" target="_blank" rel="noopener">https://www.python.org/</a></li><li>C++ 参考手册<br><a href="https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5" title="C++ 参考手册" target="_blank" rel="noopener">https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5</a></li><li>Cadence<br><a href="https://www.cadence.com/" title="Cadence" target="_blank" rel="noopener">https://www.cadence.com/</a></li><li>Synopsys<br><a href="https://www.synopsys.com/" title="Synopsys" target="_blank" rel="noopener">https://www.synopsys.com/</a></li><li>Mentor<br><a href="https://www.mentor.com/" title="Mentor" target="_blank" rel="noopener">https://www.mentor.com/</a></li><li>Accellera组织<br><a href="https://accellera.org/" title="Accellera" target="_blank" rel="noopener">https://accellera.org/</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<ul><li>Git教程<br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="Git教程" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a></li><li>GitForWinows<br><a href="https://gitforwindows.org/" title="GitForWinows" target="_blank" rel="noopener">https://gitforwindows.org/</a></li><li>Python<br><a href="https://www.python.org/" title="Python" target="_blank" rel="noopener">https://www.python.org/</a></li><li>C++ 参考手册<br><a href="https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5" title="C++ 参考手册" target="_blank" rel="noopener">https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5</a></li><li>Cadence<br><a href="https://www.cadence.com/" title="Cadence" target="_blank" rel="noopener">https://www.cadence.com/</a></li><li>Synopsys<br><a href="https://www.synopsys.com/" title="Synopsys" target="_blank" rel="noopener">https://www.synopsys.com/</a></li><li>Mentor<br><a href="https://www.mentor.com/" title="Mentor" target="_blank" rel="noopener">https://www.mentor.com/</a></li><li>Accellera组织<br><a href="https://accellera.org/" title="Accellera" target="_blank" rel="noopener">https://accellera.org/</a></li></ul>]]></content>
       
     </entry>
     
