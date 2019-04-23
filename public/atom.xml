@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
-  <updated>2019-04-23T01:33:42.452Z</updated>
+  <updated>2019-04-23T10:36:03.216Z</updated>
   <id>https://275244143.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git操作总结</title>
+    <link href="https://275244143.github.io/2019/04/23/git%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/"/>
+    <id>https://275244143.github.io/2019/04/23/git操作总结/</id>
+    <published>2019-04-23T09:13:15.000Z</published>
+    <updated>2019-04-23T10:36:03.216Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;工作原理：&quot;&gt;&lt;a href=&quot;#工作原理：&quot; class=&quot;headerlink&quot; title=&quot;工作原理：&quot;&gt;&lt;/a&gt;工作原理：&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/2019/04/23/git操作总结/git操作总结.png&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://275244143.github.io/categories/Linux/"/>
+    
+      <category term="git" scheme="https://275244143.github.io/categories/Linux/git/"/>
+    
+    
+      <category term="git" scheme="https://275244143.github.io/tags/git/"/>
+    
+      <category term="github" scheme="https://275244143.github.io/tags/github/"/>
+    
+      <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>github回退代码到历史指定版本</title>
