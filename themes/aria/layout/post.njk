@@ -71,6 +71,24 @@
       {% endif %}
     </footer>
   </article>
+  <footer class="post-footer"> 
+	<div>    
+	{# 此处判断是否在索引列表中 #}
+	{% if not is_index %}
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>{{ theme.author }}
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="{{ url_for(page.path) }}" title="{{ page.title }}">{{ page.path }}</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	{% endif %}
   {% if theme.reward.enable %}
   {% include "reward.njk" %}
   {% endif %}
@@ -88,6 +106,8 @@
     </div>
   </nav>
   {% endif %}
+ 
+</div>
   {% if theme.comment.enable %}
   {% include "comment.njk" %}
   {% endif %}
