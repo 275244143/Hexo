@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>权利的游戏:冰与火之歌</title>
+      <link href="/2019/04/24/%E6%9D%83%E5%88%A9%E7%9A%84%E6%B8%B8%E6%88%8F-%E5%86%B0%E4%B8%8E%E7%81%AB%E4%B9%8B%E6%AD%8C/"/>
+      <url>/2019/04/24/%E6%9D%83%E5%88%A9%E7%9A%84%E6%B8%B8%E6%88%8F-%E5%86%B0%E4%B8%8E%E7%81%AB%E4%B9%8B%E6%AD%8C/</url>
+      
+        <content type="html"><![CDATA[<iframe width="100%" height="350" src="//player.bilibili.com/player.html?aid=50276305&cid=88015480&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe><a id="more"></a>]]></content>
+      
+      
+      <categories>
+          
+          <category> 娱乐 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 音乐 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git操作总结</title>
       <link href="/2019/04/23/git%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/"/>
       <url>/2019/04/23/git%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/</url>
@@ -22,11 +47,11 @@
       
         <tags>
             
+            <tag> shell </tag>
+            
             <tag> git </tag>
             
             <tag> github </tag>
-            
-            <tag> shell </tag>
             
         </tags>
       
@@ -51,11 +76,11 @@
       
         <tags>
             
+            <tag> shell </tag>
+            
             <tag> git </tag>
             
             <tag> github </tag>
-            
-            <tag> shell </tag>
             
         </tags>
       
@@ -161,9 +186,9 @@
       
         <tags>
             
-            <tag> shell </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> shell </tag>
             
         </tags>
       
@@ -176,7 +201,7 @@
       <link href="/2019/04/18/VCS-Crash%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%EF%BC%9F/"/>
       <url>/2019/04/18/VCS-Crash%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%EF%BC%9F/</url>
       
-        <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="~友情QQ红包，发送密码~" />    <label for="pass">~友情QQ红包，发送密码~</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">U2FsdGVkX19sMYy7lXRfl0mvEsIUgMPMS9bhJL/jmZHos5C2/DVhBH3OXWffTSD2mGQgHooKqOoHipYeOqonKeGtoC1lo+CVih8x5GbmUZCSeI4H6KWhm3gfmz/WCIEKeqZYx3JDE3q41uAc/NmGZwmc8hhiWsIeb+cx17LcYtpJFb1+mUdPEE29Ss+pfV7yOuzghO/hGBbOYf0NJ1El/gOlJhhG1ID5RZrCzmcJhDQxmK0eg7NQ0oPlwLcSQA68y/13Vd/hdQi/3/qZLVksR3dcXdviLZxh5Zd57+6mOsLxyYxELpYRCRNmlkRrBVocuDidHRXtDF+7s4r2JnazEQUvZvSWyJWEGCsZLMflxUbYEqZwLh0xV8aF9HLooG7Tdj8OZa9kR+7pGEr/5hhomg7QAEtzbV7m+ks4m6g1gDHJnfrr+0VwAVpANUggv/eGl15XZOxf/BFgmOoVDSckwqx6PnF/VOT3dJuf16jb4UgFiP2uxrDby3rRLyg95hGMkZME8mA7tgrRRnvgLTwnlir+FdNGMAkTxxlNqS8630s6zBbwyHCS5FtDABVWvwAMZZMaauwDbQPnTkVW0BuZ6LE/TGTraUqx93WdWMi3u2C9vNaWOl7bNPkzmGgYaAcRJ7wibeYWlqdYNZoH7ix6H8OqoPhYcYtDtDo1UGnhaQF2bPU8JINMCA0UUp2B75+n25xc9rinwkLdX4Bi/DBf2SPlTfiet6FxDN5G4M2exdLdEByUXiNv+oXePBlPfnjCIbvQCjb6N5NdzSeJF7mzDUDeeHaL2gpjjHB3LEIS2r4kG8o7gT2oA3GXmdF+yFl2ifLZPrIpUcuCiLLFKlLeiZKecb4zba9m3yEirL6RBcQmmzByi7ojvpdEyg7yCcNJ</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+        <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="~友情QQ红包，发送密码~" />    <label for="pass">~友情QQ红包，发送密码~</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">U2FsdGVkX19TDR64XnO2J94msF6xYV5xwxoEv4iV6ZlVKilhk7Pawr76LlNL1dExwzTTJmyuEcMxb75PQl5bm3KSe2UW1h7BA2xbgR9Q8ddD7T+/oFox8t4ZBZspIb/b2I1IjnoIyGR+PcqTiZrSNjJBTI6STDCIiW/Snggeo54VDg8UCdHk0XmIFzpO0ZqIWrs0nBtGYCLNstvR9N///bRkHKzo1qvFlie7tHFIW7vDuVhSndekSuSEcvzj4Mb3HB2cZAprZV0F85raNkZtyRCZBm2RPBx97xSCFfUfZcqx21T3cl634oVIXCsOpcCR9S601D1ILK4atfEz2CoMuVeDgI7UWR9re8wBI9dwvXAQG9A7ptGFy1TmThHdxZevEUFbz3SnhymX8wSILePjmxT6pKPJvkBL0+tvwgTo5kP08FSMeyOQ5Jaak1vYk6oBCab/74yA3QAWn0U05hSNY87UNw5deUNS0xt+L1txOxUZNGibibZ2hSqzh9RL3tLRWwHNfRwtfdeOAC7ZZrll65bNbybV6G+nroi7XfKEZjPULoiTnnZ86HGk8QqKQkWL9V7v4ovx9fCwlv1X1G5mtm+nfJNw5cda7NkWsR96fXUn1tsko+kTA7UIh4hWbLuBLD6P8f6KSbwzhaCm/YoUtHUBshEa/D1fqhGHCnMdIG/UHmnsGzuroib6Ub1P/6ONCsRNzliat2TvMyaNNxyy0jqUdZ+LBwMsdF/4y1geZCT4ayc+4Ofmn+llC3wTPokzaZmgGzzw4vmbHaADJCi3jV6hbTc4p4v82KDifBnxVAFU9V8UdG5QISut/e17VDuDDD2lfLA6OGYIr88NnUNUfWxV0JEHiB993RZUcpT2I8Frm74tSbjAsAgLVmsW2kwE</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       
       
       <categories>
@@ -354,11 +379,22 @@
     
     
     <entry>
-      <title>有问必答</title>
-      <link href="/guessbook/index.html"/>
-      <url>/guessbook/index.html</url>
+      <title>常用技术链接</title>
+      <link href="/hyperlink/index.html"/>
+      <url>/hyperlink/index.html</url>
       
-        <content type="html"><![CDATA[<ul><li><strong>~有什么话要对我说吗？这里是你畅所欲言的地方，可以咨询，可以交流，可以感叹~</strong><br><img src="/guessbook/index/message.jpg" alt="留言"></li></ul>]]></content>
+        <content type="html"><![CDATA[<ul><li>Git教程<br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="Git教程" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a></li><li>GitForWinows<br><a href="https://gitforwindows.org/" title="GitForWinows" target="_blank" rel="noopener">https://gitforwindows.org/</a></li><li>Python<br><a href="https://www.python.org/" title="Python" target="_blank" rel="noopener">https://www.python.org/</a></li><li>C++ 参考手册<br><a href="https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5" title="C++ 参考手册" target="_blank" rel="noopener">https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5</a></li><li>Cadence<br><a href="https://www.cadence.com/" title="Cadence" target="_blank" rel="noopener">https://www.cadence.com/</a></li><li>Synopsys<br><a href="https://www.synopsys.com/" title="Synopsys" target="_blank" rel="noopener">https://www.synopsys.com/</a></li><li>Mentor<br><a href="https://www.mentor.com/" title="Mentor" target="_blank" rel="noopener">https://www.mentor.com/</a></li><li>Accellera组织<br><a href="https://accellera.org/" title="Accellera" target="_blank" rel="noopener">https://accellera.org/</a></li></ul>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -376,22 +412,11 @@
     
     
     <entry>
-      <title>常用技术链接</title>
-      <link href="/hyperlink/index.html"/>
-      <url>/hyperlink/index.html</url>
+      <title>有问必答</title>
+      <link href="/guessbook/index.html"/>
+      <url>/guessbook/index.html</url>
       
-        <content type="html"><![CDATA[<ul><li>Git教程<br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="Git教程" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a></li><li>GitForWinows<br><a href="https://gitforwindows.org/" title="GitForWinows" target="_blank" rel="noopener">https://gitforwindows.org/</a></li><li>Python<br><a href="https://www.python.org/" title="Python" target="_blank" rel="noopener">https://www.python.org/</a></li><li>C++ 参考手册<br><a href="https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5" title="C++ 参考手册" target="_blank" rel="noopener">https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5</a></li><li>Cadence<br><a href="https://www.cadence.com/" title="Cadence" target="_blank" rel="noopener">https://www.cadence.com/</a></li><li>Synopsys<br><a href="https://www.synopsys.com/" title="Synopsys" target="_blank" rel="noopener">https://www.synopsys.com/</a></li><li>Mentor<br><a href="https://www.mentor.com/" title="Mentor" target="_blank" rel="noopener">https://www.mentor.com/</a></li><li>Accellera组织<br><a href="https://accellera.org/" title="Accellera" target="_blank" rel="noopener">https://accellera.org/</a></li></ul>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<ul><li><strong>~有什么话要对我说吗？这里是你畅所欲言的地方，可以咨询，可以交流，可以感叹~</strong><br><img src="/guessbook/index/message.jpg" alt="留言"></li></ul>]]></content>
       
     </entry>
     
