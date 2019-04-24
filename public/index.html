@@ -228,85 +228,6 @@
 <h2 id="1-新建代码库"><a href="#1-新建代码库" class="headerlink" title="1.新建代码库"></a>1.新建代码库</h2><h3 id="在当前目录新建一个Git代码库"><a href="#在当前目录新建一个Git代码库" class="headerlink" title="在当前目录新建一个Git代码库"></a>在当前目录新建一个Git代码库</h3><figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">git init</span><br></code></pre></td></tr></table></figure>
 <h3 id="新建一个目录，将其初始化为Git代码库"><a href="#新建一个目录，将其初始化为Git代码库" class="headerlink" title="新建一个目录，将其初始化为Git代码库"></a>新建一个目录，将其初始化为Git代码库</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git init <span class="hljs-string">[project-name]</span><br></code></pre></td></tr></table></figure>
 <h4 id="下载一个项目和它的整个代码历史"><a href="#下载一个项目和它的整个代码历史" class="headerlink" title="下载一个项目和它的整个代码历史"></a>下载一个项目和它的整个代码历史</h4><figure class="hljs highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">clone</span> <span class="hljs-title">[url</span>]<br></code></pre></td></tr></table></figure>
-<h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h2><h3 id="显示当前的Git配置"><a href="#显示当前的Git配置" class="headerlink" title="显示当前的Git配置"></a>显示当前的Git配置</h3><figure class="hljs highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git<span class="hljs-built_in"> config </span>--list<br></code></pre></td></tr></table></figure>
-<h3 id="编辑Git配置文件"><a href="#编辑Git配置文件" class="headerlink" title="编辑Git配置文件"></a>编辑Git配置文件</h3><figure class="hljs highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git<span class="hljs-built_in"> config </span>-e [--global]<br></code></pre></td></tr></table></figure>
-<h3 id="设置提交代码时的用户信息"><a href="#设置提交代码时的用户信息" class="headerlink" title="设置提交代码时的用户信息"></a>设置提交代码时的用户信息</h3><figure class="hljs highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git<span class="hljs-built_in"> config </span>[--global] user.name <span class="hljs-string">"[name]"</span><br>git<span class="hljs-built_in"> config </span>[--global] user.email <span class="hljs-string">"[email address]"</span><br></code></pre></td></tr></table></figure>
-<h2 id="3-增加-删除文件"><a href="#3-增加-删除文件" class="headerlink" title="3.增加/删除文件"></a>3.增加/删除文件</h2><h3 id="添加指定文件到暂存区"><a href="#添加指定文件到暂存区" class="headerlink" title="添加指定文件到暂存区"></a>添加指定文件到暂存区</h3><figure class="hljs highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git add [file1] [file2] ...<br></code></pre></td></tr></table></figure>
-<h3 id="添加指定目录到暂存区，包括子目录"><a href="#添加指定目录到暂存区，包括子目录" class="headerlink" title="添加指定目录到暂存区，包括子目录"></a>添加指定目录到暂存区，包括子目录</h3><figure class="hljs highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">add</span><span class="bash"> [dir]</span><br></code></pre></td></tr></table></figure>
-<h3 id="添加当前目录的所有文件到暂存区"><a href="#添加当前目录的所有文件到暂存区" class="headerlink" title="添加当前目录的所有文件到暂存区"></a>添加当前目录的所有文件到暂存区</h3><figure class="hljs highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">add</span><span class="bash"> .</span><br></code></pre></td></tr></table></figure>
-<h3 id="添加每个变化前，都会要求确认-对于同一个文件的多处变化，可以实现分次提交"><a href="#添加每个变化前，都会要求确认-对于同一个文件的多处变化，可以实现分次提交" class="headerlink" title="添加每个变化前，都会要求确认,对于同一个文件的多处变化，可以实现分次提交"></a>添加每个变化前，都会要求确认,对于同一个文件的多处变化，可以实现分次提交</h3><figure class="hljs highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">add</span><span class="bash"> -p</span><br></code></pre></td></tr></table></figure>
-<h3 id="删除工作区文件，并且将这次删除放入暂存区"><a href="#删除工作区文件，并且将这次删除放入暂存区" class="headerlink" title="删除工作区文件，并且将这次删除放入暂存区"></a>删除工作区文件，并且将这次删除放入暂存区</h3><figure class="hljs highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git rm [file1] [file2] ...<br></code></pre></td></tr></table></figure>
-<h3 id="停止追踪指定文件，但该文件会保留在工作区"><a href="#停止追踪指定文件，但该文件会保留在工作区" class="headerlink" title="停止追踪指定文件，但该文件会保留在工作区"></a>停止追踪指定文件，但该文件会保留在工作区</h3><figure class="hljs highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">rm</span> --cached [<span class="hljs-keyword">file</span>]<br></code></pre></td></tr></table></figure>
-<h3 id="改名文件，并且将这个改名放入暂存区"><a href="#改名文件，并且将这个改名放入暂存区" class="headerlink" title="改名文件，并且将这个改名放入暂存区"></a>改名文件，并且将这个改名放入暂存区</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git mv <span class="hljs-string">[file-original]</span> <span class="hljs-string">[file-renamed]</span><br></code></pre></td></tr></table></figure>
-<h2 id="4-代码提交"><a href="#4-代码提交" class="headerlink" title="4.代码提交"></a>4.代码提交</h2><h3 id="提交暂存区到仓库区"><a href="#提交暂存区到仓库区" class="headerlink" title="提交暂存区到仓库区"></a>提交暂存区到仓库区</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git commit -m <span class="hljs-string">[message]</span><br></code></pre></td></tr></table></figure>
-<h3 id="提交暂存区的指定文件到仓库区"><a href="#提交暂存区的指定文件到仓库区" class="headerlink" title="提交暂存区的指定文件到仓库区"></a>提交暂存区的指定文件到仓库区</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git commit <span class="hljs-string">[file1]</span> <span class="hljs-string">[file2]</span> ... -m <span class="hljs-string">[message]</span><br></code></pre></td></tr></table></figure>
-<h3 id="提交工作区自上次commit之后的变化，直接到仓库区"><a href="#提交工作区自上次commit之后的变化，直接到仓库区" class="headerlink" title="提交工作区自上次commit之后的变化，直接到仓库区"></a>提交工作区自上次commit之后的变化，直接到仓库区</h3><figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">git commit -a</span><br></code></pre></td></tr></table></figure>
-<h3 id="提交时显示所有diff信息"><a href="#提交时显示所有diff信息" class="headerlink" title="提交时显示所有diff信息"></a>提交时显示所有diff信息</h3><figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">git commit -v</span><br></code></pre></td></tr></table></figure>
-<h3 id="使用一次新的commit，替代上一次提交-如果代码没有任何新变化，则用来改写上一次commit的提交信息"><a href="#使用一次新的commit，替代上一次提交-如果代码没有任何新变化，则用来改写上一次commit的提交信息" class="headerlink" title="使用一次新的commit，替代上一次提交,如果代码没有任何新变化，则用来改写上一次commit的提交信息"></a>使用一次新的commit，替代上一次提交,如果代码没有任何新变化，则用来改写上一次commit的提交信息</h3><figure class="hljs highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">commit</span> <span class="hljs-comment">--amend -m [message]</span><br></code></pre></td></tr></table></figure>
-<h3 id="重做上一次commit，并包括指定文件的新变化"><a href="#重做上一次commit，并包括指定文件的新变化" class="headerlink" title="重做上一次commit，并包括指定文件的新变化"></a>重做上一次commit，并包括指定文件的新变化</h3><figure class="hljs highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git commit --amend [file1] [file2] ...<br></code></pre></td></tr></table></figure>
-<h2 id="5-分支"><a href="#5-分支" class="headerlink" title="5.分支"></a>5.分支</h2><h3 id="列出所有本地分支"><a href="#列出所有本地分支" class="headerlink" title="列出所有本地分支"></a>列出所有本地分支</h3><figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">git branch</span><br></code></pre></td></tr></table></figure>
-<h3 id="列出所有远程分支"><a href="#列出所有远程分支" class="headerlink" title="列出所有远程分支"></a>列出所有远程分支</h3><figure class="hljs highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-symbol">git</span> <span class="hljs-keyword">branch </span>-r<br></code></pre></td></tr></table></figure>
-<h3 id="列出所有本地分支和远程分支"><a href="#列出所有本地分支和远程分支" class="headerlink" title="列出所有本地分支和远程分支"></a>列出所有本地分支和远程分支</h3><figure class="hljs highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-symbol">git</span> <span class="hljs-keyword">branch </span>-a<br></code></pre></td></tr></table></figure>
-<h3 id="新建一个分支，但依然停留在当前分支"><a href="#新建一个分支，但依然停留在当前分支" class="headerlink" title="新建一个分支，但依然停留在当前分支"></a>新建一个分支，但依然停留在当前分支</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git branch <span class="hljs-string">[branch-name]</span><br></code></pre></td></tr></table></figure>
-<h3 id="新建一个分支，并切换到该分支"><a href="#新建一个分支，并切换到该分支" class="headerlink" title="新建一个分支，并切换到该分支"></a>新建一个分支，并切换到该分支</h3><figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git checkout -<span class="hljs-selector-tag">b</span> [branch]<br></code></pre></td></tr></table></figure>
-<h3 id="新建一个分支，指向指定commit"><a href="#新建一个分支，指向指定commit" class="headerlink" title="新建一个分支，指向指定commit"></a>新建一个分支，指向指定commit</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git branch <span class="hljs-string">[branch]</span> <span class="hljs-string">[commit]</span><br></code></pre></td></tr></table></figure>
-<h3 id="新建一个分支，与指定的远程分支建立追踪关系"><a href="#新建一个分支，与指定的远程分支建立追踪关系" class="headerlink" title="新建一个分支，与指定的远程分支建立追踪关系"></a>新建一个分支，与指定的远程分支建立追踪关系</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git branch --track <span class="hljs-string">[branch]</span> <span class="hljs-string">[remote-branch]</span><br></code></pre></td></tr></table></figure>
-<h3 id="切换到指定分支，并更新工作区"><a href="#切换到指定分支，并更新工作区" class="headerlink" title="切换到指定分支，并更新工作区"></a>切换到指定分支，并更新工作区</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git checkout <span class="hljs-string">[branch-name]</span><br></code></pre></td></tr></table></figure>
-<h3 id="切换到上一个分支"><a href="#切换到上一个分支" class="headerlink" title="切换到上一个分支"></a>切换到上一个分支</h3><figure class="hljs highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">git</span> checkout -<br></code></pre></td></tr></table></figure>
-<h3 id="建立追踪关系，在现有分支与指定的远程分支之间"><a href="#建立追踪关系，在现有分支与指定的远程分支之间" class="headerlink" title="建立追踪关系，在现有分支与指定的远程分支之间"></a>建立追踪关系，在现有分支与指定的远程分支之间</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git branch --set-upstream <span class="hljs-string">[branch]</span> <span class="hljs-string">[remote-branch]</span><br></code></pre></td></tr></table></figure>
-<h3 id="合并指定分支到当前分支"><a href="#合并指定分支到当前分支" class="headerlink" title="合并指定分支到当前分支"></a>合并指定分支到当前分支</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git merge <span class="hljs-string">[branch]</span><br></code></pre></td></tr></table></figure>
-<h3 id="选择一个commit，合并进当前分支"><a href="#选择一个commit，合并进当前分支" class="headerlink" title="选择一个commit，合并进当前分支"></a>选择一个commit，合并进当前分支</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git cherry-pick <span class="hljs-string">[commit]</span><br></code></pre></td></tr></table></figure>
-<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git branch -d <span class="hljs-string">[branch-name]</span><br></code></pre></td></tr></table></figure>
-<h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><figure class="hljs highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-symbol">git</span> <span class="hljs-keyword">push </span>origin --delete [<span class="hljs-keyword">branch-name]<br></span><span class="hljs-symbol">git</span> <span class="hljs-keyword">branch </span>-dr [remote/<span class="hljs-keyword">branch]</span><br></code></pre></td></tr></table></figure>
-<h2 id="6-标签"><a href="#6-标签" class="headerlink" title="6.标签"></a>6.标签</h2><h3 id="列出所有tag"><a href="#列出所有tag" class="headerlink" title="列出所有tag"></a>列出所有tag</h3><figure class="hljs highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">tag</span><br></code></pre></td></tr></table></figure>
-<h3 id="新建一个tag在当前commit"><a href="#新建一个tag在当前commit" class="headerlink" title="新建一个tag在当前commit"></a>新建一个tag在当前commit</h3><figure class="hljs highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">tag</span> <span class="hljs-title">[tag</span>]<br></code></pre></td></tr></table></figure>
-<h3 id="新建一个tag在指定commit"><a href="#新建一个tag在指定commit" class="headerlink" title="新建一个tag在指定commit"></a>新建一个tag在指定commit</h3><figure class="hljs highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">tag</span> <span class="hljs-title">[tag</span>] [commit]<br></code></pre></td></tr></table></figure>
-<h3 id="删除本地tag"><a href="#删除本地tag" class="headerlink" title="删除本地tag"></a>删除本地tag</h3><figure class="hljs highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">tag</span> <span class="hljs-title">-d</span> [<span class="hljs-keyword">tag</span>]<br></code></pre></td></tr></table></figure>
-<h3 id="删除远程tag"><a href="#删除远程tag" class="headerlink" title="删除远程tag"></a>删除远程tag</h3><figure class="hljs highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git push origin <span class="hljs-symbol">:refs/tags/</span>[tagName]<br></code></pre></td></tr></table></figure>
-<h3 id="查看tag信息"><a href="#查看tag信息" class="headerlink" title="查看tag信息"></a>查看tag信息</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git show <span class="hljs-string">[tag]</span><br></code></pre></td></tr></table></figure>
-<h3 id="提交指定tag"><a href="#提交指定tag" class="headerlink" title="提交指定tag"></a>提交指定tag</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git push <span class="hljs-string">[remote]</span> <span class="hljs-string">[tag]</span><br></code></pre></td></tr></table></figure>
-<h3 id="提交所有tag"><a href="#提交所有tag" class="headerlink" title="提交所有tag"></a>提交所有tag</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git push <span class="hljs-string">[remote]</span> --tags<br></code></pre></td></tr></table></figure>
-<h3 id="新建一个分支，指向某个tag"><a href="#新建一个分支，指向某个tag" class="headerlink" title="新建一个分支，指向某个tag"></a>新建一个分支，指向某个tag</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git checkout -b <span class="hljs-string">[branch]</span> <span class="hljs-string">[tag]</span><br></code></pre></td></tr></table></figure>
-<h2 id="7-查看信息"><a href="#7-查看信息" class="headerlink" title="7.查看信息"></a>7.查看信息</h2><h3 id="显示有变更的文件"><a href="#显示有变更的文件" class="headerlink" title="显示有变更的文件"></a>显示有变更的文件</h3><figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">git status</span><br></code></pre></td></tr></table></figure>
-<h3 id="显示当前分支的版本历史"><a href="#显示当前分支的版本历史" class="headerlink" title="显示当前分支的版本历史"></a>显示当前分支的版本历史</h3><figure class="hljs highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-built_in">log</span><br></code></pre></td></tr></table></figure>
-<h3 id="显示commit历史，以及每次commit发生变更的文件"><a href="#显示commit历史，以及每次commit发生变更的文件" class="headerlink" title="显示commit历史，以及每次commit发生变更的文件"></a>显示commit历史，以及每次commit发生变更的文件</h3><figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-built_in">log</span> <span class="hljs-comment">--stat</span><br></code></pre></td></tr></table></figure>
-<h3 id="搜索提交历史，根据关键词"><a href="#搜索提交历史，根据关键词" class="headerlink" title="搜索提交历史，根据关键词"></a>搜索提交历史，根据关键词</h3><figure class="hljs highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-built_in">log</span> -S [<span class="hljs-function"><span class="hljs-keyword">keyword</span>]</span><br></code></pre></td></tr></table></figure>
-<h3 id="显示某个commit之后的所有变动，每个commit占据一行"><a href="#显示某个commit之后的所有变动，每个commit占据一行" class="headerlink" title="显示某个commit之后的所有变动，每个commit占据一行"></a>显示某个commit之后的所有变动，每个commit占据一行</h3><figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-built_in">log</span> [tag] HEAD <span class="hljs-comment">--pretty=format:%s</span><br></code></pre></td></tr></table></figure>
-<h3 id="显示某个commit之后的所有变动，其”提交说明”必须符合搜索条件"><a href="#显示某个commit之后的所有变动，其”提交说明”必须符合搜索条件" class="headerlink" title="显示某个commit之后的所有变动，其”提交说明”必须符合搜索条件"></a>显示某个commit之后的所有变动，其”提交说明”必须符合搜索条件</h3><figure class="hljs highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-built_in">log</span> [<span class="hljs-keyword">tag</span>] HEAD --<span class="hljs-keyword">grep</span> feature<br></code></pre></td></tr></table></figure>
-<h3 id="显示某个文件的版本历史，包括文件改名"><a href="#显示某个文件的版本历史，包括文件改名" class="headerlink" title="显示某个文件的版本历史，包括文件改名"></a>显示某个文件的版本历史，包括文件改名</h3><figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-built_in">log</span> <span class="hljs-comment">--follow [file]</span><br>git whatchanged [<span class="hljs-built_in">file</span>]<br></code></pre></td></tr></table></figure>
-<h3 id="显示指定文件相关的每一次diff"><a href="#显示指定文件相关的每一次diff" class="headerlink" title="显示指定文件相关的每一次diff"></a>显示指定文件相关的每一次diff</h3><figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-built_in">log</span> -p [<span class="hljs-built_in">file</span>]<br></code></pre></td></tr></table></figure>
-<h3 id="显示过去5次提交"><a href="#显示过去5次提交" class="headerlink" title="显示过去5次提交"></a>显示过去5次提交</h3><figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-built_in">log</span> <span class="hljs-number">-5</span> <span class="hljs-comment">--pretty --oneline</span><br></code></pre></td></tr></table></figure>
-<h3 id="显示所有提交过的用户，按提交次数排序"><a href="#显示所有提交过的用户，按提交次数排序" class="headerlink" title="显示所有提交过的用户，按提交次数排序"></a>显示所有提交过的用户，按提交次数排序</h3><figure class="hljs highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-symbol">git</span> shortlog -<span class="hljs-meta">sn</span><br></code></pre></td></tr></table></figure>
-<h3 id="显示指定文件是什么人在什么时间修改过"><a href="#显示指定文件是什么人在什么时间修改过" class="headerlink" title="显示指定文件是什么人在什么时间修改过"></a>显示指定文件是什么人在什么时间修改过</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git blame <span class="hljs-string">[file]</span><br></code></pre></td></tr></table></figure>
-<h3 id="显示暂存区和工作区的差异"><a href="#显示暂存区和工作区的差异" class="headerlink" title="显示暂存区和工作区的差异"></a>显示暂存区和工作区的差异</h3><figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">git diff</span><br></code></pre></td></tr></table></figure>
-<h3 id="显示暂存区和上一个commit的差异"><a href="#显示暂存区和上一个commit的差异" class="headerlink" title="显示暂存区和上一个commit的差异"></a>显示暂存区和上一个commit的差异</h3><figure class="hljs highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">diff </span>--<span class="hljs-keyword">cached </span>[file]<br></code></pre></td></tr></table></figure>
-<h3 id="显示工作区与当前分支最新commit之间的差异"><a href="#显示工作区与当前分支最新commit之间的差异" class="headerlink" title="显示工作区与当前分支最新commit之间的差异"></a>显示工作区与当前分支最新commit之间的差异</h3><figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">git diff HEAD</span><br></code></pre></td></tr></table></figure>
-<h3 id="显示两次提交之间的差异"><a href="#显示两次提交之间的差异" class="headerlink" title="显示两次提交之间的差异"></a>显示两次提交之间的差异</h3><figure class="hljs highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-built_in">diff</span> [<span class="hljs-built_in">first</span>-branch]...[<span class="hljs-built_in">second</span>-branch]<br></code></pre></td></tr></table></figure>
-<h3 id="显示今天你写了多少行代码"><a href="#显示今天你写了多少行代码" class="headerlink" title="显示今天你写了多少行代码"></a>显示今天你写了多少行代码</h3><figure class="hljs highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">diff </span>--<span class="hljs-keyword">shortstat </span><span class="hljs-string">"@&#123;0 day ago&#125;"</span><br></code></pre></td></tr></table></figure>
-<h3 id="显示某次提交的元数据和内容变化"><a href="#显示某次提交的元数据和内容变化" class="headerlink" title="显示某次提交的元数据和内容变化"></a>显示某次提交的元数据和内容变化</h3><figure class="hljs highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">show</span> [<span class="hljs-keyword">commit</span>]<br></code></pre></td></tr></table></figure>
-<h3 id="显示某次提交发生变化的文件"><a href="#显示某次提交发生变化的文件" class="headerlink" title="显示某次提交发生变化的文件"></a>显示某次提交发生变化的文件</h3><figure class="hljs highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git show --<span class="hljs-keyword">name</span>-<span class="hljs-keyword">only</span> [commit]<br></code></pre></td></tr></table></figure>
-<h3 id="显示某次提交时，某个文件的内容"><a href="#显示某次提交时，某个文件的内容" class="headerlink" title="显示某次提交时，某个文件的内容"></a>显示某次提交时，某个文件的内容</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git show <span class="hljs-string">[commit]</span>:<span class="hljs-string">[filename]</span><br></code></pre></td></tr></table></figure>
-<h3 id="显示当前分支的最近几次提交"><a href="#显示当前分支的最近几次提交" class="headerlink" title="显示当前分支的最近几次提交"></a>显示当前分支的最近几次提交</h3><figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">git reflog</span><br></code></pre></td></tr></table></figure>
-<p>八、远程同步</p>
-<h3 id="下载远程仓库的所有变动"><a href="#下载远程仓库的所有变动" class="headerlink" title="下载远程仓库的所有变动"></a>下载远程仓库的所有变动</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git fetch <span class="hljs-string">[remote]</span><br></code></pre></td></tr></table></figure>
-<h3 id="显示所有远程仓库"><a href="#显示所有远程仓库" class="headerlink" title="显示所有远程仓库"></a>显示所有远程仓库</h3><figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">git remote -v</span><br></code></pre></td></tr></table></figure>
-<h3 id="显示某个远程仓库的信息"><a href="#显示某个远程仓库的信息" class="headerlink" title="显示某个远程仓库的信息"></a>显示某个远程仓库的信息</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git remote show <span class="hljs-string">[remote]</span><br></code></pre></td></tr></table></figure>
-<h3 id="增加一个新的远程仓库，并命名"><a href="#增加一个新的远程仓库，并命名" class="headerlink" title="增加一个新的远程仓库，并命名"></a>增加一个新的远程仓库，并命名</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git remote add <span class="hljs-string">[shortname]</span> <span class="hljs-string">[url]</span><br></code></pre></td></tr></table></figure>
-<h3 id="取回远程仓库的变化，并与本地分支合并"><a href="#取回远程仓库的变化，并与本地分支合并" class="headerlink" title="取回远程仓库的变化，并与本地分支合并"></a>取回远程仓库的变化，并与本地分支合并</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git pull <span class="hljs-string">[remote]</span> <span class="hljs-string">[branch]</span><br></code></pre></td></tr></table></figure>
-<h3 id="上传本地指定分支到远程仓库"><a href="#上传本地指定分支到远程仓库" class="headerlink" title="上传本地指定分支到远程仓库"></a>上传本地指定分支到远程仓库</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git push <span class="hljs-string">[remote]</span> <span class="hljs-string">[branch]</span><br></code></pre></td></tr></table></figure>
-<h3 id="强行推送当前分支到远程仓库，即使有冲突"><a href="#强行推送当前分支到远程仓库，即使有冲突" class="headerlink" title="强行推送当前分支到远程仓库，即使有冲突"></a>强行推送当前分支到远程仓库，即使有冲突</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git push <span class="hljs-string">[remote]</span> --force<br></code></pre></td></tr></table></figure>
-<h3 id="推送所有分支到远程仓库"><a href="#推送所有分支到远程仓库" class="headerlink" title="推送所有分支到远程仓库"></a>推送所有分支到远程仓库</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git push <span class="hljs-string">[remote]</span> --all<br></code></pre></td></tr></table></figure>
-<h2 id="9-撤销"><a href="#9-撤销" class="headerlink" title="9.撤销"></a>9.撤销</h2><h3 id="恢复暂存区的指定文件到工作区"><a href="#恢复暂存区的指定文件到工作区" class="headerlink" title="恢复暂存区的指定文件到工作区"></a>恢复暂存区的指定文件到工作区</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git checkout <span class="hljs-string">[file]</span><br></code></pre></td></tr></table></figure>
-<h3 id="恢复某个commit的指定文件到暂存区和工作区"><a href="#恢复某个commit的指定文件到暂存区和工作区" class="headerlink" title="恢复某个commit的指定文件到暂存区和工作区"></a>恢复某个commit的指定文件到暂存区和工作区</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git checkout <span class="hljs-string">[commit]</span> <span class="hljs-string">[file]</span><br></code></pre></td></tr></table></figure>
-<h3 id="恢复暂存区的所有文件到工作区"><a href="#恢复暂存区的所有文件到工作区" class="headerlink" title="恢复暂存区的所有文件到工作区"></a>恢复暂存区的所有文件到工作区</h3><figure class="hljs highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git checkout .<br></code></pre></td></tr></table></figure>
-<h3 id="重置暂存区的指定文件，与上一次commit保持一致，但工作区不变"><a href="#重置暂存区的指定文件，与上一次commit保持一致，但工作区不变" class="headerlink" title="重置暂存区的指定文件，与上一次commit保持一致，但工作区不变"></a>重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</h3><figure class="hljs highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">reset</span> [<span class="hljs-keyword">file</span>]<br></code></pre></td></tr></table></figure>
-<h3 id="重置暂存区与工作区，与上一次commit保持一致"><a href="#重置暂存区与工作区，与上一次commit保持一致" class="headerlink" title="重置暂存区与工作区，与上一次commit保持一致"></a>重置暂存区与工作区，与上一次commit保持一致</h3><figure class="hljs highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard</span><br></code></pre></td></tr></table></figure>
-<h3 id="重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变"><a href="#重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变" class="headerlink" title="重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变"></a>重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</h3><figure class="hljs highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">reset</span> [<span class="hljs-keyword">commit</span>]<br></code></pre></td></tr></table></figure>
-<h3 id="重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致"><a href="#重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致" class="headerlink" title="重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致"></a>重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</h3><figure class="hljs highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard [commit]</span><br></code></pre></td></tr></table></figure>
-<h3 id="重置当前HEAD为指定commit，但保持暂存区和工作区不变"><a href="#重置当前HEAD为指定commit，但保持暂存区和工作区不变" class="headerlink" title="重置当前HEAD为指定commit，但保持暂存区和工作区不变"></a>重置当前HEAD为指定commit，但保持暂存区和工作区不变</h3><figure class="hljs highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--keep [commit]</span><br></code></pre></td></tr></table></figure>
-<h3 id="新建一个commit，用来撤销指定commit-后者的所有变化都将被前者抵消，并且应用到当前分支"><a href="#新建一个commit，用来撤销指定commit-后者的所有变化都将被前者抵消，并且应用到当前分支" class="headerlink" title="新建一个commit，用来撤销指定commit,后者的所有变化都将被前者抵消，并且应用到当前分支"></a>新建一个commit，用来撤销指定commit,后者的所有变化都将被前者抵消，并且应用到当前分支</h3><figure class="hljs highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git revert <span class="hljs-string">[commit]</span><br></code></pre></td></tr></table></figure>
-<h3 id="暂时将未提交的变化移除，稍后再移入"><a href="#暂时将未提交的变化移除，稍后再移入" class="headerlink" title="暂时将未提交的变化移除，稍后再移入"></a>暂时将未提交的变化移除，稍后再移入</h3><figure class="hljs highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git stash<br>git stash <span class="hljs-keyword">pop</span><br></code></pre></td></tr></table></figure>
-
       
     </main>
     <footer class="post-footer">
@@ -362,28 +283,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <ul>
-<li><p>前提是本地已经有了git的origin master库或者克隆需要回退的代码到本地。</p>
-</li>
-<li><p>查询历史对应不同版本的ID,用于回退使用。</p>
-<figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-built_in">log</span> <span class="hljs-comment">--pretty=oneline</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>使用git log命令查看所有的历史版本，获取你git的某个历史版本的id。</p>
-<ul>
-<li>假设查到历史版本的id是fae6966548e3ae76cfa7f38a461c438cf75ba965。</li>
-</ul>
-</li>
-<li><p>恢复到历史版本。</p>
-<figure class="hljs highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard fae6966548e3ae76cfa7f38a461c438cf75ba965</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>把修改推到远程服务器。</p>
-<figure class="hljs highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-built_in">push</span> -f -u <span class="hljs-built_in">origin</span> master<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>重新更新本地代码。</p>
-<figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">git pull</span><br></code></pre></td></tr></table></figure>
-</li>
-</ul>
-
+      
       
     </main>
     <footer class="post-footer">
@@ -439,12 +339,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h3 id="通过vcs-uvmgen模板生成UVM环境"><a href="#通过vcs-uvmgen模板生成UVM环境" class="headerlink" title="通过vcs uvmgen模板生成UVM环境"></a>通过vcs uvmgen模板生成UVM环境</h3><ul>
-<li>命令行：<br><img src="/2019/04/19/使用synopsys uvmgen快速生成uvm环境/uvmgen1.png" alt="uvmgen-cmd"></li>
-<li>树形结构：<br><img src="/2019/04/19/使用synopsys uvmgen快速生成uvm环境/uvmgen2.png" alt="uvmgen-tree"></li>
-<li>代码样例：<br><img src="/2019/04/19/使用synopsys uvmgen快速生成uvm环境/uvmgen3.png" alt="uvmgen-demo"></li>
-</ul>
-
+      
       
     </main>
     <footer class="post-footer">
@@ -500,72 +395,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h3 id="常用脚本收集"><a href="#常用脚本收集" class="headerlink" title="常用脚本收集"></a>常用脚本收集</h3><ul>
-<li><p>Sed</p>
-<ul>
-<li><p>直接对文本文件进行行替代操作</p>
-<figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'s/原字符串/新字符串/'</span> file<br>sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'s/原字符串/新字符串/g'</span> file<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>去掉 “行首” 带“@”的首字母@的行</p>
-<figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'s/^@//'</span> file<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>在含有特定字符串的行前插入新行</p>
-<figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'/特定字符串/i 新行字符串'</span> file<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>在含有特定字符串的行后插入新行</p>
-<figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'/特定字符串/a 新行字符串'</span> file<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>删除含有特定字符串的行</p>
-<figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'/字符串/d'</span> file<br></code></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<ul>
-<li>python</li>
-</ul>
-<hr>
-<ul>
-<li>Perl</li>
-</ul>
-<hr>
-<ul>
-<li><p>Shell</p>
-<ul>
-<li><p>列出所有目录使用量，并按大小排序。</p>
-<figure class="hljs highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">ls</span>|xargs du -<span class="hljs-keyword">h</span>|<span class="hljs-keyword">sort</span> -rn <br>#不递归下级目录使用du -<span class="hljs-keyword">sh</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>查看文件排除以#开关和空白行。</p>
-<figure class="hljs highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">egrep</span> -v <span class="hljs-string">"^#|^$"</span>  filename<br>sed <span class="hljs-string">'/#.*$/d; /^ *$/d'</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>查删除空格和空行。</p>
-<figure class="hljs highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">sed</span> <span class="hljs-string">'/^$/d'</span> filename <span class="hljs-comment">#删除空行</span><br>sed <span class="hljs-string">'s/ //g'</span> filename<br>sed <span class="hljs-string">'s/[[:space:]]//g'</span> filename<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>删除#后的注释。</p>
-<figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sed -<span class="hljs-selector-tag">i</span> <span class="hljs-string">'s/#.*$//g'</span> filename<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>删除空文件。</p>
-<figure class="hljs highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-built_in">find</span> / -<span class="hljs-built_in">type</span> f -<span class="hljs-built_in">size</span> <span class="hljs-number">0</span> -<span class="hljs-built_in">exec</span> rm -rf &#123;&#125; \;<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>查找进程pid并kill。</p>
-<figure class="hljs highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">pgrep nginx<span class="hljs-string">|xargs kill </span><br>pidof nginx<span class="hljs-string">|xargs kill</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>取当前IP地址。</p>
-<figure class="hljs highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">ifconfig</span> |awk -F<span class="hljs-string">"[ ]+|[:]"</span> <span class="hljs-string">'NR==2 &#123;print <span class="hljs-variable">$4</span>&#125;'</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>shell下新建文件夹并进入，以下加入bashrc。</p>
-<figure class="hljs highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">mkcd</span> ( )&#123;<br>   	<span class="hljs-attribute">mkdir</span> <span class="hljs-variable">$1</span><br>       cd <span class="hljs-variable">$1</span><br>   &#125;<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>Kill整个进程树。</p>
-<figure class="hljs highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">pstree -ap <span class="hljs-number">10277</span>|grep -oP '[<span class="hljs-number">0</span><span class="hljs-number">-9</span>]&#123;<span class="hljs-number">4</span>,<span class="hljs-number">6</span>&#125;'|xargs kill <span class="hljs-number">-9</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>目录中大量文件删除。</p>
-<figure class="hljs highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">ls</span> | xargs <span class="hljs-keyword">rm</span><br></code></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-
+      
       
     </main>
     <footer class="post-footer">
@@ -617,8 +447,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h3 id="UVM-Layer-Sequence结构图"><a href="#UVM-Layer-Sequence结构图" class="headerlink" title="UVM Layer Sequence结构图"></a>UVM Layer Sequence结构图</h3><p><img src="/2019/04/19/Layer-Sequence结构图/Layer-Sequence结构图.png" alt="Layer-Sequence结构图"></p>
-<font color="blue"><br><br> 1.可以1:1，1：N，N:N进行堆叠。<br><br> 2.堆叠指针必须指向对应的sequencer。<br><br></font>
+      
       
     </main>
     <footer class="post-footer">
@@ -672,15 +501,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h3 id="给定一个进程名称特征串，查找所有匹配该进程名称的进程的详细信息。"><a href="#给定一个进程名称特征串，查找所有匹配该进程名称的进程的详细信息。" class="headerlink" title="给定一个进程名称特征串，查找所有匹配该进程名称的进程的详细信息。"></a>给定一个进程名称特征串，查找所有匹配该进程名称的进程的详细信息。</h3><font color="blue">
-
-<p>(1) 先用pgrep [str] 命令进行模糊匹配，找到匹配该特征串的进程ID；</p>
-<p>(2) 其次根据进程ID显示指定的进程信息，ps –pid [pid]；</p>
-<p>(3) 因为查找出来的进程ID需要被作为参数传递给ps命令，故使用xargs命令，通过管道符号连接；</p>
-<p>(4) 最后显示进程详细信息，需要加上-u参数。</p>
-<p>最终命令形如:</p>
-<p>pgrep ncsim | xargs ps -u –pid<br></p>
-</font>
+      
       
     </main>
     <footer class="post-footer">
@@ -788,8 +609,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h2 id="为啥要推荐使用clocking块？"><a href="#为啥要推荐使用clocking块？" class="headerlink" title="为啥要推荐使用clocking块？"></a>为啥要推荐使用clocking块？</h2><font color="red"><br>代码例子：<br><pre name="code" class="systemverilog"><br><br>clocking cb @(negedge clk);<br>  input v;<br>endclocking<br><br>always @(cb) $display(cb.v);//采样old值<br><br>always @(negedge clk) $display(cb.v);//采样old or new值和仿真器相关。<br><br></pre><br><br>主要原因是clocking块中默认为1step采样，在clk下降沿发生时（@(cb)触发），数据已经采样了。<br>而第二条always语句直接(@(negedge clk))和（@(cb)）并发，所以就有race glitch。<br><br></font> 
-
+      
       
     </main>
     <footer class="post-footer">
@@ -841,9 +661,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h2 id="1-Kind-“HARD”-or-“SOFT”"><a href="#1-Kind-“HARD”-or-“SOFT”" class="headerlink" title="1.Kind = “HARD” or “SOFT”"></a>1.Kind = “HARD” or “SOFT”</h2><p>寄存器模型中复位操作这个到底有什么作用呢？源码如下：</p>
-<font color="red"><br>代码例子：<br><pre name="code" class="systemverilog"><br>function void uvm_reg_xxx::reset(string kind = “HARD”);<br>    if (!m_reset.exists(kind))<br>          return;<br>    m_mirrored = m_reset[kind];<br>    m_desired  = m_mirrored;<br>    value      = m_mirrored;<br>    if (kind == “HARD”)<br>        m_written  = 0;<br>endfunction: reset<br></pre><br></font><br><font color="blue"><br>其实是作为特别处理用的，如果所有的寄存器都只有一个复位的时候默认一个HARD值统一复位。<br>如果某个寄存器需要特殊的复位，则可以重写该类中的reset（…）方法：<br>代码例子：<br><pre name="code" class="systemverilog"><br>class some_reg extends uvm_reg;<br>    …<br>    function void reset(string kind = “HARD”);<br>        if (kind != “SOFT”)<br>            super.reset(kind);<br>    endfunction<br><br>endclass<br></pre><br></font> 
-
+      
       
     </main>
     <footer class="post-footer">
@@ -899,9 +717,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h1 id="1-UVM寄存器模型相关操作引起的一些关键变化"><a href="#1-UVM寄存器模型相关操作引起的一些关键变化" class="headerlink" title="1.UVM寄存器模型相关操作引起的一些关键变化"></a>1.UVM寄存器模型相关操作引起的一些关键变化</h1><h1 id="缩写词"><a href="#缩写词" class="headerlink" title="缩写词"></a><strong>缩写词</strong></h1><p>UMV –  Update Main Variable,<br>UMrV – Update Mirror Variable,<br>AP – Auto predict<br>RDR – Read DUT Register,<br>UDR – Update DUT Register,<br>RMV – Read Main Variable<br>FD – frontdoor,<br>BD – Backdoor,   <em>  – check if UVM_CHEK is used,   NA – Not Applicable</em></p>
-<p><img src="https://github.com/275244143/picBed/blob/master/uvm-reg-access.jpg?raw=true" alt></p>
-
+      
       
     </main>
     <footer class="post-footer">

@@ -91,6 +91,8 @@ busuanzi: true
 # Recomend to place `<!--more-->` to where you want to stop excerpt in content instead of use this option.
 # Example: `auto_excerpt: 200`, use first 200 chars in post content as excerpt.
 auto_excerpt:
+  enable: false
+  length: 150
 
 # If you want to use MathJax, first fill a CDN link like `cdn: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML`, then set `enable: true`.
 # And set front-matter `mathjax: true` to the page you want to use it.

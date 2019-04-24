@@ -35,6 +35,7 @@ categories:
 ```
 	git clone [url]
 ```
+<!--more-->
 ## 2.配置
 
 ### 显示当前的Git配置
