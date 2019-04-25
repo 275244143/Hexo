@@ -133,7 +133,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>UVM-Register-Model | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+    <title>uvm_re_match和uvm_glob_to_re的使用 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -181,7 +181,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://275244143.github.io/2019/04/17/UVM-Register-Model/">
+      <link itemprop="mainEntityOfPage" href="https://275244143.github.io/2019/04/25/uvm-re-match和uvm-glob-to-re的使用/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="神秘人">
        <meta itemprop="description" content="在人生中最艰难的是选择。">
@@ -192,12 +192,12 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">UVM-Register-Model</h1>
+      <h1 class="post-title" itemprop="name headline">uvm_re_match和uvm_glob_to_re的使用</h1>
       <div class="post-meta">
          
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-17T14:03:12+08:00">2019-04-17 14:03:12</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-25T15:29:05+08:00">2019-04-25 15:29:05</time></span>
         </span>
         
         
@@ -209,7 +209,7 @@
           <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
         </span>
 	<span class="post-meta-item-text">  字数统计: </span>
-	<span class="post-count">55字</span>
+	<span class="post-count">354字</span>
 	<span class="post-meta-item-text">  阅读时长: </span>
 	<span class="post-count">1分</span>
 	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
@@ -220,9 +220,8 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h1 id="1-UVM寄存器模型相关操作引起的一些关键变化"><a href="#1-UVM寄存器模型相关操作引起的一些关键变化" class="headerlink" title="1.UVM寄存器模型相关操作引起的一些关键变化"></a>1.UVM寄存器模型相关操作引起的一些关键变化</h1><h1 id="缩写词"><a href="#缩写词" class="headerlink" title="缩写词"></a><strong>缩写词</strong></h1><p>UMV –  Update Main Variable,<br>UMrV – Update Mirror Variable,<br>AP – Auto predict<br>RDR – Read DUT Register,<br>UDR – Update DUT Register,<br>RMV – Read Main Variable<br>FD – frontdoor,<br>BD – Backdoor,   <em>  – check if UVM_CHEK is used,   NA – Not Applicable</em></p>
-<p><img src="https://github.com/275244143/picBed/blob/master/uvm-reg-access.jpg?raw=true" alt></p>
-
+      <h3 id="uvm-re-match和uvm-glob-to-re使用方法"><a href="#uvm-re-match和uvm-glob-to-re使用方法" class="headerlink" title="uvm_re_match和uvm_glob_to_re使用方法"></a>uvm_re_match和uvm_glob_to_re使用方法</h3><p>首先，您必须确保将uvm与其dpi代码一起使用，也就是说，uvm_no_dpi未定义。通过将uvm_glob_to_re（“abc”）的结果打印出来，可以很容易地检查这一点。如果结果仍然是“abc”，那么您使用的是函数的systemverilog版本（只返回参数），而不是dpi-c实现。有关代码，请参阅dpi/uvm_regex.svh。<br>假设您使用的是dpi函数，那么您的glob表达式就出错了。“abc”的glob表达式不应该与字符串匹配。您需要使用“<em>abc</em>”（glob）来匹配它。通过查看这两个表达式的regex版本，可以看到这不起作用：<br>您将看到RE1包含“/^abc$/”，它只能与“abc”匹配。RE2包含/^.<em>abc.</em>$/，它匹配字符串中的任何“abc”子字符串。您可以忽略开头和结尾的/字符，因为这些字符将被剥离（不确定它们为什么存在）。<br>如果你试图匹配这两个表达式，你会发现第一个表达式不匹配，而第二个表达式不匹配。<br>另外：另一个与字符串匹配的正则表达式是“abc”，您可以看到它也适用于uvm_re_match（…）<br><figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">module</span> tb;<br><br>    <span class="hljs-keyword">import</span> uvm_pkg::*;<br><br>    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span><br>        <span class="hljs-keyword">static</span> <span class="hljs-keyword">string</span> re1 = uvm_glob_to_re(<span class="hljs-string">"abc"</span>);<br>        <span class="hljs-keyword">static</span> <span class="hljs-keyword">string</span> re2 = uvm_glob_to_re(<span class="hljs-string">"*abc*"</span>);<br>        <span class="hljs-built_in">$display</span>(re1);<br>        <span class="hljs-built_in">$display</span>(re2);<br>        <span class="hljs-keyword">if</span> (!uvm_re_match(re1, <span class="hljs-string">"top.mydut_abc_comp_inst"</span>))<br>            <span class="hljs-built_in">$display</span>(<span class="hljs-string">"matches re1"</span>);<br><br>        <span class="hljs-keyword">if</span> (!uvm_re_match(re2, <span class="hljs-string">"top.mydut_abc_comp_inst"</span>))<br>            <span class="hljs-built_in">$display</span>(<span class="hljs-string">"matches re2"</span>);<br>        <span class="hljs-keyword">if</span> (!uvm_re_match(<span class="hljs-string">"abc"</span>, <span class="hljs-string">"top.mydut_abc_comp_inst"</span>))<br>            <span class="hljs-built_in">$display</span>(<span class="hljs-string">"matches re3"</span>);<br>    <span class="hljs-keyword">end</span><br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure></p>
+<h3 id="NCsim输出"><a href="#NCsim输出" class="headerlink" title="NCsim输出"></a>NCsim输出</h3><figure class="hljs highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-regexp">/^abc$/</span><br><span class="hljs-regexp">/^.*abc.*$/</span><br>matches re2<br>matches re3<br></code></pre></td></tr></table></figure>
     </main>
     <footer class="post-footer">
       
@@ -247,7 +246,7 @@
 	</li>
 	<li class="post-copyright-link">
 		<strong>本文链接：</strong>
-		<a href="/2019/04/17/UVM-Register-Model/" title="UVM-Register-Model">http://118.25.122.94:8080/2019/04/17/UVM-Register-Model/</a>
+		<a href="/2019/04/25/uvm-re-match和uvm-glob-to-re的使用/" title="uvm_re_match和uvm_glob_to_re的使用">http://118.25.122.94:8080/2019/04/25/uvm-re-match和uvm-glob-to-re的使用/</a>
 	</li>
 	<li class="post-copyright-license">
 		<strong>版权声明： </strong>
@@ -278,12 +277,10 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2019/04/17/形式验证/" rel="next" title="形式验证"><i class="fas fa-angle-left"></i><span class="nav-title">形式验证</span></a>
+      <a href="/2019/04/24/权利的游戏-冰与火之歌/" rel="next" title="权利的游戏:冰与火之歌"><i class="fas fa-angle-left"></i><span class="nav-title">权利的游戏:冰与火之歌</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2019/04/18/UVM寄存器模型中soft和hard-reset有什么区别？/" rel="prev" title="UVM寄存器模型中soft和hard reset有什么区别？"><span class="nav-title">UVM寄存器模型中soft和hard reset有什么区别？</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -396,7 +393,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#1-UVM寄存器模型相关操作引起的一些关键变化"><span class="toc-text">1.UVM寄存器模型相关操作引起的一些关键变化</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#缩写词"><span class="toc-text">缩写词</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#uvm-re-match和uvm-glob-to-re使用方法"><span class="toc-text">uvm_re_match和uvm_glob_to_re使用方法</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#NCsim输出"><span class="toc-text">NCsim输出</span></a></li></ol></div>
     </div>
     
     

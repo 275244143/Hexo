@@ -9,7 +9,7 @@ categories:
   - Linux
   - git
 ---
-# 工作原理： #
+# 1.工作原理： #
 
 ![git](git操作总结/git操作总结.png)
 
@@ -442,3 +442,62 @@ categories:
 	git stash
 	git stash pop
 ```
+
+# 2.git技巧 #
+
+## 1.~/.gitconfig全局配置文件
+```
+	[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	unstage = reset HEAD
+	last = log -1
+	lpo = log --pretty=oneline --abbrev-commit
+```
+
+## 2.git查询对比远程和本地仓库内容信息有什么不同
+```
+	git diff <local branch> <remote>/<remote branch>
+```
+
+## 3.git中从远程的分支获取最新的版本到本地
+
+### Git中从远程的分支获取最新的版本到本地有这样2个命令：
++ git fetch：相当于是从远程获取最新版本到本地，不会自动merge。
+```
+	git fetch origin master
+	git log -p master..origin/master
+	git merge origin/master
+```
+
+* 以上命令的含义：首先从远程的origin的master主分支下载最新的版本到origin/master分支上,然后比较本地的master分支和origin/master分支的差别最后进行合并。上述过程其实可以用以下更清晰的方式来进行：
+```
+	git fetch origin master:tmp
+	git diff tmp 
+	git merge tmp
+```
+* 从远程获取最新的版本到本地的test分支上之后再进行比较合并
+
++ git pull：相当于是从远程获取最新版本并merge到本地
+```
+	git pull origin master
+```
+* 上述命令其实相当于git fetch 和 git merge,在实际使用中，git fetch更安全一些因为在merge前，我们可以查看更新情况，然后再决定是否合并结束。
+```
+	git lg <local branch> <remote>/<remote branch>
+```
+
+## 3.git本地版本落后仓库几个版本pull冲突相关
++ git中本地落后仓库几个版本pull冲突,但是自己又不想提交本地的代码到远程仓库，可以尝试使用下面的方法： 
+* 一种是使用git fetch，但是自己这个用得少 
+* 另外就是使用git pull,git pull = git fetch + git merch,解决冲突时利用git stash 把本地代码保存起来 
+- 1.git pull origin master //报错：有冲突 不能拉取下来（本地和远程在同地方都有改动 ）
+- 2.git stash
+- 3.git pull origin master //这个时候一直报下面错误说明xxx这个文件没有stash进去 
+- 4.使用 git stash -a //成功 
+- 5.使用 git pull origin master //把主干拉下来
+- 6.使用git stash list 找//到你刚刚stash的id
+- 7.使用git stash pop stash@{0} //取出刚刚存入代码 如果无冲突将会自动合并 如果有冲突需要你进入文件手动解决冲突，冲突在冲突文件夹里会有明显标注你本地代码和仓库代码

@@ -97,7 +97,9 @@ feed:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: root@148.70.238.123:/home/ubuntu/blog.git
+  repo: 
+    shanghai: root@118.25.122.94:/home/ubuntu/blog.git
+	#chengdu: root@148.70.238.123:/home/ubuntu/blog.git
   branch: master
 
 # 配置版权
