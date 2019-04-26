@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>UVM-CUTOM-FIELD-ACCESS-POLICY</title>
+      <link href="/2019/04/26/UVM-CUTOM-FIELD-ACCESS-POLICY/"/>
+      <url>/2019/04/26/UVM-CUTOM-FIELD-ACCESS-POLICY/</url>
+      
+        <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="~友情QQ红包，发送密码~" />    <label for="pass">~友情QQ红包，发送密码~</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">U2FsdGVkX19bbn1qnq/17pMJ+W7+ze9saJIZeeVNhxOy4Mf/ewmud0cgMibMwszmuKqmcnhYSgRXHICMmXdQlZPu5V7o8mmHR257Lmw56CNacl+bQvh1B/hzdjSQ+K78JoezQyvrNsZCmdITJ75JO/a7bJU6F/9d6QDKTUV1G3LQWpHR7UTRYUhcyP5LxJXHmwyQyy5w1879dCGEh03SvGpM29/caTh7iDDtMCwvGqeatRoh9CMyvTGk7WrkOXBEyAjpEBpAeMkPBtdRw1vrAFekHxIUegdBZoKRTEewqaXYM+/mahv0Szfvi20+lGLlJVvc5CDI+uE8k6sGBZ6OqrOP1nDu9DgiPXui2FqObtaQ1xucnZnWSzpANMUkT+8dp4bnfqQPypafvdGq6lETCw69S4icHaWJdxe/ARdhcBefSv+AxnbhR81G6yQGHl1cq1gg81QwznB7Rr9ItZedD0Ctk8vWZV0+UzMWJ8uCWpjLtd2sMFDPurh+5q5g4pTkr9R/fiyPsqIFsYbXCoSgDUbwBmAOzKfv3H9bCnN3SpKA22jhnHgKgPFA9Y8OA3p22tfLOz5OmrkAlOub70G8k/roT6HvnPMyUvq7y/JlgjjLArPp1l8EZRxnGF7Ig1NcbAzBpiwld34iMCXS9zJGrnw+nLEE8OrgdbClpx935rLFWRpHY/uv9B9FdZYsG0y9rf+DiFBVOM5BoZQ/Ntn8T++Aw3vDbsRTGtIuGxyMPaTmfE+c5Mv9sH0DkSxBVlh5JvESGOY0wEZ5x7MNnvh3cH7ViNz9ueCDRQ1kjUdSVehgF8wZrJlvMfYGwdmb4n5PXKWHmyQeeEzloWjt9ow2Gzc6kI8aq5gTDwV4t5mAsb2CmkPHFk3kEjSOjvQTeFOmoYlhuJux6uRVHoZazSZBD34Jr2eqgMmzYAPYb1edPDnA1uT/JGh5+tYRSI6R+mlq8iSHdjGnD1x8KdLWyGYDLBYc/5sGnZOBJeCva1ijPjz9enAdwVH84PpoP+96E33bZ2hQazC8oPsTT4mCgCl5GtxYjGMjVmJfHP+ER6ddl0d3YI2kF2E6lnKuFd/WIjDzxn13+ZiS9CWdw8CNYQwIznxcpC5eGjRqODkOzRDmSg9/9cDmoesq05MG0gb0KnfvfS8HlLrHcPSLAPCIl9WiqaBjEipMDh8X3Sv81efkCqijWfSfYrlfr4jxvtxQcKXBtVfgIb/PONb0mKvh4GFbODMYME7wEPhQiCi35Zbf/GF8Nj3BohoJ4PVvHWTmG6ZviEV5GQVYT1nT6vLX/CS0v36XgTsBUL6t16ioD66tcCuqdfhdnGrPM7UpqHY/B75dGuB6A+wTh6ZJBFcHFFI1UJXkENFTpu+KQlKUPEc4Zlc=</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 验证 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> UVM </tag>
+            
+            <tag> SystemVerilog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C-C++资源</title>
       <link href="/2019/04/25/C-C-%E8%B5%84%E6%BA%90/"/>
       <url>/2019/04/25/C-C-%E8%B5%84%E6%BA%90/</url>
@@ -253,7 +280,7 @@
       <link href="/2019/04/18/VCS-Crash%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%EF%BC%9F/"/>
       <url>/2019/04/18/VCS-Crash%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%EF%BC%9F/</url>
       
-        <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="~友情QQ红包，发送密码~" />    <label for="pass">~友情QQ红包，发送密码~</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">U2FsdGVkX1/OLjTpQAiwIEt05GVDf91KSdBitLcdyLm+kVqnfUnRDxFfv07nVUpUCAJduMT0+ZQhVwwTrwyxYVKD/S5SKI9d2WivYroUh1BlFK03zU4JD84Ur6GNDUC3i+t+8CCQCRTqQA6LniwLiuAyv8PZevoe0DHONqrruaskYy1WDaTCNc+J0MysK8w1ivxlZ6U23eSEzYF8TI4PmYSZ5xYD77GIbwG5bnZZbtGzgFATQhomPzVyKkVftizJwKwqQCeio6vOA/UdJsaN1k80W7URblmIkU/TLirX08QN+jjzV49pWexC/6XMsa2Iv5sRqyuDsoZcJtONJvNoTtrJo1I2DqT7AP9aAsi9LVTCIZ0MIwCOlO10WO81Rfer4eZm0tEh1ByMH41rm7AVHjzMZP3ybBti4ARvBwljzwENDK8HtpT4GRTDxY+3i1QJ5RyX56ekzRIiRDio1SOlKlxYE2FMK0PKWIhNzDLzBjjrKjmh/vc/YcJQWqVRt/K0tlAWqvxBsQFDylsdAHHb0Y2vp54AnrQBedo9a5W+JxJWyTknYQhdKhXKwkZvc9LRmynjkpctRGTgnfHf8Q3EMEPiRhhRA0E2SOvyuG9wKFevyvx+WddG1EFiTnBULfYjwVx5E0FsDVZW9u+cvf92eQo6fNp9iea+PY60BQvmLZOrh59UawDPxZIsTz6p0aRGkKK+L7ZgrgaSML8aAmSI0tC2M+UDquGl0cWVGj2/clizeV1icUCIbmw0UyPvznadbLBdN3APcMHLYgBBtfkJWJuhlod9sVkpJKtuZbtWz4z/6254c4tESOR4mqphFq2ttJ8JzTr3AWsr6j88hD1YymohFhVk/zWUOn+OLLJrU2KTyY91DqmMkvvPVR8Ehy6X</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+        <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="~友情QQ红包，发送密码~" />    <label for="pass">~友情QQ红包，发送密码~</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">U2FsdGVkX19d/74uKxkmzvqf0ezVKBUELrV+mKGigpPji/NhNVkMyY/pgr98JsjOolvh3Ap0KZJUzyv7Ql11WAjG9vfts/y7QGNFMNiCoKAqMmwFE5eEQ4VITxYFCmSwO7yxAbwjQrxTUSLATLj14bAEHUVcT8l2DzHSPkTX5+mABNiT/wFsd2IyEScp8LRU0W0zFJYAlZUV74sBvXRsf2+qy7DRekx07f6gpoct6oTHMrsX7KxDHaIfFH4qVMJ8MLhubFD4PiJEUIS38zK8VAzdWMSlM8IKPvgOaLhvBLC8b7QTUKDaereU22eZKg3fgILsygdSsXt/z5n6doUdKNq1hETsZIZuyH5Jn95Vsgi/ydda2BYlRYraM/kxs7CXSaE7kyGFnHklcXr5PSCbIt5lPzvkl87mD7uE8VEKQuGOGj1Vg4F7q+qtYTX6gOPU763nWgorwVMduWpubtvSW+FXMPDtZ7cvuAQlNZDx6hylU45VBtu0IJVZEuxRGM1HnbbzR4bo7diMf6wnWiAepY+5IJzubnLrDM45inSbgmO/iF34Xqojega1iEb4bmz4u4dEWKt24nFvEZ++ACqliiH4/PQ8h/5kquNdjAZLkv04eR1hVLzNDD/h95iNVQY6gtTYKX0MAZ28a2ROvRdbwnsa7La7DON8xDuGHSlWTUulrSM0zOYankvCQIcUwDHmnA0RBQLQx3YuFsRff/GZMsyM+JvPqz+bebbkWBZvW/4pJSy681PXxsaqpS2TpnBdh8Kp9g5+FM60kQAPkaj1ts99s4GPKXSk1Wav8W14OgsNrQczQ8n1xrgAlI0YBh9OIVhS99t/n21RDg4iyta83DfP2WCUH5w5IyRSJO9bIlvVKARIkjH5Re8Na/KYyhHu</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       
       
       <categories>
@@ -431,22 +458,22 @@
     
     
     <entry>
-      <title>有问必答</title>
-      <link href="/guessbook/index.html"/>
-      <url>/guessbook/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[<ul><li><strong>~有什么话要对我说吗？这里是你畅所欲言的地方，可以咨询，可以交流，可以感叹~</strong><br><img src="/guessbook/index/message.jpg" alt="留言"></li></ul>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>有问必答</title>
+      <link href="/guessbook/index.html"/>
+      <url>/guessbook/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<ul><li><strong>~有什么话要对我说吗？这里是你畅所欲言的地方，可以咨询，可以交流，可以感叹~</strong><br><img src="/guessbook/index/message.jpg" alt="留言"></li></ul>]]></content>
       
     </entry>
     
