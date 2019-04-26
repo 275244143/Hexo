@@ -145,3 +145,17 @@ live2d:
     height: 300
   mobile:
     show: true
+
+douban:
+  user: 195577863
+  builtin: true
+  book:
+    title: '我的阅读'
+    quote: '读书记录'
+  movie:
+    title: '我的电影'
+    quote: '电影记录'
+    #game:
+    #gatitle: 'This is my game title'
+    #gaquote: 'This is my game quote'
+  timeout: 10000 

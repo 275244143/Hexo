@@ -16,9 +16,16 @@ menu:
 - name: hyperlink
   link: hyperlink/
   icon: <i class="fas fa-link"></i>
+- name: Books
+  link: /books
+  icon: <i class="fas fa-book"></i>
+- name: Movies
+  link: /movies
+  icon: <i class="fas fa-film"></i>
 - name: guessbook
   link: guessbook/
   icon: <i class="fas fa-user-edit"></i>
+
 # - name: about
 #   link: about/
 #   icon: <i class="fas fa-user-edit"></i>
