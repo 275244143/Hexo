@@ -213,9 +213,9 @@
           <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/脚本/" itemprop="url" rel="index"><span itemprop="name">脚本</span></a></span>
         </span>
 	<span class="post-meta-item-text">  字数统计: </span>
-	<span class="post-count">321字</span>
+	<span class="post-count">639字</span>
 	<span class="post-meta-item-text">  阅读时长: </span>
-	<span class="post-count">1分</span>
+	<span class="post-count">2分</span>
 	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
         
         
@@ -285,7 +285,52 @@
 <figure class="hljs highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">pstree -ap <span class="hljs-number">10277</span>|grep -oP '[<span class="hljs-number">0</span><span class="hljs-number">-9</span>]&#123;<span class="hljs-number">4</span>,<span class="hljs-number">6</span>&#125;'|xargs kill <span class="hljs-number">-9</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>目录中大量文件删除。</p>
-<figure class="hljs highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">ls</span> | xargs <span class="hljs-keyword">rm</span><br></code></pre></td></tr></table></figure></li>
+<figure class="hljs highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">ls</span> | xargs <span class="hljs-keyword">rm</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>监控命令(每2秒运行一次)</p>
+<figure class="hljs highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">watch</span> <span class="hljs-string">"ls -larth"</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>限制以下命令的内存使用</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-built_in">ulimit</span> -Sv 1000 <span class="hljs-comment"># 1000 KBs = 1 MB</span><br><span class="hljs-built_in">ulimit</span> -Sv unlimited <span class="hljs-comment"># Remove limit</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>使用正则表达式重命名所选文件</p>
+<figure class="hljs highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">rename 's/<span class="hljs-string">.bak</span>$<span class="hljs-string">/.txt/</span>' *<span class="hljs-string">.bak</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>获得完整的文件路径</p>
+<figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">readlink -f <span class="hljs-built_in">file</span>.txt<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>检查每个目录中的文件的的权限</p>
+<figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">namei -l /path/<span class="hljs-keyword">to</span>/<span class="hljs-built_in">file</span>.txt<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>创建给定大小的空文件</p>
+<figure class="hljs highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">fallocate -l <span class="hljs-number">1</span>G <span class="hljs-keyword">test</span>.img<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在文件中分割长文件，使用相同数量的行</p>
+<figure class="hljs highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-built_in">split</span> -l LINES -d <span class="hljs-built_in">file</span>.txt output_prefix<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>刷新交换分区</p>
+</li>
+</ul>
+<ul>
+<li>如果一个程序消耗了太多的内存，交换分区就会被剩余的内存填满，当你回到正常的时候，一切都是缓慢的。只需重新启动交换分区来修复它<figure class="hljs highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sudo swapoff -<span class="hljs-keyword">a</span><br>sudo swapon -<span class="hljs-keyword">a</span><br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>列出tar.gz文件的内容，并只提取一个文件</p>
+<figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">tar tf file<span class="hljs-selector-class">.tgz</span><br>tar xf file<span class="hljs-selector-class">.tgz</span> filename<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>Cat命令反向输出(从末端开始)</p>
+<figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">tac <span class="hljs-built_in">file</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>文件的随机行</p>
+<figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">shuf <span class="hljs-built_in">file</span>.txt<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在有限的时间内运行命令</p>
+<figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">timeout</span> <span class="hljs-number">10</span>s ./<span class="hljs-keyword">script</span>.sh<br>Restart <span class="hljs-keyword">every</span> <span class="hljs-number">30</span> minutes<br><span class="hljs-keyword">while</span> <span class="hljs-literal">true</span>; do <span class="hljs-keyword">timeout</span> <span class="hljs-number">30</span>m ./<span class="hljs-keyword">script</span>.sh; done<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>从两个排序文件中合并行</p>
+<figure class="hljs highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">comm file1 file2<br>打印这三列：<br><br>行file1独有。<br>行file2独有。<br>在行file1和行file2中都有。<br>使用选项<span class="hljs-number">-1</span>、<span class="hljs-number">-2</span>、<span class="hljs-number">-3</span>，可以删除这些列。<br></code></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
@@ -468,6 +513,18 @@
       <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#常用脚本收集"><span class="toc-text">常用脚本收集</span></a></li></ol></div>
     </div>
     
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/">synopsys</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
     
     
     <hr>

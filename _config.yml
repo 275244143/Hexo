@@ -159,3 +159,11 @@ douban:
     #gatitle: 'This is my game title'
     #gaquote: 'This is my game quote'
   timeout: 10000 
+
+# hexo-tag-cloud
+tag_cloud:
+  textFont: Trebuchet MS, Helvetica
+  textColor: '#333'
+  textHeight: 25
+  outlineColor: '#E2E1D1'
+  maxSpeed:

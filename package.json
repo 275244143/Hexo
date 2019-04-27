@@ -26,6 +26,7 @@
     "hexo-renderer-njucks": "^1.0.0",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
+    "hexo-tag-cloud": "^2.1.1",
     "hexo-wordcount": "^6.0.1",
     "hoek": "^4.2.1",
     "shell-quote": "^1.6.1"
