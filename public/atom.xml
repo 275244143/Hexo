@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
-  <updated>2019-04-26T09:22:13.773Z</updated>
+  <updated>2019-04-28T14:54:04.039Z</updated>
   <id>https://275244143.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>VCS定位死循环</title>
+    <link href="https://275244143.github.io/2019/04/28/VCS-deadLoop/"/>
+    <id>https://275244143.github.io/2019/04/28/VCS-deadLoop/</id>
+    <published>2019-04-28T11:11:32.000Z</published>
+    <updated>2019-04-28T14:54:04.039Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="EDA" scheme="https://275244143.github.io/tags/EDA/"/>
+    
+      <category term="VCS" scheme="https://275244143.github.io/tags/VCS/"/>
+    
+      <category term="Synopsys" scheme="https://275244143.github.io/tags/Synopsys/"/>
+    
+  </entry>
+  
+  <entry>
     <title>UVM-CUTOM-FIELD-ACCESS-POLICY</title>
     <link href="https://275244143.github.io/2019/04/26/UVM-CUTOM-FIELD-ACCESS-POLICY/"/>
     <id>https://275244143.github.io/2019/04/26/UVM-CUTOM-FIELD-ACCESS-POLICY/</id>
     <published>2019-04-26T09:19:16.000Z</published>
-    <updated>2019-04-26T09:22:13.773Z</updated>
+    <updated>2019-04-26T13:39:41.417Z</updated>
     
     <summary type="html">
     
@@ -43,7 +67,7 @@
     <link href="https://275244143.github.io/2019/04/25/C-C-%E8%B5%84%E6%BA%90/"/>
     <id>https://275244143.github.io/2019/04/25/C-C-资源/</id>
     <published>2019-04-25T14:15:04.000Z</published>
-    <updated>2019-04-26T06:56:40.412Z</updated>
+    <updated>2019-04-25T14:20:12.515Z</updated>
     
     <summary type="html">
     
@@ -69,7 +93,7 @@
     <link href="https://275244143.github.io/2019/04/25/uvm-re-match%E5%92%8Cuvm-glob-to-re%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>https://275244143.github.io/2019/04/25/uvm-re-match和uvm-glob-to-re的使用/</id>
     <published>2019-04-25T07:29:05.000Z</published>
-    <updated>2019-04-26T06:56:40.452Z</updated>
+    <updated>2019-04-25T14:04:33.716Z</updated>
     
     <summary type="html">
     
@@ -97,7 +121,7 @@
     <link href="https://275244143.github.io/2019/04/24/%E6%9D%83%E5%88%A9%E7%9A%84%E6%B8%B8%E6%88%8F-%E5%86%B0%E4%B8%8E%E7%81%AB%E4%B9%8B%E6%AD%8C/"/>
     <id>https://275244143.github.io/2019/04/24/权利的游戏-冰与火之歌/</id>
     <published>2019-04-24T15:21:38.000Z</published>
-    <updated>2019-04-26T06:56:40.459Z</updated>
+    <updated>2019-04-25T14:09:02.915Z</updated>
     
     <summary type="html">
     
@@ -117,7 +141,7 @@
     <link href="https://275244143.github.io/2019/04/23/git%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/"/>
     <id>https://275244143.github.io/2019/04/23/git操作总结/</id>
     <published>2019-04-23T09:13:15.000Z</published>
-    <updated>2019-04-26T06:56:40.439Z</updated>
+    <updated>2019-04-25T14:04:33.716Z</updated>
     
     <summary type="html">
     
@@ -139,11 +163,11 @@
       <category term="git" scheme="https://275244143.github.io/categories/Linux/git/"/>
     
     
-      <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
-    
       <category term="git" scheme="https://275244143.github.io/tags/git/"/>
     
       <category term="github" scheme="https://275244143.github.io/tags/github/"/>
+    
+      <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
     
   </entry>
   
@@ -152,7 +176,7 @@
     <link href="https://275244143.github.io/2019/04/22/github%E5%9B%9E%E9%80%80%E4%BB%A3%E7%A0%81%E5%88%B0%E5%8E%86%E5%8F%B2%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC/"/>
     <id>https://275244143.github.io/2019/04/22/github回退代码到历史指定版本/</id>
     <published>2019-04-22T10:51:16.000Z</published>
-    <updated>2019-04-26T06:56:40.437Z</updated>
+    <updated>2019-04-24T14:22:16.129Z</updated>
     
     <summary type="html">
     
@@ -173,11 +197,11 @@
       <category term="Linux" scheme="https://275244143.github.io/categories/Linux/"/>
     
     
-      <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
-    
       <category term="git" scheme="https://275244143.github.io/tags/git/"/>
     
       <category term="github" scheme="https://275244143.github.io/tags/github/"/>
+    
+      <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
     
   </entry>
   
@@ -186,7 +210,7 @@
     <link href="https://275244143.github.io/2019/04/19/%E4%BD%BF%E7%94%A8synopsys%20uvmgen%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90uvm%E7%8E%AF%E5%A2%83/"/>
     <id>https://275244143.github.io/2019/04/19/使用synopsys uvmgen快速生成uvm环境/</id>
     <published>2019-04-19T11:09:00.000Z</published>
-    <updated>2019-04-26T06:56:40.452Z</updated>
+    <updated>2019-04-24T14:22:16.129Z</updated>
     
     <summary type="html">
     
@@ -216,7 +240,7 @@
     <link href="https://275244143.github.io/2019/04/19/%E5%B8%B8%E7%94%A8%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/"/>
     <id>https://275244143.github.io/2019/04/19/常用脚本收集/</id>
     <published>2019-04-19T08:38:00.000Z</published>
-    <updated>2019-04-28T01:10:25.041Z</updated>
+    <updated>2019-04-27T15:27:12.604Z</updated>
     
     <summary type="html">
     
@@ -242,7 +266,7 @@
     <link href="https://275244143.github.io/2019/04/19/Layer-Sequence%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
     <id>https://275244143.github.io/2019/04/19/Layer-Sequence结构图/</id>
     <published>2019-04-19T06:53:55.000Z</published>
-    <updated>2019-04-26T06:56:40.414Z</updated>
+    <updated>2019-04-24T14:22:16.113Z</updated>
     
     <summary type="html">
     
@@ -270,7 +294,7 @@
     <link href="https://275244143.github.io/2019/04/19/Linux%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"/>
     <id>https://275244143.github.io/2019/04/19/Linux相关操作/</id>
     <published>2019-04-19T03:10:00.000Z</published>
-    <updated>2019-04-26T06:56:40.417Z</updated>
+    <updated>2019-04-24T14:22:16.113Z</updated>
     
     <summary type="html">
     
@@ -287,9 +311,9 @@
       <category term="Linux" scheme="https://275244143.github.io/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://275244143.github.io/tags/Linux/"/>
-    
       <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
+    
+      <category term="Linux" scheme="https://275244143.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -298,7 +322,7 @@
     <link href="https://275244143.github.io/2019/04/18/VCS-Crash%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%EF%BC%9F/"/>
     <id>https://275244143.github.io/2019/04/18/VCS-Crash如何定位？/</id>
     <published>2019-04-18T14:37:37.000Z</published>
-    <updated>2019-04-26T06:56:40.434Z</updated>
+    <updated>2019-04-24T14:22:16.129Z</updated>
     
     <summary type="html">
     
@@ -320,7 +344,7 @@
     <link href="https://275244143.github.io/2019/04/18/clocking%E5%9D%97%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E4%BF%9D%E8%AF%81race-free/"/>
     <id>https://275244143.github.io/2019/04/18/clocking块为什么能保证race-free/</id>
     <published>2019-04-18T09:19:13.000Z</published>
-    <updated>2019-04-26T06:56:40.434Z</updated>
+    <updated>2019-04-24T14:22:16.129Z</updated>
     
     <summary type="html">
     
@@ -346,7 +370,7 @@
     <link href="https://275244143.github.io/2019/04/18/UVM%E5%AF%84%E5%AD%98%E5%99%A8%E6%A8%A1%E5%9E%8B%E4%B8%ADsoft%E5%92%8Chard-reset%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/"/>
     <id>https://275244143.github.io/2019/04/18/UVM寄存器模型中soft和hard-reset有什么区别？/</id>
     <published>2019-04-18T01:39:46.000Z</published>
-    <updated>2019-04-26T06:56:40.433Z</updated>
+    <updated>2019-04-24T14:22:16.113Z</updated>
     
     <summary type="html">
     
@@ -378,7 +402,7 @@
     <link href="https://275244143.github.io/2019/04/17/UVM-Register-Model/"/>
     <id>https://275244143.github.io/2019/04/17/UVM-Register-Model/</id>
     <published>2019-04-17T06:03:12.000Z</published>
-    <updated>2019-04-26T06:56:40.432Z</updated>
+    <updated>2019-04-24T14:22:16.113Z</updated>
     
     <summary type="html">
     
@@ -406,7 +430,7 @@
     <link href="https://275244143.github.io/2019/04/17/%E5%BD%A2%E5%BC%8F%E9%AA%8C%E8%AF%81/"/>
     <id>https://275244143.github.io/2019/04/17/形式验证/</id>
     <published>2019-04-17T03:15:24.000Z</published>
-    <updated>2019-04-26T06:56:40.458Z</updated>
+    <updated>2019-04-24T14:22:16.129Z</updated>
     
     <summary type="html">
     
@@ -436,7 +460,7 @@
     <link href="https://275244143.github.io/2019/04/16/QQ%E7%BA%A2%E5%8C%85%E6%89%93%E8%B5%8F,%E9%AA%8C%E8%AF%81%E6%8A%80%E6%9C%AF%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%EF%BC%8C%E6%89%AB%E7%A0%81%E5%8D%B3%E5%8F%AF%EF%BC%8C%E4%BD%A0%E7%9A%84%E6%94%AF%E6%8C%81%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%8A%80%E6%9C%AF%E7%9A%84%E4%B8%8D%E6%96%AD%E5%89%8D%E8%BF%9B%EF%BC%81/"/>
     <id>https://275244143.github.io/2019/04/16/QQ红包打赏,验证技术微信公众号，扫码即可，你的支持，就是技术的不断前进！/</id>
     <published>2019-04-16T08:52:08.000Z</published>
-    <updated>2019-04-26T06:56:40.418Z</updated>
+    <updated>2019-04-24T14:22:16.113Z</updated>
     
     <summary type="html">
     
@@ -458,7 +482,7 @@
     <link href="https://275244143.github.io/2019/04/16/SystemVerilog%E8%AF%AD%E6%B3%95%E9%87%8A%E4%B9%89/"/>
     <id>https://275244143.github.io/2019/04/16/SystemVerilog语法释义/</id>
     <published>2019-04-16T08:08:43.000Z</published>
-    <updated>2019-04-26T06:56:40.419Z</updated>
+    <updated>2019-04-24T14:22:16.113Z</updated>
     
     <summary type="html">
     
