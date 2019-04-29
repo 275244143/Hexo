@@ -3,7 +3,7 @@ title: VCS定位死循环
 date: 2019-04-28 19:11:32
 tags: [EDA,VCS,Synopsys]
 categories: [验证]
-password: 888888
+password: 2102113
 abstract: 欢迎光临~
 message: ~友情QQ红包，发送密码~
 ---
