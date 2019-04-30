@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
-  <updated>2019-04-29T01:54:55.335Z</updated>
+  <updated>2019-04-30T02:04:23.854Z</updated>
   <id>https://275244143.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>约束12与34都存在number数组里或者12与34都不在number数组里里？</title>
+    <link href="https://275244143.github.io/2019/04/30/%E7%BA%A6%E6%9D%9F12%E4%B8%8E34%E9%83%BD%E5%AD%98%E5%9C%A8number%E6%88%96%E8%80%8512%E4%B8%8E34%E9%83%BD%E4%B8%8D%E5%9C%A8number%E9%87%8C%EF%BC%9F/"/>
+    <id>https://275244143.github.io/2019/04/30/约束12与34都存在number或者12与34都不在number里？/</id>
+    <published>2019-04-30T01:59:29.000Z</published>
+    <updated>2019-04-30T02:04:23.854Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight verilog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="https://275244143.github.io/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>uvm-indirect-registers</title>
@@ -518,34 +546,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>SystemVerilog语法释义</title>
-    <link href="https://275244143.github.io/2019/04/16/SystemVerilog%E8%AF%AD%E6%B3%95%E9%87%8A%E4%B9%89/"/>
-    <id>https://275244143.github.io/2019/04/16/SystemVerilog语法释义/</id>
-    <published>2019-04-16T08:08:43.000Z</published>
-    <updated>2019-04-26T06:56:40.419Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-浮点数转换&quot;&gt;&lt;a href=&quot;#1-浮点数转换&quot; class=&quot;headerlink&quot; title=&quot;1.浮点数转换&quot;&gt;&lt;/a&gt;1.浮点数转换&lt;/h2&gt;&lt;h3 id=&quot;ieee1800-2017解释：&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="https://275244143.github.io/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
     
   </entry>
   
