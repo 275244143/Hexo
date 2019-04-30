@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
-  <updated>2019-04-30T02:04:23.854Z</updated>
+  <updated>2019-04-30T09:29:35.336Z</updated>
   <id>https://275244143.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VM虚拟机再见！Docker来了！</title>
+    <link href="https://275244143.github.io/2019/04/30/VM%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%8D%E8%A7%81%EF%BC%81Docker%E6%9D%A5%E4%BA%86%EF%BC%81/"/>
+    <id>https://275244143.github.io/2019/04/30/VM虚拟机再见！Docker来了！/</id>
+    <published>2019-04-30T09:23:23.000Z</published>
+    <updated>2019-04-30T09:29:35.336Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;VM(VMware)在宿主机器、宿主机器操作系统的基础上创建虚拟层、虚拟化的操作系统、虚拟化的仓库，然后再安装应用；&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Container(Docker容器)，在宿主机器、宿主机器操作系统上创建Docker引擎，在引擎的基础上再安装应用。那
+        
+      
+    
+    </summary>
+    
+      <category term="虚拟机" scheme="https://275244143.github.io/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+    
+      <category term="Docker" scheme="https://275244143.github.io/tags/Docker/"/>
+    
+      <category term="VMware" scheme="https://275244143.github.io/tags/VMware/"/>
+    
+  </entry>
   
   <entry>
     <title>约束12与34都存在number数组里或者12与34都不在number数组里里？</title>
@@ -282,7 +312,7 @@
     <link href="https://275244143.github.io/2019/04/19/%E4%BD%BF%E7%94%A8synopsys%20uvmgen%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90uvm%E7%8E%AF%E5%A2%83/"/>
     <id>https://275244143.github.io/2019/04/19/使用synopsys uvmgen快速生成uvm环境/</id>
     <published>2019-04-19T11:09:00.000Z</published>
-    <updated>2019-04-26T06:56:40.452Z</updated>
+    <updated>2019-04-30T02:16:14.336Z</updated>
     
     <summary type="html">
     
@@ -303,7 +333,7 @@
     
       <category term="EDA" scheme="https://275244143.github.io/tags/EDA/"/>
     
-      <category term="synopsys" scheme="https://275244143.github.io/tags/synopsys/"/>
+      <category term="Synopsys" scheme="https://275244143.github.io/tags/Synopsys/"/>
     
   </entry>
   
@@ -524,28 +554,6 @@
       <category term="ABV" scheme="https://275244143.github.io/tags/ABV/"/>
     
       <category term="FV" scheme="https://275244143.github.io/tags/FV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QQ红包打赏,验证技术微信公众号，扫码即可，你的支持，就是技术的不断前进！</title>
-    <link href="https://275244143.github.io/2019/04/16/QQ%E7%BA%A2%E5%8C%85%E6%89%93%E8%B5%8F,%E9%AA%8C%E8%AF%81%E6%8A%80%E6%9C%AF%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%EF%BC%8C%E6%89%AB%E7%A0%81%E5%8D%B3%E5%8F%AF%EF%BC%8C%E4%BD%A0%E7%9A%84%E6%94%AF%E6%8C%81%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%8A%80%E6%9C%AF%E7%9A%84%E4%B8%8D%E6%96%AD%E5%89%8D%E8%BF%9B%EF%BC%81/"/>
-    <id>https://275244143.github.io/2019/04/16/QQ红包打赏,验证技术微信公众号，扫码即可，你的支持，就是技术的不断前进！/</id>
-    <published>2019-04-16T08:52:08.000Z</published>
-    <updated>2019-04-26T06:56:40.418Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;谢谢打赏&quot;&gt;&lt;a href=&quot;#谢谢打赏&quot; class=&quot;headerlink&quot; title=&quot;谢谢打赏&quot;&gt;&lt;/a&gt;谢谢打赏&lt;/h1&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
