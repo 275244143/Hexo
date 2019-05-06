@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
-  <updated>2019-04-30T09:29:35.336Z</updated>
+  <updated>2019-05-06T06:18:03.254Z</updated>
   <id>https://275244143.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker启动EDA工具迅速！</title>
+    <link href="https://275244143.github.io/2019/05/05/Docker%E5%90%AF%E5%8A%A8EDA%E5%B7%A5%E5%85%B7%E8%BF%85%E9%80%9F%EF%BC%81/"/>
+    <id>https://275244143.github.io/2019/05/05/Docker启动EDA工具迅速！/</id>
+    <published>2019-05-05T11:25:22.000Z</published>
+    <updated>2019-05-06T06:18:03.254Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;神秘人的Docker-EDA：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;内存占用极低（&amp;lt;100M），启动迅速，1s级别。基本上就是内嵌在Win7的应用软件。&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="https://275244143.github.io/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
+    
+      <category term="EDA" scheme="https://275244143.github.io/tags/EDA/"/>
+    
+  </entry>
   
   <entry>
     <title>VM虚拟机再见！Docker来了！</title>
@@ -136,9 +170,9 @@
     
       <category term="EDA" scheme="https://275244143.github.io/tags/EDA/"/>
     
-      <category term="VCS" scheme="https://275244143.github.io/tags/VCS/"/>
-    
       <category term="Synopsys" scheme="https://275244143.github.io/tags/Synopsys/"/>
+    
+      <category term="VCS" scheme="https://275244143.github.io/tags/VCS/"/>
     
   </entry>
   
@@ -524,36 +558,6 @@
       <category term="UVM" scheme="https://275244143.github.io/tags/UVM/"/>
     
       <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>形式验证</title>
-    <link href="https://275244143.github.io/2019/04/17/%E5%BD%A2%E5%BC%8F%E9%AA%8C%E8%AF%81/"/>
-    <id>https://275244143.github.io/2019/04/17/形式验证/</id>
-    <published>2019-04-17T03:15:24.000Z</published>
-    <updated>2019-04-26T06:56:40.458Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-什么时候需要使用形式验证（Formal-Verification：FV）&quot;&gt;&lt;a href=&quot;#1-什么时候需要使用形式验证（Formal-Verification：FV）&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
-    
-      <category term="ABV" scheme="https://275244143.github.io/tags/ABV/"/>
-    
-      <category term="FV" scheme="https://275244143.github.io/tags/FV/"/>
     
   </entry>
   

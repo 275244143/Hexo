@@ -133,7 +133,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>UVM寄存器模型中soft和hard reset有什么区别？ | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+    <title>Docker启动EDA工具迅速！ | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -185,7 +185,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://275244143.github.io/2019/04/18/UVM寄存器模型中soft和hard-reset有什么区别？/">
+      <link itemprop="mainEntityOfPage" href="https://275244143.github.io/2019/05/05/Docker启动EDA工具迅速！/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="神秘人">
        <meta itemprop="description" content="在人生中最艰难的是选择。">
@@ -196,12 +196,12 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">UVM寄存器模型中soft和hard reset有什么区别？</h1>
+      <h1 class="post-title" itemprop="name headline">Docker启动EDA工具迅速！</h1>
       <div class="post-meta">
          
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-18T09:39:46+08:00">2019-04-18 09:39:46</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-05T19:25:22+08:00">2019-05-05 19:25:22</time></span>
         </span>
         
         
@@ -210,10 +210,10 @@
         
         <span class="post-categories">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/UVM-RAL/" itemprop="url" rel="index"><span itemprop="name">UVM-RAL</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
         </span>
 	<span class="post-meta-item-text">  字数统计: </span>
-	<span class="post-count">145字</span>
+	<span class="post-count">35字</span>
 	<span class="post-meta-item-text">  阅读时长: </span>
 	<span class="post-count">1分</span>
 	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
@@ -224,8 +224,12 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h2 id="1-Kind-“HARD”-or-“SOFT”"><a href="#1-Kind-“HARD”-or-“SOFT”" class="headerlink" title="1.Kind = “HARD” or “SOFT”"></a>1.Kind = “HARD” or “SOFT”</h2><p>寄存器模型中复位操作这个到底有什么作用呢？源码如下：</p>
-<font color="red"><br>代码例子：<br><pre name="code" class="systemverilog"><br>function void uvm_reg_xxx::reset(string kind = “HARD”);<br>    if (!m_reset.exists(kind))<br>          return;<br>    m_mirrored = m_reset[kind];<br>    m_desired  = m_mirrored;<br>    value      = m_mirrored;<br>    if (kind == “HARD”)<br>        m_written  = 0;<br>endfunction: reset<br></pre><br></font><br><font color="blue"><br>其实是作为特别处理用的，如果所有的寄存器都只有一个复位的时候默认一个HARD值统一复位。<br>如果某个寄存器需要特殊的复位，则可以重写该类中的reset（…）方法：<br>代码例子：<br><pre name="code" class="systemverilog"><br>class some_reg extends uvm_reg;<br>    …<br>    function void reset(string kind = “HARD”);<br>        if (kind != “SOFT”)<br>            super.reset(kind);<br>    endfunction<br><br>endclass<br></pre><br></font> 
+      <ul>
+<li>神秘人的Docker-EDA：</li>
+</ul>
+<ul>
+<li>内存占用极低（&lt;100M），启动迅速，1s级别。基本上就是内嵌在Win7的应用软件。<br><img src="/2019/05/05/Docker启动EDA工具迅速！/EDA.png" alt></li>
+</ul>
 
     </main>
     <footer class="post-footer">
@@ -236,7 +240,7 @@
         
         <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
         
-        <a class="post-tag button" href="/tags/RAL/" rel="tag"><i class="fas fa-tags"></i>RAL</a>
+        <a class="post-tag button" href="/tags/EDA/" rel="tag"><i class="fas fa-tags"></i>EDA</a>
         
       </div>
       
@@ -253,7 +257,7 @@
 	</li>
 	<li class="post-copyright-link">
 		<strong>本文链接：</strong>
-		<a href="/2019/04/18/UVM寄存器模型中soft和hard-reset有什么区别？/" title="UVM寄存器模型中soft和hard reset有什么区别？">http://118.25.122.94:8080/2019/04/18/UVM寄存器模型中soft和hard-reset有什么区别？/</a>
+		<a href="/2019/05/05/Docker启动EDA工具迅速！/" title="Docker启动EDA工具迅速！">http://118.25.122.94:8080/2019/05/05/Docker启动EDA工具迅速！/</a>
 	</li>
 	<li class="post-copyright-license">
 		<strong>版权声明： </strong>
@@ -284,12 +288,10 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2019/04/17/UVM-Register-Model/" rel="next" title="UVM-Register-Model"><i class="fas fa-angle-left"></i><span class="nav-title">UVM-Register-Model</span></a>
+      <a href="/2019/04/30/VM虚拟机再见！Docker来了！/" rel="next" title="VM虚拟机再见！Docker来了！"><i class="fas fa-angle-left"></i><span class="nav-title">VM虚拟机再见！Docker来了！</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2019/04/18/clocking块为什么能保证race-free/" rel="prev" title="clocking块为什么能保证race free?"><span class="nav-title">clocking块为什么能保证race free?</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -402,12 +404,6 @@
     
     
     
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-Kind-“HARD”-or-“SOFT”"><span class="toc-text">1.Kind = “HARD” or “SOFT”</span></a></li></ol></div>
-    </div>
     
     
     
