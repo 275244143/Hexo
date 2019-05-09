@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
-  <updated>2019-05-09T07:58:02.405Z</updated>
+  <updated>2019-05-09T10:26:48.118Z</updated>
   <id>https://275244143.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>库映射问题(续)：相同module不同映射</title>
+    <link href="https://275244143.github.io/2019/05/09/%E5%BA%93%E6%98%A0%E5%B0%84%E9%97%AE%E9%A2%98-%E7%BB%AD-%EF%BC%9A%E7%9B%B8%E5%90%8Cmodule%E4%B8%8D%E5%90%8C%E6%98%A0%E5%B0%84/"/>
+    <id>https://275244143.github.io/2019/05/09/库映射问题-续-：相同module不同映射/</id>
+    <published>2019-05-09T09:50:54.000Z</published>
+    <updated>2019-05-09T10:26:48.118Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;上节中运用的config标准，这次采用EDA工具自带支持的uselib宏&quot;&gt;&lt;a href=&quot;#上节中运用的config标准，这次采用EDA工具自带支持的uselib宏&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="https://275244143.github.io/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
+    
+      <category term="EDA" scheme="https://275244143.github.io/tags/EDA/"/>
+    
+      <category term="VCS" scheme="https://275244143.github.io/tags/VCS/"/>
+    
+      <category term="NCsim" scheme="https://275244143.github.io/tags/NCsim/"/>
+    
+  </entry>
   
   <entry>
     <title>库映射问题：相同module不同映射</title>
@@ -77,9 +111,9 @@
       <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
-      <category term="Linux" scheme="https://275244143.github.io/tags/Linux/"/>
-    
       <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
+    
+      <category term="Linux" scheme="https://275244143.github.io/tags/Linux/"/>
     
       <category term="Socket" scheme="https://275244143.github.io/tags/Socket/"/>
     
@@ -543,32 +577,6 @@
       <category term="EDA" scheme="https://275244143.github.io/tags/EDA/"/>
     
       <category term="gdb" scheme="https://275244143.github.io/tags/gdb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>clocking块为什么能保证race free?</title>
-    <link href="https://275244143.github.io/2019/04/18/clocking%E5%9D%97%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E4%BF%9D%E8%AF%81race-free/"/>
-    <id>https://275244143.github.io/2019/04/18/clocking块为什么能保证race-free/</id>
-    <published>2019-04-18T09:19:13.000Z</published>
-    <updated>2019-04-26T06:56:40.434Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;为啥要推荐使用clocking块？&quot;&gt;&lt;a href=&quot;#为啥要推荐使用clocking块？&quot; class=&quot;headerlink&quot; title=&quot;为啥要推荐使用clocking块？&quot;&gt;&lt;/a&gt;为啥要推荐使用clocking块？&lt;/h2&gt;&lt;font
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
     
   </entry>
   

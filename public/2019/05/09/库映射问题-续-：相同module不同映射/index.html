@@ -133,7 +133,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>UVM寄存器模型中soft和hard reset有什么区别？ | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+    <title>库映射问题(续)：相同module不同映射 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -185,7 +185,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://275244143.github.io/2019/04/18/UVM寄存器模型中soft和hard-reset有什么区别？/">
+      <link itemprop="mainEntityOfPage" href="https://275244143.github.io/2019/05/09/库映射问题-续-：相同module不同映射/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="神秘人">
        <meta itemprop="description" content="在人生中最艰难的是选择。">
@@ -196,12 +196,12 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">UVM寄存器模型中soft和hard reset有什么区别？</h1>
+      <h1 class="post-title" itemprop="name headline">库映射问题(续)：相同module不同映射</h1>
       <div class="post-meta">
          
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-18T09:39:46+08:00">2019-04-18 09:39:46</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-09T17:50:54+08:00">2019-05-09 17:50:54</time></span>
         </span>
         
         
@@ -210,10 +210,10 @@
         
         <span class="post-categories">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/UVM-RAL/" itemprop="url" rel="index"><span itemprop="name">UVM-RAL</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
         </span>
 	<span class="post-meta-item-text">  字数统计: </span>
-	<span class="post-count">145字</span>
+	<span class="post-count">34字</span>
 	<span class="post-meta-item-text">  阅读时长: </span>
 	<span class="post-count">1分</span>
 	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
@@ -224,8 +224,8 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h2 id="1-Kind-“HARD”-or-“SOFT”"><a href="#1-Kind-“HARD”-or-“SOFT”" class="headerlink" title="1.Kind = “HARD” or “SOFT”"></a>1.Kind = “HARD” or “SOFT”</h2><p>寄存器模型中复位操作这个到底有什么作用呢？源码如下：</p>
-<font color="red"><br>代码例子：<br><pre name="code" class="systemverilog"><br>function void uvm_reg_xxx::reset(string kind = “HARD”);<br>    if (!m_reset.exists(kind))<br>          return;<br>    m_mirrored = m_reset[kind];<br>    m_desired  = m_mirrored;<br>    value      = m_mirrored;<br>    if (kind == “HARD”)<br>        m_written  = 0;<br>endfunction: reset<br></pre><br></font><br><font color="blue"><br>其实是作为特别处理用的，如果所有的寄存器都只有一个复位的时候默认一个HARD值统一复位。<br>如果某个寄存器需要特殊的复位，则可以重写该类中的reset（…）方法：<br>代码例子：<br><pre name="code" class="systemverilog"><br>class some_reg extends uvm_reg;<br>    …<br>    function void reset(string kind = “HARD”);<br>        if (kind != “SOFT”)<br>            super.reset(kind);<br>    endfunction<br><br>endclass<br></pre><br></font> 
+      <h3 id="上节中运用的config标准，这次采用EDA工具自带支持的uselib宏"><a href="#上节中运用的config标准，这次采用EDA工具自带支持的uselib宏" class="headerlink" title="上节中运用的config标准，这次采用EDA工具自带支持的uselib宏"></a>上节中运用的config标准，这次采用EDA工具自带支持的uselib宏</h3><h4 id="采用如下运行"><a href="#采用如下运行" class="headerlink" title="采用如下运行"></a>采用如下运行</h4><figure class="hljs highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">irun <span class="hljs-built_in">top</span>.v<br></code></pre></td></tr></table></figure>
+<h4 id="相关代码："><a href="#相关代码：" class="headerlink" title="相关代码："></a>相关代码：</h4><p><img src="/2019/05/09/库映射问题-续-：相同module不同映射/1.png" alt="rtl"><br><img src="/2019/05/09/库映射问题-续-：相同module不同映射/2.png" alt="compile"><br><img src="/2019/05/09/库映射问题-续-：相同module不同映射/3.png" alt="run"></p>
 
     </main>
     <footer class="post-footer">
@@ -236,7 +236,11 @@
         
         <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
         
-        <a class="post-tag button" href="/tags/RAL/" rel="tag"><i class="fas fa-tags"></i>RAL</a>
+        <a class="post-tag button" href="/tags/EDA/" rel="tag"><i class="fas fa-tags"></i>EDA</a>
+        
+        <a class="post-tag button" href="/tags/VCS/" rel="tag"><i class="fas fa-tags"></i>VCS</a>
+        
+        <a class="post-tag button" href="/tags/NCsim/" rel="tag"><i class="fas fa-tags"></i>NCsim</a>
         
       </div>
       
@@ -253,7 +257,7 @@
 	</li>
 	<li class="post-copyright-link">
 		<strong>本文链接：</strong>
-		<a href="/2019/04/18/UVM寄存器模型中soft和hard-reset有什么区别？/" title="UVM寄存器模型中soft和hard reset有什么区别？">http://118.25.122.94:8080/2019/04/18/UVM寄存器模型中soft和hard-reset有什么区别？/</a>
+		<a href="/2019/05/09/库映射问题-续-：相同module不同映射/" title="库映射问题(续)：相同module不同映射">http://118.25.122.94:8080/2019/05/09/库映射问题-续-：相同module不同映射/</a>
 	</li>
 	<li class="post-copyright-license">
 		<strong>版权声明： </strong>
@@ -284,12 +288,10 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2019/04/17/UVM-Register-Model/" rel="next" title="UVM-Register-Model"><i class="fas fa-angle-left"></i><span class="nav-title">UVM-Register-Model</span></a>
+      <a href="/2019/05/09/库映射问题：相同module不同映射/" rel="next" title="库映射问题：相同module不同映射"><i class="fas fa-angle-left"></i><span class="nav-title">库映射问题：相同module不同映射</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2019/04/18/clocking块为什么能保证race-free/" rel="prev" title="clocking块为什么能保证race free?"><span class="nav-title">clocking块为什么能保证race free?</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -406,7 +408,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-Kind-“HARD”-or-“SOFT”"><span class="toc-text">1.Kind = “HARD” or “SOFT”</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#上节中运用的config标准，这次采用EDA工具自带支持的uselib宏"><span class="toc-text">上节中运用的config标准，这次采用EDA工具自带支持的uselib宏</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#采用如下运行"><span class="toc-text">采用如下运行</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#相关代码："><span class="toc-text">相关代码：</span></a></li></ol></li></ol></div>
     </div>
     
     
