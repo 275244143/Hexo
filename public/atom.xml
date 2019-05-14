@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://275244143.github.io/"/>
-  <updated>2019-05-09T10:26:48.118Z</updated>
+  <updated>2019-05-14T03:41:31.197Z</updated>
   <id>https://275244143.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何去除恼人的VHDL-IP的ASSERT/WARNING?</title>
+    <link href="https://275244143.github.io/2019/05/14/%E5%A6%82%E4%BD%95%E5%8E%BB%E9%99%A4%E6%81%BC%E4%BA%BA%E7%9A%84VHDL-IP%E7%9A%84ASSERT-WARNING/"/>
+    <id>https://275244143.github.io/2019/05/14/如何去除恼人的VHDL-IP的ASSERT-WARNING/</id>
+    <published>2019-05-14T03:30:13.000Z</published>
+    <updated>2019-05-14T03:41:31.197Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;IP采用的是VHDL代码，Verilog和VHDL混合仿真出现恼人的无关紧要的Waning&quot;&gt;&lt;a href=&quot;#IP采用的是VHDL代码，Verilog和VHDL混合仿真出现恼人的无关紧要的Waning&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="https://275244143.github.io/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="https://275244143.github.io/tags/SystemVerilog/"/>
+    
+      <category term="EDA" scheme="https://275244143.github.io/tags/EDA/"/>
+    
+      <category term="NCsim" scheme="https://275244143.github.io/tags/NCsim/"/>
+    
+  </entry>
   
   <entry>
     <title>库映射问题(续)：相同module不同映射</title>
@@ -404,11 +436,11 @@
       <category term="git" scheme="https://275244143.github.io/categories/Linux/git/"/>
     
     
-      <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
-    
       <category term="git" scheme="https://275244143.github.io/tags/git/"/>
     
       <category term="github" scheme="https://275244143.github.io/tags/github/"/>
+    
+      <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
     
   </entry>
   
@@ -438,11 +470,11 @@
       <category term="Linux" scheme="https://275244143.github.io/categories/Linux/"/>
     
     
-      <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
-    
       <category term="git" scheme="https://275244143.github.io/tags/git/"/>
     
       <category term="github" scheme="https://275244143.github.io/tags/github/"/>
+    
+      <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
     
   </entry>
   
@@ -552,31 +584,9 @@
       <category term="Linux" scheme="https://275244143.github.io/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://275244143.github.io/tags/Linux/"/>
-    
       <category term="shell" scheme="https://275244143.github.io/tags/shell/"/>
     
-  </entry>
-  
-  <entry>
-    <title>VCS Crash如何定位？</title>
-    <link href="https://275244143.github.io/2019/04/18/VCS-Crash%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8D%EF%BC%9F/"/>
-    <id>https://275244143.github.io/2019/04/18/VCS-Crash如何定位？/</id>
-    <published>2019-04-18T14:37:37.000Z</published>
-    <updated>2019-04-29T01:07:40.479Z</updated>
-    
-    <summary type="html">
-    
-      欢迎光临~
-    
-    </summary>
-    
-      <category term="验证" scheme="https://275244143.github.io/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="EDA" scheme="https://275244143.github.io/tags/EDA/"/>
-    
-      <category term="gdb" scheme="https://275244143.github.io/tags/gdb/"/>
+      <category term="Linux" scheme="https://275244143.github.io/tags/Linux/"/>
     
   </entry>
   
