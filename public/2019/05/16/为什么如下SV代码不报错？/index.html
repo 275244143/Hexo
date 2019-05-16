@@ -133,7 +133,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>标签: VCS | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+    <title>为什么如下SV代码不报错？ | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -181,50 +181,159 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tag" class="tag page">
-  <h1 class="page-title">VCS</h1>
+<div id="post" class="page">
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/05/09/库映射问题-续-：相同module不同映射/" itemprop="url">库映射问题(续)：相同module不同映射</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-09T17:50:54+08:00">05-09</time>
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/05/16/为什么如下SV代码不报错？/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
       </span>
-      
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">为什么如下SV代码不报错？</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-16T09:35:24+08:00">2019-05-16 09:35:24</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">209字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">1分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
     </header>
+    <main class="post-main" itemprop="articleBody">
+      <figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">module</span> top();<br> <br><span class="hljs-keyword">class</span> class_A;<br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> compare( <span class="hljs-keyword">int</span> a1, <span class="hljs-keyword">int</span> a2);<br> <br>      <span class="hljs-keyword">if</span>(a1 &gt; a2)<br>         <span class="hljs-built_in">$display</span>(<span class="hljs-string">"%d  &gt; %d\n"</span>,a1,a2);<br>      <span class="hljs-keyword">if</span>(a1 &lt; a2)<br>         <span class="hljs-built_in">$display</span>(<span class="hljs-string">"%d  &lt; %d\n"</span>,a1,a2);<br>      <span class="hljs-keyword">if</span>(a1 == a2)<br>         <span class="hljs-built_in">$display</span>(<span class="hljs-string">"%d  ==  %d\n"</span>,a1,a2);<br> <br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br> <br><span class="hljs-keyword">class</span> class_B;<br> <br>   class_A  A;<br> <br>   <span class="hljs-comment">//function calling class_A's comapre function</span><br>   <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> new_compare(<span class="hljs-keyword">int</span> a , <span class="hljs-keyword">int</span> b);;<br>      A<span class="hljs-variable">.compare</span>(a,b);<br>   <span class="hljs-keyword">endfunction</span><br> <br><span class="hljs-keyword">endclass</span><br> <br> <span class="hljs-comment">//class B instance</span><br>  class_B  B;<br> <br>  <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span><br> <br>     <span class="hljs-built_in">$display</span>(<span class="hljs-string">"Start Test\n"</span>);<br>     B = <span class="hljs-keyword">new</span>;<br>     B<span class="hljs-variable">.new_compare</span>(<span class="hljs-number">32</span>,<span class="hljs-number">24</span>);<br> <br>  <span class="hljs-keyword">end</span><br> <br> <br><span class="hljs-keyword">endmodule</span> : top<br></code></pre></td></tr></table></figure>
+<ul>
+<li>解释</li>
+</ul>
+<p>You code “works？？” because the method class_A::compare makes no references to any non-static class properties. Most implementations add an implicit this handle argument to non-static class methods, and it would not be until the method tries to reference the null this handle that you would see an error. However, the LRM does not guarantee this behavior and you should declare compare() as a static method so the compiler will check that compare does not access any non-static class properties.</p>
+<p>Accessing non-static members (see 8.9) or virtual methods (see 8.20) via a null object handle is illegal. The result of an illegal access via a null object is indeterminate, and implementations may issue an error.</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+      </div>
+      
+    </footer>
   </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2019/05/16/为什么如下SV代码不报错？/" title="为什么如下SV代码不报错？">http://118.25.122.94:8080/2019/05/16/为什么如下SV代码不报错？/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
   
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/05/09/库映射问题：相同module不同映射/" itemprop="url">库映射问题：相同module不同映射</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-09T09:40:51+08:00">05-09</time>
-      </span>
-      
-    </header>
-  </article>
   
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/04/28/VCS-deadLoop/" itemprop="url">VCS定位死循环</a>
-      </h1>
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
       
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-28T19:11:32+08:00">04-28</time>
-      </span>
+      <a href="/2019/05/14/测试SystemVerilog代码片段性能可否？/" rel="next" title="测试SystemVerilog代码片段性能可否？"><i class="fas fa-angle-left"></i><span class="nav-title">测试SystemVerilog代码片段性能可否？</span></a>
       
-    </header>
-  </article>
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
   
   
 </div>
+
+
+
+  
+</footer></div>
 
           </div>
           
@@ -289,6 +398,11 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
     
     
     <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>

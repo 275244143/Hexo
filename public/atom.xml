@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-05-14T07:59:24.987Z</updated>
+  <updated>2019-05-16T01:46:50.341Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为什么如下SV代码不报错？</title>
+    <link href="http://118.25.122.94:8080/2019/05/16/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A6%82%E4%B8%8BSV%E4%BB%A3%E7%A0%81%E4%B8%8D%E6%8A%A5%E9%94%99%EF%BC%9F/"/>
+    <id>http://118.25.122.94:8080/2019/05/16/为什么如下SV代码不报错？/</id>
+    <published>2019-05-16T01:35:24.000Z</published>
+    <updated>2019-05-16T01:46:50.341Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight verilog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>测试SystemVerilog代码片段性能可否？</title>
@@ -567,34 +595,6 @@
     
     
       <category term="脚本" scheme="http://118.25.122.94:8080/tags/%E8%84%9A%E6%9C%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Layer-Sequence结构图</title>
-    <link href="http://118.25.122.94:8080/2019/04/19/Layer-Sequence%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
-    <id>http://118.25.122.94:8080/2019/04/19/Layer-Sequence结构图/</id>
-    <published>2019-04-19T06:53:55.000Z</published>
-    <updated>2019-04-26T06:56:40.414Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;UVM-Layer-Sequence结构图&quot;&gt;&lt;a href=&quot;#UVM-Layer-Sequence结构图&quot; class=&quot;headerlink&quot; title=&quot;UVM Layer Sequence结构图&quot;&gt;&lt;/a&gt;UVM Layer
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
     
   </entry>
   
