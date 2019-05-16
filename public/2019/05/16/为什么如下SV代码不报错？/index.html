@@ -81,6 +81,27 @@
     </script>
     
     
+    
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    });
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += " has-jax";
+      }
+    });
+    </script>
+    
+    
     <script defer type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript">
     $(document).ready(function () {
@@ -213,7 +234,7 @@
           <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
         </span>
 	<span class="post-meta-item-text">  字数统计: </span>
-	<span class="post-count">209字</span>
+	<span class="post-count">271字</span>
 	<span class="post-meta-item-text">  阅读时长: </span>
 	<span class="post-count">1分</span>
 	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
@@ -230,6 +251,12 @@
 </ul>
 <p>You code “works？？” because the method class_A::compare makes no references to any non-static class properties. Most implementations add an implicit this handle argument to non-static class methods, and it would not be until the method tries to reference the null this handle that you would see an error. However, the LRM does not guarantee this behavior and you should declare compare() as a static method so the compiler will check that compare does not access any non-static class properties.</p>
 <p>Accessing non-static members (see 8.9) or virtual methods (see 8.20) via a null object handle is illegal. The result of an illegal access via a null object is indeterminate, and implementations may issue an error.</p>
+<ul>
+<li>试下公式~~~~</li>
+</ul>
+<p>$$ \bbox[red,5px,border:2px solid black]<br>{<br>E=mc^2<br>}<br>$$</p>
+<p>$$ \bbox[yellow,5px,border:2px solid red]<br>{<br>e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n<br>\qquad (1)<br>}<br>$$</p>
+<p>$$ \bbox[blue,5px,border:2px solid yellow]<br>{<br>\begin{matrix}<br>1 &amp; 2 &amp; 3 \\<br>4 &amp; 5 &amp; 6 \\<br>7 &amp; 8 &amp; 9<br>\end{matrix}<br>}<br>$$</p>
 
     </main>
     <footer class="post-footer">

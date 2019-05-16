@@ -6,6 +6,7 @@ tags:
   - SystemVerilog
 categories:
   - 验证
+mathjax: true
 date: 2019-05-16 09:35:24
 ---
 
@@ -57,3 +58,33 @@ You code "works？？" because the method class_A::compare makes no references t
 
 
 Accessing non-static members (see 8.9) or virtual methods (see 8.20) via a null object handle is illegal. The result of an illegal access via a null object is indeterminate, and implementations may issue an error.
+
++ 试下公式~~~~
+
+$$ \bbox[red,5px,border:2px solid black]
+{
+E=mc^2 
+}
+$$
+
+
+
+$$ \bbox[yellow,5px,border:2px solid red]
+{
+e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n
+\qquad (1) 
+}
+$$
+
+$$ \bbox[blue,5px,border:2px solid yellow]
+{
+\begin{matrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 
+\end{matrix}
+}
+$$
+
+
+
