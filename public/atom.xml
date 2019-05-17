@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-05-16T06:18:34.692Z</updated>
+  <updated>2019-05-17T03:22:34.362Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何理解内存模型的Memory-Order?</title>
+    <link href="http://118.25.122.94:8080/2019/05/17/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E7%9A%84Memory-Order/"/>
+    <id>http://118.25.122.94:8080/2019/05/17/如何理解内存模型的Memory-Order/</id>
+    <published>2019-05-17T02:06:59.000Z</published>
+    <updated>2019-05-17T03:22:34.362Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;（转载）&quot;&gt;&lt;a href=&quot;#（转载）&quot; class=&quot;headerlink&quot; title=&quot;（转载）&quot;&gt;&lt;/a&gt;（转载）&lt;/h3&gt;&lt;h3 id=&quot;理解-Memory-Order&quot;&gt;&lt;a href=&quot;#理解-Memory-Order&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://118.25.122.94:8080/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="C/C++" scheme="http://118.25.122.94:8080/tags/C-C/"/>
+    
+      <category term="编译器" scheme="http://118.25.122.94:8080/tags/%E7%BC%96%E8%AF%91%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>为什么如下SV代码不报错？</title>
@@ -569,32 +597,6 @@
       <category term="EDA" scheme="http://118.25.122.94:8080/tags/EDA/"/>
     
       <category term="Synopsys" scheme="http://118.25.122.94:8080/tags/Synopsys/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用脚本收集</title>
-    <link href="http://118.25.122.94:8080/2019/04/19/%E5%B8%B8%E7%94%A8%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/"/>
-    <id>http://118.25.122.94:8080/2019/04/19/常用脚本收集/</id>
-    <published>2019-04-19T08:38:00.000Z</published>
-    <updated>2019-04-28T01:10:25.041Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;常用脚本收集&quot;&gt;&lt;a href=&quot;#常用脚本收集&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="脚本" scheme="http://118.25.122.94:8080/categories/%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="脚本" scheme="http://118.25.122.94:8080/tags/%E8%84%9A%E6%9C%AC/"/>
     
   </entry>
   
