@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>SystemVerilog和UVM编程基本规范 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/05/20/SystemVerilog和UVM编程基本规范/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">SystemVerilog和UVM编程基本规范</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-20T09:44:52+08:00">2019-05-20 09:44:52</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">7.4k字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">29分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h2 id="UVM-SV验证代码规范"><a href="#UVM-SV验证代码规范" class="headerlink" title="UVM-SV验证代码规范"></a>UVM-SV验证代码规范</h2><h4 id="词汇指南和命名约定"><a href="#词汇指南和命名约定" class="headerlink" title="词汇指南和命名约定"></a>词汇指南和命名约定</h4><ul>
+<li><p>每行只有一个声明或定义。</p>
+</li>
+<li><p>为 SystemVerilog 变量和类创建用户定义的名称时，请使用以下划线分隔的小写单词。</p>
+</li>
+<li><p>为 SystemVerilog 枚举文字，常量和参数创建用户定义的名称时，请使用以下划线分隔的<br>大写单词。</p>
+</li>
+<li><p>将所有用户定义的 UVM 实例名称（即组件实例名称等字符串）限制为字符集 a-z，A-Z，0-9 和_（下划线）。</p>
+</li>
+<li><p>对局部变量使用较短的名称，对类名和包名等全局项使用更长，更具描述性的名称。</p>
+</li>
+<li><p>在用户定义的类成员变量的名称之前使用前缀 m_（在 SystemVerilog 中官方称为类属性）</p>
+</li>
+<li><p>在每个 agent 中分别使用名称 m_sequencer，m_driver 和 m_monitor 作为 sequencer，driver<br>和 monitor 的实例名称。</p>
+</li>
+<li><p>分别在每个 env 和 agent 的实例名后面加上后缀_env 和_agent。</p>
+</li>
+<li><p>使用名称 m_config 作为具有一个组件或 sequence 的配置对象的实例名称。</p>
+</li>
+<li><p>在用户定义的配置类名后使用后缀_config。</p>
+</li>
+<li><p>在用户定义的 port 名称后使用后缀_port。</p>
+</li>
+<li><p>在用户定义的 export 名称后使用后缀_export。</p>
+</li>
+<li><p>在用户定义的虚拟接口名称后使用后缀_vif。</p>
+</li>
+<li><p>使用关键字 typedef 引入的用户定义类型定义后，使用后缀_t。</p>
+</li>
+<li><p>在用户定义的软件包名称后使用后缀_pkg。</p>
+</li>
+<li><p>在任何可以为源代码增加价值的地方写评论，并帮助读者理解代码的用途。</p>
+</li>
+<li><p>在有助于使代码更具可读性的任何地方包括空格（空行，缩进）。</p>
+</li>
+<li><p>覆盖内置 UVM 虚拟方法时，请勿在重写方法定义的开头插入 virtual 关键字。</p>
+</li>
+</ul>
+<h4 id="一般准则"><a href="#一般准则" class="headerlink" title="一般准则"></a>一般准则</h4><ul>
+<li><p>不要使用在 UVM 类参考或基类库中特别标记为已弃用的 UVM 功能。</p>
+</li>
+<li><p>请勿使用 UVM 类参考中未记录的 UVM 基类库代码的内部功能。</p>
+</li>
+</ul>
+<h4 id="通用代码结构"><a href="#通用代码结构" class="headerlink" title="通用代码结构"></a>通用代码结构</h4><ul>
+<li><p>在构建和编码验证环境时，主要考虑重用。</p>
+</li>
+<li><p>始终使用一致的文件结构和一致的文件命名约定。</p>
+</li>
+<li><p>每个类都应该在一个包中定义（而不是在模块或文件范围内定义类）。</p>
+</li>
+<li><p>在包中使用`include 指令允许将每个类放在一个单独的文件中。</p>
+</li>
+<li><p>使用条件编译保护措施避免多次编译同一个包含文件。</p>
+</li>
+<li><p>不要在编译单元范围内使用通配符导入。</p>
+</li>
+<li><p>包含 uvm_macros.svh 并在引用 UVM 基类库的每个包或模块中导入 uvm_pkg :: *。</p>
+</li>
+<li><p>每个接口使用一个 agent ，带有 passive monitor 和可选的 sequence 和 driver ，其存<br>在性由类 uvm_agent 的 get_is_active 方法的值决定。</p>
+</li>
+<li><p>agent 不应实例化除一个 sequencer，一个 driver 和一个 monitor 的规范 agent 结构之<br>外的组件。</p>
+</li>
+<li><p>使用虚拟 sequence 协调多个并行 agent 的激励生成活动。</p>
+</li>
+<li><p>检查和功能覆盖收集应在检查器，记分板，覆盖收集器和其他临时订户组件中执行，这些<br>组件在任何 agent 外部实例化并连接到 monitor 的 analysis port。</p>
+</li>
+<li><p>通常使用 analysis port 和 export 连接 agent，检查器，记分板和 coverage 收集器。</p>
+</li>
+<li><p>应编写 UVM 环境，使其可用作顶级环境，或在其他较大的验证环境中作为子环境重复使<br>用。</p>
+</li>
+<li><p>使用 factory 覆盖和/或配置数据库，使重新调整的 UVM 组件的行为适应新验证环境的需<br>要。</p>
+</li>
+<li><p>顶级模块应设置由测试检索的配置参数，测试应设置 env 检索的参数，并且 env 应设置由<br>较低级别的 env 或 agent 检索的参数。</p>
+</li>
+<li><p>通过使用多个 sequencer 来表示分层协议，每个 sequencer 都有自己的 transaction 类型。</p>
+</li>
+</ul>
+<h4 id="时钟、定时、同步和接口"><a href="#时钟、定时、同步和接口" class="headerlink" title="时钟、定时、同步和接口"></a>时钟、定时、同步和接口</h4><ul>
+<li><p>在 SystemVerilog 的 module 中生成时钟和复位，而从不在基于 UVM class 的验证环境中，也从不在 SystemVerilog program 中生成。否则，SystemVerilog scheduler 可能会给出不正确的行为。</p>
+</li>
+<li><p>优先使用 SystemVerilog module，而不是 SystemVerilog program。</p>
+</li>
+<li><p>使用 SystemVerilog 接口内的 clocking block 来检测和驱动一个同步 DUT 接口。</p>
+</li>
+<li><p>使用 modports 强制使用时钟块，通过 UVM 验证环境中的虚拟接口访问这些时钟块。</p>
+</li>
+<li><p>使用将 clocking block 与异步信号组合在一起的 modports，以访问同时包含同步和异步信<br>号的接口。</p>
+</li>
+<li><p>尽可能确保 DUT 接口信号与 driver 和 monitor 的精确延时。</p>
+</li>
+<li><p>如果一个 driver 在驱动 DUT 接口时需要在 transaction 之间或者 transaction 内插入可变<br>延迟，那么这个可变延迟应当存储在 transaction 中传递给 driver。</p>
+</li>
+<li><p>driver 应使用非阻塞 try_ *方法从 sequencer 中获取 transaction，以便在作者无法知道<br>sequence 是否会阻塞 driver 执行的情况下最大限度地提高可重用性。</p>
+</li>
+<li><p>driver 只应在需要时从 sequencer 中提取 transaction。</p>
+</li>
+<li><p>使用 uvm_event 或 uvm_barrier 在 sequence 和/或 analysis 组件（如记分板）之间进行临时<br>同步。</p>
+</li>
+<li><p>monitor 不应在 SystemVerilog 接口中为变量或 wire 赋值。</p>
+</li>
+<li><p>在接口中使用并发断言和 cover property，以进行协议检查和相关的覆盖率收集。</p>
+</li>
+</ul>
+<h4 id="Transactions"><a href="#Transactions" class="headerlink" title="Transactions"></a>Transactions</h4><ul>
+<li><p>通过扩展类 uvm_sequence_item 来创建用户定义的 transaction 类。</p>
+</li>
+<li><p>尽量减少不同 transaction 类的数量。</p>
+</li>
+<li><p>在现在或将来可能需要随机化的类成员变量前面使用 rand 限定符。</p>
+</li>
+<li><p>在成员变量之后，定义一个构造函数，该构造函数包含一个字符串名称参数，其默认值可<br>为空字符串，并调用 super.new。</p>
+</li>
+<li><p>推荐重写 convert2string，do_copy，do_compare，do_print 和 do_record 等方法（可使<br>用相关宏<code>uvm_record_attribute 和</code>uvm_record_field 等）。</p>
+</li>
+<li><p>推荐重写 do_pack 和 do_unpack 方法（可使用相关宏`uvm_pack_int 等）。</p>
+</li>
+<li><p>使用 factory 实例化 transaction 对象。</p>
+</li>
+</ul>
+<h4 id="Sequence"><a href="#Sequence" class="headerlink" title="Sequence"></a>Sequence</h4><ul>
+<li><p>通过扩展类 uvm_sequence 来创建用户定义的 sequence 类。</p>
+</li>
+<li><p>在现在或将来可能需要随机化的类成员变量前面使用 rand 限定符。</p>
+</li>
+<li><p>在成员变量之后，定义一个构造函数，该构造函数包含一个字符串名称参数，其默认值可<br>为空字符串，并调用 super.new。</p>
+</li>
+<li><p>与 sequence 执行相关的任何 housekeeping 代码，例如提出和撤销 objection，都应放在<br>sequence 的 pre_start 和 post_start 方法中。sequence 的 body 方法应该只执行 sequence 的原始功能行为。pre_start 和 post_start 被称为用户可定义的回调。</p>
+</li>
+<li><p>在 body 任务中使用如下通用模板：</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs verilog">req = tx_type::type_id::create(<span class="hljs-string">"req"</span>);<br>start_item(req);<br><span class="hljs-keyword">assert</span>( req<span class="hljs-variable">.randomize</span>() <span class="hljs-keyword">with</span> &#123;…;&#125; ) <span class="hljs-keyword">else</span> <span class="hljs-meta">`uvm_error( ... );</span><br>finish_item(req);<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>不要使用`uvm_do 系列宏。</p>
+</li>
+<li><p>推荐在 sequence 中使用内建的 transaction 变量 req 和 rsp。</p>
+</li>
+<li><p>通过调用 start 方法在启动 sequence。</p>
+</li>
+<li><p>仅覆盖 sequence 类的 pre_do，mid_do 和/或 post_do 回调，以修改预先存在的“不可变”<br>sequence 类的行为。</p>
+<p>也就是说，只对那些你无权访问源代码或不希望修改源代码的 sequence 覆盖这些回调。不<br>要覆盖 pre_do，mid_do 和/或 post_do 回调，来作为修改直接封闭的 sequence 类的 body 任<br>务的行为的方法，而仅仅是作为修改你正在扩展的其他 sequence 类的行为的方法。 定义了<br>一个或多个这些回调后，您需要使用 factory 覆盖来将原始 sequence 类替换为扩展 sequence<br>类。<br>例如：</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-comment">// Original sequence class that we do not want to modify</span><br><span class="hljs-keyword">class</span> vip_seq <span class="hljs-keyword">extends</span> uvm_sequence <span class="hljs-variable">#(my_tx)</span>;<br>    <span class="hljs-meta">`uvm_object_utils(vip_seq)</span><br>    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span> (<span class="hljs-keyword">string</span> name = <span class="hljs-string">""</span>);<br>        <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name);<br>    <span class="hljs-keyword">endfunction</span><br>    <span class="hljs-keyword">task</span> body;<br>        req = my_tx::type_id::create(<span class="hljs-string">"req"</span>);<br>        start_item(req);<br>        <span class="hljs-keyword">if</span>( !req<span class="hljs-variable">.randomize</span>() ) <br>            ...<br>        finish_item(req);...<br><span class="hljs-comment">// Sequence extended for a specific test</span><br><span class="hljs-keyword">class</span> alt_seq <span class="hljs-keyword">extends</span> vip_seq;<br>    <span class="hljs-meta">`uvm_object_utils(alt_seq)</span><br>    ...<br>    <span class="hljs-keyword">int</span> prev_addr = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> mid_do(uvm_sequence_item this_item);<br>        my_tx tx;<br>        <span class="hljs-built_in">$cast</span>(tx, this_item);<br>        tx<span class="hljs-variable">.m_addr</span> = prev_addr + $urandom_range(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>); <span class="hljs-comment">// Overwrite the address field</span><br>    <span class="hljs-keyword">endfunction</span><br>    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> post_do(uvm_sequence_item this_item);<br>        my_tx tx;<br>        <span class="hljs-built_in">$cast</span>(tx, this_item);<br>        prev_addr = tx<span class="hljs-variable">.m_addr</span>; <span class="hljs-comment">// Store the address to constrain the next transaction</span><br>    <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">class</span> my_test <span class="hljs-keyword">extends</span> existing_test;<br>    <span class="hljs-meta">`uvm_component_utils(my_test);</span><br>    ...<br>    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> start_of_simulation_phase(uvm_phase phase);<br>        <span class="hljs-comment">// Factory override to replace the original sequence</span><br>        vip_seq::type_id::set_type_override( alt_seq::get_type() );<br>    <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在 sequence 需要访问运行它的 sequencer 的情况下，使用宏 uvm_declare_p_sequencer 声明变量 p_sequencer。</p>
+<p>使用 p_sequencer 变量访问运行 sequence 的 sequencer，有助于阐明 sequence 和 sequencer之间的结构关系。 可以使用方法 uvm_sequence_item :: get_sequencer（）来返回 sequencer，但返回值的 base 类型为 uvm_sequencer_base。 宏 uvm_declare_p_sequence 允许您定义特定的 sequencer 类型。 不要使用内部变量 uvm_sequence_item :: m_sequencer。</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs verilog">例如：<br><span class="hljs-keyword">class</span> my_sequence <span class="hljs-keyword">extends</span> uvm_sequence <span class="hljs-variable">#(my_tx)</span>;<br>    <span class="hljs-meta">`uvm_object_utils(my_sequence)</span><br>    <span class="hljs-meta">`uvm_declare_p_sequencer(the_sequencer_class_name)</span><br>    ...<br>    <span class="hljs-keyword">task</span> pre_start;<br>        <span class="hljs-comment">// Get the configuration object associated with the sequencer component</span><br>        <span class="hljs-comment">// on which this sequence is currently running</span><br>        uvm_config_db <span class="hljs-variable">#(my_config)::get(p_sequencer, "", "config", m_config)</span>;<span class="hljs-keyword">endtask</span><br>    <span class="hljs-keyword">task</span> body;<br>        <span class="hljs-comment">// Set the arbitration algorithm of the current sequencer</span><br>        p_sequencer<span class="hljs-variable">.set_arbitration</span>(SEQ_ARB_STRICT_RANDOM);<br>    <span class="hljs-keyword">begin</span><br>        sequence2 seq2;<br>        seq2 = sequence2::type_id::create(<span class="hljs-string">"seq2"</span>);<br>        <span class="hljs-keyword">if</span> ( !seq2<span class="hljs-variable">.randomize</span>() )<br>            <span class="hljs-meta">`uvm_error(get_type_name(), "Randomize failed")</span><br>            <span class="hljs-comment">// Start a child sequence on the current sequencer</span><br>            seq2<span class="hljs-variable">.start</span>(p_sequencer, <span class="hljs-keyword">this</span>);<br>        ...<br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">endtask</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>如果 sequence 需要访问自身运行的 sequencer 以外的 sequencer，请在 sequence 对象中添加成员变量，并在启动 sequence 之前分配该变量以引用到其他 sequencer。</p>
+<h4 id="Stimulus和Phasing"><a href="#Stimulus和Phasing" class="headerlink" title="Stimulus和Phasing"></a>Stimulus和Phasing</h4></li>
+<li><p>使用 virtual sequence 协调多个 agent 的行为。</p>
+</li>
+<li><p>应在 null sequencer 上启动 virtual sequence。</p>
+</li>
+<li><p>一个 top_level sequence 运行在每个 agent 上，在所有允许的子 sequence 中随机选择。</p>
+</li>
+<li><p>尽可能保持 sequence 通用。 避免编写定向 sequence，除非绝对必要。</p>
+</li>
+<li><p>sequence 不应是 phase-aware 的，Sequence 应该在所有 run-time phase 中都能够被启动，<br>这样有利于重用。</p>
+</li>
+<li><p>可以重写 run-time phase 的 reset_phase，configure_phase，main_phase，shutdown_phase<br>以生成激励，通常是通过启动 sequence，但绝不会在 driver，monitor，subscriber 或记分板<br>等组件中生成。</p>
+</li>
+<li><p>在引入用户自定义的 run-time phase 时，phase 名不应该与预定义的 run-time 相重合。</p>
+</li>
+<li><p>在集成多个环境时，如果每个 env 都覆盖了预定义或用户定义的 run-time phase，请注意<br>通过引入 phase 域和跨域同步 phase 来正确排序 phase。</p>
+<p>UVM 不会对每个内置 run-time phase 可以执行的操作施加任何明确的规则。在集成使用预定义或用户定义的 run-time phase 的组件时，可以将不同的组件放在不同的域中，并通过跨域同步 phase 明确定义不同域中的 phase 之间的关系。</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> top_level_env <span class="hljs-keyword">extends</span> uvm_env;<br>	...<br>	env m_env1;<br>	env m_env2; <span class="hljs-comment">// Environments to be integrated</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);<br>		uvm_domain domain1, domain2;<br>		m_env1 = env::type_id::create(<span class="hljs-string">"m_env1"</span>, <span class="hljs-keyword">this</span>);<br>        m_env2 = env::type_id::create(<span class="hljs-string">"m_env2"</span>, <span class="hljs-keyword">this</span>);<br>        domain1 = <span class="hljs-keyword">new</span>(<span class="hljs-string">"domain1"</span>);<br>        m_env1<span class="hljs-variable">.set_domain</span>(domain1);<br>        domain2 = <span class="hljs-keyword">new</span>(<span class="hljs-string">"domain2"</span>);<br>        m_env2<span class="hljs-variable">.set_domain</span>(domain2); <span class="hljs-comment">// Two new phase domains</span><br>        <span class="hljs-comment">// Synchronize specific run-time phases across domains</span><br>        domain1<span class="hljs-variable">.sync</span>(domain2, uvm_reset_phase::get(), uvm_configure_phase::get());<br>        ...<br>    <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>不要覆盖预定义的 pre-和 post-方法（例如 pre_reset_phase），而是保留这些 phase 以便在跨域同步 phase 时使用。</p>
+</li>
+<li><p>如果您选择执行 phase 跳转，则必须非常小心地在 phase 中止时正确清理。不要随便使用相位跳转，因为没有内置的安全措施。向后跳转应限制为跳转到其他 run-time phase。前向跳转应限制为跳转到 run-time phase 之后的常见 phase。</p>
+<h4 id="Objections"><a href="#Objections" class="headerlink" title="Objections"></a>Objections</h4></li>
+<li><p>在任何 class 中都可以通过提起和撤销 objection 来控制验证平台的起始与结束。</p>
+<p>通常，driver 从 sequencer 中获取 transaction 时都应该提起 objection，在处理完该 transaction后撤销 objection。Monitor 在检测到新的 transaction 时应该提起 objection，在通过 analysis port发生出该 transaction 后应该撤销 objection。当 Scoreboard 需要等待多个 item 时，应该提起objection。</p>
+</li>
+<li><p>调用每个 objection（UVM 1.2 以后）的 set_propagate_mode（0）方法来禁用该 objection的分层传播。</p>
+</li>
+<li><p>考虑在内部循环中提起和撤销 objection 的对仿真速度影响，例如：各个 transaction。如果仿真速度损失很大，则从内部循环中删除 objection。</p>
+</li>
+<li><p>如果 sequence 要提出和撤销 objection，则应在其 pre_start 方法中调用 raise_objection，在其 post_start 方法中调用 drop_objection。</p>
+</li>
+<li><p>在 sequence 中调用 raise_objection 与 drop_objection 方法时，将其置于 if (starting_phase ！= null)条件中。</p>
+<p>在 uvm-1.2 之前，starting_phase 是类 uvm_sequence_base 的成员。从 uvm-1.2 开始，不推荐使用 starting_phase 变量，而必须使用 get_starting_phase 方法访问它。</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">task</span> pre_start;<br>uvm_phase starting_phase = get_starting_phase(); <span class="hljs-comment">// uvm-1.2</span><br>	<span class="hljs-keyword">if</span> (starting_phase != <span class="hljs-literal">null</span>)<br>	starting_phase<span class="hljs-variable">.raise_objection</span>(<span class="hljs-keyword">this</span>, <span class="hljs-string">"Sequence started"</span>);<br><span class="hljs-keyword">endtask</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在启动 sequence 之前，如果要提起 objection，则需要先设置 starting_phase 成员变量。从uvm-1.2 开始，不推荐使用 starting_phase 变量，必须使用 set_starting_phase 方法设置：</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">task</span> run_phase(uvm_phase phase);<br>	my_sequence seq;<br>	seq = my_sequence::type_id::create(<span class="hljs-string">"seq"</span>);<br>    <span class="hljs-keyword">if</span> ( !seq<span class="hljs-variable">.randomize</span>() )<br>		<span class="hljs-meta">`uvm_error( ... )</span><br>	seq<span class="hljs-variable">.set_starting_phase</span>(phase); <span class="hljs-comment">// uvm-1.2</span><br>	seq<span class="hljs-variable">.start</span>( ... );<br><span class="hljs-keyword">endtask</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>调用 raise_objection 或 drop_objection 时，总是传递一个字符串作为第二个参数来描述objection 以帮助调试。<br>命令行参数+ UVM_OBJECTION_TRACE 打开 objection 跟踪，打印出每个被调用objection 的description 参数。</p>
+</li>
+<li><p>如果调用 sequence 的 kill 方法并且 sequence 可以提出 objection，请确保覆盖 sequence 的do_kill 方法以能够撤销 objection。</p>
+<p>否则，objection 可能永远不会被撤销，这将阻止 phase 结束。如果 sequence 由于 phase 跳<br>转而过早结束，则所有 objection 计数都会自动清除，因此不需要明确撤销 objection。在 phase<br>跳转时也不会自动调用 kill。例如：</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> do_kill;<br>	<span class="hljs-keyword">if</span> (starting_phase != <span class="hljs-literal">null</span>)<br>		starting_phase<span class="hljs-variable">.drop_objection</span>(<span class="hljs-keyword">this</span>, <span class="hljs-string">"Sequence ended prematurely"</span>);<br><span class="hljs-keyword">endfunction</span><br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h4><ul>
+<li><p>通过扩展 uvm_component 的相应子类来创建用户定义的组件类，以实现需要的功能。</p>
+</li>
+<li><p>在类中的第一行使用宏`uvm_component_utils 在 factory 中注册组件类。</p>
+</li>
+<li><p>在 factory 注册宏之后，使用规范命名方式的后缀声明 ports，exports 和 virtual interface。</p>
+</li>
+<li><p>声明了 ports，exports 和 virtual interface 后，再声明类的成员变量。</p>
+</li>
+<li><p>然后是构造函数 new，构造函数应包含 string name 和无默认值的 parent 参数，需要调用super.new。</p>
+</li>
+<li><p>在 build_phase 中实例化组件类，而不应该在其他 phase 或者构造函数中实例化组件类。</p>
+</li>
+<li><p>总是使用 factory 实例化组件</p>
+</li>
+<li><p>组件的 string 名称”var_name”应与变量名称 var_name 相同，除非有特定原因使字符串名称与变量名称不同，例如在使用相同变量的循环中创建多个组件对象时。</p>
+</li>
+<li><p>第二个参数 this 表示此组件的父类。</p>
+</li>
+<li><p>如果用户定义的组件类扩展了另一个用户定义的组件类，则应注意在适当的位置插入super.&lt;phase_name&gt; _phase 形式的调用，即执行相应的基类 phase 方法。</p>
+</li>
+<li><p>如果用户定义的组件类是直接从 UVM 基类库进行扩展得到的，则内建 phase 方法不必调用super.&lt;phase_name&gt; _phase，尽管这曾经在 OVM 中是一个推荐。</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> connect_phase(uvm_phase phase);<br>	<span class="hljs-keyword">super</span><span class="hljs-variable">.connect_phase</span>(phase); <span class="hljs-comment">// Not necessary when extending uvm_component</span><br>	...<br><span class="hljs-keyword">endfunction</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>如果用户定义的组件类是直接从 UVM 基类库扩展得到的，在覆盖内建的 build_phase 方法时，请不要调用 super.build_phase。</p>
+<p>相反，如果您确实需要调用 super.build_phase，则必须需要理解 uvm_component :: build_phase方法调用了 apply_config_settings，它将在组件的字段名称和层次名称恰好与配置数据库中的名称和范围匹配的情况下，使用字段宏注册的字段的值设置为从配置数据库获取的相应值。一个标准的写法如下：</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> my_component <span class="hljs-keyword">extends</span> uvm_env;<br>	<span class="hljs-meta">`uvm_component_utils(my_component)</span><br>	<span class="hljs-comment">// Transaction-level ports and exports</span><br>	uvm_analysis_port <span class="hljs-variable">#(my_tx)</span> a_port;<br>	<span class="hljs-comment">// Virtual interfaces</span><br>	<span class="hljs-keyword">virtual</span> dut_if vif;<br>	<span class="hljs-comment">// Internal data members (variables)</span><br>	my_agent m_agent;<br>	<span class="hljs-comment">// Constructor</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span> (<span class="hljs-keyword">string</span> name, uvm_component parent);<br>		<span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);<br>	<span class="hljs-keyword">endfunction</span><br>	<span class="hljs-comment">// Standard phase methods</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);<br>		a_port = <span class="hljs-keyword">new</span>(<span class="hljs-string">"a_port"</span>, <span class="hljs-keyword">this</span>);<br>		m_agent = my_agent::type_id::create(<span class="hljs-string">"m_agent"</span>, <span class="hljs-keyword">this</span>);<br>	<span class="hljs-keyword">endfunction</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> connect_phase(uvm_phase phase);<br>		...<br>	<span class="hljs-keyword">endfunction</span><br>	<span class="hljs-keyword">task</span> run_phase(uvm_phase phase);<br>		...<br>	<span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Connection-to-the-DUT"><a href="#Connection-to-the-DUT" class="headerlink" title="Connection to the DUT"></a>Connection to the DUT</h4><ul>
+<li>每个 DUT 接口使用一个 SystemVerilog 接口实例。</li>
+<li>在 UVM 验证环境使用虚拟接口访问 SystemVerilog 接口实例。</li>
+<li>在配置数据库中的 configuration object 配置对象里将虚拟接口封装。</li>
+<li>将顶层配置对象中的虚拟接口复制到顶层 env 的 build_phase 方法中的 agent 或较低级别env 相关联的配置对象。</li>
+<li>agent 应检查其虚拟接口是否已被 set。</li>
+</ul>
+<h4 id="TLM-Connections"><a href="#TLM-Connections" class="headerlink" title="TLM Connections"></a>TLM Connections</h4><ul>
+<li>在 connect_phase 中建立 TLM port/export 连接，分配虚拟接口。</li>
+<li>使用 port 和 export 在 UVM 组件之间进行通信，包括 analysis ports 和相应的 exports。</li>
+<li>当 UVM 组件之间需要实现一对多的连接时，使用 analysis ports 和 analysis exports（或者是 uvm_subscriber 的对象）。</li>
+<li>在组件之间建立对等（peer-to-peer）连接时，将 ports（或 analysis ports）直接连接到 exports（或 analysis exports），而无需任何中间 FIFO。</li>
+<li>与 agent 进行通信的两种方式：将 agent 的 analysis ports 连接到 uvm_subscriber，或从外部的使用直接对象引用（direct object reference）来访问 agent 中的 sequencer。</li>
+</ul>
+<h4 id="Configurations"><a href="#Configurations" class="headerlink" title="Configurations"></a>Configurations</h4><ul>
+<li><p>使用配置数据库 uvm_config_db 而不是资源数据库 uvm_resource_db。</p>
+<p>使用 uvm_resource_db 的唯一情况是，在多次设置相同 item（即同名和相同范围）时，它们具有不同的规则。但是，不必学习两组规则，单独使用 uvm_config_db 就可以完成所需的一切。</p>
+</li>
+<li><p>将给定组件的配置参数分组到配置对象中，并将该配置对象设置到配置数据库中。</p>
+</li>
+<li><p>顶层配置对象应包含对所有低层配置对象的引用。</p>
+</li>
+<li><p>通过扩展类 uvm_object 来创建用户定义的配置类。</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> my_agent_config <span class="hljs-keyword">extends</span> uvm_object;<br>	<span class="hljs-keyword">virtual</span> my_if vif;<br>	uvm_active_passive_enum is_active;<br>	<span class="hljs-keyword">bit</span> coverage_enable; <span class="hljs-comment">// From the UVM User Guide</span><br>	<span class="hljs-keyword">bit</span> checks_enable;<br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name = <span class="hljs-string">""</span>);<br>		<span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name);<br>	<span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>将类名&lt;component_class&gt; _config 或&lt;sequence_class&gt; _config 分别用于与组件或 sequence关联的配置类，其中&lt;component_class&gt;是组件的类名，&lt;sequence_class&gt;是 sequence 的类名。</p>
+</li>
+<li><p>在配置数据库中的配置对象使用字段名称“config”。</p>
+</li>
+<li><p>不要使用 factory 注册用户定义的配置类。因此，配置类可以具有带有任意数量的用户自定义参数的构造函数。将配置对象视为一组参数值，而不是激励。</p>
+</li>
+<li><p>组件在 build_phase 中 get 和 set 配置参数（通常是配置的对象）。</p>
+<p>例：</p>
+<figure class="hljs highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs verilog">class my_agent_config extends uvm_object;<br>	virtual my_agent_if vif;<br>	uvm_active_passive_enum is_active = UVM_ACTIVE;<br>	bit coverage_enable;<br>	bit checks_enable;<br>    function new(string name = "");<br>        super.new(name);<br>    endfunction<br>endclass<br><br>class top_config extends uvm_object;<br>	rand my_agent_config m_my_agent_config;<br>	function new(string name = "");<br>		super.new(name);<br>    endfunction : new<br>endclass : top_config<br><br>module top_tb;<br>	...<br>	top_config top_env_config;<br>	initial begin<br>        top_env_config = new("top_env_config");<br>        if ( !top_env_config.randomize() )<br>			`uvm_error("top_tb","Failed to randomize top-level configuration object" )<br>		top_env_config.m_my_agent_config.vif = th.my_agent_if_0;<br>        uvm_config_db#(top_config)::set(null,"uvm_test_top", "config",top_env_config);<br>        uvm_config_db#(top_config)::set(null,"uvm_test_top.m_env","config",top_env_c<br>onfig);<br>		run_test();<br>	end<br>endmodule<br><br>class top_env extends uvm_env;<br>	`uvm_component_utils(top_env)<br>	my_agent_config m_my_agent_config;<br>	my_agent_agent m_my_agent_agent;<br>	my_agent_coverage m_my_agent_coverage;<br>	top_config m_config;<br>	...<br>	function void build_phase(uvm_phase phase);<br>		if (!uvm_config_db #(top_config)::get(this, "", "config", m_config))<br>			`uvm_error(get_type_name(), "Unable to get top_config")<br>		m_my_agent_config = m_config.m_my_agent_config;<br>		uvm_config_db #(my_agent_config)::set(this, "m_my_agent_agent", "config",<br>											m_my_agent_config);<br>		if (m_my_agent_config.is_active == UVM_ACTIVE )<br>			uvm_config_db #(my_agent_config)::set(this,"m_my_agent_agent.m_sequencer", 					"config", m_my_agent_config);<br>		uvm_config_db #(my_agent_config)::set(this, "m_my_agent_coverage", "config",<br>			m_my_agent_config);<br>		m_my_agent_agent=my_agent_agent::type_id::create("m_my_agent_agent",this);<br>		m_my_agent_coverage=my_agent_coverage::type_id::create("m_my_agent_cover<br>age",this);<br>	endfunction : build_phase<br>	...<br><br>endclass<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>始终检查 uvm_config_db#(T):: get 的返回值（bit），以确保配置数据库中存在这个配置参数。</p>
+</li>
+<li><p>如果 uvm_config_db#(T):: get 返回 0（即 get 失败），则应选择合理的默认值。</p>
+</li>
+<li><p>每个组件都应该是仅仅 get 自己实例对应的配置对象，而不应该 get 到其他组件实例的配置对象。</p>
+</li>
+<li><p>组件实例相关联的配置对象应由其 parent 组件或该组件实例的其他直接祖先进行 set，而不应由任何其他组件实例设置。</p>
+</li>
+<li><p>避免使用绝对层次路径名作为 uvm_config_db#T(T):: set 的第二个参数，并提供尽可能短的唯一路径名。</p>
+</li>
+<li><p>组件实例可以与一个配置对象关联，也可以不与配置对象关联，并且多个组件实例可以与同一配置对象关联。</p>
+</li>
+<li><p>对于 agent，其配置对象的 is_active 变量决定这个 agent 是 active 或者 passive 的。覆盖 virtual get_is_active 方法以返回此值。在 agent 中创建和连接 sequencer 和 driver 之前，请检查get_is_active。</p>
+<p>例：</p>
+<figure class="hljs highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs verilog">class my_agent extends uvm_agent;<br>	`uvm_component_utils(my_agent)<br>	uvm_analysis_port#(my_transaction) a_port;<br>	my_config m_config;<br>	my_sequencer m_sequencer;<br>	my_driver m_driver;<br>	my_monitor m_monitor;<br>	function new(string name, uvm_component parent);<br>		super.new(name, parent);<br>	endfunction<br>	function void build_phase(uvm_phase phase);<br>		if (!uvm_config_db #(my_config)::get(this, "", "config", m_config))<br>			`uvm_error(get_type_name(), "Agent config object is missing from<br>config_db")<br>		if (get_is_active() == UVM_ACTIVE) begin<br>			m_sequencer = my_sequencer::type_id::create("m_sequencer", this);<br>			m_driver = my_driver ::type_id::create("m_driver", this);<br>		end<br>		m_monitor = my_monitor::type_id::create("m_monitor", this);<br>		a_port = new("a_port", this);<br>	endfunction<br>	function void connect_phase(uvm_phase phase);<br>		if (get_is_active() == UVM_ACTIVE)<br>			m_driver.seq_item_port.connect( m_sequencer.seq_item_export );<br>			m_monitor.a_port.connect( a_port );<br>	endfunction<br>	virtual function uvm_active_passive_enum get_is_active();<br>		return uvm_active_passive_enum'( m_config.is_active );<br>	endfunction<br>/*<br>// Alternative version that includes defensive programming to check for conflicts<br>// between the config object and the "is_active" field<br>local int m_is_active = -1;<br>	virtual function uvm_active_passive_enum get_is_active();<br>		if (m_is_active == -1)begin<br>		if(uvm_config_db#(uvm_bitstream_t)::get(this,"","is_active",m_is_active))begin<br>			if (m_is_active != m_config.is_active)<br>				`uvm_warning(get_type_name(), "is_active field in config_db conflicts with config object")<br>		end<br>		else<br>			m_is_active = m_config.is_active;<br>		end<br>	return uvm_active_passive_enum'(m_is_active);<br>endfunction<br>*/<br>endclass: my_agent<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>如果要对 sequence 进行参数化，则应将 sequence 的参数放入配置数据库中的配置对象中。配置对象应与 sequence 运行的 sequencer 相关联。</p>
+</li>
+<li><p>与 sequence 关联的配置对象都应该从 sequence 的 start 中从配置数据库中获取，并且sequence 对象中的变量指向该配置对象。</p>
+</li>
+<li><p>如果一个组件在其子组件中对自己的变量（包括虚拟接口）进行连接，那么应该在build_phase 中创建子组件并完成连接操作。</p>
+</li>
+</ul>
+<h4 id="Factory"><a href="#Factory" class="headerlink" title="Factory"></a>Factory</h4><ul>
+<li><p>总是使用 factory 实例化 transaction，sequence以及组件的对象。不要简单使用 new 函数来实例化对象。</p>
+</li>
+<li><p>使用 factory 将 transaction，sequence，以及组件对象替换为其类的扩展类的另一个对象时，factory 覆盖应采用以下形式之一：</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs verilog">old_type_name::type_id::set_type_override(new_type_name::get_type());<br>old_type_name::type_id::set_inst_override(new_type_name::get_type() ... );<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>当您需要访问 factory 时，请调用静态方法 uvm_factory :: get( )。不要使用全局变量 factory 来访问某个factory（全局变量 factory 在 uvm_1.2 中被丢弃）。</p>
+</li>
+</ul>
+<h4 id="Tests"><a href="#Tests" class="headerlink" title="Tests"></a>Tests</h4><ul>
+<li>不要直接从测试中生成激励，而是使用测试来设置配置参数和 factory 覆盖。</li>
+<li>通常最好从 env 而不是从测试中启动 sequence，并将测试限制为参数化或重配置环境。环境应该知道如何激励 DUT。</li>
+<li>设置验证环境的默认配置，并在 env 类中生成默认激励，而不是测试类，以便即使使用空测试也能运行 env。</li>
+<li>在适当的情况下，使用 text_base 类来定义一组测试中常见的结构和行为，并通过扩展这些 base 类来创建各个测试。</li>
+<li>为了重复使用，请避免根据验证环境的具体细节进行测试。</li>
+<li><p>使用命令行参数修改测试行为，无需重新编译。</p>
+<h4 id="Messaging"><a href="#Messaging" class="headerlink" title="Messaging"></a>Messaging</h4></li>
+<li><p>要报告消息，请始终使用八个标准报告宏之一<code>uvm_info，</code>uvm_info_context 等，而不是$display 及类似语句。</p>
+</li>
+<li>将消息 ID 设置为静态 string 或 get_type_name( )。</li>
+<li>在整个代码中仔细，有条理地和一致地设置消息详细级别，以避免日志文件中不必要的数据，并区分在验证环境开发调试期间使用的消息和在运行 testcase 时使用的消息。</li>
+<li>默认情况下，将各个报告宏的详细级别设置为较大的数字，以便不太可能报告 message。</li>
+<li>仔细设置消息严重性级别，以区分纯信息性消息，可能代表错误的消息和肯定是错误的消息。</li>
+</ul>
+<h4 id="RAL"><a href="#RAL" class="headerlink" title="RAL"></a>RAL</h4><ul>
+<li><p>如果使用生成器为寄存器模型创建 SystemVerilog 代码，请不要修改生成的代码。</p>
+</li>
+<li><p>顶层 UVM 环境应使用 factory 实例化寄存器块，并应调用寄存器模型的 build 方法。</p>
+</li>
+<li><p>对于子环境使用寄存器模型的层次结构 UVM 环境，应该有一个顶层寄存器块，用于实例化与子环境关联的寄存器块，依此类推。</p>
+</li>
+<li><p>任何使用寄存器模型的 UVM env 都应该有一个名为 regmodel 的变量，该变量存储对该特定环境的寄存器块的引用。</p>
+</li>
+<li><p>具有寄存器模型的 UVM env 应设置所有子组件的 regmodel 变量，如果子组件也使用了寄存器模型到其寄存器块的相应子块。</p>
+</li>
+<li><p>如果 env 的 regmodel 变量的值为 null，则 UVM 环境应仅实例化一个寄存器块。</p>
+<p>对于顶层环境，regmodel 的值将为 null，因此 env 应实例化寄存器块并设置 regmodel 的值。对于较低层次的 env，regmodel 的值不应为 null，因为它应该由更高层次的 env 设置。此机制允许将相同的 env 实例化为顶层 env（具有寄存器模型）或作为较低层次的 env（没有自己的寄存器模型）。例：</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs verilog">top_reg_block regmodel;<br><span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> top_env::build_phase(uvm_phase phase);<br>	<span class="hljs-keyword">if</span> (regmodel == <span class="hljs-literal">null</span>)<span class="hljs-keyword">begin</span><br>	<span class="hljs-comment">// Instantiate register model for top-level env</span><br>		regmodel = top_reg_block::type_id::create(<span class="hljs-string">"regmodel"</span>);<br>		regmodel = build();<br>	<span class="hljs-keyword">end</span><br>	<span class="hljs-comment">// Set regmodel variable of lower-level env through config object</span><br>	m_bus_env_cfg = <span class="hljs-keyword">new</span>(<span class="hljs-string">"m_bus_env_cfg"</span>);<br>	m_bus_env_cfg<span class="hljs-variable">.regmodel</span> = regmodel<span class="hljs-variable">.bus</span>;<br>	...<br><span class="hljs-keyword">endfunction</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>寄存器模型中每个子寄存器块的变量名称和 UVM 实例名称应与相应 agent 的名称相对应。</p>
+</li>
+<li><p>寄存器块应仅模拟 DUT 寄存器，这些寄存器可由与 UVM 环境相关联的 UVM sequence 访问。</p>
+</li>
+<li><p>使用寄存器模型并实例化了 agent 的 UVM 环境应实例化并连接寄存器 adapter 和该 agent的寄存器 predictor。</p>
+</li>
+<li><p>寄存器模型应使用显式预测，以使其镜像值与 DUT 中的寄存器值保持同步。</p>
+</li>
+<li><p>应分配每个子寄存器块中预测器的地址映射变量.map，以引用顶层寄存器块的相应地址映射。</p>
+<p>这确保了使用系统地址映射中的全局地址而不是本地地址映射中的偏移来访问寄存器。例：</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-comment">// To connect the register layer to an agent named bus</span><br>bus_agent m_bus_agent;<br>bus_reg_block regmodel;<br>reg2bus_adapter m_reg2bus;<br>uvm_reg_predictor <span class="hljs-variable">#(bus_tx)</span> m_bus2reg_predictor;<br><span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> bus_env::build_phase(uvm_phase phase);<br>	...<br>	m_bus_agent = bus_agent ::type_id::create(<span class="hljs-string">"m_bus_agent"</span>, <span class="hljs-keyword">this</span>);<br>	m_reg2bus = reg2bus_adapter::type_id::create(<span class="hljs-string">"m_reg2bus"</span>, <span class="hljs-keyword">this</span>);<br>	m_bus2reg_predictor =<br>	uvm_reg_predictor <span class="hljs-variable">#(bus_tx)::type_id::create("m_bus2reg_predictor", this)</span>;<br><span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> top_env::connect_phase(uvm_phase phase);<br>	<span class="hljs-keyword">if</span> (regmodel<span class="hljs-variable">.get_parent</span>() == <span class="hljs-literal">null</span>)<br>		regmodel<span class="hljs-variable">.default_map</span><span class="hljs-variable">.set_sequence</span>(m_bus_agent<span class="hljs-variable">.m_sequencer</span>, m_reg2bus);<br>		m_bus2reg_predictor<span class="hljs-variable">.map</span> = regmodel<span class="hljs-variable">.bus_map</span>;<br>		m_bus2reg_predictor<span class="hljs-variable">.adapter</span> = m_reg2bus;<br>		regmodel<span class="hljs-variable">.bus_map</span><span class="hljs-variable">.set_auto_predict</span>(<span class="hljs-number">0</span>);<br>		m_bus_agent<span class="hljs-variable">.m_monitor</span><span class="hljs-variable">.ap</span><span class="hljs-variable">.connect</span>( m_bus2reg_predictor<span class="hljs-variable">.bus_in</span> );<br><span class="hljs-keyword">endfunction</span><br></code></pre></td></tr></table></figure>
+<p>在验证环境的开发过程中，为了调试，打印寄存器模型中的寄存器的详细信息可能会有所帮<br>助。这应该在 end_of_elaboration_phase 方法中完成。例：</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> end_of_elaboration_phase(uvm_phase phase);<br>	uvm_reg regs[$];<br>	<span class="hljs-keyword">string</span> name;<br>	regmodel<span class="hljs-variable">.bus_map</span><span class="hljs-variable">.get_registers</span>(regs);<br>	<span class="hljs-meta">`uvm_info(get_type_name(),</span><br>		<span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"Found %d registers"</span>, regs<span class="hljs-variable">.size</span>()), UVM_MEDIUM)<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; regs<span class="hljs-variable">.size</span>(); j++)<br>		<span class="hljs-meta">`uvm_info(get_type_name(),$sformatf("regs[%0d]:%s",j,regs[j].get_name()),UVM_</span><br>			HIGH)<br><span class="hljs-keyword">endfunction</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在寄存器模型中读取或写入寄存器的寄存器 sequence 应扩展自 uvm_sequence，并且应具有名为 regmodel 的变量，该变量存储着对相应寄存器块的指针。</p>
+</li>
+<li><p>在启动读取或写入寄存器的 sequence 之前，请先设置该 sequence 的 regmodel 变量。</p>
+</li>
+</ul>
+<h4 id="Functional-Coverage"><a href="#Functional-Coverage" class="headerlink" title="Functional Coverage"></a>Functional Coverage</h4><ul>
+<li><p>使用 SystemVerilog covergroup 结构在 UVM 验证环境中收集功能覆盖率。</p>
+<p>处理或转换来自 DUT 的值以创建为实际采样覆盖点的派生值，有时这是必要的或更方便的。例如，您可以计算在总线上连续出现的两个地址之间的差异，并将结果值用作覆盖点。该技术可以克服在覆盖组实例化时就进行了定义但覆盖点的定义不能动态地改变的基本限制。例：</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> my_agent_coverage <span class="hljs-keyword">extends</span> uvm_subscriber <span class="hljs-variable">#(bus_tx)</span>;<br>	<span class="hljs-meta">`uvm_component_utils(my_agent_coverage)</span><br>	bus_tx m_item;<br>	<span class="hljs-keyword">int</span> m_address_delta;<br>	<span class="hljs-keyword">covergroup</span> m_cov;<br>		cp_address_delta: <span class="hljs-keyword">coverpoint</span> m_address_delta &#123;<br>			<span class="hljs-keyword">bins</span> zero = &#123;<span class="hljs-number">0</span>&#125;;<br>			<span class="hljs-keyword">bins</span> one = &#123;<span class="hljs-number">1</span>&#125;;<br>			<span class="hljs-keyword">bins</span> negative = &#123; [-<span class="hljs-number">128</span>:-<span class="hljs-number">1</span>] &#125;;<br>			<span class="hljs-keyword">bins</span> positive = &#123; [<span class="hljs-number">1</span>: <span class="hljs-number">127</span>] &#125;;<br>			option<span class="hljs-variable">.at_least</span> = <span class="hljs-number">16</span>;<br>		&#125;<br>	<span class="hljs-keyword">endgroup</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name, uvm_component parent);<br>		<span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);<br>	m_cov = <span class="hljs-keyword">new</span>;<span class="hljs-keyword">endfunction</span> : <span class="hljs-keyword">new</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> write(<span class="hljs-keyword">input</span> bus_tx t);<br>		m_item = t;<br>		m_address_delta = m_item<span class="hljs-variable">.current_address</span> - m_item<span class="hljs-variable">.previous_address</span>;<br>		m_cov<span class="hljs-variable">.sample</span>();<br>	<span class="hljs-keyword">endfunction</span> : write<br><span class="hljs-keyword">endclass</span> : my_agent_coverage<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在适当的情况下，使用 cover property 在 interface 中收集功能覆盖信息。</p>
+</li>
+<li><p>将 covergroup 作为嵌入式 covergroup 放置在类中，或者将 covergroup 放在 package 中并参数化 covergroup，以便可以从该 package 中的类进行实例化。</p>
+</li>
+<li><p>Covergroups 应该在 UVM 组件类中实例化，而不是在 sequence 或 transaction 中。</p>
+</li>
+<li><p>Covergroups 应在 UVM subscribers 或 scoreboards 中实例化，并且 scoreboard 是在 UVM env类中实例化并连接到 monitor/agent 的 analysis port。</p>
+</li>
+<li><p>在 coverage 收集器类的构造函数中实例化 covergroup。</p>
+</li>
+<li><p>为了收集 DUT 内部信号的功能覆盖信息，在单个 SystemVerilog module（或接口）中封装对 DUT 层次路径的引用，然后使用虚拟接口和 interface 从 UVM 环境访问该模块。可以使用层次路径或使用 bind 语句访问 DUT 中的内部信号。在单个模块（或接口）中封装所有层次路径可以使得验证环境保持干净。</p>
+</li>
+<li><p>如果 coverage 收集跨越多个 DUT 接口，因此需要从多个 agent 接收 analysis transaction，请使用`uvm_analysis_imp_decl 宏在 coverage collector 类中提供多个 analysis exports。</p>
+<p>uvm_subscriber 类仅仅只有一个 analysis export，`uvm_analysis_imp_decl 宏提供了接受多个传入 transaction 流的最方便的方法，每个传入 transaction 流都有自己独立的 write 方法。例：</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-meta">`uvm_analysis_imp_decl(_expected)</span><br><span class="hljs-meta">`uvm_analysis_imp_decl(_actual)</span><br><span class="hljs-keyword">class</span> my_cov_collector <span class="hljs-keyword">extends</span> uvm_scoreboard;<br>	<span class="hljs-meta">`uvm_component_utils(my_cov_collector)</span><br>	uvm_analysis_imp_expected <span class="hljs-variable">#(tx_t, my_cov_collector)</span> expected_export;<br>	uvm_analysis_imp_actual <span class="hljs-variable">#(tx_t, my_cov_collector)</span> actual_export;<br>	...<br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);<br>        expected_export = <span class="hljs-keyword">new</span>(<span class="hljs-string">"expected_export"</span>, <span class="hljs-keyword">this</span>);actual_export = 		                   		<span class="hljs-keyword">new</span>(<span class="hljs-string">"actual_export"</span>, <span class="hljs-keyword">this</span>);<br>	<span class="hljs-keyword">endfunction</span><br>	...<br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> write_expected(tx_t t);<br>		...<br>	<span class="hljs-keyword">endfunction</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> write_actual(tx_t t);<br>		...<br>	<span class="hljs-keyword">endfunction</span><br>	...<br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>将覆盖点分为多个覆盖组，以便将的 specification features 的 coverage 与 implementation features 的 coverage 分开。这将有助于重新使用 coverage 模型。</p>
+</li>
+<li><p>在 coverage 收集器的配置对象中使用变量 coverage_enable 来启用或禁用 coverage 收集。</p>
+</li>
+<li><p>通过调用 sample 方法而不是为 covergroup 指定时钟事件来对进行采样。</p>
+</li>
+<li><p>不要频繁地过度对覆盖组进行采样。考虑对每个覆盖点使用条件表达式 iff( …)来降低采样频率。</p>
+</li>
+<li><p>在 DUT 端口或者 DUT 内部进行采样，不要在激励上面进行采样。在采样 DUT 的寄存器的值时，应该等到 DUT 寄存器值发生变化后才采样，而不是在激励发生变化时就进行采样。</p>
+</li>
+<li><p>考虑将每个覆盖组和覆盖点的 option.at_least 设置为默认值 1 以外的某个值。option.at_least 的默认值仅确保每个状态被命中一次，这通常不足以测试状态是否已经锁定。</p>
+</li>
+<li><p>不要设置覆盖组和覆盖点的 option.weight 或 option.goal。</p>
+</li>
+<li><p>仔细设计 coverpoint bin，以确保涵盖功能重要的 case。</p>
+<p>由于 100％覆盖状态空间是不现实的，因此仔细设计 coverage bin 对于验证质量至关重要。一种解决方案的是为典型值，特殊值和边界条件创建单独的 bin。bin 的选择应与验证计划有关。</p>
+</li>
+<li><p>设计覆盖点时，请指定非法值或不需要覆盖的值为 ignore_bins。不要使用 illegal_bins。</p>
+<p>Covergroups 应限于收集功能覆盖率信息，而不是直接与错误报告相关联。应使用断言或使用 UVM 报告处理程序来捕获非法值。</p>
+</li>
+</ul>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2019/05/20/SystemVerilog和UVM编程基本规范/" title="SystemVerilog和UVM编程基本规范">http://118.25.122.94:8080/2019/05/20/SystemVerilog和UVM编程基本规范/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/05/17/如何理解内存模型的Memory-Order/" rel="next" title="如何理解内存模型的Memory-Order?"><i class="fas fa-angle-left"></i><span class="nav-title">如何理解内存模型的Memory-Order?</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">31</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">9</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">23</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#UVM-SV验证代码规范"><span class="toc-text">UVM-SV验证代码规范</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#词汇指南和命名约定"><span class="toc-text">词汇指南和命名约定</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#一般准则"><span class="toc-text">一般准则</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#通用代码结构"><span class="toc-text">通用代码结构</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#时钟、定时、同步和接口"><span class="toc-text">时钟、定时、同步和接口</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Transactions"><span class="toc-text">Transactions</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Sequence"><span class="toc-text">Sequence</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Stimulus和Phasing"><span class="toc-text">Stimulus和Phasing</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Objections"><span class="toc-text">Objections</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Components"><span class="toc-text">Components</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Connection-to-the-DUT"><span class="toc-text">Connection to the DUT</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#TLM-Connections"><span class="toc-text">TLM Connections</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Configurations"><span class="toc-text">Configurations</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Factory"><span class="toc-text">Factory</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Tests"><span class="toc-text">Tests</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Messaging"><span class="toc-text">Messaging</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#RAL"><span class="toc-text">RAL</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Functional-Coverage"><span class="toc-text">Functional Coverage</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
