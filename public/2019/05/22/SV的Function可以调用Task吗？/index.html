@@ -135,7 +135,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>通过套接字进行SV和其他语言进行交互 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+    <title>SV的Function可以调用Task吗？ | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -187,7 +187,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/05/08/通过套接字进行SV和其他语言进行交互/">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/05/22/SV的Function可以调用Task吗？/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="神秘人">
        <meta itemprop="description" content="在人生中最艰难的是选择。">
@@ -198,12 +198,12 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">通过套接字进行SV和其他语言进行交互</h1>
+      <h1 class="post-title" itemprop="name headline">SV的Function可以调用Task吗？</h1>
       <div class="post-meta">
          
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-08T10:46:20+08:00">2019-05-08 10:46:20</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-22T14:55:10+08:00">2019-05-22 14:55:10</time></span>
         </span>
         
         
@@ -215,7 +215,7 @@
           <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
         </span>
 	<span class="post-meta-item-text">  字数统计: </span>
-	<span class="post-count">88字</span>
+	<span class="post-count">98字</span>
 	<span class="post-meta-item-text">  阅读时长: </span>
 	<span class="post-count">1分</span>
 	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
@@ -227,13 +227,15 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       <ul>
-<li>通过TCP套接字，可以进行其他语言进行交互。</li>
-<li>外围算法计算后传输到验证平台，验证平台再传输数据回外围算法进行交互，在算法初期调试阶段，减少编写各种DPI接口，进行快速迭代开发。</li>
+<li><p>SV要求<br>nonblocking assignments, event triggers, clocking drives, and fork-join_none constructs shall be allowed inside a function.<br>代码例子：</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><br><span class="hljs-meta">`<span class="hljs-meta-keyword">timescale</span> 1ns/1ps</span><br><br><span class="hljs-keyword">module</span> DetachThreadTB;<br><br><span class="hljs-keyword">task</span> rw_task(<span class="hljs-keyword">byte</span> addr,<span class="hljs-keyword">output</span> <span class="hljs-keyword">byte</span> data);<br>    #<span class="hljs-number">10</span>ns;<br>    data = addr + <span class="hljs-number">1</span>;<br>    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"%m:%h"</span>,data);<br><span class="hljs-keyword">endtask</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-keyword">byte</span> rw_func(<span class="hljs-keyword">byte</span> addr);<br>    <span class="hljs-keyword">byte</span> data; <br>    <span class="hljs-keyword">fork</span><br>        rw_task(addr,data);<br>    <span class="hljs-keyword">join_none</span><br>    <span class="hljs-keyword">return</span> data;<br><span class="hljs-keyword">endfunction</span><br><br><span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span><br>    <span class="hljs-keyword">byte</span> data ;<br>    data = rw_func(<span class="hljs-number">100</span>);<br>    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"rw_func:%h"</span>,data);<br><span class="hljs-keyword">end</span><br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>输出</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs verilog">rw_func:<span class="hljs-number">00</span><br>DetachThreadTB<span class="hljs-variable">.rw_task</span>:<span class="hljs-number">65</span><br></code></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
-<li>服务器端：<br><img src="/2019/05/08/通过套接字进行SV和其他语言进行交互/ser.png" alt="服务器端"></li>
-<li>仿真器端：<br><img src="/2019/05/08/通过套接字进行SV和其他语言进行交互/sv.png" alt="仿真器端"></li>
-<li>sv代码端：<br><img src="/2019/05/08/通过套接字进行SV和其他语言进行交互/src.png" alt="代码片段"></li>
+<li>结论<br>主要是为了边际效应，可以在多线程中通道中操作等。</li>
 </ul>
 
     </main>
@@ -241,13 +243,9 @@
       
       <div class="post-tags">
         
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
         <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
-        
-        <a class="post-tag button" href="/tags/Linux/" rel="tag"><i class="fas fa-tags"></i>Linux</a>
-        
-        <a class="post-tag button" href="/tags/Socket/" rel="tag"><i class="fas fa-tags"></i>Socket</a>
-        
-        <a class="post-tag button" href="/tags/TCP/" rel="tag"><i class="fas fa-tags"></i>TCP</a>
         
       </div>
       
@@ -264,7 +262,7 @@
 	</li>
 	<li class="post-copyright-link">
 		<strong>本文链接：</strong>
-		<a href="/2019/05/08/通过套接字进行SV和其他语言进行交互/" title="通过套接字进行SV和其他语言进行交互">http://118.25.122.94:8080/2019/05/08/通过套接字进行SV和其他语言进行交互/</a>
+		<a href="/2019/05/22/SV的Function可以调用Task吗？/" title="SV的Function可以调用Task吗？">http://118.25.122.94:8080/2019/05/22/SV的Function可以调用Task吗？/</a>
 	</li>
 	<li class="post-copyright-license">
 		<strong>版权声明： </strong>
@@ -295,12 +293,10 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2019/05/05/Docker启动EDA工具迅速！/" rel="next" title="Docker启动EDA工具迅速！"><i class="fas fa-angle-left"></i><span class="nav-title">Docker启动EDA工具迅速！</span></a>
+      <a href="/2019/05/20/SystemVerilog和UVM编程基本规范/" rel="next" title="SystemVerilog和UVM编程基本规范"><i class="fas fa-angle-left"></i><span class="nav-title">SystemVerilog和UVM编程基本规范</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2019/05/09/库映射问题：相同module不同映射/" rel="prev" title="库映射问题：相同module不同映射"><span class="nav-title">库映射问题：相同module不同映射</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>

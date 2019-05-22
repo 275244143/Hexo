@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-05-20T07:25:46.382Z</updated>
+  <updated>2019-05-22T07:00:07.004Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SV的Function可以调用Task吗？</title>
+    <link href="http://118.25.122.94:8080/2019/05/22/SV%E7%9A%84Function%E5%8F%AF%E4%BB%A5%E8%B0%83%E7%94%A8Task%E5%90%97%EF%BC%9F/"/>
+    <id>http://118.25.122.94:8080/2019/05/22/SV的Function可以调用Task吗？/</id>
+    <published>2019-05-22T06:55:10.000Z</published>
+    <updated>2019-05-22T07:00:07.004Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;SV要求&lt;br&gt;nonblocking assignments, event triggers, clocking drives, and fork-join_none constructs shall be allowed inside a
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>SystemVerilog和UVM编程基本规范</title>
@@ -554,40 +583,6 @@
       <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
     
       <category term="git" scheme="http://118.25.122.94:8080/categories/Linux/git/"/>
-    
-    
-      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
-    
-      <category term="git" scheme="http://118.25.122.94:8080/tags/git/"/>
-    
-      <category term="github" scheme="http://118.25.122.94:8080/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>github回退代码到历史指定版本</title>
-    <link href="http://118.25.122.94:8080/2019/04/22/github%E5%9B%9E%E9%80%80%E4%BB%A3%E7%A0%81%E5%88%B0%E5%8E%86%E5%8F%B2%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC/"/>
-    <id>http://118.25.122.94:8080/2019/04/22/github回退代码到历史指定版本/</id>
-    <published>2019-04-22T10:51:16.000Z</published>
-    <updated>2019-04-26T06:56:40.437Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;前提是本地已经有了git的origin master库或者克隆需要回退的代码到本地。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;查询历史对应不同版本的ID,用于回退使用。&lt;/p&gt;
-&lt;figure class=&quot;hljs highlight
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
     
     
       <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
