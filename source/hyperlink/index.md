@@ -21,3 +21,7 @@ comments: false
 [https://www.mentor.com/](https://www.mentor.com/ "Mentor")
 * Accellera组织
 [https://accellera.org/](https://accellera.org/ "Accellera")
+* shell命令解释器
+https://explainshell.com/
+* shell语法检查
+https://www.shellcheck.net/

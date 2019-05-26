@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-05-24T07:29:00.567Z</updated>
+  <updated>2019-05-26T03:28:52.044Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>机油：git和tig</title>
+    <link href="http://118.25.122.94:8080/2019/05/26/%E6%9C%BA%E6%B2%B9%EF%BC%9Agit%E5%92%8Ctig/"/>
+    <id>http://118.25.122.94:8080/2019/05/26/机油：git和tig/</id>
+    <published>2019-05-26T02:56:26.000Z</published>
+    <updated>2019-05-26T03:28:52.044Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;tig-是一款优化-git-命令行的工具，使-git-命令行更加的便捷人性化-。&quot;&gt;&lt;a href=&quot;#tig-是一款优化-git-命令行的工具，使-git-命令行更加的便捷人性化-。&quot; class=&quot;headerlink&quot; title=&quot;tig 是一款优化
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+    
+      <category term="git" scheme="http://118.25.122.94:8080/categories/Linux/git/"/>
+    
+    
+      <category term="git" scheme="http://118.25.122.94:8080/tags/git/"/>
+    
+      <category term="github" scheme="http://118.25.122.94:8080/tags/github/"/>
+    
+      <category term="tig" scheme="http://118.25.122.94:8080/tags/tig/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SystemVerilog PrettyPrint For Struct Display.</title>
     <link href="http://118.25.122.94:8080/2019/05/24/SystemVerilog-PrettyPrint-For-Struct-Display/"/>
     <id>http://118.25.122.94:8080/2019/05/24/SystemVerilog-PrettyPrint-For-Struct-Display/</id>
     <published>2019-05-24T07:08:50.000Z</published>
-    <updated>2019-05-24T07:29:00.567Z</updated>
+    <updated>2019-05-26T03:26:01.701Z</updated>
     
     <summary type="html">
     
@@ -49,7 +81,7 @@
     <link href="http://118.25.122.94:8080/2019/05/22/SV%E7%9A%84Function%E5%8F%AF%E4%BB%A5%E8%B0%83%E7%94%A8Task%E5%90%97%EF%BC%9F/"/>
     <id>http://118.25.122.94:8080/2019/05/22/SV的Function可以调用Task吗？/</id>
     <published>2019-05-22T06:55:10.000Z</published>
-    <updated>2019-05-22T07:00:07.004Z</updated>
+    <updated>2019-05-26T03:26:01.701Z</updated>
     
     <summary type="html">
     
@@ -78,7 +110,7 @@
     <link href="http://118.25.122.94:8080/2019/05/20/SystemVerilog%E5%92%8CUVM%E7%BC%96%E7%A8%8B%E5%9F%BA%E6%9C%AC%E8%A7%84%E8%8C%83/"/>
     <id>http://118.25.122.94:8080/2019/05/20/SystemVerilog和UVM编程基本规范/</id>
     <published>2019-05-20T01:44:52.000Z</published>
-    <updated>2019-05-20T07:25:46.382Z</updated>
+    <updated>2019-05-26T03:26:01.703Z</updated>
     
     <summary type="html">
     
@@ -106,7 +138,7 @@
     <link href="http://118.25.122.94:8080/2019/05/17/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E7%9A%84Memory-Order/"/>
     <id>http://118.25.122.94:8080/2019/05/17/如何理解内存模型的Memory-Order/</id>
     <published>2019-05-17T02:06:59.000Z</published>
-    <updated>2019-05-17T03:22:34.362Z</updated>
+    <updated>2019-05-26T03:26:01.708Z</updated>
     
     <summary type="html">
     
@@ -134,7 +166,7 @@
     <link href="http://118.25.122.94:8080/2019/05/16/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A6%82%E4%B8%8BSV%E4%BB%A3%E7%A0%81%E4%B8%8D%E6%8A%A5%E9%94%99%EF%BC%9F/"/>
     <id>http://118.25.122.94:8080/2019/05/16/为什么如下SV代码不报错？/</id>
     <published>2019-05-16T01:35:24.000Z</published>
-    <updated>2019-05-16T06:18:34.692Z</updated>
+    <updated>2019-05-26T03:26:01.705Z</updated>
     
     <summary type="html">
     
@@ -162,7 +194,7 @@
     <link href="http://118.25.122.94:8080/2019/05/14/%E6%B5%8B%E8%AF%95SystemVerilog%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5%E6%80%A7%E8%83%BD%E5%8F%AF%E5%90%A6%EF%BC%9F/"/>
     <id>http://118.25.122.94:8080/2019/05/14/测试SystemVerilog代码片段性能可否？/</id>
     <published>2019-05-14T07:51:37.000Z</published>
-    <updated>2019-05-14T07:59:24.987Z</updated>
+    <updated>2019-05-26T03:26:01.710Z</updated>
     
     <summary type="html">
     
@@ -198,7 +230,7 @@
     <link href="http://118.25.122.94:8080/2019/05/14/%E5%A6%82%E4%BD%95%E5%8E%BB%E9%99%A4%E6%81%BC%E4%BA%BA%E7%9A%84VHDL-IP%E7%9A%84ASSERT-WARNING/"/>
     <id>http://118.25.122.94:8080/2019/05/14/如何去除恼人的VHDL-IP的ASSERT-WARNING/</id>
     <published>2019-05-14T03:30:13.000Z</published>
-    <updated>2019-05-14T03:41:31.197Z</updated>
+    <updated>2019-05-26T03:26:01.707Z</updated>
     
     <summary type="html">
     
@@ -230,7 +262,7 @@
     <link href="http://118.25.122.94:8080/2019/05/09/%E5%BA%93%E6%98%A0%E5%B0%84%E9%97%AE%E9%A2%98-%E7%BB%AD-%EF%BC%9A%E7%9B%B8%E5%90%8Cmodule%E4%B8%8D%E5%90%8C%E6%98%A0%E5%B0%84/"/>
     <id>http://118.25.122.94:8080/2019/05/09/库映射问题-续-：相同module不同映射/</id>
     <published>2019-05-09T09:50:54.000Z</published>
-    <updated>2019-05-09T10:26:48.118Z</updated>
+    <updated>2019-05-11T05:55:25.386Z</updated>
     
     <summary type="html">
     
@@ -264,7 +296,7 @@
     <link href="http://118.25.122.94:8080/2019/05/09/%E5%BA%93%E6%98%A0%E5%B0%84%E9%97%AE%E9%A2%98%EF%BC%9A%E7%9B%B8%E5%90%8Cmodule%E4%B8%8D%E5%90%8C%E6%98%A0%E5%B0%84/"/>
     <id>http://118.25.122.94:8080/2019/05/09/库映射问题：相同module不同映射/</id>
     <published>2019-05-09T01:40:51.000Z</published>
-    <updated>2019-05-09T07:58:02.405Z</updated>
+    <updated>2019-05-11T05:55:25.389Z</updated>
     
     <summary type="html">
     
@@ -298,7 +330,7 @@
     <link href="http://118.25.122.94:8080/2019/05/08/%E9%80%9A%E8%BF%87%E5%A5%97%E6%8E%A5%E5%AD%97%E8%BF%9B%E8%A1%8CSV%E5%92%8C%E5%85%B6%E4%BB%96%E8%AF%AD%E8%A8%80%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92/"/>
     <id>http://118.25.122.94:8080/2019/05/08/通过套接字进行SV和其他语言进行交互/</id>
     <published>2019-05-08T02:46:20.000Z</published>
-    <updated>2019-05-08T03:00:57.187Z</updated>
+    <updated>2019-05-11T05:55:25.394Z</updated>
     
     <summary type="html">
     
@@ -320,9 +352,9 @@
       <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
       <category term="Linux" scheme="http://118.25.122.94:8080/tags/Linux/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
     
       <category term="Socket" scheme="http://118.25.122.94:8080/tags/Socket/"/>
     
@@ -335,7 +367,7 @@
     <link href="http://118.25.122.94:8080/2019/05/05/Docker%E5%90%AF%E5%8A%A8EDA%E5%B7%A5%E5%85%B7%E8%BF%85%E9%80%9F%EF%BC%81/"/>
     <id>http://118.25.122.94:8080/2019/05/05/Docker启动EDA工具迅速！/</id>
     <published>2019-05-05T11:25:22.000Z</published>
-    <updated>2019-05-06T06:18:03.254Z</updated>
+    <updated>2019-05-11T05:55:25.383Z</updated>
     
     <summary type="html">
     
@@ -369,7 +401,7 @@
     <link href="http://118.25.122.94:8080/2019/04/30/VM%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%8D%E8%A7%81%EF%BC%81Docker%E6%9D%A5%E4%BA%86%EF%BC%81/"/>
     <id>http://118.25.122.94:8080/2019/04/30/VM虚拟机再见！Docker来了！/</id>
     <published>2019-04-30T09:23:23.000Z</published>
-    <updated>2019-04-30T09:29:35.336Z</updated>
+    <updated>2019-04-30T14:37:01.612Z</updated>
     
     <summary type="html">
     
@@ -399,7 +431,7 @@
     <link href="http://118.25.122.94:8080/2019/04/30/%E7%BA%A6%E6%9D%9F12%E4%B8%8E34%E9%83%BD%E5%AD%98%E5%9C%A8number%E6%88%96%E8%80%8512%E4%B8%8E34%E9%83%BD%E4%B8%8D%E5%9C%A8number%E9%87%8C%EF%BC%9F/"/>
     <id>http://118.25.122.94:8080/2019/04/30/约束12与34都存在number或者12与34都不在number里？/</id>
     <published>2019-04-30T01:59:29.000Z</published>
-    <updated>2019-04-30T02:04:23.854Z</updated>
+    <updated>2019-04-30T14:37:01.629Z</updated>
     
     <summary type="html">
     
@@ -427,7 +459,7 @@
     <link href="http://118.25.122.94:8080/2019/04/29/uvm-indirect-registers/"/>
     <id>http://118.25.122.94:8080/2019/04/29/uvm-indirect-registers/</id>
     <published>2019-04-29T01:38:41.000Z</published>
-    <updated>2019-04-29T01:54:55.335Z</updated>
+    <updated>2019-04-30T14:37:01.621Z</updated>
     
     <summary type="html">
     
@@ -449,7 +481,7 @@
     <link href="http://118.25.122.94:8080/2019/04/29/regModel/"/>
     <id>http://118.25.122.94:8080/2019/04/29/regModel/</id>
     <published>2019-04-29T01:33:14.000Z</published>
-    <updated>2019-04-29T01:54:38.393Z</updated>
+    <updated>2019-04-30T14:37:01.618Z</updated>
     
     <summary type="html">
     
@@ -471,7 +503,7 @@
     <link href="http://118.25.122.94:8080/2019/04/28/VCS-deadLoop/"/>
     <id>http://118.25.122.94:8080/2019/04/28/VCS-deadLoop/</id>
     <published>2019-04-28T11:11:32.000Z</published>
-    <updated>2019-04-29T01:07:11.559Z</updated>
+    <updated>2019-04-30T14:37:01.611Z</updated>
     
     <summary type="html">
     
@@ -495,7 +527,7 @@
     <link href="http://118.25.122.94:8080/2019/04/26/UVM-CUTOM-FIELD-ACCESS-POLICY/"/>
     <id>http://118.25.122.94:8080/2019/04/26/UVM-CUTOM-FIELD-ACCESS-POLICY/</id>
     <published>2019-04-26T09:19:16.000Z</published>
-    <updated>2019-04-29T01:08:02.073Z</updated>
+    <updated>2019-04-30T14:37:01.607Z</updated>
     
     <summary type="html">
     
@@ -517,7 +549,7 @@
     <link href="http://118.25.122.94:8080/2019/04/25/C-C-%E8%B5%84%E6%BA%90/"/>
     <id>http://118.25.122.94:8080/2019/04/25/C-C-资源/</id>
     <published>2019-04-25T14:15:04.000Z</published>
-    <updated>2019-04-26T06:56:40.412Z</updated>
+    <updated>2019-04-25T14:20:12.515Z</updated>
     
     <summary type="html">
     
@@ -543,7 +575,7 @@
     <link href="http://118.25.122.94:8080/2019/04/25/uvm-re-match%E5%92%8Cuvm-glob-to-re%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://118.25.122.94:8080/2019/04/25/uvm-re-match和uvm-glob-to-re的使用/</id>
     <published>2019-04-25T07:29:05.000Z</published>
-    <updated>2019-04-26T06:56:40.452Z</updated>
+    <updated>2019-04-25T14:04:33.716Z</updated>
     
     <summary type="html">
     
@@ -563,26 +595,6 @@
       <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
     
       <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>权利的游戏:冰与火之歌</title>
-    <link href="http://118.25.122.94:8080/2019/04/24/%E6%9D%83%E5%88%A9%E7%9A%84%E6%B8%B8%E6%88%8F-%E5%86%B0%E4%B8%8E%E7%81%AB%E4%B9%8B%E6%AD%8C/"/>
-    <id>http://118.25.122.94:8080/2019/04/24/权利的游戏-冰与火之歌/</id>
-    <published>2019-04-24T15:21:38.000Z</published>
-    <updated>2019-04-26T06:56:40.459Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;//player.bilibili.com/player.html?aid=50161560&amp;cid=87808970&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;&gt; &lt;/iframe&gt;&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="娱乐" scheme="http://118.25.122.94:8080/categories/%E5%A8%B1%E4%B9%90/"/>
-    
-    
-      <category term="音乐" scheme="http://118.25.122.94:8080/tags/%E9%9F%B3%E4%B9%90/"/>
     
   </entry>
   
