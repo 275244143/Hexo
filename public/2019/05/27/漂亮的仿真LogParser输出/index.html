@@ -135,7 +135,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>标签: 音乐 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+    <title>漂亮的仿真LogParser输出 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -183,24 +183,167 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tag" class="tag page">
-  <h1 class="page-title">音乐</h1>
+<div id="post" class="page">
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/04/24/权利的游戏-冰与火之歌/" itemprop="url">权利的游戏:冰与火之歌</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-24T23:21:38+08:00">04-24</time>
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/05/27/漂亮的仿真LogParser输出/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
       </span>
-      
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">漂亮的仿真LogParser输出</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-27T17:44:07+08:00">2019-05-27 17:44:07</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">206字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">1分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
     </header>
+    <main class="post-main" itemprop="articleBody">
+      <h4 id="盗用了CTest思想，做了一个ErrorPattern漂亮的查找Dashboard"><a href="#盗用了CTest思想，做了一个ErrorPattern漂亮的查找Dashboard" class="headerlink" title="盗用了CTest思想，做了一个ErrorPattern漂亮的查找Dashboard~~~"></a>盗用了CTest思想，做了一个ErrorPattern漂亮的查找Dashboard~~~</h4><ul>
+<li>假设所有的仿真log都在文件夹LOG下，并且都是以.log结尾<br>LOG/<br>├── test0.log<br>├── test1.log<br>├── test2.log<br>└── test3.log</li>
+<li>个别文件中可能含有mismatch关键字， 用于判断此testcase 是否fail.</li>
+</ul>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash">./logcheck.sh mismatch</span><br>Input cmd is ./logcheck.sh mismatch ./LOG<br>Running LogPasering ...<br>-- TestName is : test0 &gt;&gt; LogName:./LOG/test0.log<br>-- TestName is : test1 &gt;&gt; LogName:./LOG/test1.log<br>-- TestName is : test2 &gt;&gt; LogName:./LOG/test2.log<br>-- TestName is : test3 &gt;&gt; LogName:./LOG/test3.log<br>-- Configuring done<br>-- Generating done<br>-- Build files have been written to: ./LOG/build<br>Test project ./LOG/build<br>    Start 1: test0<br>1/4 Test #1: test0 ............................   Passed    0.00 sec<br>    Start 2: test1<br>2/4 Test #2: test1 ............................***Failed    0.00 sec<br>    Start 3: test2<br>3/4 Test #3: test2 ............................***Failed    0.00 sec<br>    Start 4: test3<br>4/4 Test #4: test3 ............................   Passed    0.00 sec<br><span class="hljs-meta"><br>50%</span><span class="bash"> tests passed, 2 tests failed out of 4</span><br><br>Total Test time (real) =   0.02 sec<br><br>The following tests FAILED:<br>	  2 - test1 (Failed)<br>	  3 - test2 (Failed)<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p>代码片段，详细代码@QQ.</p>
+<p><img src="/2019/05/27/漂亮的仿真LogParser输出/log.png" alt="log"></p>
+</li>
+</ul>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+        <a class="post-tag button" href="/tags/Linux/" rel="tag"><i class="fas fa-tags"></i>Linux</a>
+        
+        <a class="post-tag button" href="/tags/CMake/" rel="tag"><i class="fas fa-tags"></i>CMake</a>
+        
+      </div>
+      
+    </footer>
   </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2019/05/27/漂亮的仿真LogParser输出/" title="漂亮的仿真LogParser输出">http://118.25.122.94:8080/2019/05/27/漂亮的仿真LogParser输出/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/05/26/机油：git和tig/" rel="next" title="机油：git和tig"><i class="fas fa-angle-left"></i><span class="nav-title">机油：git和tig</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
   
   
 </div>
+
+
+
+  
+</footer></div>
 
           </div>
           
@@ -265,6 +408,17 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#盗用了CTest思想，做了一个ErrorPattern漂亮的查找Dashboard"><span class="toc-text">盗用了CTest思想，做了一个ErrorPattern漂亮的查找Dashboard~~~</span></a></li></ol></div>
+    </div>
+    
     
     
     <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
