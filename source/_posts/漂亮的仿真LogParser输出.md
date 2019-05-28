@@ -52,6 +52,41 @@ The following tests FAILED:
 	  2 - test1 (Failed)
 	  3 - test2 (Failed)
 ```
++ 只重新运行fails的用例Parser
+
+  ```shell
+  $./logcheck.sh mismatch ./LOG/ --rerun-failed
+  Input cmd is ./logcheck.sh mismatch ./LOG/ --rerun-failed...
+  Running LogPasering ...
+  -- TestName is : test0 >> ./LOG/test0.log
+  -- TestName is : test1 >> ./LOG/test1.log
+  -- TestName is : test2 >> ./LOG/test2.log
+  -- TestName is : test3 >> ./LOG/test3.log
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: ./LOG/build
+  Test project ./LOG/build
+      Start 2: test1
+  1/2 Test #2: test1 ............................***Failed    0.00 sec
+      Start 3: test2
+  2/2 Test #3: test2 ............................***Failed    0.00 sec
+  
+  0% tests passed, 2 tests failed out of 2
+  
+  Total Test time (real) =   0.01 sec
+  
+  The following tests FAILED:
+  	  2 - test1 (Failed)
+  	  3 - test2 (Failed)
+  ```
+
++ 多线程运行
+
+  ```shell
+  $./logcheck.sh mismatch ./LOG/  -parallel 4
+  ```
+
+  
 
 + 代码片段，详细代码@QQ.
 

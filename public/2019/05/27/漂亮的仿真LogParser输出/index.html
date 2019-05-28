@@ -215,7 +215,7 @@
           <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
         </span>
 	<span class="post-meta-item-text">  字数统计: </span>
-	<span class="post-count">206字</span>
+	<span class="post-count">336字</span>
 	<span class="post-meta-item-text">  阅读时长: </span>
 	<span class="post-count">1分</span>
 	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
@@ -232,6 +232,14 @@
 </ul>
 <figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash">./logcheck.sh mismatch</span><br>Input cmd is ./logcheck.sh mismatch ./LOG<br>Running LogPasering ...<br>-- TestName is : test0 &gt;&gt; LogName:./LOG/test0.log<br>-- TestName is : test1 &gt;&gt; LogName:./LOG/test1.log<br>-- TestName is : test2 &gt;&gt; LogName:./LOG/test2.log<br>-- TestName is : test3 &gt;&gt; LogName:./LOG/test3.log<br>-- Configuring done<br>-- Generating done<br>-- Build files have been written to: ./LOG/build<br>Test project ./LOG/build<br>    Start 1: test0<br>1/4 Test #1: test0 ............................   Passed    0.00 sec<br>    Start 2: test1<br>2/4 Test #2: test1 ............................***Failed    0.00 sec<br>    Start 3: test2<br>3/4 Test #3: test2 ............................***Failed    0.00 sec<br>    Start 4: test3<br>4/4 Test #4: test3 ............................   Passed    0.00 sec<br><span class="hljs-meta"><br>50%</span><span class="bash"> tests passed, 2 tests failed out of 4</span><br><br>Total Test time (real) =   0.02 sec<br><br>The following tests FAILED:<br>	  2 - test1 (Failed)<br>	  3 - test2 (Failed)<br></code></pre></td></tr></table></figure>
 <ul>
+<li><p>只重新运行fails的用例Parser</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash">./logcheck.sh mismatch ./LOG/ --rerun-failed</span><br>Input cmd is ./logcheck.sh mismatch ./LOG/ --rerun-failed...<br>Running LogPasering ...<br>-- TestName is : test0 &gt;&gt; ./LOG/test0.log<br>-- TestName is : test1 &gt;&gt; ./LOG/test1.log<br>-- TestName is : test2 &gt;&gt; ./LOG/test2.log<br>-- TestName is : test3 &gt;&gt; ./LOG/test3.log<br>-- Configuring done<br>-- Generating done<br>-- Build files have been written to: ./LOG/build<br>Test project ./LOG/build<br>    Start 2: test1<br>1/2 Test #2: test1 ............................***Failed    0.00 sec<br>    Start 3: test2<br>2/2 Test #3: test2 ............................***Failed    0.00 sec<br><span class="hljs-meta"><br>0%</span><span class="bash"> tests passed, 2 tests failed out of 2</span><br><br>Total Test time (real) =   0.01 sec<br><br>The following tests FAILED:<br>	  2 - test1 (Failed)<br>	  3 - test2 (Failed)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>多线程运行</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash">./logcheck.sh mismatch ./LOG/  -parallel 4</span><br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
 <li><p>代码片段，详细代码@QQ.</p>
 <p><img src="/2019/05/27/漂亮的仿真LogParser输出/log.png" alt="log"></p>
 </li>
@@ -246,9 +254,9 @@
         
         <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
         
-        <a class="post-tag button" href="/tags/Linux/" rel="tag"><i class="fas fa-tags"></i>Linux</a>
-        
         <a class="post-tag button" href="/tags/CMake/" rel="tag"><i class="fas fa-tags"></i>CMake</a>
+        
+        <a class="post-tag button" href="/tags/Linux/" rel="tag"><i class="fas fa-tags"></i>Linux</a>
         
       </div>
       
