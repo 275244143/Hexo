@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-06-05T03:24:55.813Z</updated>
+  <updated>2019-06-05T06:08:28.453Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何优雅的结束UVM Test？</title>
+    <link href="http://118.25.122.94:8080/2019/06/05/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E7%BB%93%E6%9D%9FUVM-Test%EF%BC%9F/"/>
+    <id>http://118.25.122.94:8080/2019/06/05/如何优雅的结束UVM-Test？/</id>
+    <published>2019-06-05T06:07:48.000Z</published>
+    <updated>2019-06-05T06:08:28.453Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;如何优雅的结束UVM-Test？&quot;&gt;&lt;a href=&quot;#如何优雅的结束UVM-Test？&quot; class=&quot;headerlink&quot; title=&quot;如何优雅的结束UVM Test？&quot;&gt;&lt;/a&gt;如何优雅的结束UVM Test？&lt;/h3&gt;&lt;p&gt;End-of-test
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>zsh:oh-my-zsh插件收集</title>
@@ -596,30 +624,6 @@
       <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
     
       <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VCS定位死循环</title>
-    <link href="http://118.25.122.94:8080/2019/04/28/VCS-deadLoop/"/>
-    <id>http://118.25.122.94:8080/2019/04/28/VCS-deadLoop/</id>
-    <published>2019-04-28T11:11:32.000Z</published>
-    <updated>2019-04-29T01:07:11.559Z</updated>
-    
-    <summary type="html">
-    
-      欢迎光临~
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="EDA" scheme="http://118.25.122.94:8080/tags/EDA/"/>
-    
-      <category term="VCS" scheme="http://118.25.122.94:8080/tags/VCS/"/>
-    
-      <category term="Synopsys" scheme="http://118.25.122.94:8080/tags/Synopsys/"/>
     
   </entry>
   
