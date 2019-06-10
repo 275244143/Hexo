@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-06-10T08:06:57.529Z</updated>
+  <updated>2019-06-10T09:46:27.609Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UVM-RAL Burst R/W的三种基本方法</title>
+    <link href="http://118.25.122.94:8080/2019/06/10/UVM-RAL-Burst-R-W%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/"/>
+    <id>http://118.25.122.94:8080/2019/06/10/UVM-RAL-Burst-R-W的三种基本方法/</id>
+    <published>2019-06-10T09:44:47.000Z</published>
+    <updated>2019-06-10T09:46:27.609Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>向UVM工厂注册抽象基类</title>
@@ -607,36 +629,6 @@
       <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
     
       <category term="EDA" scheme="http://118.25.122.94:8080/tags/EDA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VM虚拟机再见！Docker来了！</title>
-    <link href="http://118.25.122.94:8080/2019/04/30/VM%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%8D%E8%A7%81%EF%BC%81Docker%E6%9D%A5%E4%BA%86%EF%BC%81/"/>
-    <id>http://118.25.122.94:8080/2019/04/30/VM虚拟机再见！Docker来了！/</id>
-    <published>2019-04-30T09:23:23.000Z</published>
-    <updated>2019-04-30T09:29:35.336Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;VM(VMware)在宿主机器、宿主机器操作系统的基础上创建虚拟层、虚拟化的操作系统、虚拟化的仓库，然后再安装应用；&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Container(Docker容器)，在宿主机器、宿主机器操作系统上创建Docker引擎，在引擎的基础上再安装应用。那
-        
-      
-    
-    </summary>
-    
-      <category term="虚拟机" scheme="http://118.25.122.94:8080/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
-    
-    
-      <category term="Docker" scheme="http://118.25.122.94:8080/tags/Docker/"/>
-    
-      <category term="VMware" scheme="http://118.25.122.94:8080/tags/VMware/"/>
     
   </entry>
   
