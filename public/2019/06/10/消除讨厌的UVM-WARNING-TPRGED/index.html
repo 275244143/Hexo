@@ -135,7 +135,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>VM虚拟机再见！Docker来了！ | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+    <title> 消除讨厌的UVM_WARNING:[TPRGED] | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -187,7 +187,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/04/30/VM虚拟机再见！Docker来了！/">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/06/10/消除讨厌的UVM-WARNING-TPRGED/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="神秘人">
        <meta itemprop="description" content="在人生中最艰难的是选择。">
@@ -198,12 +198,12 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">VM虚拟机再见！Docker来了！</h1>
+      <h1 class="post-title" itemprop="name headline"> 消除讨厌的UVM_WARNING:[TPRGED]</h1>
       <div class="post-meta">
          
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-30T17:23:23+08:00">2019-04-30 17:23:23</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-10T11:36:54+08:00">2019-06-10 11:36:54</time></span>
         </span>
         
         
@@ -212,12 +212,12 @@
         
         <span class="post-categories">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/虚拟机/" itemprop="url" rel="index"><span itemprop="name">虚拟机</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
         </span>
 	<span class="post-meta-item-text">  字数统计: </span>
-	<span class="post-count">143字</span>
+	<span class="post-count">737字</span>
 	<span class="post-meta-item-text">  阅读时长: </span>
-	<span class="post-count">1分</span>
+	<span class="post-count">4分</span>
 	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
         
         
@@ -226,24 +226,32 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <ul>
-<li>VM(VMware)在宿主机器、宿主机器操作系统的基础上创建虚拟层、虚拟化的操作系统、虚拟化的仓库，然后再安装应用；</li>
-<li><p>Container(Docker容器)，在宿主机器、宿主机器操作系统上创建Docker引擎，在引擎的基础上再安装应用。那么问题来了，没有操作系统，怎么运行程序？可以在Docker中创建一个ubuntu的镜像文件，这样就能将ubuntu系统集成到Docker中，运行的应用就都是ubuntu的应用。</p>
-</li>
-<li><p>区别：<br><img src="/2019/04/30/VM虚拟机再见！Docker来了！/vm-docker.png" alt="vm-docker"></p>
-</li>
-<li><p>神秘人的Docker：<br><img src="/2019/04/30/VM虚拟机再见！Docker来了！/docker-ubuntu.png" alt="docker-ubuntu"></p>
-</li>
-</ul>
+      <h3 id="包，类名和UVM-的前缀、后缀？"><a href="#包，类名和UVM-的前缀、后缀？" class="headerlink" title="包，类名和UVM 的前缀、后缀？"></a>包，类名和UVM 的前缀、后缀？</h3><p>Some time ago I wrote a post that challenged some of the established coding conventions of modern <em>SystemVerilog</em>. In particular, I expressed my displeasure with the fact that all training material from EDA companies, tutorial sites and other learning resources state that packages should always contain a <em>“_pkg”</em> suffix appended to the package name and that all identifiers in the package (class/function/constant names) should contain the package name as a prefix. I attribute this to the significant <em>C</em> legacy that exists in our field, as the <em>C</em> language doesn’t have any construct for packaging code.</p>
+<p>I’ve started to drop the package name prefix from any new code I’m writing, both for the blog (as you might have noticed), but also at work. By seeing how this works out in “real life”, I’ve noticed some pitfalls. The first is, of course, that people will come and complain that this doesn’t satisfy the commandments given to us by the lords of <em>SystemVerilog</em>. I’ve yet to hear any compelling argument against dropping package names from classes. Moreover, the only arguments I’ve ever heard were “this isn’t how everybody else is doing it” and my favorite “we’ve always done it this way”. Until someone can come up with something better, I’ll continue to believe that the much larger communities of <em>C++</em>, <em>Java</em> and other modern programming languages are onto something.</p>
+<p>Now let’s look at what happens when applying this idea when also using UVM. Normally, we’d have a package that contains a class definition. Inside this class, we’d use the utils macro to reduce the amount of boilerplate code needed to make it a productive member of a UVM environment:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">package</span> some_package;<br>  <span class="hljs-comment">// ...</span><br><br>  <span class="hljs-keyword">class</span> some_class <span class="hljs-keyword">extends</span> uvm_object;<br>    <span class="hljs-comment">// ...</span><br><br>    <span class="hljs-meta">`uvm_object_utils(some_class)</span><br>  <span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">endpackage</span><br></code></pre></td></tr></table></figure>
+<p>If we’d try to print an object of this class, we’d get something like this:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs verilog">---------------------------------<br>Name      Type        Size  Value<br>---------------------------------<br>some_obj  some_class  -     @<span class="hljs-number">338</span><br>---------------------------------<br></code></pre></td></tr></table></figure>
+<p>The type column would rightly show <em>some_class</em>, but that isn’t very informative, as some colleague pointed out. Having the package name as a prefix made it instantly possible to identify the scope where the class is defined. This is particularly helpful when classes from different packages use the same name.</p>
+<p>And speaking of using the same name for multiple classes… Let’s say that we also have another package that defines a <em>some_class</em>type:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">package</span> some_other_package;<br>  <span class="hljs-comment">// ...</span><br><br>  <span class="hljs-keyword">class</span> some_class <span class="hljs-keyword">extends</span> uvm_object;<br>    <span class="hljs-comment">// ...</span><br><br>    <span class="hljs-meta">`uvm_object_utils(some_class)</span><br>  <span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">endpackage</span><br></code></pre></td></tr></table></figure>
+<p>Because the classes have the same name, when they get registered with the factory, we’ll get the following warning:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs verilog">UVM_WARNING @ <span class="hljs-number">0</span>: reporter [TPRGED] Type name 'some_class' already registered <span class="hljs-keyword">with</span> factory. No <span class="hljs-keyword">string</span>-based lookup support <span class="hljs-keyword">for</span> multiple types <span class="hljs-keyword">with</span> the same <span class="hljs-keyword">type</span> name.<br></code></pre></td></tr></table></figure>
+<p>Aside from disabling the <em>set_\</em>_override_by_name(…)<em> functions (which I anyway wouldn’t recommend using), it doesn’t do anything else. Everything else still works just fine. Nevertheless, extra warning message aren’t nice, because they clutter the log file. For one or two classes it might be ok, but try working with multiple UVC packages that each define a </em>driver<em>, </em>monitor<em>, </em>agent*, etc. class… I tried to come up with a way to disable the warning, but I wasn’t successful.</p>
+<p>I’ve thought about these problems on multiple occasions, went down a few dead ends and dreamt up some silly solutions. I kept thinking that the problem was with UVM, that the macros were to restrictive because they don’t consider the class’s parent package. Then I realized that the name that gets displayed by the <em>print(…)</em> function and that gets registered with the factory is merely the one supplied as the macro argument. Instead of using just the class name, we can just as well use its fully qualified name, that includes the package name and the scope operator, <em>“::”</em>. This means we can change our code to this:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> some_class <span class="hljs-keyword">extends</span> uvm_object;<br>  <span class="hljs-comment">// ...</span><br><br>  <span class="hljs-meta">`uvm_object_utils(some_package::some_class)</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Now we won’t get any more warning from the UVM factory and the text displayed by <em>print(…)</em> will make it clear which class we’re dealing with:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs verilog">-----------------------------------------------<br>Name      Type                      Size  Value<br>-----------------------------------------------<br>some_obj  some_package::some_class  -     @<span class="hljs-number">338</span><br>-----------------------------------------------<br></code></pre></td></tr></table></figure>
+<p>With this small tweak, it’s possible to drop the package prefix from classes while still getting nice prints in UVM and avoiding any warnings from the factory. Now we have two reasons less against shortening our class names.</p>
 
     </main>
     <footer class="post-footer">
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/Docker/" rel="tag"><i class="fas fa-tags"></i>Docker</a>
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
         
-        <a class="post-tag button" href="/tags/VMware/" rel="tag"><i class="fas fa-tags"></i>VMware</a>
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
         
       </div>
       
@@ -260,7 +268,7 @@
 	</li>
 	<li class="post-copyright-link">
 		<strong>本文链接：</strong>
-		<a href="/2019/04/30/VM虚拟机再见！Docker来了！/" title="VM虚拟机再见！Docker来了！">http://118.25.122.94:8080/2019/04/30/VM虚拟机再见！Docker来了！/</a>
+		<a href="/2019/06/10/消除讨厌的UVM-WARNING-TPRGED/" title=" 消除讨厌的UVM_WARNING:[TPRGED]">http://118.25.122.94:8080/2019/06/10/消除讨厌的UVM-WARNING-TPRGED/</a>
 	</li>
 	<li class="post-copyright-license">
 		<strong>版权声明： </strong>
@@ -291,12 +299,10 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2019/04/30/约束12与34都存在number或者12与34都不在number里？/" rel="next" title="约束12与34都存在number数组里或者12与34都不在number数组里里？"><i class="fas fa-angle-left"></i><span class="nav-title">约束12与34都存在number数组里或者12与34都不在number数组里里？</span></a>
+      <a href="/2019/06/05/如何优雅的结束UVM-Test？/" rel="next" title="如何优雅的结束UVM Test？"><i class="fas fa-angle-left"></i><span class="nav-title">如何优雅的结束UVM Test？</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2019/05/05/Docker启动EDA工具迅速！/" rel="prev" title="Docker启动EDA工具迅速！"><span class="nav-title">Docker启动EDA工具迅速！</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -409,6 +415,12 @@
     
     
     
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#包，类名和UVM-的前缀、后缀？"><span class="toc-text">包，类名和UVM 的前缀、后缀？</span></a></li></ol></div>
+    </div>
     
     
     

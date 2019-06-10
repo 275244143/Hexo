@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-06-05T06:08:28.453Z</updated>
+  <updated>2019-06-10T03:40:32.224Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title> 消除讨厌的UVM_WARNING:[TPRGED]</title>
+    <link href="http://118.25.122.94:8080/2019/06/10/%E6%B6%88%E9%99%A4%E8%AE%A8%E5%8E%8C%E7%9A%84UVM-WARNING-TPRGED/"/>
+    <id>http://118.25.122.94:8080/2019/06/10/消除讨厌的UVM-WARNING-TPRGED/</id>
+    <published>2019-06-10T03:36:54.000Z</published>
+    <updated>2019-06-10T03:40:32.224Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;包，类名和UVM-的前缀、后缀？&quot;&gt;&lt;a href=&quot;#包，类名和UVM-的前缀、后缀？&quot; class=&quot;headerlink&quot; title=&quot;包，类名和UVM 的前缀、后缀？&quot;&gt;&lt;/a&gt;包，类名和UVM 的前缀、后缀？&lt;/h3&gt;&lt;p&gt;Some time ago
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>如何优雅的结束UVM Test？</title>
@@ -593,28 +621,6 @@
     <summary type="html">
     
       UVM寄存器间接访问package。
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>regModel</title>
-    <link href="http://118.25.122.94:8080/2019/04/29/regModel/"/>
-    <id>http://118.25.122.94:8080/2019/04/29/regModel/</id>
-    <published>2019-04-29T01:33:14.000Z</published>
-    <updated>2019-04-29T01:54:38.393Z</updated>
-    
-    <summary type="html">
-    
-      寄存器模型markdown文件生成器
     
     </summary>
     
