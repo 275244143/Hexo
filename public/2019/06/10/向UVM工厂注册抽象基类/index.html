@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>向UVM工厂注册抽象基类 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/06/10/向UVM工厂注册抽象基类/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">向UVM工厂注册抽象基类</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-10T16:02:05+08:00">2019-06-10 16:02:05</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">2k字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">12分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>Every now and again I stumble upon a situation where it’s natural to use an abstract class. A typical example is when working with parameterized classes and wanting to swap parameterizations:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">class</span> some_abstract_component <span class="hljs-keyword">extends</span> uvm_component;<br>  <span class="hljs-keyword">pure</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> do_stuff();<br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">task</span> run_phase(uvm_phase phase);<br>    do_stuff();<br>  <span class="hljs-keyword">endtask</span><br><span class="hljs-keyword">endclass</span><br><br><br><span class="hljs-keyword">class</span> some_concrete_param_component <span class="hljs-variable">#(type T = int)</span> <span class="hljs-keyword">extends</span><br>  some_abstract_component;<br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> do_stuff();<br>    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"I'm doing %s stuff"</span>, <span class="hljs-built_in">$typename</span>(T));<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>This is something we used on coverage extendability, when we talked about having policy classes as parameters to coverage collector components.</p>
+<p>Each parameterization of a class creates an own inheritance tree independent of the others. If we want to be able to store any parameterization in a variable, we need a common base class:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog">some_abstract_component comp;<br>some_concrete_param_component <span class="hljs-variable">#(bit) bit_comp = new()</span>;<br>some_concrete_param_component <span class="hljs-variable">#(real) real_comp = new()</span>;<br><br><span class="hljs-comment">// allowed</span><br>comp = bit_comp;<br><br><span class="hljs-comment">// also allowed</span><br>comp = real_comp;<br></code></pre></td></tr></table></figure>
+<p>By tagging the base class as <strong>virtual</strong> we’ve marked it as incomplete. We’ve declared that it can do something (via the <em>do_stuff()</em>function), but we haven’t yet told the compiler how it can do it. This is left to sub-classes. We want to be able to easily swap parameterizations, without resorting to a big <strong>if/else</strong> cascade or a long <strong>case</strong> statement. This is what the UVM factory is for. Assuming that both types are registered with the factory we could do the following:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog">some_abstract_component comp = some_abstract_component::type_id::create(...);<br><br><span class="hljs-comment">// In a test, before creating 'comp'</span><br>some_abstract_component::type_id::set_type_override(<br>  some_concrete_param_component <span class="hljs-variable">#(bit)::get_type())</span>;<br><br><span class="hljs-comment">// In a different test, also before creating 'comp'</span><br>some_abstract_component::type_id::set_type_override(<br>  some_concrete_param_component <span class="hljs-variable">#(real)::get_type())</span>;<br></code></pre></td></tr></table></figure>
+<p>The type overrides let the factory know that wherever we wanted to instantiate <em>some_abstract_component</em> it should instantiate the overridden type instead. We can’t (officially) do this out of the box.</p>
+<p>Depending on your simulator you can see one of the following outcomes when using the <em>uvm_object_utils</em> macro with a virtual class:</p>
+<ol>
+<li>the code compiles without any problems; if the virtual class constructor ends up being called (which would happen if we’d forget to set an override) a fatal error is issued</li>
+<li>you get a warning that you’re trying to instantiate a virtual class, but the code still compiles; as above, actually calling the constructor is not allowed</li>
+<li>the compiler stops with an error saying that it’s illegal to instantiate a virtual class</li>
+</ol>
+<p>Out of the three above, only outcome number 3 follows the LRM strictly. In the interest of portability, we shouldn’t be writing code that relies on vendor “features” to compile. This is the whole reason why we as an industry have moved to <em>SystemVerilog</em>, isn’t it?</p>
+<p>Let’s look at what the uvm_component_utils macro expands to:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">class</span> some_abstract_class <span class="hljs-keyword">extends</span> uvm_component;<br>  <span class="hljs-comment">// ...</span><br><br>  <span class="hljs-comment">// `uvm_component_utils(some_abstract_class)</span><br>  <span class="hljs-meta">`m_uvm_component_registry_internal(some_abstract_class, some_abstract_class)</span><br>  <span class="hljs-meta">`m_uvm_get_type_name_func(some_abstract_class)</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Let’s dig deeper and see how factory registration is done by also expanding the <em>m_uvm_component_registry_internal(…)</em> macro:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">class</span> some_abstract_class <span class="hljs-keyword">extends</span> uvm_component;<br>  <span class="hljs-comment">// ...</span><br><br>  <span class="hljs-comment">// `m_uvm_component_registry_internal(some_abstract_class, ...)</span><br>  <span class="hljs-keyword">typedef</span> uvm_component_registry #(some_abstract_class,<br>    <span class="hljs-string">"some_abstract_class"</span>) type_id;<br><br>  <span class="hljs-keyword">static</span> <span class="hljs-keyword">function</span> type_id get_type();<br>    <span class="hljs-keyword">return</span> type_id::get();<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> uvm_object_wrapper get_object_type();<br>    <span class="hljs-keyword">return</span> type_id::get();<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The veil of secrecy is being lifted. The ominous <em>type_id</em> that we’ve been using is actually a <strong>typedef</strong> that is shorthand for a parameterization of <em>uvm_component_registry</em>. If we open up its source code we can find the offending function:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> uvm_component_registry <span class="hljs-variable">#(...)</span> <span class="hljs-keyword">extends</span> uvm_object_wrapper;<br><br>  <span class="hljs-comment">// After elaboration with 'some_abstract_class' as an parameter</span><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> uvm_component create_component (<span class="hljs-keyword">string</span> name,<br>                                                   uvm_component parent);<br>    some_abstract_class obj;<br>    obj = <span class="hljs-keyword">new</span>(name, parent);  <span class="hljs-comment">// !!!</span><br>    <span class="hljs-keyword">return</span> obj;<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The <em>create_component(…)</em> function calls <em>new(…)</em> to get an object of the type its parameterized with, which in our case is <em>some_abstract_class</em>. Because of this, we can’t parameterize <em>uvm_component_registry</em> with a virtual class. The same point also applies for classes that inherit directly from <em>uvm_object</em> and its corresponding <em>uvm_object_registry</em>.</p>
+<p>Before we continue, it might be a good idea to take a step back and look at what exactly happens when we create an object using the factory. The first cog in the machine is the <em>uvm_object_wrapper</em> class, which contains two methods, <em>create_object(…)</em> and <em>create_component(…)</em>. The class itself is <strong>virtual</strong> and these methods are almost <strong>pure virtual</strong> (in the sense that they don’t do anything)<strong>:</strong></p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">class</span> uvm_object_wrapper;<br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> uvm_object create_object (<span class="hljs-keyword">string</span> name=<span class="hljs-string">""</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> uvm_component create_component (<span class="hljs-keyword">string</span> name,<br>                                                   uvm_component parent);<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>A class that can be created by the factory must have a corresponding <em>uvm_object_wrapper</em> associated with it, that implements the corresponding <em>create_\</em>(…)* function to call that class’s constructor, thereby returning an instance of that class:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> some_class <span class="hljs-keyword">extends</span> uvm_object;<br>  <span class="hljs-keyword">extern</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name);<br><span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">class</span> some_class_wrapper <span class="hljs-keyword">extends</span> uvm_object_wrapper;<br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> uvm_object create_object(<span class="hljs-keyword">string</span> name);<br>    some_class obj = <span class="hljs-keyword">new</span>(name);<br>    <span class="hljs-keyword">return</span> obj;<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The factory can create an instance of <em>some_class</em> by using its wrapper:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> uvm_factory;<br>  <span class="hljs-keyword">function</span> uvm_object create_object_by_type(uvm_object_wrapper requested_type,<br>    <span class="hljs-keyword">string</span> name = <span class="hljs-string">""</span><br>  );<br>    <span class="hljs-comment">// ...</span><br>    <span class="hljs-keyword">return</span> requesed_type<span class="hljs-variable">.create_object</span>(name);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>It would be rather boring if this is all it would do, because what would then be the point of using the factory? We could just as easily create an object in our user code. What the factory first does is it checks if there is an override in place. If there is, instead of calling <em>create_object(…)</em> on the wrapper it got as an argument, it’s going to call it on the wrapper of the overriding type:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> uvm_factory;<br>  <span class="hljs-keyword">function</span> uvm_object create_object_by_type(uvm_object_wrapper requested_type,<br>    <span class="hljs-keyword">string</span> name = <span class="hljs-string">""</span><br>  );<br>    uvm_object_wrapper returned_type;<br>    <span class="hljs-keyword">if</span> (has_override(requested_type))<br>      returned_type = get_override(requested_type);<br>    <span class="hljs-keyword">else</span><br>      returned_type = requested_type;<br>    <span class="hljs-keyword">return</span> returned_type<span class="hljs-variable">.create_object</span>(name);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>For simplicity, we can imagine that the lookup mechanism works like a look up table, which maps one wrapper to a potentially different wrapper.</p>
+<p>Let’s go back to how wrappers are defined. What we’ve looked at up to now are the classes behind the curtain of encapsulation, that we as users don’t normally see. As the task of registering a class with the factory is something that we need to do quite often, the nice people at Accellera defined some classes that can handle this easily: <em>uvm_object_registry</em> and <em>uvm_component_registry</em>. These are sub-classes of <em>uvm_object_wrapper</em> and parameterized with the class they are supposed to create:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> uvm_object_registry <span class="hljs-variable">#(type T=uvm_object)</span> <span class="hljs-keyword">extends</span> uvm_object_wrapper;<br>  <span class="hljs-keyword">typedef</span> uvm_object_registry <span class="hljs-variable">#(T)</span> this_type;<br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>This way, these classes can provide generic implementations of <em>create_object(…)</em> and <em>create_component(…)</em>, respectively:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> uvm_object_registry <span class="hljs-variable">#(type T=uvm_object)</span> <span class="hljs-keyword">extends</span> uvm_object_wrapper;<br>  <span class="hljs-comment">// ...</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> uvm_object create_object(<span class="hljs-keyword">string</span> name);<br>    T obj = <span class="hljs-keyword">new</span>(name);<br>    <span class="hljs-keyword">return</span> obj;<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>By having the class of interest as a parameter, we avoid having to always declare a sub-class for each new class we want to use with the factory. The <em>*_registry</em> classes also provide the famous <em>create(…)</em> function we’ve been told to always call instead of <em>new(…)</em>. This function gets an instance of the registry class its being called on and passes it to the factory to do the actual creation:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> uvm_object_registry <span class="hljs-variable">#(type T=uvm_object)</span> <span class="hljs-keyword">extends</span> uvm_object_wrapper;<br>  <span class="hljs-comment">// ...</span><br><br>  <span class="hljs-keyword">static</span> <span class="hljs-keyword">function</span> T create(<span class="hljs-keyword">string</span> name);<br>    uvm_object obj;<br>    uvm_factory f = uvm_factory::get();<br>    obj = f<span class="hljs-variable">.create_object_by_type</span>(get());<br>    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">$cast</span>(create, obj))<br>      uvm_report_fatal(<span class="hljs-string">"FCTTYP"</span>, <span class="hljs-string">"..."</span>, UVM_NONE);<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The registry classes are implemented as singletons; this means that there can only ever be a single instance of a certain registry and the <em>get(…)</em> function will return it. The object returned by the factory needs to be cast to make sure that it’s compatible with the original class. This means it has to be of either the same type or a sub-class.</p>
+<p>Now that we know a little more about how the factory mechanism is implemented, we can get back to the problem at hand: associating abstract classes with registry classes.</p>
+<p>A cool feature that <em>C++</em> has is template specialization. This means that it’s possible to modify the implementation of the code that gets generated when a template is specialized with a certain type. For our example, this would mean that we would writing something like:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> uvm_component_registry <span class="hljs-variable">#(some_abstract_class, ...)</span> <span class="hljs-keyword">extends</span><br>  uvm_object_wrapper;<br><br>  <span class="hljs-comment">// After elaboration with 'some_abstract_class' as an parameter</span><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> uvm_component create_component (<span class="hljs-keyword">string</span> name,<br>                                                   uvm_component parent);<br>    <span class="hljs-meta">`uvm_fatal("NEWERR", "Trying to create a virtual class")</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>This means that for all other classes except <em>some_abstract_class</em> the <em>create_component(…)</em> function does exactly what it used to do in the generic implementation (i.e. it instantiates an object). For <em>some_abstract_class</em> it issues a fatal error instead, because this means that the user forgot something (most likely a factory override). This mechanism isn’t supported by <em>SystemVerilog</em>, so we’ll have to find another solution.</p>
+<p>If we go back to the macro expansion, we can see that we can replace the type of <em>type_id</em> with something other than <em>uvm_component_registry</em>. We need a different class that extends <em>uvm_object_wrapper</em>, but doesn’t call the constructor of the class it’s parameterized with and instead issues a fatal error:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> vgm_abstract_component_registry #(<span class="hljs-keyword">type</span> T=uvm_component,<br>  <span class="hljs-keyword">string</span> Tname=<span class="hljs-string">"&lt;unknown&gt;"</span>) <span class="hljs-keyword">extends</span> uvm_object_wrapper;<br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> uvm_component create_component(<span class="hljs-keyword">string</span> name,<br>    uvm_component parent<br>  );<br>    <span class="hljs-meta">`uvm_fatal("INTERR", $sformatf("Trying to create an instance of class %s",</span><br>      Tname))<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>We also need to implement the singleton infrastructure required to get an instance of the class:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> vgm_abstract_component_registry #(<span class="hljs-keyword">type</span> T=uvm_component,<br>  <span class="hljs-keyword">string</span> Tname=<span class="hljs-string">"&lt;unknown&gt;"</span>) <span class="hljs-keyword">extends</span> uvm_object_wrapper;<br><br>  <span class="hljs-keyword">typedef</span> vgm_abstract_component_registry <span class="hljs-variable">#(T, Tname)</span> this_type;<br><br>  <span class="hljs-keyword">local</span> <span class="hljs-keyword">static</span> this_type me = get();<br><br>  <span class="hljs-keyword">static</span> <span class="hljs-keyword">function</span> this_type get();<br>    <span class="hljs-keyword">if</span> (me == <span class="hljs-literal">null</span>) <span class="hljs-keyword">begin</span><br>      uvm_factory f = uvm_factory::get();<br>      me = <span class="hljs-keyword">new</span>();<br>      f<span class="hljs-variable">.register</span>(me);<br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">return</span> me;<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The key part of the whole mechanism, the <em>create(…)</em> function is still missing. Notice that we’ve extended our class from <em>uvm_object_wrapper</em> directly. What I first tried was to extend <em>uvm_component_registry</em>, so I would only need to override the methods of interest and inherit the rest from the base class. This didn’t work, because that would mean elaborating the base class with a virtual class as its parameter, which results in an instant compile error. Even if the latter doesn’t happen, since the <em>create(…)</em> function of <em>uvm_component_registry</em> calls the class’s <em>get()</em> function (which is <strong>static</strong>) it won’t ever be possible to get it to call the <em>get()</em> function defined in the sub-class. This means that the factory would always receive an instance of <em>uvm_component_registry</em>.</p>
+<p>What we need to do is (gasp!) duplicate the code that implements <em>create(…)</em> and <em>set_\</em>_override(…)*, to allow users to use the new registry class in the same way as the original one from UVM:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> vgm_abstract_component_registry #(<span class="hljs-keyword">type</span> T=uvm_component,<br>  <span class="hljs-comment">// ...</span><br><br>  <span class="hljs-keyword">static</span> <span class="hljs-keyword">function</span> T create(<span class="hljs-keyword">string</span> name, uvm_component parent, <span class="hljs-keyword">string</span> contxt=<span class="hljs-string">""</span>);<br>    <span class="hljs-comment">// ...</span><br>  <span class="hljs-keyword">endfunction</span><br><br><br>  <span class="hljs-keyword">static</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set_type_override (uvm_object_wrapper override_type,<br>                                          <span class="hljs-keyword">bit</span> replace=<span class="hljs-number">1</span>);<br>    <span class="hljs-comment">// ...</span><br>  <span class="hljs-keyword">endfunction</span><br><br><br>  <span class="hljs-keyword">static</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set_inst_override(uvm_object_wrapper override_type,<br>                                         <span class="hljs-keyword">string</span> inst_path,<br>                                         uvm_component parent=<span class="hljs-literal">null</span>);<br>    <span class="hljs-comment">// ...</span><br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>A lot of this clipboard based inheritance could have been avoided with some better choice of class hierarchy. Even the <em>uvm_object_registry</em> and <em>uvm_component_registry</em> classes contain a lot of duplicated code that could have been refactored. For example, a <em>uvm_registry</em> base class could have provided the required infrastructure for creation and factory overrides.</p>
+<p>Aside from registering a class with the factory, we’ve seen that the <em>uvm_\</em>_utils<em> macros do a bit more, like implementing the </em>get_type_name()* function. To have a similar look and feel to the UVM macros, we could define their abstract counterparts:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> vgm_abstract_component_utils(T) \</span><br>   <span class="hljs-meta">`m_vgm_abstract_component_registry_internal(T,T) \</span><br>   <span class="hljs-meta">`m_uvm_get_type_name_func(T)</span><br><br><span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> m_vgm_abstract_component_registry_internal(T,S) \</span><br>   <span class="hljs-keyword">typedef</span> vgm_abstract_component_registry <span class="hljs-variable">#(T,`"S`")</span> type_id; \<br>   <span class="hljs-keyword">static</span> <span class="hljs-keyword">function</span> type_id get_type(); \<br>     <span class="hljs-keyword">return</span> type_id::get(); \<br>   <span class="hljs-keyword">endfunction</span> \<br>   <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> uvm_object_wrapper get_object_type(); \<br>     <span class="hljs-keyword">return</span> type_id::get(); \<br>   <span class="hljs-keyword">endfunction</span><br></code></pre></td></tr></table></figure>
+<p>I’ve only shown the <em>abstract_component_utils</em> macro, but we can extend the concept to the <em>abstract_object_utils</em> macro, their <em>begin/end</em> variants and the <em>param</em> versions. I know we’re not supposed to be using the <em>m_uvm_*</em> versions of the macros, but I like to live on the wild side. For code that is supposed to enhance the library, I guess it’s not a big problem if it’s tightly coupled to its implementation.</p>
+<h3 id="读到这里说明你毅力不错，最重要的是UVM-1-2已经可以直接注册了，是不是被欺骗了得感觉？！！哈哈！"><a href="#读到这里说明你毅力不错，最重要的是UVM-1-2已经可以直接注册了，是不是被欺骗了得感觉？！！哈哈！" class="headerlink" title="读到这里说明你毅力不错，最重要的是UVM-1.2已经可以直接注册了，是不是被欺骗了得感觉？！！哈哈！"></a>读到这里说明你毅力不错，最重要的是UVM-1.2已经可以直接注册了，是不是被欺骗了得感觉？！！哈哈！</h3>
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2019/06/10/向UVM工厂注册抽象基类/" title="向UVM工厂注册抽象基类">http://118.25.122.94:8080/2019/06/10/向UVM工厂注册抽象基类/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/06/10/心跳测试/" rel="next" title="心跳测试"><i class="fas fa-angle-left"></i><span class="nav-title">心跳测试</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">41</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">9</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">30</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#读到这里说明你毅力不错，最重要的是UVM-1-2已经可以直接注册了，是不是被欺骗了得感觉？！！哈哈！"><span class="toc-text">读到这里说明你毅力不错，最重要的是UVM-1.2已经可以直接注册了，是不是被欺骗了得感觉？！！哈哈！</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tig/">tig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

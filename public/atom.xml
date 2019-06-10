@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-06-10T03:40:32.224Z</updated>
+  <updated>2019-06-10T08:06:57.529Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>向UVM工厂注册抽象基类</title>
+    <link href="http://118.25.122.94:8080/2019/06/10/%E5%90%91UVM%E5%B7%A5%E5%8E%82%E6%B3%A8%E5%86%8C%E6%8A%BD%E8%B1%A1%E5%9F%BA%E7%B1%BB/"/>
+    <id>http://118.25.122.94:8080/2019/06/10/向UVM工厂注册抽象基类/</id>
+    <published>2019-06-10T08:02:05.000Z</published>
+    <updated>2019-06-10T08:06:57.529Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Every now and again I stumble upon a situation where it’s natural to use an abstract class. A typical example is when working with
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>心跳测试</title>
+    <link href="http://118.25.122.94:8080/2019/06/10/%E5%BF%83%E8%B7%B3%E6%B5%8B%E8%AF%95/"/>
+    <id>http://118.25.122.94:8080/2019/06/10/心跳测试/</id>
+    <published>2019-06-10T07:18:54.000Z</published>
+    <updated>2019-06-10T07:20:13.899Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;心跳测试&quot;&gt;&lt;a href=&quot;#心跳测试&quot; class=&quot;headerlink&quot; title=&quot;心跳测试&quot;&gt;&lt;/a&gt;心跳测试&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;查找死循环~~~&lt;figure class=&quot;hljs highlight
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title> 消除讨厌的UVM_WARNING:[TPRGED]</title>
@@ -580,56 +637,6 @@
       <category term="Docker" scheme="http://118.25.122.94:8080/tags/Docker/"/>
     
       <category term="VMware" scheme="http://118.25.122.94:8080/tags/VMware/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>约束12与34都存在number数组里或者12与34都不在number数组里里？</title>
-    <link href="http://118.25.122.94:8080/2019/04/30/%E7%BA%A6%E6%9D%9F12%E4%B8%8E34%E9%83%BD%E5%AD%98%E5%9C%A8number%E6%88%96%E8%80%8512%E4%B8%8E34%E9%83%BD%E4%B8%8D%E5%9C%A8number%E9%87%8C%EF%BC%9F/"/>
-    <id>http://118.25.122.94:8080/2019/04/30/约束12与34都存在number或者12与34都不在number里？/</id>
-    <published>2019-04-30T01:59:29.000Z</published>
-    <updated>2019-04-30T02:04:23.854Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;figure class=&quot;hljs highlight verilog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>uvm-indirect-registers</title>
-    <link href="http://118.25.122.94:8080/2019/04/29/uvm-indirect-registers/"/>
-    <id>http://118.25.122.94:8080/2019/04/29/uvm-indirect-registers/</id>
-    <published>2019-04-29T01:38:41.000Z</published>
-    <updated>2019-04-29T01:54:55.335Z</updated>
-    
-    <summary type="html">
-    
-      UVM寄存器间接访问package。
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
     
   </entry>
   
