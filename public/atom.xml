@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-06-10T09:46:27.609Z</updated>
+  <updated>2019-06-11T09:33:11.616Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,78 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UVM RAL中的保留字段如何模拟？</title>
+    <link href="http://118.25.122.94:8080/2019/06/11/UVM-RAL%E4%B8%AD%E7%9A%84%E4%BF%9D%E7%95%99%E5%AD%97%E6%AE%B5%E5%A6%82%E4%BD%95%E6%A8%A1%E6%8B%9F%EF%BC%9F/"/>
+    <id>http://118.25.122.94:8080/2019/06/11/UVM-RAL中的保留字段如何模拟？/</id>
+    <published>2019-06-11T09:32:18.000Z</published>
+    <updated>2019-06-11T09:33:11.616Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SystemVerilog文档生成~代码检视~</title>
+    <link href="http://118.25.122.94:8080/2019/06/11/SystemVerilog%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90-%E4%BB%A3%E7%A0%81%E6%A3%80%E8%A7%86/"/>
+    <id>http://118.25.122.94:8080/2019/06/11/SystemVerilog文档生成-代码检视/</id>
+    <published>2019-06-11T07:19:58.000Z</published>
+    <updated>2019-06-11T08:00:24.428Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;借用Accellera-生成器，UVM-SV代码检视可以用了&quot;&gt;&lt;a href=&quot;#借用Accellera-生成器，UVM-SV代码检视可以用了&quot; class=&quot;headerlink&quot; title=&quot;借用Accellera
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UVM-RAL自定义字段访问策略</title>
+    <link href="http://118.25.122.94:8080/2019/06/11/UVM-RAL%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5%E8%AE%BF%E9%97%AE%E7%AD%96%E7%95%A5/"/>
+    <id>http://118.25.122.94:8080/2019/06/11/UVM-RAL自定义字段访问策略/</id>
+    <published>2019-06-11T02:07:31.000Z</published>
+    <updated>2019-06-11T02:09:19.102Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>UVM-RAL Burst R/W的三种基本方法</title>
@@ -524,111 +596,6 @@
       <category term="VCS" scheme="http://118.25.122.94:8080/tags/VCS/"/>
     
       <category term="NCsim" scheme="http://118.25.122.94:8080/tags/NCsim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>库映射问题：相同module不同映射</title>
-    <link href="http://118.25.122.94:8080/2019/05/09/%E5%BA%93%E6%98%A0%E5%B0%84%E9%97%AE%E9%A2%98%EF%BC%9A%E7%9B%B8%E5%90%8Cmodule%E4%B8%8D%E5%90%8C%E6%98%A0%E5%B0%84/"/>
-    <id>http://118.25.122.94:8080/2019/05/09/库映射问题：相同module不同映射/</id>
-    <published>2019-05-09T01:40:51.000Z</published>
-    <updated>2019-05-09T07:58:02.405Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;想例化不一样的instance，但是用不同功能的同名module，如rtl，netlist，beh模型等。&quot;&gt;&lt;a href=&quot;#想例化不一样的instance，但是用不同功能的同名module，如rtl，netlist，beh模型等。&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-      <category term="EDA" scheme="http://118.25.122.94:8080/tags/EDA/"/>
-    
-      <category term="VCS" scheme="http://118.25.122.94:8080/tags/VCS/"/>
-    
-      <category term="NCsim" scheme="http://118.25.122.94:8080/tags/NCsim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>通过套接字进行SV和其他语言进行交互</title>
-    <link href="http://118.25.122.94:8080/2019/05/08/%E9%80%9A%E8%BF%87%E5%A5%97%E6%8E%A5%E5%AD%97%E8%BF%9B%E8%A1%8CSV%E5%92%8C%E5%85%B6%E4%BB%96%E8%AF%AD%E8%A8%80%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92/"/>
-    <id>http://118.25.122.94:8080/2019/05/08/通过套接字进行SV和其他语言进行交互/</id>
-    <published>2019-05-08T02:46:20.000Z</published>
-    <updated>2019-05-08T03:00:57.187Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;通过TCP套接字，可以进行其他语言进行交互。&lt;/li&gt;
-&lt;li&gt;外围算法计算后传输到验证平台，验证平台再传输数据回外围算法进行交互，在算法初期调试阶段，减少编写各种DPI接口，进行快速迭代开发。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;服务器端：&lt;br&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-      <category term="Linux" scheme="http://118.25.122.94:8080/tags/Linux/"/>
-    
-      <category term="Socket" scheme="http://118.25.122.94:8080/tags/Socket/"/>
-    
-      <category term="TCP" scheme="http://118.25.122.94:8080/tags/TCP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker启动EDA工具迅速！</title>
-    <link href="http://118.25.122.94:8080/2019/05/05/Docker%E5%90%AF%E5%8A%A8EDA%E5%B7%A5%E5%85%B7%E8%BF%85%E9%80%9F%EF%BC%81/"/>
-    <id>http://118.25.122.94:8080/2019/05/05/Docker启动EDA工具迅速！/</id>
-    <published>2019-05-05T11:25:22.000Z</published>
-    <updated>2019-05-06T06:18:03.254Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;神秘人的Docker-EDA：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;内存占用极低（&amp;lt;100M），启动迅速，1s级别。基本上就是内嵌在Win7的应用软件。&lt;br&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-      <category term="EDA" scheme="http://118.25.122.94:8080/tags/EDA/"/>
     
   </entry>
   
