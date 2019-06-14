@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-06-12T07:20:40.512Z</updated>
+  <updated>2019-06-14T09:34:11.782Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,128 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CrossXXXType使用方法</title>
+    <link href="http://118.25.122.94:8080/2019/06/14/CrossXXXType%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>http://118.25.122.94:8080/2019/06/14/CrossXXXType使用方法/</id>
+    <published>2019-06-14T09:31:07.000Z</published>
+    <updated>2019-06-14T09:34:11.782Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>If-and-only-if约束</title>
+    <link href="http://118.25.122.94:8080/2019/06/14/If-and-only-if%E7%BA%A6%E6%9D%9F/"/>
+    <id>http://118.25.122.94:8080/2019/06/14/If-and-only-if约束/</id>
+    <published>2019-06-14T05:56:45.000Z</published>
+    <updated>2019-06-14T06:18:31.110Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight verilog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在UVM TEST中控制断言</title>
+    <link href="http://118.25.122.94:8080/2019/06/14/%E5%9C%A8UVM-TEST%E4%B8%AD%E6%8E%A7%E5%88%B6%E6%96%AD%E8%A8%80/"/>
+    <id>http://118.25.122.94:8080/2019/06/14/在UVM-TEST中控制断言/</id>
+    <published>2019-06-14T03:26:35.000Z</published>
+    <updated>2019-06-14T03:27:29.232Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Testbench中的断言使用</title>
+    <link href="http://118.25.122.94:8080/2019/06/14/Testbench%E4%B8%AD%E7%9A%84%E6%96%AD%E8%A8%80%E4%BD%BF%E7%94%A8/"/>
+    <id>http://118.25.122.94:8080/2019/06/14/Testbench中的断言使用/</id>
+    <published>2019-06-14T02:30:16.000Z</published>
+    <updated>2019-06-14T02:31:21.361Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Testbench中的断言使用&quot;&gt;&lt;a href=&quot;#Testbench中的断言使用&quot; class=&quot;headerlink&quot; title=&quot;Testbench中的断言使用&quot;&gt;&lt;/a&gt;Testbench中的断言使用&lt;/h3&gt;&lt;p&gt;Developing
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Constraints和Covergroups保持同步</title>
+    <link href="http://118.25.122.94:8080/2019/06/13/Constraints%E5%92%8CCovergroups%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5/"/>
+    <id>http://118.25.122.94:8080/2019/06/13/Constraints和Covergroups保持同步/</id>
+    <published>2019-06-13T02:25:06.000Z</published>
+    <updated>2019-06-13T02:26:02.464Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>由上到下约束Sequence item</title>
@@ -427,151 +549,6 @@
       <category term="Linux" scheme="http://118.25.122.94:8080/tags/Linux/"/>
     
       <category term="CMake" scheme="http://118.25.122.94:8080/tags/CMake/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机油：git和tig</title>
-    <link href="http://118.25.122.94:8080/2019/05/26/%E6%9C%BA%E6%B2%B9%EF%BC%9Agit%E5%92%8Ctig/"/>
-    <id>http://118.25.122.94:8080/2019/05/26/机油：git和tig/</id>
-    <published>2019-05-26T02:56:26.000Z</published>
-    <updated>2019-05-27T09:43:35.826Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;tig-是一款优化-git-命令行的工具，使-git-命令行更加的便捷人性化-。&quot;&gt;&lt;a href=&quot;#tig-是一款优化-git-命令行的工具，使-git-命令行更加的便捷人性化-。&quot; class=&quot;headerlink&quot; title=&quot;tig 是一款优化
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
-    
-      <category term="git" scheme="http://118.25.122.94:8080/categories/Linux/git/"/>
-    
-    
-      <category term="git" scheme="http://118.25.122.94:8080/tags/git/"/>
-    
-      <category term="github" scheme="http://118.25.122.94:8080/tags/github/"/>
-    
-      <category term="tig" scheme="http://118.25.122.94:8080/tags/tig/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SystemVerilog PrettyPrint For Struct Display.</title>
-    <link href="http://118.25.122.94:8080/2019/05/24/SystemVerilog-PrettyPrint-For-Struct-Display/"/>
-    <id>http://118.25.122.94:8080/2019/05/24/SystemVerilog-PrettyPrint-For-Struct-Display/</id>
-    <published>2019-05-24T07:08:50.000Z</published>
-    <updated>2019-05-24T07:29:00.567Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;因为SytemVerilog没有反射特性，只能自己写一个层次化显示结构体的包。通常EDA工具只是一行显示，非常ugly，如下所示。如果拷贝走的，请自觉在自己代码上面贴上神秘人版权，或者给予红包支持，谢谢！x3-。&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SV的Function可以调用Task吗？</title>
-    <link href="http://118.25.122.94:8080/2019/05/22/SV%E7%9A%84Function%E5%8F%AF%E4%BB%A5%E8%B0%83%E7%94%A8Task%E5%90%97%EF%BC%9F/"/>
-    <id>http://118.25.122.94:8080/2019/05/22/SV的Function可以调用Task吗？/</id>
-    <published>2019-05-22T06:55:10.000Z</published>
-    <updated>2019-05-22T07:00:07.004Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;SV要求&lt;br&gt;nonblocking assignments, event triggers, clocking drives, and fork-join_none constructs shall be allowed inside a
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SystemVerilog和UVM编程基本规范</title>
-    <link href="http://118.25.122.94:8080/2019/05/20/SystemVerilog%E5%92%8CUVM%E7%BC%96%E7%A8%8B%E5%9F%BA%E6%9C%AC%E8%A7%84%E8%8C%83/"/>
-    <id>http://118.25.122.94:8080/2019/05/20/SystemVerilog和UVM编程基本规范/</id>
-    <published>2019-05-20T01:44:52.000Z</published>
-    <updated>2019-05-20T07:25:46.382Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;UVM-SV验证代码规范&quot;&gt;&lt;a href=&quot;#UVM-SV验证代码规范&quot; class=&quot;headerlink&quot; title=&quot;UVM-SV验证代码规范&quot;&gt;&lt;/a&gt;UVM-SV验证代码规范&lt;/h2&gt;&lt;h4 id=&quot;词汇指南和命名约定&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何理解内存模型的Memory-Order?</title>
-    <link href="http://118.25.122.94:8080/2019/05/17/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E7%9A%84Memory-Order/"/>
-    <id>http://118.25.122.94:8080/2019/05/17/如何理解内存模型的Memory-Order/</id>
-    <published>2019-05-17T02:06:59.000Z</published>
-    <updated>2019-05-17T03:22:34.362Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;（转载）&quot;&gt;&lt;a href=&quot;#（转载）&quot; class=&quot;headerlink&quot; title=&quot;（转载）&quot;&gt;&lt;/a&gt;（转载）&lt;/h3&gt;&lt;h3 id=&quot;理解-Memory-Order&quot;&gt;&lt;a href=&quot;#理解-Memory-Order&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="编程" scheme="http://118.25.122.94:8080/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="C/C++" scheme="http://118.25.122.94:8080/tags/C-C/"/>
-    
-      <category term="编译器" scheme="http://118.25.122.94:8080/tags/%E7%BC%96%E8%AF%91%E5%99%A8/"/>
     
   </entry>
   
