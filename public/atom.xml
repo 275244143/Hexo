@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-06-14T09:34:11.782Z</updated>
+  <updated>2019-06-17T08:05:45.083Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Constraints 的混入模式</title>
+    <link href="http://118.25.122.94:8080/2019/06/17/Constraints-%E7%9A%84%E6%B7%B7%E5%85%A5%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://118.25.122.94:8080/2019/06/17/Constraints-的混入模式/</id>
+    <published>2019-06-17T08:04:27.000Z</published>
+    <updated>2019-06-17T08:05:45.083Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Coverage的可扩展性设计</title>
+    <link href="http://118.25.122.94:8080/2019/06/17/Coverage%E7%9A%84%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7%E8%AE%BE%E8%AE%A1/"/>
+    <id>http://118.25.122.94:8080/2019/06/17/Coverage的可扩展性设计/</id>
+    <published>2019-06-17T05:38:34.000Z</published>
+    <updated>2019-06-17T08:11:09.274Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SV反射功能</title>
+    <link href="http://118.25.122.94:8080/2019/06/17/SV%E5%8F%8D%E5%B0%84%E5%8A%9F%E8%83%BD/"/>
+    <id>http://118.25.122.94:8080/2019/06/17/SV反射功能/</id>
+    <published>2019-06-17T02:18:48.000Z</published>
+    <updated>2019-06-17T02:27:22.618Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>CrossXXXType使用方法</title>
@@ -448,107 +514,6 @@
       <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
     
       <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>zsh:oh-my-zsh插件收集</title>
-    <link href="http://118.25.122.94:8080/2019/06/05/zsh-oh-my-zsh%E6%8F%92%E4%BB%B6%E6%94%B6%E9%9B%86/"/>
-    <id>http://118.25.122.94:8080/2019/06/05/zsh-oh-my-zsh插件收集/</id>
-    <published>2019-06-05T01:33:20.000Z</published>
-    <updated>2019-06-05T03:24:55.813Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;bash/csh再见了~~&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;启用zsh：oh-my-zsh 安装参考网络吧~&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;插件收集&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;zsh-syntax-highlighting&lt;br&gt;作用
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
-    
-    
-      <category term="zsh" scheme="http://118.25.122.94:8080/tags/zsh/"/>
-    
-      <category term="oh-my-zsh" scheme="http://118.25.122.94:8080/tags/oh-my-zsh/"/>
-    
-      <category term="bash" scheme="http://118.25.122.94:8080/tags/bash/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux下的xshell替代品</title>
-    <link href="http://118.25.122.94:8080/2019/06/03/Linux%E4%B8%8B%E7%9A%84xshell%E6%9B%BF%E4%BB%A3%E5%93%81/"/>
-    <id>http://118.25.122.94:8080/2019/06/03/Linux下的xshell替代品/</id>
-    <published>2019-06-03T13:22:18.000Z</published>
-    <updated>2019-06-05T01:31:24.333Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;最近经常用Linux系统做终端连接服务器，用惯了xshell，实在不习惯ssh+tmux流，找了个替代品~~~&lt;/li&gt;
-&lt;li&gt;ubuntu安装&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;hljs highlight
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
-    
-    
-      <category term="ubuntu" scheme="http://118.25.122.94:8080/tags/ubuntu/"/>
-    
-      <category term="ssh" scheme="http://118.25.122.94:8080/tags/ssh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>漂亮的仿真LogParser输出</title>
-    <link href="http://118.25.122.94:8080/2019/05/27/%E6%BC%82%E4%BA%AE%E7%9A%84%E4%BB%BF%E7%9C%9FLogParser%E8%BE%93%E5%87%BA/"/>
-    <id>http://118.25.122.94:8080/2019/05/27/漂亮的仿真LogParser输出/</id>
-    <published>2019-05-27T09:44:07.000Z</published>
-    <updated>2019-05-28T01:17:53.511Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;盗用了CTest思想，做了一个ErrorPattern漂亮的查找Dashboard&quot;&gt;&lt;a href=&quot;#盗用了CTest思想，做了一个ErrorPattern漂亮的查找Dashboard&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-      <category term="Linux" scheme="http://118.25.122.94:8080/tags/Linux/"/>
-    
-      <category term="CMake" scheme="http://118.25.122.94:8080/tags/CMake/"/>
     
   </entry>
   
