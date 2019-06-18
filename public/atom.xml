@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-06-17T08:05:45.083Z</updated>
+  <updated>2019-06-18T07:32:34.684Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UVM工厂实例覆盖</title>
+    <link href="http://118.25.122.94:8080/2019/06/18/UVM%E5%B7%A5%E5%8E%82%E5%AE%9E%E4%BE%8B%E8%A6%86%E7%9B%96/"/>
+    <id>http://118.25.122.94:8080/2019/06/18/UVM工厂实例覆盖/</id>
+    <published>2019-06-18T07:24:27.000Z</published>
+    <updated>2019-06-18T07:32:34.684Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UVM工厂类覆盖</title>
+    <link href="http://118.25.122.94:8080/2019/06/18/UVM%E5%B7%A5%E5%8E%82%E7%B1%BB%E8%A6%86%E7%9B%96/"/>
+    <id>http://118.25.122.94:8080/2019/06/18/UVM工厂类覆盖/</id>
+    <published>2019-06-18T06:59:33.000Z</published>
+    <updated>2019-06-18T07:23:36.193Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;UVM工厂类覆盖&quot;&gt;&lt;a href=&quot;#UVM工厂类覆盖&quot; class=&quot;headerlink&quot; title=&quot;UVM工厂类覆盖&quot;&gt;&lt;/a&gt;UVM工厂类覆盖&lt;/h3&gt;&lt;p&gt;When working with UVM, the phrase “you gotta
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>Constraints 的混入模式</title>
@@ -447,62 +497,6 @@
         
           &lt;h3 id=&quot;心跳测试&quot;&gt;&lt;a href=&quot;#心跳测试&quot; class=&quot;headerlink&quot; title=&quot;心跳测试&quot;&gt;&lt;/a&gt;心跳测试&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;查找死循环~~~&lt;figure class=&quot;hljs highlight
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title> 消除讨厌的UVM_WARNING:[TPRGED]</title>
-    <link href="http://118.25.122.94:8080/2019/06/10/%E6%B6%88%E9%99%A4%E8%AE%A8%E5%8E%8C%E7%9A%84UVM-WARNING-TPRGED/"/>
-    <id>http://118.25.122.94:8080/2019/06/10/消除讨厌的UVM-WARNING-TPRGED/</id>
-    <published>2019-06-10T03:36:54.000Z</published>
-    <updated>2019-06-10T03:40:32.224Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;包，类名和UVM-的前缀、后缀？&quot;&gt;&lt;a href=&quot;#包，类名和UVM-的前缀、后缀？&quot; class=&quot;headerlink&quot; title=&quot;包，类名和UVM 的前缀、后缀？&quot;&gt;&lt;/a&gt;包，类名和UVM 的前缀、后缀？&lt;/h3&gt;&lt;p&gt;Some time ago
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何优雅的结束UVM Test？</title>
-    <link href="http://118.25.122.94:8080/2019/06/05/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E7%BB%93%E6%9D%9FUVM-Test%EF%BC%9F/"/>
-    <id>http://118.25.122.94:8080/2019/06/05/如何优雅的结束UVM-Test？/</id>
-    <published>2019-06-05T06:07:48.000Z</published>
-    <updated>2019-06-05T06:08:28.453Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;如何优雅的结束UVM-Test？&quot;&gt;&lt;a href=&quot;#如何优雅的结束UVM-Test？&quot; class=&quot;headerlink&quot; title=&quot;如何优雅的结束UVM Test？&quot;&gt;&lt;/a&gt;如何优雅的结束UVM Test？&lt;/h3&gt;&lt;p&gt;End-of-test
         
       
     

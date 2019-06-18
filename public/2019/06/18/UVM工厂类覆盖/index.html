@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>UVM工厂类覆盖 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/06/18/UVM工厂类覆盖/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">UVM工厂类覆盖</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-18T14:59:33+08:00">2019-06-18 14:59:33</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">2.5k字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">15分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h3 id="UVM工厂类覆盖"><a href="#UVM工厂类覆盖" class="headerlink" title="UVM工厂类覆盖"></a>UVM工厂类覆盖</h3><p>When working with UVM, the phrase “you gotta use the factory!” gets drilled into our heads constantly. This is because in object oriented programming (OOP) extendability doesn’t come for free. We need to plan for it by structuring our code in certain ways. Why the factory is important, though, and how it helps us achieve that goal may be kind of difficult for a beginner to understand (I know I was pretty confused back in the day). The UVM user guide doesn’t explain things all that well, either. Note that I haven’t cracked it open in a while, so apologies if everything I’m going to talk about in this post is already presented crystal clearly over there.</p>
+<p>And even if it is, by all means, you should still read on. For the seasoned professionals it’s going to be a walk down memory lane and maybe we’ll manage to rekindle the old Specmaniac a little. For the energetic youth that’s only ever worked with <em>SystemVerilog</em>, it’s going to be interesting to see how the other guys do it. It might also make for a nice side by side comparison of the two languages.</p>
+<p>A lot of of our state-of-the-art verification methodology concepts can trace their roots back to <em>e</em>. Many such ideas were pushed by Cadence to OVM and they were subsequently inherited by UVM. In <em>e</em>, a lot of neat stuff like sequences is already built into the language. Its support for aspect oriented programming (AOP) also provides a really cool way of extending the behavior of existing code without touching it. Because of this, a task where <em>e</em> really shines is in how easy it is to write tests.</p>
+<p>Let’s look at a small example. We’ll assume we have an AHB slave that we want to verify. To keep things simple, we won’t consider the full gamut of protocol aspects. We’ll focus on an AHB item that contains fields for the transfer direction, its size and its timing:</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;&apos;<br>struct ahb_item like any_sequence_item &#123;<br>  direction : [ READ, WRITE ];<br>  size : [ BYTE, HALFWORD, WORD ];<br>  delay : [ NONE, SMALL, MEDIUM, LARGE ];<br>&#125;;<br>&apos;&gt;<br></code></pre></td></tr></table></figure>
+<p>Declaring a sequence is done using the <strong>sequence</strong> keyword:</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;&apos;<br>sequence ahb_sequence using item = ahb_item;<br>&apos;&gt;<br></code></pre></td></tr></table></figure>
+<p>The <strong>sequence</strong> block also declares the sequence driver (aka sequencer in UVM speak). This sequencer communicates with a bus functional model (which has the same role as a UVM driver). For this example, let’s just have the driver print the items it receives:</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;&apos;<br>unit ahb_bfm &#123;<br>  driver : ahb_sequence_driver;<br><br>  event clock;<br><br>  on clock &#123;<br>    emit driver.clock;<br>  &#125;;<br><br>  run() is also &#123;<br>    start execute_items();<br>  &#125;;<br><br>  execute_items() @clock is &#123;<br>    while TRUE &#123;<br>      var item : ahb_item;<br>      item = driver.get_next_item();<br>      drive(item);<br>      emit driver.item_done;<br>    &#125;;<br>  &#125;;<br><br>  drive(item : ahb_item) @clock is &#123;<br>    print item;<br>  &#125;;<br>&#125;;<br>&apos;&gt;<br></code></pre></td></tr></table></figure>
+<p>Now that we have our building blocks, we need to instantiate and connect them. This is typically done in an agent unit:</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;&apos;<br>unit ahb_agent &#123;<br>  driver : ahb_sequence_driver is instance;<br>  bfm : ahb_bfm is instance;<br><br>  keep bfm.driver == driver;<br>&#125;;<br>&apos;&gt;<br></code></pre></td></tr></table></figure>
+<p>Once we instantiate the agent we’re ready to go:</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;&apos;<br>import ahb;<br><br>extend sys &#123;<br>  ahb : ahb_agent is instance;<br>&#125;;<br>&apos;&gt;<br></code></pre></td></tr></table></figure>
+<p>With the environment in place, let’s write a very simple test that sends some traffic to the DUT:</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;&apos;<br>import env;<br><br>extend MAIN ahb_sequence &#123;<br>  !item : ahb_item;<br><br>  keep count in [ 10..20 ];<br><br>  body() @driver.clock is only &#123;<br>    for i from 1 to count &#123;<br>      do item;<br>    &#125;;<br>  &#125;;<br>&#125;;<br>&apos;&gt;<br></code></pre></td></tr></table></figure>
+<p>The <em>MAIN</em> sequence gets started automatically on the sequencer.</p>
+<p>From a run perspective, things work a bit differently in <em>e</em> than we’re used to in <em>SystemVerilog</em>. The verification environment is typically compiled for performance. Tests are then read in on top of the compiled code by an interpreter to make additions to it. Those additions are only valid throughout the single test run. Typically, there are multiple test files, each creating a slightly different version of the verification environment.</p>
+<p>In this very simple test we’re blindly randomizing what sequence items get sent to the DUT. Eventually we’d get all combinations through, but we’d have to run this test quite a few times. Let’s assume that after discussing with our designers, we find out that our device contains some special logic to treat back-to-back reads. We’d need to test it sooner rather than later. This is where the <em>constrained</em> in <em>constrained random</em> comes in.</p>
+<p>We could add a constraint to the AHB item that makes all items reads without delays. This is done by extending our sequence item:</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;&apos;<br>import test1;<br><br>extend ahb_item &#123;<br>  keep direction == READ;<br>  keep delay == NONE;<br>&#125;;<br>&apos;&gt;<br></code></pre></td></tr></table></figure>
+<p>This constraint is valid for this test. If we try to run the first test, it will still generate unconstrained items.</p>
+<p>If we would also ascertain from our spec that doing word accesses is really important, then we could create a dedicated test for that too:</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;&apos;<br>import test1;<br><br>extend ahb_item &#123;<br>  keep size == WORD;<br>&#125;;<br>&apos;&gt;<br></code></pre></td></tr></table></figure>
+<p>Now let’s suppose we find a bug relating to byte accesses. We could create a test like we did for word accesses. At the same time, we know that back-to-back reads are special, so why not double check that they work as byte accesses? We could create a very directed test by adding another constraint on top of our read test:</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;&apos;<br>import test2;<br><br>extend ahb_item &#123;<br>  keep size == BYTE;<br>&#125;;<br>&apos;&gt;<br></code></pre></td></tr></table></figure>
+<p>As we could see, <em>e</em> makes it very easy to write one test template and then fine tune it’s parameters using constraints to home in on those pesky bugs much faster. The power of AOP enables us to write once and tweak everywhere.</p>
+<p><em>SystemVerilog</em> lacks AOP. Vis-à-vis the release of the 2012 LRM, Tom Fitzpatrick (a Mentor Graphics technologist) even said that his “favorite enhancement in SV-2012 is that it doesn’t have AOP”. Despite that, I remember reading that one Big Three EDA vendor used to support proprietary AOP extensions. Even though some users still want the flexibility of <em>e</em>, it doesn’t seem likely that anything like this will get added in the future.</p>
+<p>This doesn’t mean that we can’t achieve the same effect without AOP; we’re just going to have to pay an extra cost to do it. We can implement a similar scheme in OOP by using the factory pattern, It allows for the type of object that gets instantiated to be controlled at run-time. Instead of getting an object of a certain class we can get one of a subclass by configuring the factory to perform this replacement. UVM comes with an implementation of a (too) generic factory pattern.</p>
+<p>Let’s see how our verification environment would look like when implemented using UVM. First we need to define our sequence item:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">enum</span> &#123; READ, WRITE &#125; direction_t;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">enum</span> &#123; BYTE, HALFWORD, WORD &#125; size_t;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">enum</span> &#123; NONE, SMALL, MEDIUM, LARGE &#125; delay_t;<br><br><br><span class="hljs-keyword">class</span> ahb_item <span class="hljs-keyword">extends</span> uvm_sequence_item;<br>  <span class="hljs-meta">`uvm_object_utils(ahb_item)</span><br><br>  <span class="hljs-keyword">rand</span> direction_t direction;<br>  <span class="hljs-keyword">rand</span> size_t size;<br>  <span class="hljs-keyword">rand</span> delay_t delay;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name = <span class="hljs-string">"ahb_item"</span>);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> do_print(uvm_printer printer);<br>    <span class="hljs-meta">`uvm_print_enum(direction_t, direction, "direction", printer)</span><br>    <span class="hljs-meta">`uvm_print_enum(size_t, size, "size", printer)</span><br>    <span class="hljs-meta">`uvm_print_enum(delay_t, delay, "delay", printer)</span><br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>We need to set up the machinery to allow objects of this class to be instantiated by the UVM factory. To do this, we register it with the factory using the <em>`uvm_object_utils</em> macro. Typical operations such as printing or packing aren’t implemented for us, so we’ll need to provide the compiler with our own implementations of these functions. This makes <em>SystemVerilog</em> more verbose than <em>e</em>.</p>
+<p>Sequences aren’t built into the language (at least not in the same sense as <em>e</em> sequences). <em>SystemVerilog</em> defines the <strong>sequence</strong>keyword, but that is an assertion construct. The sequences we’re looking for are implemented as part of the UVM library. It’s customary to define a base sequence that test writers would extend to implement their own scenarios:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> ahb_sequence_base <span class="hljs-keyword">extends</span> uvm_sequence <span class="hljs-variable">#(ahb_item)</span>;<br>  <span class="hljs-meta">`uvm_declare_p_sequencer(uvm_sequencer #(ahb_item))</span><br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">task</span> pre_body();<br>    <span class="hljs-keyword">if</span> (starting_phase != <span class="hljs-literal">null</span>)<br>      starting_phase<span class="hljs-variable">.raise_objection</span>(<span class="hljs-keyword">this</span>);<br>  <span class="hljs-keyword">endtask</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">task</span> post_body();<br>    <span class="hljs-keyword">if</span> (starting_phase != <span class="hljs-literal">null</span>)<br>      starting_phase<span class="hljs-variable">.drop_objection</span>(<span class="hljs-keyword">this</span>);<br>  <span class="hljs-keyword">endtask</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>We’ll implement the same simple driver that just prints the items it receives:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> ahb_driver <span class="hljs-keyword">extends</span> uvm_driver <span class="hljs-variable">#(ahb_item)</span>;<br>  <span class="hljs-meta">`uvm_component_utils(ahb_driver)</span><br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name, uvm_component parent);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">task</span> run_phase(uvm_phase phase);<br>    execute_items();<br>  <span class="hljs-keyword">endtask</span><br><br>  <span class="hljs-keyword">protected</span> <span class="hljs-keyword">task</span> execute_items();<br>    <span class="hljs-keyword">forever</span> <span class="hljs-keyword">begin</span><br>      ahb_item item;<br>      seq_item_port<span class="hljs-variable">.get_next_item</span>(item);<br>      drive(item);<br>      seq_item_port<span class="hljs-variable">.item_done</span>();<br>    <span class="hljs-keyword">end</span><br>  <span class="hljs-keyword">endtask</span><br><br>  <span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">task</span> drive(ahb_item item);<br>    item<span class="hljs-variable">.print</span>();<br>  <span class="hljs-keyword">endtask</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The agent instantiates and connects the driver and the sequencer:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> ahb_agent <span class="hljs-keyword">extends</span> uvm_agent;<br>  <span class="hljs-meta">`uvm_component_utils(ahb_agent)</span><br><br>  ahb_driver driver;<br>  uvm_sequencer <span class="hljs-variable">#(ahb_item)</span> sequencer;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name, uvm_component parent);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);<br>    driver = ahb_driver::type_id::create(<span class="hljs-string">"driver"</span>, <span class="hljs-keyword">this</span>);<br>    sequencer = uvm_sequencer <span class="hljs-variable">#(ahb_item)::type_id::create("sequencer", this)</span>;<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> connect_phase(uvm_phase phase);<br>    driver<span class="hljs-variable">.seq_item_port</span><span class="hljs-variable">.connect</span>(sequencer<span class="hljs-variable">.seq_item_export</span>);<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>For tests, we have a different use model as for <em>e</em>. All tests in <em>SystemVerilog</em> are compiled together into one big library and selecting which one to run is done based on the <em>+UVM_TESTNAME</em> plusarg.</p>
+<p>We’ll need a base class that sets up our environment, which tests will extend:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">class</span> test_base <span class="hljs-keyword">extends</span> uvm_test;<br>  ahb_agent ahb;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name, uvm_component parent);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);<br>    ahb = ahb_agent::type_id::create(<span class="hljs-string">"ahb"</span>, <span class="hljs-keyword">this</span>);<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Now that we’ve got our infrastructure sorted out, we can start writing our tests. Let’s begin with the fully random test that just sends out a stream of items. We’ll need to define the sequence:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> main_ahb_sequence <span class="hljs-keyword">extends</span> ahb_sequence_base;<br>  <span class="hljs-meta">`uvm_object_utils(main_ahb_sequence)</span><br><br>  <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> <span class="hljs-keyword">unsigned</span> count;<br><br>  <span class="hljs-keyword">constraint</span> count_range &#123;<br>    count <span class="hljs-keyword">inside</span> &#123; [<span class="hljs-number">10</span>:<span class="hljs-number">20</span>] &#125;;<br>  &#125;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name = <span class="hljs-string">"main_ahb_sequence"</span>);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">task</span> body();<br>    <span class="hljs-keyword">repeat</span> (count) <span class="hljs-keyword">begin</span><br>      ahb_item item;<br>      <span class="hljs-meta">`uvm_do(item)</span><br>    <span class="hljs-keyword">end</span><br>  <span class="hljs-keyword">endtask</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The <em>`uvm_do</em> macro will request an instance of an <em>ahb_item</em> from the factory using a call to <em>ahb_item::type_id::create(…)</em>. This sequence won’t get started automatically like in <em>e</em>. We’ll have to start it from the test:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> test1 <span class="hljs-keyword">extends</span> test_base;<br>  <span class="hljs-meta">`uvm_component_utils(test1)</span><br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name, uvm_component parent);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> end_of_elaboration_phase(uvm_phase phase);<br>    uvm_config_db <span class="hljs-variable">#(uvm_object_wrapper)</span>::set(<span class="hljs-keyword">this</span>, <span class="hljs-string">"ahb.sequencer.run_phase"</span>,<br>      <span class="hljs-string">"default_sequence"</span>, main_ahb_sequence::get_type());<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Up to now, so far, so good. We’ve had to write similar code in both languages (albeit a little more on the <em>SystemVerilog</em> side). Now, the two paths begin to diverge. Let’s try to write the test that targets back-to-back reads. We’ll need to add the constraint to the AHB item, but we can’t do it inside the <em>ahb_item</em> class. We can only do it in a subclass:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> fast_read_ahb_item <span class="hljs-keyword">extends</span> ahb_item;<br>  <span class="hljs-meta">`uvm_object_utils(fast_read_ahb_item)</span><br><br>  <span class="hljs-keyword">constraint</span> fast_read &#123;<br>    direction == READ;<br>    delay == NONE;<br>  &#125;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name = <span class="hljs-string">"fast_read_ahb_item"</span>);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name);<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Now, for a specific test run, we need to replace all instances of <em>ahb_item</em> with <em>fast_read_ahb_item</em>. You’ll remember that this is exactly what the factory is for. We can instruct the factory that whenever an <em>ahb_item</em> is requested, it should return an instance of <em>fast_read_ahb_item</em>. Since the latter is a subclass of the former, it is assignment compatible. This replacement is done by applying a type override:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> test2 <span class="hljs-keyword">extends</span> test1;<br>  <span class="hljs-meta">`uvm_component_utils(test2)</span><br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name, uvm_component parent);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> end_of_elaboration_phase(uvm_phase phase);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.end_of_elaboration_phase</span>(phase);<br>    ahb_item::type_id::set_type_override(fast_read_ahb_item::get_type());<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>When running <em>test2</em>, wherever an <em>ahb_item</em> is requested, a <em>fast_ahb_item</em> will be created in its place, thereby making sure that all AHB transfers are constrained to be back-to-back reads. We’ve had to write quite a bit more code, but it does the job. This is a recurring theme when comparing AOP to pure OOP.</p>
+<p>Writing the test for word accesses is done in the same way:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> word_ahb_item <span class="hljs-keyword">extends</span> ahb_item;<br>  <span class="hljs-meta">`uvm_object_utils(word_ahb_item)</span><br><br>  <span class="hljs-keyword">constraint</span> word &#123;<br>    size == WORD;<br>  &#125;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name = <span class="hljs-string">"word_ahb_item"</span>);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name);<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br><br><br><span class="hljs-keyword">class</span> test3 <span class="hljs-keyword">extends</span> test1;<br>  <span class="hljs-meta">`uvm_component_utils(test3)</span><br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name, uvm_component parent);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> end_of_elaboration_phase(uvm_phase phase);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.end_of_elaboration_phase</span>(phase);<br>    ahb_item::type_id::set_type_override(word_ahb_item::get_type());<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Things get interesting when we want to stress byte back-to-back reads. We need to define the new item. It makes the most sense to extend the <em>fast_read_ahb_item</em> class to leverage its constraints. This way we just need to add a constraint for byte accesses:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> fast_read_byte_ahb_item <span class="hljs-keyword">extends</span> fast_read_ahb_item;<br>  <span class="hljs-meta">`uvm_object_utils(fast_read_byte_ahb_item)</span><br><br>  <span class="hljs-keyword">constraint</span> byte_sized &#123;<br>    size == BYTE;<br>  &#125;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name = <span class="hljs-string">"fast_read_byte_ahb_item"</span>);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name);<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Since <em>fast_read_byte_ahb_item</em> is a subclass of <em>ahb_item</em> we can set a type override to it:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> test4a <span class="hljs-keyword">extends</span> test1;<br>  <span class="hljs-meta">`uvm_component_utils(test4a)</span><br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name, uvm_component parent);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> end_of_elaboration_phase(uvm_phase phase);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.end_of_elaboration_phase</span>(phase);<br>    ahb_item::type_id::set_type_override(fast_read_byte_ahb_item::get_type());<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Notice that we’ve extended our test from <em>test1</em>. This isn’t optimal, since if <em>test2</em> would have made any other modification to the initial test (like setting overrides for any other interfaces) then we won’t get these. A better way is to extend <em>test2</em> and set the same override:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> test4b <span class="hljs-keyword">extends</span> test2;<br>  <span class="hljs-meta">`uvm_component_utils(test4b)</span><br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name, uvm_component parent);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> end_of_elaboration_phase(uvm_phase phase);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.end_of_elaboration_phase</span>(phase);<br>    ahb_item::type_id::set_type_override(fast_read_byte_ahb_item::get_type());<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>What happens in this case is that during <em>super.end_of_elaboration_phase(…)</em> the <em>ahb_item</em> class is set to be replaced by <em>fast_read_ahb_item</em>. Setting another type override on <em>ahb_item</em> will replace the previous one, so what we will get from now are <em>fast_read_byte_ahb_items</em>.</p>
+<p>At the same time, a very nifty feature the UVM factory supports is override chaining. We already have a test that overrides <em>ahb_item</em> with <em>fast_read_ahb_item</em>. We can also set up an override from <em>fast_read_ahb_item</em> to <em>fast_read_byte_ahb_item</em>.</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> test4c <span class="hljs-keyword">extends</span> test2;<br>  <span class="hljs-meta">`uvm_component_utils(test4c)</span><br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name, uvm_component parent);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> end_of_elaboration_phase(uvm_phase phase);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.end_of_elaboration_phase</span>(phase);<br>    fast_read_ahb_item::type_id::set_type_override(<br>      fast_read_byte_ahb_item::get_type());<br>  <span class="hljs-keyword">endfunction</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The factory will chain the overrides. Whenever an <em>ahb_item</em> is requested, the factory will want to return a <em>fast_read_ahb_item</em>. At the same time, when trying to return a <em>fast_read_ahb_item</em>, the factory will notice that that type is also overridden and it will return a <em>fast_read_byte_ahb_item</em>. This has the same effect as overriding <em>ahb_item</em> directly with <em>fast_read_byte_ahb_item</em>. Both methods can be useful so it’s good to keep them in mind.</p>
+<p>We’ve seen that the factory is indispensable in writing compact tests that leverage each other. Being able to direct the randomization helps find bugs earlier and close coverage faster. The type override mechanism, while powerful, is an all or nothing approach that suffers a bit in terms of flexibility. </p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2019/06/18/UVM工厂类覆盖/" title="UVM工厂类覆盖">http://118.25.122.94:8080/2019/06/18/UVM工厂类覆盖/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/06/17/Constraints-的混入模式/" rel="next" title="Constraints 的混入模式"><i class="fas fa-angle-left"></i><span class="nav-title">Constraints 的混入模式</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/06/18/UVM工厂实例覆盖/" rel="prev" title="UVM工厂实例覆盖"><span class="nav-title">UVM工厂实例覆盖</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">59</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">9</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">30</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#UVM工厂类覆盖"><span class="toc-text">UVM工厂类覆盖</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">44</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">42</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tig/">tig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
