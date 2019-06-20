@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-06-19T03:15:05.483Z</updated>
+  <updated>2019-06-20T15:00:12.761Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>懒人编写AOP代替OOP测试用例</title>
+    <link href="http://118.25.122.94:8080/2019/06/20/%E6%87%92%E4%BA%BA%E7%BC%96%E5%86%99AOP%E4%BB%A3%E6%9B%BFOOP%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/"/>
+    <id>http://118.25.122.94:8080/2019/06/20/懒人编写AOP代替OOP测试用例/</id>
+    <published>2019-06-20T09:38:55.000Z</published>
+    <updated>2019-06-20T15:00:12.761Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;AOP-vs-OOP&quot;&gt;&lt;a href=&quot;#AOP-vs-OOP&quot; class=&quot;headerlink&quot; title=&quot;AOP vs OOP&quot;&gt;&lt;/a&gt;AOP vs
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+      <category term="EDA" scheme="http://118.25.122.94:8080/tags/EDA/"/>
+    
+      <category term="VCS" scheme="http://118.25.122.94:8080/tags/VCS/"/>
+    
+  </entry>
   
   <entry>
     <title>VCS运行错误后保持ucli进行后续诊断~</title>
@@ -476,28 +508,6 @@
     <id>http://118.25.122.94:8080/2019/06/11/UVM-RAL自定义字段访问策略/</id>
     <published>2019-06-11T02:07:31.000Z</published>
     <updated>2019-06-11T02:09:19.102Z</updated>
-    
-    <summary type="html">
-    
-      欢迎光临~
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UVM-RAL Burst R/W的三种基本方法</title>
-    <link href="http://118.25.122.94:8080/2019/06/10/UVM-RAL-Burst-R-W%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/"/>
-    <id>http://118.25.122.94:8080/2019/06/10/UVM-RAL-Burst-R-W的三种基本方法/</id>
-    <published>2019-06-10T09:44:47.000Z</published>
-    <updated>2019-06-10T09:46:27.609Z</updated>
     
     <summary type="html">
     

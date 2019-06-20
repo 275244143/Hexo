@@ -135,7 +135,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>标签: VCS | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+    <title>懒人编写AOP代替OOP测试用例 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -183,89 +183,164 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tag" class="tag page">
-  <h1 class="page-title">VCS</h1>
+<div id="post" class="page">
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/06/20/懒人编写AOP代替OOP测试用例/" itemprop="url">懒人编写AOP代替OOP测试用例</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-20T17:38:55+08:00">06-20</time>
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/06/20/懒人编写AOP代替OOP测试用例/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
       </span>
-      
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">懒人编写AOP代替OOP测试用例</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-20T17:38:55+08:00">2019-06-20 17:38:55</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">424字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">1分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
     </header>
+    <main class="post-main" itemprop="articleBody">
+      <h4 id="AOP-vs-OOP"><a href="#AOP-vs-OOP" class="headerlink" title="AOP vs OOP"></a>AOP vs OOP</h4><ol>
+<li>面向对象编程(OOP)<br>针对业务处理过程中的实体,属性,行为进行封装,以获得更加清晰高效的逻辑单元划分。<br>OOP主要特点：<br>封装、继承性、多态性</li>
+<li>面向切面编程(AOP)<br>针对业务处理过程中的切面进行提取,更偏重于业务处理过程中的某个步骤或阶段,以获得逻辑处理过程中各部分之间低耦合的隔离效果,使代码具有更好的可移植性。<br>AOP主要的特点：<br>源码无关性:在不改变源码的前提下,给程序动态统一添加功能 。<br>隔离性、低耦合</li>
+<li>OOP和AOP的区别<br>a. AOP是对OOP的补充。<br>b. OOP是将程序分解成各个层次的对象,面向业务中的名词领域,侧重点在与抽象。<br>c. AOP是将程序运行过程分解成各个切面,从程序运行角度考虑程序的结构,面向业务中的动词领域,侧重点在于解耦。<h4 id="SV是不支持AOP的，e等语言才支持，必须采用EDA工具进行处理。"><a href="#SV是不支持AOP的，e等语言才支持，必须采用EDA工具进行处理。" class="headerlink" title="SV是不支持AOP的，e等语言才支持，必须采用EDA工具进行处理。"></a>SV是不支持AOP的，e等语言才支持，必须采用EDA工具进行处理。</h4><h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">package</span> test;<br>    <span class="hljs-keyword">class</span> pkt;<br><br>        <span class="hljs-keyword">int</span> data;<br>    <br>        <span class="hljs-keyword">task</span> send();<br>            <span class="hljs-built_in">$display</span>(<span class="hljs-string">"Send data:%0d"</span>,data);<br>        <span class="hljs-keyword">endtask</span><br>    <br>    <span class="hljs-keyword">endclass</span><br><br>    <span class="hljs-keyword">class</span> driver;<br>    <br>        <span class="hljs-keyword">task</span> drive(pkt p);<br>            <span class="hljs-built_in">$display</span>(<span class="hljs-string">"Drive data"</span>);<br>            p<span class="hljs-variable">.send</span>();<br>        <span class="hljs-keyword">endtask</span><br>    <br>    <span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">endpackage</span><br><br><span class="hljs-keyword">program</span> top;<br>    <span class="hljs-keyword">import</span> test::*;<br><br>    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span><br>        pkt p = <span class="hljs-keyword">new</span>();<br>        driver drv = <span class="hljs-keyword">new</span>();<br>        drv<span class="hljs-variable">.drive</span>(p);<br>    <span class="hljs-keyword">end</span><br><br><span class="hljs-keyword">endprogram</span><br><br><span class="hljs-keyword">extends</span> aop_pkt(test::pkt);<br><br>    around <span class="hljs-keyword">task</span> send();<br>        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"Around before send.."</span>);<br>        proceed;<br>        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"Around end send.."</span>);<br>    <span class="hljs-keyword">endtask</span><br><br>    <span class="hljs-keyword">before</span> <span class="hljs-keyword">task</span> send();<br>        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"Before send.."</span>);<br>    <span class="hljs-keyword">endtask</span><br><br>    after <span class="hljs-keyword">task</span> send();<br>        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"After send.."</span>);<br>    <span class="hljs-keyword">endtask</span><br><br>endextends<br><br><span class="hljs-keyword">extends</span> aop_driver(test::driver);<br><br>    around <span class="hljs-keyword">task</span> drive(pkt p);<br>        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"Around before drive.."</span>);<br>        p<span class="hljs-variable">.data</span> = <span class="hljs-number">100</span>;<br>        proceed;<br>        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"Around end drive.."</span>);<br>    <span class="hljs-keyword">endtask</span><br><br>endextends<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h4><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">Around before drive..<br>Drive data<br>Before send..<br>Around before send..<br>Send data:100<br>Around end send..<br>After send..<br>Around end drive..<br></code></pre></td></tr></table></figure>
+<h3 id="扩展uvm-test，uvm-driver等自然也就可以得心应手"><a href="#扩展uvm-test，uvm-driver等自然也就可以得心应手" class="headerlink" title="扩展uvm_test，uvm_driver等自然也就可以得心应手~"></a>扩展uvm_test，uvm_driver等自然也就可以得心应手~</h3>
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+        <a class="post-tag button" href="/tags/EDA/" rel="tag"><i class="fas fa-tags"></i>EDA</a>
+        
+        <a class="post-tag button" href="/tags/VCS/" rel="tag"><i class="fas fa-tags"></i>VCS</a>
+        
+      </div>
+      
+    </footer>
   </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2019/06/20/懒人编写AOP代替OOP测试用例/" title="懒人编写AOP代替OOP测试用例">http://118.25.122.94:8080/2019/06/20/懒人编写AOP代替OOP测试用例/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
   
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/06/19/VCS运行错误后保持ucli进行后续诊断/" itemprop="url">VCS运行错误后保持ucli进行后续诊断~</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-19T10:41:32+08:00">06-19</time>
-      </span>
-      
-    </header>
-  </article>
   
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/06/19/simv返回值大有用处/" itemprop="url">simv返回值大有用处</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-19T09:40:55+08:00">06-19</time>
-      </span>
-      
-    </header>
-  </article>
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
   
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/05/09/库映射问题-续-：相同module不同映射/" itemprop="url">库映射问题(续)：相同module不同映射</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-09T17:50:54+08:00">05-09</time>
-      </span>
-      
-    </header>
-  </article>
   
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/05/09/库映射问题：相同module不同映射/" itemprop="url">库映射问题：相同module不同映射</a>
-      </h1>
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
       
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-09T09:40:51+08:00">05-09</time>
-      </span>
+      <a href="/2019/06/19/VCS运行错误后保持ucli进行后续诊断/" rel="next" title="VCS运行错误后保持ucli进行后续诊断~"><i class="fas fa-angle-left"></i><span class="nav-title">VCS运行错误后保持ucli进行后续诊断~</span></a>
       
-    </header>
-  </article>
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
   
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/04/28/VCS-deadLoop/" itemprop="url">VCS定位死循环</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-28T19:11:32+08:00">04-28</time>
-      </span>
-      
-    </header>
-  </article>
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
   
   
 </div>
+
+
+
+  
+</footer></div>
 
           </div>
           
@@ -330,6 +405,17 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#AOP-vs-OOP"><span class="toc-text">AOP vs OOP</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#SV是不支持AOP的，e等语言才支持，必须采用EDA工具进行处理。"><span class="toc-text">SV是不支持AOP的，e等语言才支持，必须采用EDA工具进行处理。</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#例子"><span class="toc-text">例子</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#运行结果"><span class="toc-text">运行结果</span></a></li></ol><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#扩展uvm-test，uvm-driver等自然也就可以得心应手"><span class="toc-text">扩展uvm_test，uvm_driver等自然也就可以得心应手~</span></a></li></div>
+    </div>
+    
     
     
     <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
