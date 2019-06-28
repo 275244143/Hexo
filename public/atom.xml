@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-06-20T15:00:12.761Z</updated>
+  <updated>2019-06-27T07:23:27.531Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>懒人就用DIC吧</title>
+    <link href="http://118.25.122.94:8080/2019/06/27/%E6%87%92%E4%BA%BA%E5%B0%B1%E7%94%A8DIC%E5%90%A7/"/>
+    <id>http://118.25.122.94:8080/2019/06/27/懒人就用DIC吧/</id>
+    <published>2019-06-27T07:07:25.000Z</published>
+    <updated>2019-06-27T07:23:27.531Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;PLI、DPI太烦人，那就用DIC吧&quot;&gt;&lt;a href=&quot;#PLI、DPI太烦人，那就用DIC吧&quot; class=&quot;headerlink&quot; title=&quot;PLI、DPI太烦人，那就用DIC吧~&quot;&gt;&lt;/a&gt;PLI、DPI太烦人，那就用DIC吧~&lt;/h4&gt;&lt;p&gt;PLI
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+      <category term="VCS" scheme="http://118.25.122.94:8080/tags/VCS/"/>
+    
+  </entry>
   
   <entry>
     <title>懒人编写AOP代替OOP测试用例</title>
@@ -490,28 +518,6 @@
           &lt;h3 id=&quot;借用Accellera-生成器，UVM-SV代码检视可以用了&quot;&gt;&lt;a href=&quot;#借用Accellera-生成器，UVM-SV代码检视可以用了&quot; class=&quot;headerlink&quot; title=&quot;借用Accellera
         
       
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UVM-RAL自定义字段访问策略</title>
-    <link href="http://118.25.122.94:8080/2019/06/11/UVM-RAL%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5%E8%AE%BF%E9%97%AE%E7%AD%96%E7%95%A5/"/>
-    <id>http://118.25.122.94:8080/2019/06/11/UVM-RAL自定义字段访问策略/</id>
-    <published>2019-06-11T02:07:31.000Z</published>
-    <updated>2019-06-11T02:09:19.102Z</updated>
-    
-    <summary type="html">
-    
-      欢迎光临~
     
     </summary>
     
