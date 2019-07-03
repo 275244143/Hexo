@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-06-27T07:23:27.531Z</updated>
+  <updated>2019-07-03T01:49:42.707Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>不同的TBTOP如何merge底下的同一个DUT？</title>
+    <link href="http://118.25.122.94:8080/2019/07/03/%E4%B8%8D%E5%90%8C%E7%9A%84TBTOP%E5%A6%82%E4%BD%95merge%E5%BA%95%E4%B8%8B%E7%9A%84%E5%90%8C%E4%B8%80%E4%B8%AADUT%EF%BC%9F/"/>
+    <id>http://118.25.122.94:8080/2019/07/03/不同的TBTOP如何merge底下的同一个DUT？/</id>
+    <published>2019-07-03T01:30:30.000Z</published>
+    <updated>2019-07-03T01:49:42.707Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;经常有一些小年轻还有资深设计人员问我这个问题，那就写这篇文章给RTLer的&quot;&gt;&lt;a href=&quot;#经常有一些小年轻还有资深设计人员问我这个问题，那就写这篇文章给RTLer的&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+      <category term="VCS" scheme="http://118.25.122.94:8080/tags/VCS/"/>
+    
+      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
+    
+  </entry>
   
   <entry>
     <title>懒人就用DIC吧</title>
@@ -490,34 +520,6 @@
     <summary type="html">
     
       欢迎光临~
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SystemVerilog文档生成~代码检视~</title>
-    <link href="http://118.25.122.94:8080/2019/06/11/SystemVerilog%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90-%E4%BB%A3%E7%A0%81%E6%A3%80%E8%A7%86/"/>
-    <id>http://118.25.122.94:8080/2019/06/11/SystemVerilog文档生成-代码检视/</id>
-    <published>2019-06-11T07:19:58.000Z</published>
-    <updated>2019-06-11T08:00:24.428Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;借用Accellera-生成器，UVM-SV代码检视可以用了&quot;&gt;&lt;a href=&quot;#借用Accellera-生成器，UVM-SV代码检视可以用了&quot; class=&quot;headerlink&quot; title=&quot;借用Accellera
-        
-      
     
     </summary>
     
