@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-07-03T01:49:42.707Z</updated>
+  <updated>2019-07-04T03:07:11.844Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RTL需要一场革命了~</title>
+    <link href="http://118.25.122.94:8080/2019/07/04/RTL%E9%9C%80%E8%A6%81%E4%B8%80%E5%9C%BA%E9%9D%A9%E5%91%BD%E4%BA%86/"/>
+    <id>http://118.25.122.94:8080/2019/07/04/RTL需要一场革命了/</id>
+    <published>2019-07-04T03:01:14.000Z</published>
+    <updated>2019-07-04T03:07:11.844Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;40年都在修修补补，最近RISC-V火了，RTL硬件代码需要一场革命&quot;&gt;&lt;a href=&quot;#40年都在修修补补，最近RISC-V火了，RTL硬件代码需要一场革命&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
+    
+      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
+    
+  </entry>
   
   <entry>
     <title>不同的TBTOP如何merge底下的同一个DUT？</title>
@@ -40,9 +70,9 @@
     
       <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
     
-      <category term="VCS" scheme="http://118.25.122.94:8080/tags/VCS/"/>
-    
       <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
+    
+      <category term="VCS" scheme="http://118.25.122.94:8080/tags/VCS/"/>
     
   </entry>
   
@@ -498,28 +528,6 @@
           &lt;h3 id=&quot;SystemVerilog枚举Class&quot;&gt;&lt;a href=&quot;#SystemVerilog枚举Class&quot; class=&quot;headerlink&quot;
         
       
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UVM RAL中的保留字段如何模拟？</title>
-    <link href="http://118.25.122.94:8080/2019/06/11/UVM-RAL%E4%B8%AD%E7%9A%84%E4%BF%9D%E7%95%99%E5%AD%97%E6%AE%B5%E5%A6%82%E4%BD%95%E6%A8%A1%E6%8B%9F%EF%BC%9F/"/>
-    <id>http://118.25.122.94:8080/2019/06/11/UVM-RAL中的保留字段如何模拟？/</id>
-    <published>2019-06-11T09:32:18.000Z</published>
-    <updated>2019-06-11T09:33:11.616Z</updated>
-    
-    <summary type="html">
-    
-      欢迎光临~
     
     </summary>
     
