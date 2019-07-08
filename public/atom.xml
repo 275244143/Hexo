@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-07-04T03:07:11.844Z</updated>
+  <updated>2019-07-08T11:21:06.991Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>继续试用Chisel~</title>
+    <link href="http://118.25.122.94:8080/2019/07/08/%E7%BB%A7%E7%BB%AD%E8%AF%95%E7%94%A8Chisel/"/>
+    <id>http://118.25.122.94:8080/2019/07/08/继续试用Chisel/</id>
+    <published>2019-07-08T11:17:43.000Z</published>
+    <updated>2019-07-08T11:21:06.991Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;自从使用了之后背后发凉，这就是硬件敏捷开发-HDL硅工妥妥的要被抛弃&quot;&gt;&lt;a href=&quot;#自从使用了之后背后发凉，这就是硬件敏捷开发-HDL硅工妥妥的要被抛弃&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
+    
+      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>RTL需要一场革命了~</title>
     <link href="http://118.25.122.94:8080/2019/07/04/RTL%E9%9C%80%E8%A6%81%E4%B8%80%E5%9C%BA%E9%9D%A9%E5%91%BD%E4%BA%86/"/>
     <id>http://118.25.122.94:8080/2019/07/04/RTL需要一场革命了/</id>
     <published>2019-07-04T03:01:14.000Z</published>
-    <updated>2019-07-04T03:07:11.844Z</updated>
+    <updated>2019-07-04T03:13:40.537Z</updated>
     
     <summary type="html">
     
@@ -498,34 +530,6 @@
         
         
           &lt;h3 id=&quot;SystemVerilog接口Class&quot;&gt;&lt;a href=&quot;#SystemVerilog接口Class&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SystemVerilog枚举Class</title>
-    <link href="http://118.25.122.94:8080/2019/06/12/SystemVerilog%E6%9E%9A%E4%B8%BEClass/"/>
-    <id>http://118.25.122.94:8080/2019/06/12/SystemVerilog枚举Class/</id>
-    <published>2019-06-12T02:32:42.000Z</published>
-    <updated>2019-06-12T02:33:16.795Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;SystemVerilog枚举Class&quot;&gt;&lt;a href=&quot;#SystemVerilog枚举Class&quot; class=&quot;headerlink&quot;
         
       
     
