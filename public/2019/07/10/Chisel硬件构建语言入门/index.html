@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>Chisel硬件构建语言入门 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/07/10/Chisel硬件构建语言入门/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">Chisel硬件构建语言入门</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-07-10T09:43:18+08:00">2019-07-10 09:43:18</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/设计/" itemprop="url" rel="index"><span itemprop="name">设计</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">3.3k字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">16分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h4 id="Scala-难度接近C艹优雅度超Python的语言我就不多说了"><a href="#Scala-难度接近C艹优雅度超Python的语言我就不多说了" class="headerlink" title="Scala 难度接近C艹优雅度超Python的语言我就不多说了~"></a>Scala 难度接近C艹优雅度超Python的语言我就不多说了~</h4><h4 id="新建Chisel项目-转"><a href="#新建Chisel项目-转" class="headerlink" title="新建Chisel项目(转)"></a>新建Chisel项目(转)</h4><ul>
+<li><p>方式一<br>将如下链接中的项目下载至本地。<br><a href="https://github.com/freechipsproject/chisel-template" target="_blank" rel="noopener">enter description here</a><br>更改工程名称。<br>删除.git，并将build.sbt中的name改成自己项目的名称。<br>删除source&gt;main&gt;scala中的文件和source&gt;test&gt;scala中的文件。<br>得到纯净版。</p>
+</li>
+<li><p>方式二<br>新建scala项目，选择sbt<br>scala版本选择2.11.12,sbt版本随意<br>将下方sbt替换build.sbt</p>
+</li>
+</ul>
+<p><em>build.sbt</em><br><figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">scalacOptionsVersion</span></span>(scalaVersion: <span class="hljs-type">String</span>): <span class="hljs-type">Seq</span>[<span class="hljs-type">String</span>] = &#123;<br>  <span class="hljs-type">Seq</span>() ++ &#123;<br>    <span class="hljs-comment">// If we're building with Scala &gt; 2.11, enable the compile option</span><br>    <span class="hljs-comment">//  switch to support our anonymous Bundle definitions:</span><br>    <span class="hljs-comment">//  https://github.com/scala/bug/issues/10047</span><br>    <span class="hljs-type">CrossVersion</span>.partialVersion(scalaVersion) <span class="hljs-keyword">match</span> &#123;<br>      <span class="hljs-keyword">case</span> <span class="hljs-type">Some</span>((<span class="hljs-number">2</span>, scalaMajor: <span class="hljs-type">Long</span>)) <span class="hljs-keyword">if</span> scalaMajor &lt; <span class="hljs-number">12</span> =&gt; <span class="hljs-type">Seq</span>()<br>      <span class="hljs-keyword">case</span> _ =&gt; <span class="hljs-type">Seq</span>(<span class="hljs-string">"-Xsource:2.11"</span>)<br>    &#125;<br>  &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">javacOptionsVersion</span></span>(scalaVersion: <span class="hljs-type">String</span>): <span class="hljs-type">Seq</span>[<span class="hljs-type">String</span>] = &#123;<br>  <span class="hljs-type">Seq</span>() ++ &#123;<br>    <span class="hljs-comment">// Scala 2.12 requires Java 8. We continue to generate</span><br>    <span class="hljs-comment">//  Java 7 compatible code for Scala 2.11</span><br>    <span class="hljs-comment">//  for compatibility with old clients.</span><br>    <span class="hljs-type">CrossVersion</span>.partialVersion(scalaVersion) <span class="hljs-keyword">match</span> &#123;<br>      <span class="hljs-keyword">case</span> <span class="hljs-type">Some</span>((<span class="hljs-number">2</span>, scalaMajor: <span class="hljs-type">Long</span>)) <span class="hljs-keyword">if</span> scalaMajor &lt; <span class="hljs-number">12</span> =&gt;<br>        <span class="hljs-type">Seq</span>(<span class="hljs-string">"-source"</span>, <span class="hljs-string">"1.7"</span>, <span class="hljs-string">"-target"</span>, <span class="hljs-string">"1.7"</span>)<br>      <span class="hljs-keyword">case</span> _ =&gt;<br>        <span class="hljs-type">Seq</span>(<span class="hljs-string">"-source"</span>, <span class="hljs-string">"1.8"</span>, <span class="hljs-string">"-target"</span>, <span class="hljs-string">"1.8"</span>)<br>    &#125;<br>  &#125;<br>&#125;<br><br>name := <span class="hljs-string">"Module-2.1"</span>	<span class="hljs-comment">//项目名称</span><br>version := <span class="hljs-string">"0.1"</span>			<span class="hljs-comment">//自己给项目起的版本号</span><br>scalaVersion := <span class="hljs-string">"2.11.12"</span>	<span class="hljs-comment">//scala版本</span><br>crossScalaVersions := <span class="hljs-type">Seq</span>(<span class="hljs-string">"2.11.12"</span>, <span class="hljs-string">"2.12.4"</span>)		<span class="hljs-comment">//scala版本的扩充</span><br>resolvers ++= <span class="hljs-type">Seq</span>(<br>  <span class="hljs-type">Resolver</span>.sonatypeRepo(<span class="hljs-string">"snapshots"</span>),<br>  <span class="hljs-type">Resolver</span>.sonatypeRepo(<span class="hljs-string">"releases"</span>)<br>)<br><span class="hljs-comment">// Provide a managed dependency on X if -DXVersion="" is supplied on the command line.</span><br><span class="hljs-keyword">val</span> defaultVersions = <span class="hljs-type">Map</span>(<br>  <span class="hljs-string">"chisel3"</span> -&gt; <span class="hljs-string">"3.1.+"</span>,<br>  <span class="hljs-string">"chisel-iotesters"</span> -&gt; <span class="hljs-string">"1.2.5+"</span><br>)<br><br>libraryDependencies ++= <span class="hljs-type">Seq</span>(<span class="hljs-string">"chisel3"</span>,<span class="hljs-string">"chisel-iotesters"</span>).map &#123;<br>  dep: <span class="hljs-type">String</span> =&gt; <span class="hljs-string">"edu.berkeley.cs"</span> %% dep % sys.props.getOrElse(dep + <span class="hljs-string">"Version"</span>, defaultVersions(dep)) &#125;<br><br>scalacOptions ++= scalacOptionsVersion(scalaVersion.value)<br>javacOptions ++= javacOptionsVersion(scalaVersion.value)<br></code></pre></td></tr></table></figure></p>
+<h4 id="Chisel例子、测试、verilog生成"><a href="#Chisel例子、测试、verilog生成" class="headerlink" title="Chisel例子、测试、verilog生成"></a>Chisel例子、测试、verilog生成</h4><ul>
+<li><p>样例模块</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">package</span> <span class="hljs-type">Passthrough</span><br><span class="hljs-keyword">import</span> chisel3._<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MAC</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Module</span></span>&#123;<br>  <span class="hljs-keyword">val</span> io = <span class="hljs-type">IO</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span>&#123;<br>    <span class="hljs-keyword">val</span> in_a = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">4.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> in_b = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">4.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> in_c = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">4.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> out = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">8.</span><span class="hljs-type">W</span>))<br>  &#125;)<br><br>  io.out := io.in_a * io.in_b + io.in_c<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>对模块进行测试</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">package</span> <span class="hljs-type">Passthrough</span><br><span class="hljs-keyword">import</span> chisel3._<br><span class="hljs-keyword">import</span> chisel3.iotesters.&#123;<span class="hljs-type">Driver</span>, <span class="hljs-type">PeekPokeTester</span>&#125;<br><br><span class="hljs-comment">//测试样例如下所示</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MACTester</span>(<span class="hljs-params">c: <span class="hljs-type">MAC</span></span>) <span class="hljs-keyword">extends</span> <span class="hljs-title">PeekPokeTester</span>(<span class="hljs-params">c</span>) </span>&#123;<br>  <span class="hljs-keyword">val</span> cycles = <span class="hljs-number">100</span><br>  <span class="hljs-keyword">import</span> scala.util.<span class="hljs-type">Random</span><br>  <span class="hljs-keyword">for</span> (i &lt;- <span class="hljs-number">0</span> until cycles) &#123;<br>    <span class="hljs-keyword">val</span> in_a = <span class="hljs-type">Random</span>.nextInt(<span class="hljs-number">16</span>)<br>    <span class="hljs-keyword">val</span> in_b = <span class="hljs-type">Random</span>.nextInt(<span class="hljs-number">16</span>)<br>    <span class="hljs-keyword">val</span> in_c = <span class="hljs-type">Random</span>.nextInt(<span class="hljs-number">16</span>)<br>    poke(c.io.in_a, in_a)<br>    poke(c.io.in_b, in_b)<br>    poke(c.io.in_c, in_c)<br>    expect(c.io.out, in_a*in_b+in_c)<br>  &#125;<br><br>&#125;<br><br><span class="hljs-comment">//测试类如下所示</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">test</span></span>&#123;<br>	assert(<span class="hljs-type">Driver</span>(() =&gt; <span class="hljs-keyword">new</span> <span class="hljs-type">MAC</span>) &#123;c =&gt; <span class="hljs-keyword">new</span> <span class="hljs-type">MACTester</span>(c)&#125;)<br>	println(<span class="hljs-string">"SUCCESS!!"</span>)<br>&#125;<br><br><span class="hljs-comment">//运行测试</span><br><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">RunAppDemo</span> </span>&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span></span>(args:<span class="hljs-type">Array</span>[<span class="hljs-type">String</span>]) &#123;<br>    <span class="hljs-keyword">new</span> test<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>转换成verilog<br>经过测试后，将上述模块转换生成verilog的代码如下</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">Main</span> </span>&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span></span>(args: <span class="hljs-type">Array</span>[<span class="hljs-type">String</span>]): <span class="hljs-type">Unit</span> = &#123;<br>    println(<span class="hljs-string">"Generating the Adder hardware"</span>)<br>    chisel3.<span class="hljs-type">Driver</span>.execute(<span class="hljs-type">Array</span>(<span class="hljs-string">"--target-dir"</span>, <span class="hljs-string">"generated"</span>), () =&gt; <span class="hljs-keyword">new</span> <span class="hljs-type">MAC</span>)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Chisel中的组合逻辑"><a href="#Chisel中的组合逻辑" class="headerlink" title="Chisel中的组合逻辑"></a>Chisel中的组合逻辑</h4><ul>
+<li>Input与Output<br>Chisel中的所有类都要继承Module。<br>类中必须要定义io类型，用来表示该模块的输入输出端口。<br>每一个输入输出端口，需要说明是有符号数还是无符号数，以及数据位宽。</li>
+</ul>
+<p>class MyOperatorsTwo extends Module {<br>  val io = IO(new Bundle {<br>    val in      = Input(UInt(4.W))<br>    val out_mux = Output(UInt(4.W))<br>    val out_cat = Output(UInt(4.W))<br>  })<br>}</p>
+<p>class MyOperators(val length : Int) extends Module {<br>  val io = IO(new Bundle {<br>    val in      = Input(UInt(length.W))<br>    val out_mux = Output(UInt(length.W))<br>    val out_cat = Output(UInt(length.W))<br>  })<br>}</p>
+<ul>
+<li>数据类型与赋值<br>Chisel中所有的变量只能用val，不能用var。<br>Chisel中的数据类型有UInt,SInt,Bool，并且Chisel中的数据类型只能和Chisel中的数据类型进行运算，因此运算时如果需要操作常数，需写成2.U的形式。<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyOperators</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Module</span> </span>&#123;<br>  <span class="hljs-keyword">val</span> io = <span class="hljs-type">IO</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span> &#123;<br>    <span class="hljs-keyword">val</span> in      = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">4.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> out_add = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">4.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> out_sub = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">4.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> out_mul = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">4.</span><span class="hljs-type">W</span>))<br>  &#125;)<br><br>  <span class="hljs-keyword">val</span> s = <span class="hljs-literal">true</span>.<span class="hljs-type">B</span><br>  io.out_add := <span class="hljs-number">1.</span><span class="hljs-type">U</span> + <span class="hljs-number">4.</span><span class="hljs-type">U</span><br>  io.out_sub := <span class="hljs-number">2.</span><span class="hljs-type">U</span> - <span class="hljs-number">1.</span><span class="hljs-type">U</span><br>  io.out_mul := <span class="hljs-number">4.</span><span class="hljs-type">U</span> * <span class="hljs-number">2.</span><span class="hljs-type">U</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在变量初始化时使用等号，在赋值时使用:=，代表左侧变量由右侧表达式驱动<br>另外scala中提供比较常见的如多选器，连接器<br><figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> s = <span class="hljs-literal">true</span>.<span class="hljs-type">B</span><br>io.out_mux := <span class="hljs-type">Mux</span>(s, <span class="hljs-number">3.</span><span class="hljs-type">U</span>, <span class="hljs-number">0.</span><span class="hljs-type">U</span>) <br>io.out_cat := <span class="hljs-type">Cat</span>(<span class="hljs-number">2.</span><span class="hljs-type">U</span>, <span class="hljs-number">1.</span><span class="hljs-type">U</span>)<br></code></pre></td></tr></table></figure></p>
+<p>对于加法运算，Chisel提供了两种加法运算，+&amp;表示会保留进位，+不保留进位</p>
+<ul>
+<li>控制语句<br>如果有多条赋值语句驱动相同左侧变量，则选择最后一个，如下:<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LastConnect</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Module</span> </span>&#123;<br>  <span class="hljs-keyword">val</span> io = <span class="hljs-type">IO</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span> &#123;<br>    <span class="hljs-keyword">val</span> in = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">4.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> out = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">4.</span><span class="hljs-type">W</span>))<br>  &#125;)<br>  io.out := <span class="hljs-number">1.</span><span class="hljs-type">U</span><br>  io.out := <span class="hljs-number">2.</span><span class="hljs-type">U</span><br>  io.out := <span class="hljs-number">3.</span><span class="hljs-type">U</span><br>  io.out := <span class="hljs-number">4.</span><span class="hljs-type">U</span>		<span class="hljs-comment">//编译器选择这一条</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>when, elsewhen, otherwise<br>Chisel中提供条件语句when, elsewhen和otherwise<br>使用方式和if-else语句一样<br>语法如下：</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs scala">when(someBooleanCondition) &#123;<br>  <span class="hljs-comment">// things to do when true</span><br>&#125;.elsewhen(someOtherBooleanCondition) &#123;<br>  <span class="hljs-comment">// things to do on this condition</span><br>&#125;.otherwise &#123;<br>  <span class="hljs-comment">// things to do if none of th boolean conditions are true</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>示例如下：<br><figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Max3</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Module</span> </span>&#123;<br>  <span class="hljs-keyword">val</span> io = <span class="hljs-type">IO</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span> &#123;<br>    <span class="hljs-keyword">val</span> in1 = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">16.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> in2 = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">16.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> in3 = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">16.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> out = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">16.</span><span class="hljs-type">W</span>))<br>  &#125;)<br>    <br>  when(io.in1 &gt; io.in2 &amp;&amp; io.in1 &gt; io.in3) &#123;<br>    io.out := io.in1  <br>  &#125;.elsewhen(io.in2 &gt; io.in1 &amp;&amp; io.in2 &gt; io.in3) &#123;<br>    io.out := io.in2 <br>  &#125;.otherwise &#123;<br>    io.out := io.in3<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>需要注意的是，Chisel中的条件语句不像scala中的那样，最后一行为返回值<br><figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> result = when(squareIt) &#123; x * x &#125;.otherwise &#123; x &#125;<br></code></pre></td></tr></table></figure></p>
+<h4 id="Chisel中的时序逻辑"><a href="#Chisel中的时序逻辑" class="headerlink" title="Chisel中的时序逻辑"></a>Chisel中的时序逻辑</h4><ul>
+<li>寄存器reg<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> register = <span class="hljs-type">Reg</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">12.</span><span class="hljs-type">W</span>))<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RegisterModule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Module</span> </span>&#123;<br>  <span class="hljs-keyword">val</span> io = <span class="hljs-type">IO</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span> &#123;<br>    <span class="hljs-keyword">val</span> in  = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">12.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> out = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">12.</span><span class="hljs-type">W</span>))<br>  &#125;)<br>  <br>  <span class="hljs-keyword">val</span> register = <span class="hljs-type">Reg</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">12.</span><span class="hljs-type">W</span>))<br>  register := io.in + <span class="hljs-number">1.</span><span class="hljs-type">U</span><br>  io.out := register<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>还可以通过RegNext来实例化出来一个寄存器<br><figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RegNextModule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Module</span> </span>&#123;<br>  <span class="hljs-keyword">val</span> io = <span class="hljs-type">IO</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span> &#123;<br>    <span class="hljs-keyword">val</span> in  = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">12.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> out = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">12.</span><span class="hljs-type">W</span>))<br>  &#125;)<br>  <br>  <span class="hljs-comment">// register bitwidth is inferred from io.out</span><br>  io.out := <span class="hljs-type">RegNext</span>(io.in + <span class="hljs-number">1.</span><span class="hljs-type">U</span>)<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>step(n)可以改变n次时钟，常用于测试中<br><figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RegisterModuleTester</span>(<span class="hljs-params">c: <span class="hljs-type">RegisterModule</span></span>) <span class="hljs-keyword">extends</span> <span class="hljs-title">PeekPokeTester</span>(<span class="hljs-params">c</span>) </span>&#123;<br>  <span class="hljs-keyword">for</span> (i &lt;- <span class="hljs-number">0</span> until <span class="hljs-number">100</span>) &#123;<br>    poke(c.io.in, i)<br>    step(<span class="hljs-number">1</span>)<br>    expect(c.io.out, i+<span class="hljs-number">1</span>)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>可以通过RegInit来让寄存器中初始附带特定值<br><figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> myReg = <span class="hljs-type">RegInit</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">12.</span><span class="hljs-type">W</span>), <span class="hljs-number">0.</span><span class="hljs-type">U</span>)<br><span class="hljs-keyword">val</span> myReg = <span class="hljs-type">RegInit</span>(<span class="hljs-number">0.</span><span class="hljs-type">U</span>(<span class="hljs-number">12.</span><span class="hljs-type">W</span>))<br></code></pre></td></tr></table></figure></p>
+<p>有如下例子<br><figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs scala">classclass  <span class="hljs-type">RegInitModuleRegInit</span>  <span class="hljs-keyword">extends</span> <span class="hljs-type">Module</span> &#123;<br>  <span class="hljs-keyword">val</span> io = <span class="hljs-type">IO</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span> &#123;<br>    <span class="hljs-keyword">val</span> in  = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">12.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> out = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">12.</span><span class="hljs-type">W</span>))<br>  &#125;)<br>  <br>  <span class="hljs-keyword">val</span> register = <span class="hljs-type">RegInit</span>(<span class="hljs-number">0.</span><span class="hljs-type">U</span>(<span class="hljs-number">12.</span><span class="hljs-type">W</span>))<br>  register := io.in + <span class="hljs-number">1.</span><span class="hljs-type">U</span><br>  io.out := register<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>必须要使用RegInit，否则寄存器里的初值未知<br>可以在测试时使用reset(n)来使reset信号有效n个周期</p>
+<ul>
+<li>精确时钟和复位<br>Chisel中对于寄存器有默认的同步复位reset和时钟clk，但如果想自己加入额外的复位信号和额外的时钟信号，就要用到withClock/withReset/withClockAndReset。<br>withClock(a){}意味着在a的上升沿会触发什么。<br>withReset(a){}意味着在标准时钟上升沿a有效时复位。<br>withClockAndReset(a,b){}意味着在a的上升沿,b有效时复位。<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClockExamples</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Module</span> </span>&#123;<br>  <span class="hljs-keyword">val</span> io = <span class="hljs-type">IO</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span> &#123;<br>    <span class="hljs-keyword">val</span> in = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">10.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> alternateReset    = <span class="hljs-type">Input</span>(<span class="hljs-type">Bool</span>())<br>    <span class="hljs-keyword">val</span> alternateClock    = <span class="hljs-type">Input</span>(<span class="hljs-type">Clock</span>())<br>    <span class="hljs-keyword">val</span> outImplicit       = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>())<br>    <span class="hljs-keyword">val</span> outAlternateReset = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>())<br>    <span class="hljs-keyword">val</span> outAlternateClock = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>())<br>    <span class="hljs-keyword">val</span> outAlternateBoth  = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>())<br>  &#125;)<br><br>  <span class="hljs-keyword">val</span> imp = <span class="hljs-type">RegInit</span>(<span class="hljs-number">0.</span><span class="hljs-type">U</span>(<span class="hljs-number">10.</span><span class="hljs-type">W</span>))<br>  imp := io.in<br>  io.outImplicit := imp<br><br>  withReset(io.alternateReset) &#123;<br>    <span class="hljs-comment">// everything in this scope with have alternateReset as the reset</span><br>    <span class="hljs-keyword">val</span> altRst = <span class="hljs-type">RegInit</span>(<span class="hljs-number">0.</span><span class="hljs-type">U</span>(<span class="hljs-number">10.</span><span class="hljs-type">W</span>))<br>    altRst := io.in<br>    io.outAlternateReset := altRst<br>  &#125;<br><br>  withClock(io.alternateClock) &#123;<br>    <span class="hljs-keyword">val</span> altClk = <span class="hljs-type">RegInit</span>(<span class="hljs-number">0.</span><span class="hljs-type">U</span>(<span class="hljs-number">10.</span><span class="hljs-type">W</span>))<br>    altClk := io.in<br>    io.outAlternateClock := altClk<br>  &#125;<br><br>  withClockAndReset(io.alternateClock, io.alternateReset) &#123;<br>    <span class="hljs-keyword">val</span> alt = <span class="hljs-type">RegInit</span>(<span class="hljs-number">0.</span><span class="hljs-type">U</span>(<span class="hljs-number">10.</span><span class="hljs-type">W</span>))<br>    alt := io.in<br>    io.outAlternateBoth := alt<br>  &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">Main</span> </span>&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span></span>(args: <span class="hljs-type">Array</span>[<span class="hljs-type">String</span>]): <span class="hljs-type">Unit</span> = &#123;<br>    println(<span class="hljs-string">"Generating the Adder hardware"</span>)<br>    chisel3.<span class="hljs-type">Driver</span>.execute(<span class="hljs-type">Array</span>(<span class="hljs-string">"--target-dir"</span>, <span class="hljs-string">"generated"</span>), () =&gt; <span class="hljs-keyword">new</span> <span class="hljs-type">ClockExamples</span>)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>生成的verilog中相关部分如下<br><figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> ClockExamples( <span class="hljs-comment">// @[:@3.2]</span><br>  <span class="hljs-keyword">input</span>        clock, <span class="hljs-comment">// @[:@4.4]</span><br>  <span class="hljs-keyword">input</span>        reset, <span class="hljs-comment">// @[:@5.4]</span><br>  <span class="hljs-keyword">input</span>  [<span class="hljs-number">9</span>:<span class="hljs-number">0</span>] io_in, <span class="hljs-comment">// @[:@6.4]</span><br>  <span class="hljs-keyword">input</span>        io_alternateReset, <span class="hljs-comment">// @[:@6.4]</span><br>  <span class="hljs-keyword">input</span>        io_alternateClock, <span class="hljs-comment">// @[:@6.4]</span><br>  <span class="hljs-keyword">output</span> [<span class="hljs-number">9</span>:<span class="hljs-number">0</span>] io_outImplicit, <span class="hljs-comment">// @[:@6.4]</span><br>  <span class="hljs-keyword">output</span> [<span class="hljs-number">9</span>:<span class="hljs-number">0</span>] io_outAlternateReset, <span class="hljs-comment">// @[:@6.4]</span><br>  <span class="hljs-keyword">output</span> [<span class="hljs-number">9</span>:<span class="hljs-number">0</span>] io_outAlternateClock, <span class="hljs-comment">// @[:@6.4]</span><br>  <span class="hljs-keyword">output</span> [<span class="hljs-number">9</span>:<span class="hljs-number">0</span>] io_outAlternateBoth <span class="hljs-comment">// @[:@6.4]</span><br>);<br>  <span class="hljs-keyword">reg</span> [<span class="hljs-number">9</span>:<span class="hljs-number">0</span>] imp; <span class="hljs-comment">// @[Passthrough.scala 137:20:@8.4]</span><br>  <span class="hljs-keyword">reg</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] <span class="hljs-number">_</span>RAND_0;<br>  <span class="hljs-keyword">reg</span> [<span class="hljs-number">9</span>:<span class="hljs-number">0</span>] <span class="hljs-number">_</span>T_23; <span class="hljs-comment">// @[Passthrough.scala 143:25:@11.4]</span><br>  <span class="hljs-keyword">reg</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] <span class="hljs-number">_</span>RAND_1;<br>  <span class="hljs-keyword">reg</span> [<span class="hljs-number">9</span>:<span class="hljs-number">0</span>] <span class="hljs-number">_</span>T_26; <span class="hljs-comment">// @[Passthrough.scala 149:25:@14.4]</span><br>  <span class="hljs-keyword">reg</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] <span class="hljs-number">_</span>RAND_2;<br>  <span class="hljs-keyword">reg</span> [<span class="hljs-number">9</span>:<span class="hljs-number">0</span>] <span class="hljs-number">_</span>T_29; <span class="hljs-comment">// @[Passthrough.scala 155:22:@17.4]</span><br>  <span class="hljs-keyword">reg</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] <span class="hljs-number">_</span>RAND_3;<br>  <span class="hljs-keyword">assign</span> io_outImplicit = imp; <span class="hljs-comment">// @[Passthrough.scala 139:18:@10.4]</span><br>  <span class="hljs-keyword">assign</span> io_outAlternateReset = <span class="hljs-number">_</span>T_23; <span class="hljs-comment">// @[Passthrough.scala 145:26:@13.4]</span><br>  <span class="hljs-keyword">assign</span> io_outAlternateClock = <span class="hljs-number">_</span>T_26; <span class="hljs-comment">// @[Passthrough.scala 151:26:@16.4]</span><br>  <span class="hljs-keyword">assign</span> io_outAlternateBoth = <span class="hljs-number">_</span>T_29; <span class="hljs-comment">// @[Passthrough.scala 157:25:@19.4]</span><br><br>  <span class="hljs-keyword">always</span> @(<span class="hljs-keyword">posedge</span> clock) <span class="hljs-keyword">begin</span><br>    <span class="hljs-keyword">if</span> (reset) <span class="hljs-keyword">begin</span><br>      imp &lt;= <span class="hljs-number">10'h0</span>;<br>    <span class="hljs-keyword">end</span> <span class="hljs-keyword">else</span> <span class="hljs-keyword">begin</span><br>      imp &lt;= io_in;<br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">if</span> (io_alternateReset) <span class="hljs-keyword">begin</span><br>      <span class="hljs-number">_</span>T_23 &lt;= <span class="hljs-number">10'h0</span>;<br>    <span class="hljs-keyword">end</span> <span class="hljs-keyword">else</span> <span class="hljs-keyword">begin</span><br>      <span class="hljs-number">_</span>T_23 &lt;= io_in;<br>    <span class="hljs-keyword">end</span><br>  <span class="hljs-keyword">end</span><br>  <span class="hljs-keyword">always</span> @(<span class="hljs-keyword">posedge</span> io_alternateClock) <span class="hljs-keyword">begin</span><br>    <span class="hljs-keyword">if</span> (reset) <span class="hljs-keyword">begin</span><br>      <span class="hljs-number">_</span>T_26 &lt;= <span class="hljs-number">10'h0</span>;<br>    <span class="hljs-keyword">end</span> <span class="hljs-keyword">else</span> <span class="hljs-keyword">begin</span><br>      <span class="hljs-number">_</span>T_26 &lt;= io_in;<br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">if</span> (io_alternateReset) <span class="hljs-keyword">begin</span><br>      <span class="hljs-number">_</span>T_29 &lt;= <span class="hljs-number">10'h0</span>;<br>    <span class="hljs-keyword">end</span> <span class="hljs-keyword">else</span> <span class="hljs-keyword">begin</span><br>      <span class="hljs-number">_</span>T_29 &lt;= io_in;<br>    <span class="hljs-keyword">end</span><br>  <span class="hljs-keyword">end</span><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure></p>
+<h4 id="Chisel中参数"><a href="#Chisel中参数" class="headerlink" title="Chisel中参数"></a>Chisel中参数</h4><ul>
+<li>样例1<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs scala">classclass  <span class="hljs-type">ParameterizedWidthAdderParamet</span> (in0Width: <span class="hljs-type">Int</span>, in1Width: <span class="hljs-type">Int</span>, sumWidth: <span class="hljs-type">Int</span>) <span class="hljs-keyword">extends</span> <span class="hljs-type">Module</span> &#123;<br>  require(in0Width &gt;= <span class="hljs-number">0</span>)<br>  require(in1Width &gt;= <span class="hljs-number">0</span>)<br>  require(sumWidth &gt;= <span class="hljs-number">0</span>)<br>  <span class="hljs-keyword">val</span> io = <span class="hljs-type">IO</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span> &#123;<br>    <span class="hljs-keyword">val</span> in0 = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(in0Width.<span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> in1 = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(in1Width.<span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> sum = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(sumWidth.<span class="hljs-type">W</span>))<br>  &#125;)<br>  <span class="hljs-comment">// a +&amp; b 包括进位, a + b 则不包括</span><br>  io.sum := io.in0 +&amp; io.in1<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上述样例中的require关键字表示对参数做了一些限制，这种操作在我们只想实例化某些特定情况的参数、者要保证参数互斥或有意义时使用</p>
+<ul>
+<li>可选或默认的参数<br>可选的参数可以通过Option关键字实现，观察如下代码<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DelayBy1</span>(<span class="hljs-params">resetValue: <span class="hljs-type">Option</span>[<span class="hljs-type">UInt</span>] = <span class="hljs-type">None</span></span>) <span class="hljs-keyword">extends</span> <span class="hljs-title">Module</span> </span>&#123;<br>    <span class="hljs-keyword">val</span> io = <span class="hljs-type">IO</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span> &#123;<br>        <span class="hljs-keyword">val</span> in  = <span class="hljs-type">Input</span>( <span class="hljs-type">UInt</span>(<span class="hljs-number">16.</span><span class="hljs-type">W</span>))<br>        <span class="hljs-keyword">val</span> out = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">16.</span><span class="hljs-type">W</span>))<br>    &#125;)<br>    <span class="hljs-keyword">val</span> reg = <span class="hljs-keyword">if</span> (resetValue.isDefined) &#123; <span class="hljs-comment">// resetValue = Some(number)</span><br>        <span class="hljs-type">RegInit</span>(resetValue.get)<br>    &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">//resetValue = None</span><br>        <span class="hljs-type">Reg</span>(<span class="hljs-type">UInt</span>())<br>    &#125;<br>    reg := io.in<br>    io.out := reg<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>利用Option类，实现可选的Chisel类生成，即当有初始设定值时,resetValue.isDefined为真，这样做可以使得代码更美观</p>
+<ul>
+<li>match/case语句<br>Scala中提供了类似于C语言的case语句，且提供了更加便捷的功能，包括异种类型变量的匹配，基本语法如下，下方代码将匹配到的值返回给x。<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> y = <span class="hljs-number">7</span><br><span class="hljs-comment">/// ...</span><br><span class="hljs-keyword">val</span> x = y <span class="hljs-keyword">match</span> &#123;<br>  <span class="hljs-keyword">case</span> <span class="hljs-number">0</span> =&gt; <span class="hljs-string">"zero"</span> <span class="hljs-comment">// One common syntax, preferred if fits in one line</span><br>  <span class="hljs-keyword">case</span> <span class="hljs-number">1</span> =&gt;        <span class="hljs-comment">// Another common syntax, preferred if does not fit in one line.</span><br>      <span class="hljs-string">"one"</span>        <span class="hljs-comment">// Note the code block continues until the next case</span><br>  <span class="hljs-keyword">case</span> <span class="hljs-number">2</span> =&gt; &#123;      <span class="hljs-comment">// Another syntax, but curly braces are not required</span><br>      <span class="hljs-string">"two"</span><br>  &#125;<br>  <span class="hljs-keyword">case</span> _ =&gt; <span class="hljs-string">"many"</span> <span class="hljs-comment">// _ is a wildcard that matches all values</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>需要注意的是，case a =&gt;后为匹配到则执行的语句，且不会像c那样一直执行到底，执行完一个case就结束match。其次，match是顺序匹配的，从上向下一次匹配。case _ 代表其他情况。并且多个变量可以同时匹配，如下。<br><figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-function"><span class="hljs-keyword">def</span>  <span class="hljs-title">animalTypeanimalT</span> </span>(biggerThanBreadBox: <span class="hljs-type">Boolean</span>, meanAsCanBe: <span class="hljs-type">Boolean</span>): <span class="hljs-type">String</span> = &#123;<br>  (biggerThanBreadBox, meanAsCanBe) <span class="hljs-keyword">match</span> &#123;<br>    <span class="hljs-keyword">case</span> (<span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>) =&gt; <span class="hljs-string">"wolverine"</span><br>    <span class="hljs-keyword">case</span> (<span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>) =&gt; <span class="hljs-string">"elephant"</span><br>    <span class="hljs-keyword">case</span> (<span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>) =&gt; <span class="hljs-string">"shrew"</span><br>    <span class="hljs-keyword">case</span> (<span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>) =&gt; <span class="hljs-string">"puppy"</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>Scala中的match也提供对类型的匹配<br><figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> sequence = <span class="hljs-type">Seq</span>(<span class="hljs-string">"a"</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0.0</span>)<br>sequence.foreach &#123; x =&gt;<br>  x <span class="hljs-keyword">match</span> &#123;<br>    <span class="hljs-keyword">case</span> s: <span class="hljs-type">String</span> =&gt; println(<span class="hljs-string">s"<span class="hljs-subst">$x</span> is a String"</span>)<br>    <span class="hljs-keyword">case</span> s: <span class="hljs-type">Int</span>    =&gt; println(<span class="hljs-string">s"<span class="hljs-subst">$x</span> is an Int"</span>)<br>    <span class="hljs-keyword">case</span> s: <span class="hljs-type">Double</span> =&gt; println(<span class="hljs-string">s"<span class="hljs-subst">$x</span> is a Double"</span>)<br>    <span class="hljs-keyword">case</span> _ =&gt; println(<span class="hljs-string">s"<span class="hljs-subst">$x</span> is an unknown type!"</span>)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>如果想一次匹配多个类型，则需要这样写<br><figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> sequence = <span class="hljs-type">Seq</span>(<span class="hljs-string">"a"</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0.0</span>)<br>sequence.foreach &#123; x =&gt;<br>  x <span class="hljs-keyword">match</span> &#123;<br>    <span class="hljs-keyword">case</span> _: <span class="hljs-type">Int</span> | _: <span class="hljs-type">Double</span> =&gt; println(<span class="hljs-string">s"<span class="hljs-subst">$x</span> is a number!"</span>)<br>    <span class="hljs-keyword">case</span> _ =&gt; println(<span class="hljs-string">s"<span class="hljs-subst">$x</span> is an unknown type!"</span>)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>但是对类型的匹配只能精确到最顶层，对下层类型的匹配是不允许的，比如下方代码就是不符合规则的，这叫做类型擦除。<br><figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> sequence = <span class="hljs-type">Seq</span>(<span class="hljs-type">Seq</span>(<span class="hljs-string">"a"</span>), <span class="hljs-type">Seq</span>(<span class="hljs-number">1</span>), <span class="hljs-type">Seq</span>(<span class="hljs-number">0.0</span>))<br>sequence.foreach &#123; x =&gt;<br>  x <span class="hljs-keyword">match</span> &#123;<br>    <span class="hljs-keyword">case</span> s: <span class="hljs-type">Seq</span>[<span class="hljs-type">String</span>] =&gt; println(<span class="hljs-string">s"<span class="hljs-subst">$x</span> is a String"</span>)<br>    <span class="hljs-keyword">case</span> s: <span class="hljs-type">Seq</span>[<span class="hljs-type">Int</span>]    =&gt; println(<span class="hljs-string">s"<span class="hljs-subst">$x</span> is an Int"</span>)<br>    <span class="hljs-keyword">case</span> s: <span class="hljs-type">Seq</span>[<span class="hljs-type">Double</span>] =&gt; println(<span class="hljs-string">s"<span class="hljs-subst">$x</span> is a Double"</span>)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<ul>
+<li><p>实例<br>对“可选或默认的参数”中的例子，也可以这样写。</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DelayBy1</span>(<span class="hljs-params">resetValue: <span class="hljs-type">Option</span>[<span class="hljs-type">UInt</span>] = <span class="hljs-type">None</span></span>) <span class="hljs-keyword">extends</span> <span class="hljs-title">Module</span> </span>&#123;<br>  <span class="hljs-keyword">val</span> io = <span class="hljs-type">IO</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span> &#123;<br>    <span class="hljs-keyword">val</span> in  = <span class="hljs-type">Input</span>( <span class="hljs-type">UInt</span>(<span class="hljs-number">16.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> out = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">16.</span><span class="hljs-type">W</span>))<br>  &#125;)<br>  <span class="hljs-keyword">val</span> reg = resetValue <span class="hljs-keyword">match</span> &#123;<br>    <span class="hljs-keyword">case</span> <span class="hljs-type">Some</span>(r) =&gt; <span class="hljs-type">RegInit</span>(r)<br>    <span class="hljs-keyword">case</span> <span class="hljs-type">None</span>    =&gt; <span class="hljs-type">Reg</span>(<span class="hljs-type">UInt</span>())<br>  &#125;<br>  reg := io.in<br>  io.out := reg<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>可选的IO<br>参数可选的情况我们在上方讨论过，下面看一下IO模块可选时的情况（使用Some关键字）<br>以是否包含低位进位的全加器来说，有如下两种实现方式。</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HalfFullAdder</span>(<span class="hljs-params">val hasCarry: <span class="hljs-type">Boolean</span></span>) <span class="hljs-keyword">extends</span> <span class="hljs-title">Module</span> </span>&#123;<br>  <span class="hljs-keyword">val</span> io = <span class="hljs-type">IO</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span> &#123;<br>    <span class="hljs-keyword">val</span> a = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">1.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> b = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">1.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> carryIn = <span class="hljs-keyword">if</span> (hasCarry) <span class="hljs-type">Some</span>(<span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">1.</span><span class="hljs-type">W</span>))) <span class="hljs-keyword">else</span> <span class="hljs-type">None</span><br>    <span class="hljs-keyword">val</span> s = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">1.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> carryOut = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">1.</span><span class="hljs-type">W</span>))<br>  &#125;)<br>  <span class="hljs-keyword">val</span> sum = io.a +&amp; io.b +&amp; io.carryIn.getOrElse(<span class="hljs-number">0.</span><span class="hljs-type">U</span>)<br>  io.s := sum(<span class="hljs-number">0</span>)<br>  io.carryOut := sum(<span class="hljs-number">1</span>)<br>&#125;<br><br>classclass  <span class="hljs-type">HalfFullAdderHalfFul</span> (<span class="hljs-keyword">val</span> hasCarry: <span class="hljs-type">Boolean</span>) <span class="hljs-keyword">extends</span> <span class="hljs-type">Module</span> &#123;<br>  <span class="hljs-keyword">val</span> io = <span class="hljs-type">IO</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span> &#123;<br>    <span class="hljs-keyword">val</span> a = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">1.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> b = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">1.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> carryIn = <span class="hljs-type">Input</span>(<span class="hljs-keyword">if</span> (hasCarry) <span class="hljs-type">UInt</span>(<span class="hljs-number">1.</span><span class="hljs-type">W</span>) <span class="hljs-keyword">else</span> <span class="hljs-type">UInt</span>(<span class="hljs-number">0.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> s = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">1.</span><span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> carryOut = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">1.</span><span class="hljs-type">W</span>))<br>  &#125;)<br>  <span class="hljs-keyword">val</span> sum = io.a +&amp; io.b +&amp; io.carryIn<br>  io.s := sum(<span class="hljs-number">0</span>)<br>  io.carryOut := sum(<span class="hljs-number">1</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>第二种实现方式避免了使用getOrElse，对于Chisel，0宽度的数字是允许的，生成verilog时会被直接剪枝，任何使用0位宽的变量会被当作0</p>
+<ul>
+<li>隐式声明<br>隐式的声明可以帮助代码在不同情况下省去冗余的部分，使用implicit关键字即可做到，观察如下代码<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">CatDog</span> </span>&#123;<br>  <span class="hljs-keyword">implicit</span> <span class="hljs-keyword">val</span> numberOfCats: <span class="hljs-type">Int</span> = <span class="hljs-number">3</span>		<br><br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tooManyCats</span></span>(nDogs: <span class="hljs-type">Int</span>)(<span class="hljs-keyword">implicit</span> nCats: <span class="hljs-type">Int</span>): <span class="hljs-type">Boolean</span> = nCats &gt; nDogs<br>    <br>  <span class="hljs-keyword">val</span> imp = tooManyCats(<span class="hljs-number">2</span>)    <span class="hljs-comment">//隐式传参，结果为真</span><br>  <span class="hljs-keyword">val</span> exp = tooManyCats(<span class="hljs-number">2</span>)(<span class="hljs-number">1</span>) <span class="hljs-comment">// 显示传参，结果为假</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这段代码在第一行隐式地说明了猫的数量，需要注意的是，在一段代码块中，对于一种类型只能有一条隐式说明，在随后定义的函数中，有两个参数列表，分别是参数列表和隐式参数列表，隐式参数列表在未显示说明时，会找到该代码段的隐式说明语句，即numberOfCats。因此，imp的值是真，exp的值是假。对于这段代码，必须有一个隐式说明的整型值，否则函数定义会因找不到隐式的值而出错</p>
+<ul>
+<li>隐式转换<br>利用定义“隐式”，我们可以将两个不相关的量做隐式转换，而不要求父子类关系，如下代码所示<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span>(<span class="hljs-params">val name: <span class="hljs-type">String</span>, val species: <span class="hljs-type">String</span></span>)</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Human</span>(<span class="hljs-params">val name: <span class="hljs-type">String</span></span>)</span><br><span class="hljs-keyword">implicit</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">human2animal</span></span>(h: <span class="hljs-type">Human</span>): <span class="hljs-type">Animal</span> = <span class="hljs-keyword">new</span> <span class="hljs-type">Animal</span>(h.name, <span class="hljs-string">"Homo sapiens"</span>)<br><span class="hljs-keyword">val</span> me = <span class="hljs-keyword">new</span> <span class="hljs-type">Human</span>(<span class="hljs-string">"Adam"</span>)<br>println(me.species)<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>通过隐式转换，使Human类有了species属性</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/Chisel/" rel="tag"><i class="fas fa-tags"></i>Chisel</a>
+        
+        <a class="post-tag button" href="/tags/Verilog/" rel="tag"><i class="fas fa-tags"></i>Verilog</a>
+        
+        <a class="post-tag button" href="/tags/RTL/" rel="tag"><i class="fas fa-tags"></i>RTL</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2019/07/10/Chisel硬件构建语言入门/" title="Chisel硬件构建语言入门">http://118.25.122.94:8080/2019/07/10/Chisel硬件构建语言入门/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/07/08/继续试用Chisel/" rel="next" title="继续试用Chisel~"><i class="fas fa-angle-left"></i><span class="nav-title">继续试用Chisel~</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/07/11/尝试用Chisel写个SpiMaster/" rel="prev" title="尝试用Chisel写个SpiMaster~"><span class="nav-title">尝试用Chisel写个SpiMaster~</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">69</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">10</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">33</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Scala-难度接近C艹优雅度超Python的语言我就不多说了"><span class="toc-text">Scala 难度接近C艹优雅度超Python的语言我就不多说了~</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#新建Chisel项目-转"><span class="toc-text">新建Chisel项目(转)</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Chisel例子、测试、verilog生成"><span class="toc-text">Chisel例子、测试、verilog生成</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Chisel中的组合逻辑"><span class="toc-text">Chisel中的组合逻辑</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Chisel中的时序逻辑"><span class="toc-text">Chisel中的时序逻辑</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Chisel中参数"><span class="toc-text">Chisel中参数</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chisel/">Chisel</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL/">RTL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">51</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">43</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/">Verilog</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tig/">tig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
