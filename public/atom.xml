@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-07-12T09:54:36.089Z</updated>
+  <updated>2019-07-14T02:06:58.521Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chisel模块多端口扩展</title>
+    <link href="http://118.25.122.94:8080/2019/07/14/Chisel%E6%A8%A1%E5%9D%97%E5%A4%9A%E7%AB%AF%E5%8F%A3%E6%89%A9%E5%B1%95/"/>
+    <id>http://118.25.122.94:8080/2019/07/14/Chisel模块多端口扩展/</id>
+    <published>2019-07-14T01:55:58.000Z</published>
+    <updated>2019-07-14T02:06:58.521Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;端口可以继承也可以通过实验性的MultiIOModule进行扩展&quot;&gt;&lt;a href=&quot;#端口可以继承也可以通过实验性的MultiIOModule进行扩展&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
+    
+      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
+    
+      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
+    
+  </entry>
   
   <entry>
     <title>快速迭代开发SpiMaster新功能~</title>
@@ -528,28 +560,6 @@
           &lt;h3 id=&quot;Testbench中的断言使用&quot;&gt;&lt;a href=&quot;#Testbench中的断言使用&quot; class=&quot;headerlink&quot; title=&quot;Testbench中的断言使用&quot;&gt;&lt;/a&gt;Testbench中的断言使用&lt;/h3&gt;&lt;p&gt;Developing
         
       
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Constraints和Covergroups保持同步</title>
-    <link href="http://118.25.122.94:8080/2019/06/13/Constraints%E5%92%8CCovergroups%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5/"/>
-    <id>http://118.25.122.94:8080/2019/06/13/Constraints和Covergroups保持同步/</id>
-    <published>2019-06-13T02:25:06.000Z</published>
-    <updated>2019-06-13T02:26:02.464Z</updated>
-    
-    <summary type="html">
-    
-      欢迎光临~
     
     </summary>
     
