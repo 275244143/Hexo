@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-07-17T02:14:07.437Z</updated>
+  <updated>2019-07-17T07:02:23.678Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chisel引入敏捷迭代测试~</title>
+    <link href="http://118.25.122.94:8080/2019/07/17/Chisel%E5%BC%95%E5%85%A5%E6%95%8F%E6%8D%B7%E8%BF%AD%E4%BB%A3%E6%B5%8B%E8%AF%95/"/>
+    <id>http://118.25.122.94:8080/2019/07/17/Chisel引入敏捷迭代测试/</id>
+    <published>2019-07-17T06:48:41.000Z</published>
+    <updated>2019-07-17T07:02:23.678Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;引入多种高级语言的测试套件功能&quot;&gt;&lt;a href=&quot;#引入多种高级语言的测试套件功能&quot; class=&quot;headerlink&quot; title=&quot;引入多种高级语言的测试套件功能~&quot;&gt;&lt;/a&gt;引入多种高级语言的测试套件功能~&lt;/h4&gt;&lt;figure
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
+    
+      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
+    
+      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
+    
+  </entry>
   
   <entry>
     <title>Chisel设计规范</title>
@@ -611,28 +643,6 @@
       <category term="EDA" scheme="http://118.25.122.94:8080/tags/EDA/"/>
     
       <category term="VCS" scheme="http://118.25.122.94:8080/tags/VCS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UVM工厂实例覆盖</title>
-    <link href="http://118.25.122.94:8080/2019/06/18/UVM%E5%B7%A5%E5%8E%82%E5%AE%9E%E4%BE%8B%E8%A6%86%E7%9B%96/"/>
-    <id>http://118.25.122.94:8080/2019/06/18/UVM工厂实例覆盖/</id>
-    <published>2019-06-18T07:24:27.000Z</published>
-    <updated>2019-06-18T07:32:34.684Z</updated>
-    
-    <summary type="html">
-    
-      欢迎光临~
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
     
   </entry>
   

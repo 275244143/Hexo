@@ -135,7 +135,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>RTL需要一场革命了~ | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+    <title>Chisel引入敏捷迭代测试~ | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -187,7 +187,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/07/04/RTL需要一场革命了/">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/07/17/Chisel引入敏捷迭代测试/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="神秘人">
        <meta itemprop="description" content="在人生中最艰难的是选择。">
@@ -198,12 +198,12 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">RTL需要一场革命了~</h1>
+      <h1 class="post-title" itemprop="name headline">Chisel引入敏捷迭代测试~</h1>
       <div class="post-meta">
          
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-07-04T11:01:14+08:00">2019-07-04 11:01:14</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-07-17T14:48:41+08:00">2019-07-17 14:48:41</time></span>
         </span>
         
         
@@ -212,12 +212,12 @@
         
         <span class="post-categories">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/设计/" itemprop="url" rel="index"><span itemprop="name">设计</span></a></span>
         </span>
 	<span class="post-meta-item-text">  字数统计: </span>
-	<span class="post-count">64字</span>
+	<span class="post-count">553字</span>
 	<span class="post-meta-item-text">  阅读时长: </span>
-	<span class="post-count">1分</span>
+	<span class="post-count">3分</span>
 	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
         
         
@@ -226,11 +226,10 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h4 id="40年都在修修补补，最近RISC-V火了，RTL硬件代码需要一场革命"><a href="#40年都在修修补补，最近RISC-V火了，RTL硬件代码需要一场革命" class="headerlink" title="40年都在修修补补，最近RISC-V火了，RTL硬件代码需要一场革命~"></a>40年都在修修补补，最近RISC-V火了，RTL硬件代码需要一场革命~</h4><ul>
-<li>试了下chisel，感觉非常适合本人从高层次写抽象代码，然后快速原型FPGA或者ASIC，设计人员再次要失业~</li>
-</ul>
-<p><img src="/2019/07/04/RTL需要一场革命了/chisel.jpg" alt="chisel"></p>
-
+      <h4 id="引入多种高级语言的测试套件功能"><a href="#引入多种高级语言的测试套件功能" class="headerlink" title="引入多种高级语言的测试套件功能~"></a>引入多种高级语言的测试套件功能~</h4><figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">package</span> test.smr<br><br><span class="hljs-keyword">import</span> chisel3.iotesters.&#123;<span class="hljs-type">ChiselFlatSpec</span>, <span class="hljs-type">Driver</span>, <span class="hljs-type">PeekPokeTester</span>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AccumulatorTests</span>(<span class="hljs-params">c: <span class="hljs-type">Accumulator</span></span>) <span class="hljs-keyword">extends</span> <span class="hljs-title">PeekPokeTester</span>(<span class="hljs-params">c</span>) </span>&#123;<br>  <span class="hljs-keyword">var</span> tot = <span class="hljs-number">0</span><br>  <span class="hljs-keyword">for</span> (t &lt;- <span class="hljs-number">0</span> until <span class="hljs-number">16</span>) &#123;<br>    <span class="hljs-keyword">val</span> in = rnd.nextInt(<span class="hljs-number">2</span>)<br>    poke(c.io.in, in)<br>    step(<span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">if</span> (in == <span class="hljs-number">1</span>) tot += <span class="hljs-number">2</span><span class="hljs-comment">//wrong here</span><br>    expect(c.io.out, tot)<br>  &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AccumulatorTester</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ChiselFlatSpec</span> </span>&#123;<br>  behavior of <span class="hljs-string">"Accumulator"</span><br>  backends foreach &#123;backend =&gt;<br>    it should <span class="hljs-string">s"correctly accumulate randomly generated numbers in <span class="hljs-subst">$backend</span>"</span> in &#123;<br>      <span class="hljs-type">Driver</span>(() =&gt; <span class="hljs-keyword">new</span> <span class="hljs-type">Accumulator</span>, backend)(c =&gt; <span class="hljs-keyword">new</span> <span class="hljs-type">AccumulatorTests</span>(c)) should be (<span class="hljs-literal">true</span>)<br>    &#125;<br>  &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">TBTOP</span> </span>&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span></span>(args: <span class="hljs-type">Array</span>[<span class="hljs-type">String</span>]): <span class="hljs-type">Unit</span> = &#123;<br>    <span class="hljs-type">Driver</span>.execute(<span class="hljs-type">Array</span>(<span class="hljs-string">"--backend-name"</span>,<span class="hljs-string">"vcs"</span>),() =&gt; <span class="hljs-keyword">new</span> <span class="hljs-type">Accumulator</span>()) &#123;<br>        (c) =&gt; <span class="hljs-keyword">new</span> <span class="hljs-type">AccumulatorTests</span>(c)<br>      &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="生成多个测试套件以及测试脚本"><a href="#生成多个测试套件以及测试脚本" class="headerlink" title="生成多个测试套件以及测试脚本"></a>生成多个测试套件以及测试脚本</h4><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vcs -full64 -quiet -timescale=1ns/1ps -debug_pp -Mdir=Accumulator.csrc +v2k +vpi +vcs+lic+wait +vcs+initreg+random +define+CLOCK_PERIOD=1 -P vpi.tab -cpp g++ -O2 -LDFLAGS -lstdc++ -CFLAGS "-I$VCS_HOME/include -I$dir -fPIC -std=c++11" -o Accumulator Accumulator.v Accumulator-harness.v vpi.cpp<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> test;<br>  <span class="hljs-keyword">reg</span> clock = <span class="hljs-number">1</span>;<br>  <span class="hljs-keyword">reg</span> reset = <span class="hljs-number">1</span>;<br>  <span class="hljs-keyword">reg</span>[<span class="hljs-number">0</span>:<span class="hljs-number">0</span>] io_in = <span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">wire</span>[<span class="hljs-number">0</span>:<span class="hljs-number">0</span>] io_in_delay;<br>  <span class="hljs-keyword">assign</span>  io_in_delay = io_in;<br>  <span class="hljs-keyword">wire</span>[<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] io_out_delay;<br>  <span class="hljs-keyword">wire</span>[<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] io_out;<br>  <span class="hljs-keyword">assign</span>  io_out = io_out_delay;<br>  <span class="hljs-keyword">always</span> #<span class="hljs-meta">`CLOCK_PERIOD clock = ~clock;</span><br>  <span class="hljs-keyword">reg</span> vcdon = <span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">reg</span> [<span class="hljs-number">1023</span>:<span class="hljs-number">0</span>] vcdfile = <span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">reg</span> [<span class="hljs-number">1023</span>:<span class="hljs-number">0</span>] vpdfile = <span class="hljs-number">0</span>;<br><br>  <span class="hljs-comment">/*** DUT instantiation ***/</span><br>  Accumulator Accumulator(<br>    <span class="hljs-variable">.clock</span>(clock),<br>    <span class="hljs-variable">.reset</span>(reset),<br>    <span class="hljs-variable">.io_in</span>(io_in_delay),<br>    <span class="hljs-variable">.io_out</span>(io_out_delay)  );<br><br>  <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span><br>    $init_rsts(reset);<br>    $init_ins(clock, reset, io_in);<br>    $init_outs(io_out);<br>    $init_sigs(Accumulator);<br>    <span class="hljs-comment">/*** VCD dump ***/</span><br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">$value$plusargs</span>(<span class="hljs-string">"vcdfile=%s"</span>, vcdfile)) <span class="hljs-keyword">begin</span><br>      <span class="hljs-built_in">$dumpfile</span>(vcdfile);<br>      <span class="hljs-built_in">$dumpvars</span>(<span class="hljs-number">0</span>, Accumulator);<br>      <span class="hljs-built_in">$dumpoff</span>;<br>      vcdon = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">end</span><br>  <span class="hljs-keyword">end</span><br><br>  <span class="hljs-keyword">always</span> @(<span class="hljs-keyword">negedge</span> clock) <span class="hljs-keyword">begin</span><br>    <span class="hljs-keyword">if</span> (vcdfile &amp;&amp; reset) <span class="hljs-keyword">begin</span><br>      <span class="hljs-built_in">$dumpoff</span>;<br>      vcdon = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (vcdfile &amp;&amp; !vcdon) <span class="hljs-keyword">begin</span><br>      <span class="hljs-built_in">$dumpon</span>;<br>      vcdon = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">end</span><br>     $tick();<br>  <span class="hljs-keyword">end</span><br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="UnitTest快速验证迭代，测试输出"><a href="#UnitTest快速验证迭代，测试输出" class="headerlink" title="UnitTest快速验证迭代，测试输出"></a>UnitTest快速验证迭代，测试输出</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">[info] [0.001] SEED 1563344502236<br>[info] [0.002] EXPECT AT 1   io_out got 1 expected 2 FAIL<br>[info] [0.003] EXPECT AT 2   io_out got 1 expected 2 FAIL<br>[info] [0.003] EXPECT AT 3   io_out got 2 expected 4 FAIL<br>[info] [0.003] EXPECT AT 4   io_out got 3 expected 6 FAIL<br>[info] [0.004] EXPECT AT 5   io_out got 3 expected 6 FAIL<br>[info] [0.004] EXPECT AT 6   io_out got 4 expected 8 FAIL<br>[info] [0.004] EXPECT AT 7   io_out got 4 expected 8 FAIL<br>[info] [0.005] EXPECT AT 8   io_out got 5 expected 10 FAIL<br>[info] [0.005] EXPECT AT 9   io_out got 5 expected 10 FAIL<br>[info] [0.005] EXPECT AT 10   io_out got 5 expected 10 FAIL<br>[info] [0.005] EXPECT AT 11   io_out got 5 expected 10 FAIL<br>[info] [0.006] EXPECT AT 12   io_out got 6 expected 12 FAIL<br>[info] [0.006] EXPECT AT 13   io_out got 6 expected 12 FAIL<br>[info] [0.007] EXPECT AT 14   io_out got 7 expected 14 FAIL<br>[info] [0.007] EXPECT AT 15   io_out got 7 expected 14 FAIL<br>[info] [0.007] EXPECT AT 16   io_out got 8 expected 16 FAIL<br><span class="hljs-built_in">test</span> Accumulator Success: 0 tests passed <span class="hljs-keyword">in</span> 21 cycles <span class="hljs-keyword">in</span> 0.021712 seconds 967.23 Hz<br>[info] [0.008] RAN 16 CYCLES FAILED FIRST AT CYCLE 1<br></code></pre></td></tr></table></figure>
     </main>
     <footer class="post-footer">
       
@@ -240,7 +239,7 @@
         
         <a class="post-tag button" href="/tags/Verilog/" rel="tag"><i class="fas fa-tags"></i>Verilog</a>
         
-        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        <a class="post-tag button" href="/tags/RTL/" rel="tag"><i class="fas fa-tags"></i>RTL</a>
         
       </div>
       
@@ -257,7 +256,7 @@
 	</li>
 	<li class="post-copyright-link">
 		<strong>本文链接：</strong>
-		<a href="/2019/07/04/RTL需要一场革命了/" title="RTL需要一场革命了~">http://118.25.122.94:8080/2019/07/04/RTL需要一场革命了/</a>
+		<a href="/2019/07/17/Chisel引入敏捷迭代测试/" title="Chisel引入敏捷迭代测试~">http://118.25.122.94:8080/2019/07/17/Chisel引入敏捷迭代测试/</a>
 	</li>
 	<li class="post-copyright-license">
 		<strong>版权声明： </strong>
@@ -288,12 +287,10 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2019/07/03/不同的TBTOP如何merge底下的同一个DUT？/" rel="next" title="不同的TBTOP如何merge底下的同一个DUT？"><i class="fas fa-angle-left"></i><span class="nav-title">不同的TBTOP如何merge底下的同一个DUT？</span></a>
+      <a href="/2019/07/17/Chisel设计规范/" rel="next" title="Chisel设计规范"><i class="fas fa-angle-left"></i><span class="nav-title">Chisel设计规范</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2019/07/08/继续试用Chisel/" rel="prev" title="继续试用Chisel~"><span class="nav-title">继续试用Chisel~</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -410,7 +407,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#40年都在修修补补，最近RISC-V火了，RTL硬件代码需要一场革命"><span class="toc-text">40年都在修修补补，最近RISC-V火了，RTL硬件代码需要一场革命~</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#引入多种高级语言的测试套件功能"><span class="toc-text">引入多种高级语言的测试套件功能~</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#生成多个测试套件以及测试脚本"><span class="toc-text">生成多个测试套件以及测试脚本</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#UnitTest快速验证迭代，测试输出"><span class="toc-text">UnitTest快速验证迭代，测试输出</span></a></li></ol></div>
     </div>
     
     
