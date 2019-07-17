@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>Chisel设计规范 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/07/17/Chisel设计规范/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">Chisel设计规范</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-07-17T09:27:52+08:00">2019-07-17 09:27:52</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/设计/" itemprop="url" rel="index"><span itemprop="name">设计</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">2.2k字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">13分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="chisel设计规范"><a href="#chisel设计规范" class="headerlink" title="chisel设计规范"></a>chisel设计规范</h1><h2 id="Overall-goal"><a href="#Overall-goal" class="headerlink" title="Overall goal"></a>Overall goal</h2><p>Code is meant to be read, not written. You will spend more time searching for bugs, adding features to existing code bases, and trying to learn what other people have done, than you will writing your own code from scratch.  Code should strive to be easy to understand and easy to maintain.</p>
+<p>As style can be a deeply personal preference, and because Chisel is still a very young language, this guide will eschew making hard edicts on DOs and DONTs. Instead, this guide will strive to provide guidance to newcomers to Chisel through a discussion on best practices.</p>
+<h2 id="Prelude"><a href="#Prelude" class="headerlink" title="Prelude"></a>Prelude</h2><p>Chisel is a DSL embedded in Scala. However, it is still a distinct language, and so it may not follow all of Scala’s conventions.</p>
+<h2 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h2><ul>
+<li><a href="#spacing">Spacing</a></li>
+<li><a href="#naming">Naming</a></li>
+<li><a href="#registers">Registers</a></li>
+<li><a href="#bundles">Bundles</a></li>
+<li><a href="#literals">Literals</a></li>
+<li><a href="#parameters">Parameters</a></li>
+<li><a href="#ready-valid-interfaces">Ready/Valid Interfaces</a></li>
+<li><a href="#vector-of-modules">Vector of Modules</a></li>
+<li><a href="#val-versus-var">Val versus Var</a></li>
+<li><a href="#private-versus-public">Private versus Public</a></li>
+<li><a href="#imports">Imports</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#assertions">Assertions</a></li>
+<li><a href="#requires">Requires</a></li>
+<li><a href="#additional-best-practices">Additional Best Practices</a></li>
+</ul>
+<h2 id="Spacing"><a href="#Spacing" class="headerlink" title="Spacing"></a>Spacing</h2><p>Spaces, not tabs. Never tabs.</p>
+<p>Follow the indent level of the existing code.</p>
+<h2 id="Naming"><a href="#Naming" class="headerlink" title="Naming"></a>Naming</h2><p>Variable names should tend to be descriptive and not overly abbreviated. The smaller the scope (and the more used it is), the more abbreviated the name can be.</p>
+<p>Bundles used for I/Os should be named SomethingIO. IO comes last. The name is Camel-cased. Example: (FreeListIO).</p>
+<p>Any variable that is used for debugging purposes should be begin with the prefix <code>debug_</code> (i.e., things that you ideally would not synthesize).</p>
+<p>Constants/parameters should be named in all caps, demonstrating their global nature. While most things in Scala are immutable, Chisel isn’t Scala.</p>
+<p>Constants should be all uppercase and should be put in a companion object:</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">ALU</span> </span>&#123;<br>  <span class="hljs-keyword">val</span> <span class="hljs-type">SZ_ALU_FN</span> = <span class="hljs-number">4</span><br>  <span class="hljs-type">FN_ADD</span> = <span class="hljs-type">UInt</span>(<span class="hljs-number">0</span>, <span class="hljs-type">SZ_ALU_FN</span>)<br>  ...<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Or trait (if you want a Module or Bundle to extend the trait):</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">RISCVConstants</span> </span>&#123;<br>   <span class="hljs-keyword">val</span> <span class="hljs-type">RD_MSB</span>  = <span class="hljs-number">11</span><br>   <span class="hljs-keyword">val</span> <span class="hljs-type">RD_LSB</span>  = <span class="hljs-number">7</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="Registers"><a href="#Registers" class="headerlink" title="Registers"></a>Registers</h2><p>Registers (and their type) should be specified as follows:</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-type">Reg</span>(<span class="hljs-type">UInt</span>())               <span class="hljs-comment">// good!</span><br><span class="hljs-type">Reg</span>(<span class="hljs-type">UInt</span>(width=<span class="hljs-number">8.</span><span class="hljs-type">W</span>))      <span class="hljs-comment">// also good!</span><br><br><span class="hljs-type">Reg</span>(io.my_signal.clone()) <span class="hljs-comment">// good!</span><br></code></pre></td></tr></table></figure>
+<p>This construct <code>Reg(x)</code> tells the Reg to be of type <code>x</code>. It does <strong>NOT</strong> tell Reg what initial value it should be, nor does it add a <code>Delay</code> to a signal!</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-type">Reg</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">0</span>))      <span class="hljs-comment">// bad!  Returns a Reg of type UInt and unknown width.</span><br><span class="hljs-type">Reg</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">0</span>,<span class="hljs-number">15</span>))   <span class="hljs-comment">// bad!  Returns a Reg of type UInt with width 15.</span><br><br><span class="hljs-type">Reg</span>(io.my_signal) <span class="hljs-comment">// bad. This makes a Reg of type io.my_signal, but the intention is not clear!</span><br>                  <span class="hljs-comment">// It can be easily misread as Reg(next=io.my_signal).</span><br></code></pre></td></tr></table></figure>
+<p>Registers should be initialized as follows:</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-type">RegInit</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">0</span>,<span class="hljs-number">15</span>))   <span class="hljs-comment">// good</span><br><br><span class="hljs-type">Reg</span>(<span class="hljs-type">UInt</span>(<span class="hljs-number">0</span>,<span class="hljs-number">15</span>))       <span class="hljs-comment">// WRONG! This is exactly equivelant to Reg(UInt(width=15)),</span><br>                      <span class="hljs-comment">// and does NOT provide an initial value of UInt(0,15) to the Reg.</span><br></code></pre></td></tr></table></figure>
+<p>Delaying a Node (i.e., piping it into a register) should be performed as follows:</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-type">RegNext</span>(io.my_signal)  <span class="hljs-comment">// good</span><br><span class="hljs-type">Reg</span>(next=io.my_signal) <span class="hljs-comment">// okay</span><br><br><span class="hljs-type">Reg</span>(io.my_signal)      <span class="hljs-comment">// WRONG! Creates a Reg of the same type as io.a,</span><br>                       <span class="hljs-comment">// and does NOT delay the node io.a with a register.</span><br></code></pre></td></tr></table></figure>
+<h2 id="Bundles"><a href="#Bundles" class="headerlink" title="Bundles"></a>Bundles</h2><p>Consider providing <code>def</code> functions in your Bundles. It provides a clearer level of intention to the user of how to interact with the Bundle.</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-comment">// simplified example</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DecoupledIO</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Bundle</span> </span>&#123;<br>  <span class="hljs-keyword">val</span> ready = <span class="hljs-type">Input</span>(<span class="hljs-type">Bool</span>())<br>  <span class="hljs-keyword">val</span> valid = <span class="hljs-type">Output</span>(<span class="hljs-type">Bool</span>())<br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fire</span></span>(dummy: <span class="hljs-type">Int</span> = <span class="hljs-number">0</span>): <span class="hljs-type">Bool</span> = ready &amp;&amp; valid<br>  ....<br></code></pre></td></tr></table></figure>
+<p>Users of the DecoupledIO can now do something like <code>when(io.deq.fire())</code>!  (<strong>note:</strong> the <code>dummy: Int = 0</code> argument must be provided to functions with no arguments placed within Bundles, as Chisel is (currently) unable to differentiate between fields that are wires and fields that are functions with no arguments).</p>
+<p>Or this example, which performs a <code>query</code> against a TLB address translation structure:</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TLBIO</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">VMUBundle</span></span><br>&#123;<br>  <span class="hljs-keyword">val</span> req = <span class="hljs-type">Decoupled</span>(<span class="hljs-keyword">new</span> rocket.<span class="hljs-type">TLBReq</span>)<br>  <span class="hljs-keyword">val</span> resp = <span class="hljs-keyword">new</span> rocket.<span class="hljs-type">TLBRespNoHitIndex</span>().flip<br><br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">query</span></span>(vpn: <span class="hljs-type">UInt</span>, store: <span class="hljs-type">Bool</span>): <span class="hljs-type">Bool</span> = &#123;<br>    <span class="hljs-keyword">this</span>.req.bits.vpn := vpn<br>    <span class="hljs-keyword">this</span>.req.bits.asid := <span class="hljs-number">0.</span><span class="hljs-type">U</span><br>    <span class="hljs-keyword">this</span>.req.bits.passthrough := <span class="hljs-literal">false</span>.<span class="hljs-type">B</span><br>    <span class="hljs-keyword">this</span>.req.bits.instruction := <span class="hljs-literal">false</span>.<span class="hljs-type">B</span><br>    <span class="hljs-keyword">this</span>.req.bits.store := store<br><br>    <span class="hljs-keyword">this</span>.req.ready &amp;&amp; !<span class="hljs-keyword">this</span>.resp.miss<br>  &#125;<br></code></pre></td></tr></table></figure>
+<p>The particular example is quite interesting - the <code>query</code> function provides a clearer interface to the user, it automatically sets up the request signals, <em>and</em> it provides a combinational return value to the caller!</p>
+<h3 id="Conditional-I-O-Fields"><a href="#Conditional-I-O-Fields" class="headerlink" title="Conditional I/O Fields"></a>Conditional I/O Fields</h3><p>Consider breaking off Conditional I/O fields into a separate Bundles (FreeListRollbackIO and FreeListSingleCycleIO).</p>
+<h2 id="Literals"><a href="#Literals" class="headerlink" title="Literals"></a>Literals</h2><p>Be careful of using Scala Ints to describe Chisel literals. <code>0xffffffff</code> is a 32-bit signed integer with value -1, and thus will throw an error when used as <code>UInt(0xffffffff, 32)</code>. Instead, use Strings to describe large literals:</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-type">UInt</span>(<span class="hljs-string">"hffffffff"</span>, <span class="hljs-number">32</span>)<br></code></pre></td></tr></table></figure>
+<h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><p>When instantiating an object from another package, explicitly name the arguments:</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> s2d = <span class="hljs-type">Module</span>(<span class="hljs-keyword">new</span> hardfloat.<span class="hljs-type">RecFNToRecFN</span>(inExpWidth = <span class="hljs-number">8</span>, inSigWidth = <span class="hljs-number">24</span>, outExpWidth = <span class="hljs-number">11</span>, outSigWidth = <span class="hljs-number">53</span>))<br></code></pre></td></tr></table></figure>
+<p>This safe-guards against the order (or the name) of parameters changing in an external package without your knowledge.</p>
+<h2 id="Ready-Valid-Interfaces"><a href="#Ready-Valid-Interfaces" class="headerlink" title="Ready-Valid Interfaces"></a>Ready-Valid Interfaces</h2><p>A ready signal denotes a resource is available/is ready to be utilized.</p>
+<p>A valid signal denotes something is valid and <em>can</em> commit a state update (it <em>will</em> commit a state update if the corresponding ready signal is high).</p>
+<p><strong>Performance tip:</strong> a valid signal may often be a late arriving signal. Try to avoid using valid signals to drive datapath logic, and instead use valid signals to gate off state updates.</p>
+<p>A valid signal <strong>should not</strong> depend on the ready signal (unless you really know what you are doing). This hurts the critical path and can create combinational loops if both sides get coupled.</p>
+<h2 id="Vector-of-Modules"><a href="#Vector-of-Modules" class="headerlink" title="Vector of Modules"></a>Vector of Modules</h2><h3 id="Static-Indexing"><a href="#Static-Indexing" class="headerlink" title="Static Indexing"></a>Static Indexing</h3><p>An array of modules can be instantiated as follows:</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> my_args = <span class="hljs-type">Seq</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)<br><span class="hljs-keyword">val</span> exe_units = <span class="hljs-keyword">for</span> (i &lt;- <span class="hljs-number">0</span> until num_units) <span class="hljs-keyword">yield</span> &#123;<br>   <span class="hljs-keyword">val</span> exe_unit = <span class="hljs-type">Module</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">AluExeUnit</span>(args = my_args(i)))<br>   <span class="hljs-comment">// any wiring or other logic can go here</span><br>   exe_unit<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>You can provide different input parameters to each constructor as required (the above toy example shows different elements of <code>my_args</code> being provided to each <code>AluExeUnit</code>).</p>
+<p>The disadvantage is you cannot index the collection using Chisel nodes (aka, you can not dynamically index the collection during hardware execution).  If you must use a Scala collection (for the first advantage), you can still use dynamic indexing by grabbing a Vec of the IOs:</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> exe_units_io = <span class="hljs-type">Vec</span>(exe_units.map(_.io))<br></code></pre></td></tr></table></figure>
+<h3 id="Vec"><a href="#Vec" class="headerlink" title="Vec"></a>Vec</h3><p>If you need to index the vector of Modules using a Chisel node, you can also use the following structure:</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> table = <span class="hljs-type">Vec</span>.fill(num_elements) &#123;<span class="hljs-type">Module</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">TableElement</span>()).io&#125;<br><br><span class="hljs-keyword">val</span> idx = <span class="hljs-type">Wire</span>(<span class="hljs-type">UInt</span>())<br>table(idx).wen := <span class="hljs-literal">true</span>.<span class="hljs-type">B</span> <span class="hljs-comment">// indexed by a Chisel node!</span><br></code></pre></td></tr></table></figure>
+<p>Note that <code>table</code> is actually a <code>Vec</code> of <code>TableElement</code> <code>I/O</code> bundles.</p>
+<h2 id="Val-versus-Var"><a href="#Val-versus-Var" class="headerlink" title="Val versus Var"></a>Val versus Var</h2><p>Only use <code>val</code>, unless you are an experienced Chisel programmer. Even then, only use <code>var</code> in constrained situations (try to abstract it within a function). The use of the <code>var</code> can make it difficult to reason about your design.</p>
+<p>For context, a bit more background is needed. A hardware design described in Chisel is quite literally a Scala program that, when executed, generates a hardware graph composed of Chisel Nodes that is then passed to a back-end which generates a cycle-exact replica in either C++ or Verilog (or whatever other formats supported by the backend).</p>
+<p>Thus, <code>val</code> and <code>var</code> denote Scala variables (well more exactly, <code>val</code> is an immutable value and <code>var</code> is a mutable variable).</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> my_node = <span class="hljs-type">Wire</span>(<span class="hljs-type">UInt</span>())<br></code></pre></td></tr></table></figure>
+<p>This is a Scala value called <code>my_node</code>, which points to a Chisel Node in the hardware graph that is a <code>Wire</code> of type <code>UInt</code>. The <code>my_node</code> value can only ever point to this particular Chisel Node in the graph.</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">var</span> node_ptr = <span class="hljs-type">Wire</span>(<span class="hljs-type">UInt</span>())<br></code></pre></td></tr></table></figure>
+<p>Uh oh. The Scala variable <code>node_ptr</code> is pointing to a Chisel node in the graph, but it can later be changed to point to a new Chisel node!</p>
+<figure class="hljs highlight Scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Scala"><span class="hljs-keyword">var</span> node_ptr = io.a<br>node_ptr := <span class="hljs-literal">true</span>.<span class="hljs-type">B</span><br>node_ptr = io.b<br>node_ptr := <span class="hljs-literal">false</span>.<span class="hljs-type">B</span><br></code></pre></td></tr></table></figure>
+<p>In the above (scary!) code,</p>
+<ul>
+<li><code>node_ptr</code> first points to <code>io.a</code>,</li>
+<li>then uses the Chisel assignment operator <code>:=</code> to set <code>io.a</code> to <code>true.B</code></li>
+<li><code>node_ptr</code> is then changed to point to <code>io.b</code></li>
+<li>and finally, <code>io.b</code> is set to <code>false.B</code>!</li>
+</ul>
+<p>We get the following Verilog output:</p>
+<figure class="hljs highlight Verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Verilog"><span class="hljs-keyword">module</span> Hello(<br>    <span class="hljs-keyword">output</span> io_a,<br>    <span class="hljs-keyword">output</span> io_b<br>);<br><br>  <span class="hljs-keyword">assign</span> io_b = <span class="hljs-number">1'h0</span>;<br>  <span class="hljs-keyword">assign</span> io_a = <span class="hljs-number">1'h1</span>;<br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<p>Using <code>var</code> can make it difficult to reason about the circuit. <strong>And be CAREFUL when mixing <code>=</code> and <code>:=</code></strong>! The <code>=</code> is a Scala assignment, and sets a <code>var</code> variable to point to a new Node in the graph. Meanwhile, <code>:=</code> is a Chisel assignment and performs a new assignment <em>to</em> the Chisel Node. This distinction is important! For example, Chisel conditional <code>when</code> statements are for conditionally assigning values to Chisel Nodes - <strong>the scala <code>=</code> operator is invisible to <code>when</code> statements!!</strong></p>
+<figure class="hljs highlight Scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Scala"><span class="hljs-keyword">var</span> my_node = io.a<br>my_node := <span class="hljs-literal">true</span>.<span class="hljs-type">B</span> <span class="hljs-comment">// this sets io.a to "true"</span><br>my_node = <span class="hljs-literal">true</span>.<span class="hljs-type">B</span>  <span class="hljs-comment">// this sets the Scala variable my_node to point to a Chisel node that is a literal true</span><br></code></pre></td></tr></table></figure>
+<p>Consider the incorrect code below, which tries to mix <code>when</code>, <code>var</code>, and <code>=</code> to perform an OR reduction:</p>
+<figure class="hljs highlight Scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Scala"><span class="hljs-keyword">val</span> my_bits = <span class="hljs-type">Wire</span>(<span class="hljs-type">Bits</span>(width=n))<br><span class="hljs-keyword">var</span> temp = <span class="hljs-literal">false</span>.<span class="hljs-type">B</span><br><span class="hljs-keyword">for</span> (i &lt;- <span class="hljs-number">0</span> until n) &#123;<br>   when (my_bits(i)) &#123;<br>      temp = <span class="hljs-literal">true</span>.<span class="hljs-type">B</span> <span class="hljs-comment">// wrong! always returns true.</span><br>      temp := <span class="hljs-literal">true</span>.<span class="hljs-type">B</span> <span class="hljs-comment">// compiler error!</span><br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>For the first statement <code>temp = true.B</code>, the Scala variable <code>temp</code> points to the Chisel node <code>true.B</code>, ignoring the when() statement.</p>
+<p>For the second statement <code>temp := true.B</code>, a Chisel compiler error is thrown because the code is trying to reassign the node <code>false.B</code> to be <code>true.B</code>, which is nonsensical.</p>
+<p><strong>Conclusion: don’t mix <code>when</code> and <code>var</code>‘s!</strong></p>
+<p>For completness sake, the proper code for an OR reduction would be <code>my_bits.orR</code> (and no need to use var or when!).</p>
+<h3 id="Valid-uses-of-Vars"><a href="#Valid-uses-of-Vars" class="headerlink" title="Valid uses of Vars"></a>Valid uses of Vars</h3><p>There are a few valid uses of var. One would be to generate cascading logic. For example, this locking arbiter from ChiselUtil:</p>
+<figure class="hljs highlight Scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Scala"><span class="hljs-keyword">var</span> choose = (n<span class="hljs-number">-1</span>).<span class="hljs-type">U</span><br><span class="hljs-keyword">for</span> (i &lt;- n<span class="hljs-number">-2</span> to <span class="hljs-number">0</span> by <span class="hljs-number">-1</span>) &#123;<br>  choose = <span class="hljs-type">Mux</span>(io.in(i).valid, i.<span class="hljs-type">U</span>, choose)<br>&#125;<br>chosen := <span class="hljs-type">Mux</span>(locked, lockIdx, choose)<br></code></pre></td></tr></table></figure>
+<p>After each iteration of the Scala <code>for</code> loop, <code>choose</code> is pointing to a new node in the cascading Mux tree.</p>
+<p>Another use is forward declaring Modules that are conditionally instantiated later.</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">var</span> fpu: <span class="hljs-type">FPUUnit</span> = <span class="hljs-literal">null</span><br><span class="hljs-keyword">if</span> (has_fpu) &#123;<br>   fpu = <span class="hljs-type">Module</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">FPUUnit</span>())<br>   ...<br></code></pre></td></tr></table></figure>
+<h2 id="Imports"><a href="#Imports" class="headerlink" title="Imports"></a>Imports</h2><p>Try to avoid wildcard imports. They make code more obfuscated and fragile.</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">import</span> rocket.&#123;<span class="hljs-type">UseFPU</span>, <span class="hljs-type">XLen</span>&#125;<br><span class="hljs-keyword">import</span> cde.&#123;<span class="hljs-type">Parameters</span>, <span class="hljs-type">Field</span>&#125;<br></code></pre></td></tr></table></figure>
+<p>AVOID using <code>import</code> statements for bringing in new Module and Bundle definitions. Instead, explicitly invoke the namespace when instantiating the Module or Bundle. It makes the origin of the object clear.</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-comment">//bad</span><br><span class="hljs-keyword">import</span> rocket._<br>...<br><span class="hljs-keyword">val</span> tlb = <span class="hljs-type">Module</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">TLB</span>())<br><br><span class="hljs-comment">//good</span><br><span class="hljs-keyword">val</span> tlb = <span class="hljs-type">Module</span>(<span class="hljs-keyword">new</span> rocket.<span class="hljs-type">TLB</span>())<br></code></pre></td></tr></table></figure>
+<h2 id="Private-versus-Public"><a href="#Private-versus-Public" class="headerlink" title="Private versus Public"></a>Private versus Public</h2><p>By default, all <code>val</code>s and <code>def</code>s are public in Scala. Label all <code>def</code>s private if the scope is meant to stay internal to the current object. This makes intention clearer.</p>
+<h2 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h2><p>Consider commenting the use of the I/O fields (especially if there are unintuitive timings!). Chisel I/Os aren’t functions - it isn’t obvious how to interface with a Module to other programmers.</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CpuReq</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Bundle</span> </span>&#123;<br>    <span class="hljs-keyword">val</span> addr = <span class="hljs-type">UInt</span>(width = ...)<br>    <span class="hljs-keyword">val</span> cmd  = <span class="hljs-type">UInt</span>(width = ...)<br>    <span class="hljs-keyword">val</span> data = <span class="hljs-type">UInt</span>(width = ...) <span class="hljs-comment">// is sent the cycle after the request is valid</span><br></code></pre></td></tr></table></figure>
+<p>In fact, you may prefer to codify timings in the names of the signals themselves:</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">val</span> io = <span class="hljs-keyword">new</span> <span class="hljs-type">Bundle</span> &#123;<br>    <span class="hljs-comment">// send read addr on cycle 0, get data out on cycle 2.</span><br>    <span class="hljs-keyword">val</span> s0_r_idx = <span class="hljs-type">Input</span>(<span class="hljs-type">UInt</span>(width = index_sz.<span class="hljs-type">W</span>))<br>    <span class="hljs-keyword">val</span> s2_r_out = <span class="hljs-type">Output</span>(<span class="hljs-type">UInt</span>(width = fetch_width.<span class="hljs-type">W</span>))<br></code></pre></td></tr></table></figure>
+<p>If it required cleverness to write, you should probably describe <strong>why</strong> it does what it does. The reader is never as smart as the writer. Especially when it’s yourself.</p>
+<h2 id="Assertions"><a href="#Assertions" class="headerlink" title="Assertions"></a>Assertions</h2><p>If you solve a bug, strongly contemplate what <code>assert()</code> could have caught this bug and then add it.</p>
+<p>If you are using a one-hot encoding, guard it with asserts! Especially calls to <code>OHToUInt</code>.</p>
+<figure class="hljs highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scala">assert(<span class="hljs-type">PopCount</span>(updates_oh) &lt;= <span class="hljs-number">1.</span><span class="hljs-type">U</span>, <span class="hljs-string">"[MyModuleName] ..."</span>)<br></code></pre></td></tr></table></figure>
+<p>Note which Module the assert resides in when authoring the failure string.</p>
+<h2 id="Requires"><a href="#Requires" class="headerlink" title="Requires"></a>Requires</h2><p>Scala provides a <code>require()</code> function that will throw a Scala run-time error when compiling your Chisel hardware if the condition is not met.</p>
+<p>Use <code>require()</code> statements to guard against unsupported parameter values in your hardware generators.</p>
+<p>Use <code>require()</code> statements to codify your assumptions in your code (e.g., <code>require(isPow2(num_entries))</code> for logic that only works when <code>num_entries</code> is a power of 2).</p>
+<h2 id="Additional-Best-Practices"><a href="#Additional-Best-Practices" class="headerlink" title="Additional Best Practices"></a>Additional Best Practices</h2><p>If you ever write <code>+N</code>, ask yourself if the number will ever be <code>NonPow2</code> (and then you should write a <code>require</code> statement if the logic depends on <code>Pow2</code> properties!). For example, wrap-around logic will be needed to guard incrementing pointers to queues with <code>NonPow2</code> number of elements. Just like in software, overflows and array bounds overruns are scary!</p>
+<p>Avoid use of <code>var</code>. If you do use <code>var</code>, try to abstract it into a function/object. If you don’t understand why <code>var</code> and <code>when()</code> don’t mix, then for the love of god AVOID <code>var</code> (See Val versus Var section).</p>
+<p>If you solve a bug, strongly contemplate what <code>assert()</code> could have caught this bug and then add it.</p>
+<p>Consider restraining any undefined hardware behavior. It makes writing asserts easier.  Undefined behavior may provide for a more efficient circuit, but a circuit that works is even more efficient!</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/Chisel/" rel="tag"><i class="fas fa-tags"></i>Chisel</a>
+        
+        <a class="post-tag button" href="/tags/Verilog/" rel="tag"><i class="fas fa-tags"></i>Verilog</a>
+        
+        <a class="post-tag button" href="/tags/RTL/" rel="tag"><i class="fas fa-tags"></i>RTL</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2019/07/17/Chisel设计规范/" title="Chisel设计规范">http://118.25.122.94:8080/2019/07/17/Chisel设计规范/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/07/16/Queue-Valid等使用/" rel="next" title="Queue,Valid等使用"><i class="fas fa-angle-left"></i><span class="nav-title">Queue,Valid等使用</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">78</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">10</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">33</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#chisel设计规范"><span class="toc-text">chisel设计规范</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Overall-goal"><span class="toc-text">Overall goal</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Prelude"><span class="toc-text">Prelude</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Table-of-Contents"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Spacing"><span class="toc-text">Spacing</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Naming"><span class="toc-text">Naming</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Registers"><span class="toc-text">Registers</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Bundles"><span class="toc-text">Bundles</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Conditional-I-O-Fields"><span class="toc-text">Conditional I/O Fields</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Literals"><span class="toc-text">Literals</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Parameters"><span class="toc-text">Parameters</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Ready-Valid-Interfaces"><span class="toc-text">Ready-Valid Interfaces</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Vector-of-Modules"><span class="toc-text">Vector of Modules</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Static-Indexing"><span class="toc-text">Static Indexing</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Vec"><span class="toc-text">Vec</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Val-versus-Var"><span class="toc-text">Val versus Var</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Valid-uses-of-Vars"><span class="toc-text">Valid uses of Vars</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Imports"><span class="toc-text">Imports</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Private-versus-Public"><span class="toc-text">Private versus Public</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Comments"><span class="toc-text">Comments</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Assertions"><span class="toc-text">Assertions</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Requires"><span class="toc-text">Requires</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Additional-Best-Practices"><span class="toc-text">Additional Best Practices</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chisel/">Chisel</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL/">RTL</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">51</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">43</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/">Verilog</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tig/">tig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

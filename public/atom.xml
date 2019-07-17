@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-07-15T07:28:42.658Z</updated>
+  <updated>2019-07-17T02:14:07.437Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,103 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chisel设计规范</title>
+    <link href="http://118.25.122.94:8080/2019/07/17/Chisel%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/"/>
+    <id>http://118.25.122.94:8080/2019/07/17/Chisel设计规范/</id>
+    <published>2019-07-17T01:27:52.000Z</published>
+    <updated>2019-07-17T02:14:07.437Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;chisel设计规范&quot;&gt;&lt;a href=&quot;#chisel设计规范&quot; class=&quot;headerlink&quot; title=&quot;chisel设计规范&quot;&gt;&lt;/a&gt;chisel设计规范&lt;/h1&gt;&lt;h2 id=&quot;Overall-goal&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
+    
+      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
+    
+      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Queue,Valid等使用</title>
+    <link href="http://118.25.122.94:8080/2019/07/16/Queue-Valid%E7%AD%89%E4%BD%BF%E7%94%A8/"/>
+    <id>http://118.25.122.94:8080/2019/07/16/Queue-Valid等使用/</id>
+    <published>2019-07-16T10:31:47.000Z</published>
+    <updated>2019-07-16T10:45:52.794Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;Queue等抽象类型使用&quot;&gt;&lt;a href=&quot;#Queue等抽象类型使用&quot; class=&quot;headerlink&quot; title=&quot;Queue等抽象类型使用&quot;&gt;&lt;/a&gt;Queue等抽象类型使用&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Queue&lt;/strong&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
+    
+      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
+    
+      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>向量IO的Slice赋值</title>
+    <link href="http://118.25.122.94:8080/2019/07/16/%E5%90%91%E9%87%8FIO%E7%9A%84Slice%E8%B5%8B%E5%80%BC/"/>
+    <id>http://118.25.122.94:8080/2019/07/16/向量IO的Slice赋值/</id>
+    <published>2019-07-16T01:26:22.000Z</published>
+    <updated>2019-07-16T02:03:07.563Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;IO端口切片选择方法&quot;&gt;&lt;a href=&quot;#IO端口切片选择方法&quot; class=&quot;headerlink&quot; title=&quot;IO端口切片选择方法&quot;&gt;&lt;/a&gt;IO端口切片选择方法&lt;/h4&gt;&lt;figure class=&quot;hljs highlight
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
+    
+      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
+    
+      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
+    
+  </entry>
   
   <entry>
     <title>Chisel多Module级联</title>
@@ -523,78 +620,6 @@
     <id>http://118.25.122.94:8080/2019/06/18/UVM工厂实例覆盖/</id>
     <published>2019-06-18T07:24:27.000Z</published>
     <updated>2019-06-18T07:32:34.684Z</updated>
-    
-    <summary type="html">
-    
-      欢迎光临~
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UVM工厂类覆盖</title>
-    <link href="http://118.25.122.94:8080/2019/06/18/UVM%E5%B7%A5%E5%8E%82%E7%B1%BB%E8%A6%86%E7%9B%96/"/>
-    <id>http://118.25.122.94:8080/2019/06/18/UVM工厂类覆盖/</id>
-    <published>2019-06-18T06:59:33.000Z</published>
-    <updated>2019-06-18T07:23:36.193Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;UVM工厂类覆盖&quot;&gt;&lt;a href=&quot;#UVM工厂类覆盖&quot; class=&quot;headerlink&quot; title=&quot;UVM工厂类覆盖&quot;&gt;&lt;/a&gt;UVM工厂类覆盖&lt;/h3&gt;&lt;p&gt;When working with UVM, the phrase “you gotta
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Constraints 的混入模式</title>
-    <link href="http://118.25.122.94:8080/2019/06/17/Constraints-%E7%9A%84%E6%B7%B7%E5%85%A5%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://118.25.122.94:8080/2019/06/17/Constraints-的混入模式/</id>
-    <published>2019-06-17T08:04:27.000Z</published>
-    <updated>2019-06-17T08:05:45.083Z</updated>
-    
-    <summary type="html">
-    
-      欢迎光临~
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Coverage的可扩展性设计</title>
-    <link href="http://118.25.122.94:8080/2019/06/17/Coverage%E7%9A%84%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7%E8%AE%BE%E8%AE%A1/"/>
-    <id>http://118.25.122.94:8080/2019/06/17/Coverage的可扩展性设计/</id>
-    <published>2019-06-17T05:38:34.000Z</published>
-    <updated>2019-06-17T08:11:09.274Z</updated>
     
     <summary type="html">
     
