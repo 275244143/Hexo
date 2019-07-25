@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-07-18T02:09:18.185Z</updated>
+  <updated>2019-07-25T08:47:37.628Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chisel的BDD测试</title>
+    <link href="http://118.25.122.94:8080/2019/07/25/Chisel%E7%9A%84BDD%E6%B5%8B%E8%AF%95/"/>
+    <id>http://118.25.122.94:8080/2019/07/25/Chisel的BDD测试/</id>
+    <published>2019-07-25T08:34:56.000Z</published>
+    <updated>2019-07-25T08:47:37.628Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;SV的CRV，Chisel的BDD！&quot;&gt;&lt;a href=&quot;#SV的CRV，Chisel的BDD！&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
+    
+      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
+    
+      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
+    
+  </entry>
   
   <entry>
     <title>RawModule定制化~</title>
@@ -609,36 +641,6 @@
     
     
       <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-      <category term="EDA" scheme="http://118.25.122.94:8080/tags/EDA/"/>
-    
-      <category term="VCS" scheme="http://118.25.122.94:8080/tags/VCS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VCS运行错误后保持ucli进行后续诊断~</title>
-    <link href="http://118.25.122.94:8080/2019/06/19/VCS%E8%BF%90%E8%A1%8C%E9%94%99%E8%AF%AF%E5%90%8E%E4%BF%9D%E6%8C%81ucli%E8%BF%9B%E8%A1%8C%E5%90%8E%E7%BB%AD%E8%AF%8A%E6%96%AD/"/>
-    <id>http://118.25.122.94:8080/2019/06/19/VCS运行错误后保持ucli进行后续诊断/</id>
-    <published>2019-06-19T02:41:32.000Z</published>
-    <updated>2019-06-19T03:15:05.483Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;VCS主要说明&quot;&gt;&lt;a href=&quot;#VCS主要说明&quot; class=&quot;headerlink&quot; title=&quot;VCS主要说明&quot;&gt;&lt;/a&gt;VCS主要说明&lt;/h4&gt;&lt;p&gt;VCS allows you to debug an unexpected error
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
     
       <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
     
