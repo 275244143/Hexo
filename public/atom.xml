@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-07-25T08:47:37.628Z</updated>
+  <updated>2019-08-08T06:06:52.193Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>xargs妙用~</title>
+    <link href="http://118.25.122.94:8080/2019/08/08/xargs%E5%A6%99%E7%94%A8/"/>
+    <id>http://118.25.122.94:8080/2019/08/08/xargs妙用/</id>
+    <published>2019-08-08T06:05:02.000Z</published>
+    <updated>2019-08-08T06:06:52.193Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、标准输入与管道命令&quot;&gt;&lt;a href=&quot;#一、标准输入与管道命令&quot; class=&quot;headerlink&quot; title=&quot;一、标准输入与管道命令&quot;&gt;&lt;/a&gt;一、标准输入与管道命令&lt;/h2&gt;&lt;p&gt;Unix
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+    
+    
+      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
+    
+      <category term="xargs" scheme="http://118.25.122.94:8080/tags/xargs/"/>
+    
+  </entry>
   
   <entry>
     <title>Chisel的BDD测试</title>
@@ -613,38 +641,6 @@
     
     
       <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-      <category term="VCS" scheme="http://118.25.122.94:8080/tags/VCS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>懒人编写AOP代替OOP测试用例</title>
-    <link href="http://118.25.122.94:8080/2019/06/20/%E6%87%92%E4%BA%BA%E7%BC%96%E5%86%99AOP%E4%BB%A3%E6%9B%BFOOP%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/"/>
-    <id>http://118.25.122.94:8080/2019/06/20/懒人编写AOP代替OOP测试用例/</id>
-    <published>2019-06-20T09:38:55.000Z</published>
-    <updated>2019-06-20T15:00:12.761Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;AOP-vs-OOP&quot;&gt;&lt;a href=&quot;#AOP-vs-OOP&quot; class=&quot;headerlink&quot; title=&quot;AOP vs OOP&quot;&gt;&lt;/a&gt;AOP vs
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-      <category term="EDA" scheme="http://118.25.122.94:8080/tags/EDA/"/>
     
       <category term="VCS" scheme="http://118.25.122.94:8080/tags/VCS/"/>
     
