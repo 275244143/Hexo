@@ -76,6 +76,7 @@ avatar: images/avatar.png
 
 logo: images/logo.png
 
+
 # Theme color.
 # Need quote to prevent `#` from comment.
 color: "#33363b"
