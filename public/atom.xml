@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-08-09T08:59:03.511Z</updated>
+  <updated>2019-08-13T01:36:20.396Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,118 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Wait for Interface Signals in UVM</title>
+    <link href="http://118.25.122.94:8080/2019/08/13/Wait-for-Interface-Signals-in-UVM/"/>
+    <id>http://118.25.122.94:8080/2019/08/13/Wait-for-Interface-Signals-in-UVM/</id>
+    <published>2019-08-13T01:35:20.000Z</published>
+    <updated>2019-08-13T01:36:20.396Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;In normal scenarios the synchronization of hardware events, like clocks, resets, error signals, interrupts etc., primarily takes place
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Interrupt Handling in UVM</title>
+    <link href="http://118.25.122.94:8080/2019/08/13/Interrupt-Handling-in-UVM/"/>
+    <id>http://118.25.122.94:8080/2019/08/13/Interrupt-Handling-in-UVM/</id>
+    <published>2019-08-13T01:32:37.000Z</published>
+    <updated>2019-08-13T01:33:52.952Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;Interrupt handling&lt;/strong&gt; is a well known feature of any SoC which usually comprises of CPU, Bus Fabric, several Controllers,
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How to handle Reset in UVM?</title>
+    <link href="http://118.25.122.94:8080/2019/08/13/How-to-handle-Reset-in-UVM/"/>
+    <id>http://118.25.122.94:8080/2019/08/13/How-to-handle-Reset-in-UVM/</id>
+    <published>2019-08-13T01:27:15.000Z</published>
+    <updated>2019-08-13T01:34:43.747Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-Introduction&quot;&gt;&lt;a href=&quot;#1-Introduction&quot; class=&quot;headerlink&quot; title=&quot;1) Introduction:&quot;&gt;&lt;/a&gt;1) Introduction:&lt;/h2&gt;&lt;p&gt;One of the
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UVM-1.2中弃用的功能</title>
+    <link href="http://118.25.122.94:8080/2019/08/13/UVM-1-2%E4%B8%AD%E5%BC%83%E7%94%A8%E7%9A%84%E5%8A%9F%E8%83%BD/"/>
+    <id>http://118.25.122.94:8080/2019/08/13/UVM-1-2中弃用的功能/</id>
+    <published>2019-08-13T01:18:49.000Z</published>
+    <updated>2019-08-13T01:19:48.814Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;There are many features which are deprecated in latest &lt;strong&gt;&lt;em&gt;UVM 1.2 standard&lt;/em&gt;&lt;/strong&gt;. If you’re switching to use UVM 1.2 in
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>awk使用频率最多的用法总结</title>
@@ -520,130 +632,6 @@
       <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
     
       <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chisel硬件构建语言入门</title>
-    <link href="http://118.25.122.94:8080/2019/07/10/Chisel%E7%A1%AC%E4%BB%B6%E6%9E%84%E5%BB%BA%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
-    <id>http://118.25.122.94:8080/2019/07/10/Chisel硬件构建语言入门/</id>
-    <published>2019-07-10T01:43:18.000Z</published>
-    <updated>2019-07-10T02:24:09.249Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;Scala-难度接近C艹优雅度超Python的语言我就不多说了&quot;&gt;&lt;a href=&quot;#Scala-难度接近C艹优雅度超Python的语言我就不多说了&quot; class=&quot;headerlink&quot; title=&quot;Scala
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>继续试用Chisel~</title>
-    <link href="http://118.25.122.94:8080/2019/07/08/%E7%BB%A7%E7%BB%AD%E8%AF%95%E7%94%A8Chisel/"/>
-    <id>http://118.25.122.94:8080/2019/07/08/继续试用Chisel/</id>
-    <published>2019-07-08T11:17:43.000Z</published>
-    <updated>2019-07-08T11:21:06.991Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;自从使用了之后背后发凉，这就是硬件敏捷开发-HDL硅工妥妥的要被抛弃&quot;&gt;&lt;a href=&quot;#自从使用了之后背后发凉，这就是硬件敏捷开发-HDL硅工妥妥的要被抛弃&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RTL需要一场革命了~</title>
-    <link href="http://118.25.122.94:8080/2019/07/04/RTL%E9%9C%80%E8%A6%81%E4%B8%80%E5%9C%BA%E9%9D%A9%E5%91%BD%E4%BA%86/"/>
-    <id>http://118.25.122.94:8080/2019/07/04/RTL需要一场革命了/</id>
-    <published>2019-07-04T03:01:14.000Z</published>
-    <updated>2019-07-04T03:13:40.537Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;40年都在修修补补，最近RISC-V火了，RTL硬件代码需要一场革命&quot;&gt;&lt;a href=&quot;#40年都在修修补补，最近RISC-V火了，RTL硬件代码需要一场革命&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>不同的TBTOP如何merge底下的同一个DUT？</title>
-    <link href="http://118.25.122.94:8080/2019/07/03/%E4%B8%8D%E5%90%8C%E7%9A%84TBTOP%E5%A6%82%E4%BD%95merge%E5%BA%95%E4%B8%8B%E7%9A%84%E5%90%8C%E4%B8%80%E4%B8%AADUT%EF%BC%9F/"/>
-    <id>http://118.25.122.94:8080/2019/07/03/不同的TBTOP如何merge底下的同一个DUT？/</id>
-    <published>2019-07-03T01:30:30.000Z</published>
-    <updated>2019-07-03T01:49:42.707Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;经常有一些小年轻还有资深设计人员问我这个问题，那就写这篇文章给RTLer的&quot;&gt;&lt;a href=&quot;#经常有一些小年轻还有资深设计人员问我这个问题，那就写这篇文章给RTLer的&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-      <category term="VCS" scheme="http://118.25.122.94:8080/tags/VCS/"/>
     
   </entry>
   

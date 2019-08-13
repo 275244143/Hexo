@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>How to handle Reset in UVM? | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/08/13/How-to-handle-Reset-in-UVM/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">How to handle Reset in UVM?</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-13T09:27:15+08:00">2019-08-13 09:27:15</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">2k字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">12分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1) Introduction:"></a>1) Introduction:</h2><p>One of the fundamental requirement in Electronic Design is to put the Design into a <strong>known state</strong> after the power is switched <strong>ON</strong>. This process of putting the Design into a known state is technically synchronized &amp; achieved using a dedicated signal popularly called “<strong>Reset</strong>” signal. We know that after power is switched ON, we <strong>Assert</strong> the Reset signal to the Design to put it into a known state and after certain time (usually in terms of number of clocks) the Reset signal is <strong>De-asserted</strong> to bring the Design Under Test (DUT) out of Reset. Assertion or De-assertion of Reset signal will depend on <strong>Active HIGH</strong> or <strong>Active LOW</strong> conditions. It is expected that after Reset signal is De-asserted, DUT achieves the known state as per the <strong>specification</strong> of the Design. So this is a simplified way to explain “How Reset signal directly relates to a Design’s operation”.</p>
+<h2 id="2-Reset-generation-for-Module-Verification-by-UVC"><a href="#2-Reset-generation-for-Module-Verification-by-UVC" class="headerlink" title="2) Reset generation for Module Verification by UVC:"></a>2) Reset generation for Module Verification by UVC:</h2><p>To verify the <strong>Design Under Test</strong> (DUT), we know, we construct a <strong>Verification Environment</strong> aka <strong>Testbench</strong> around the DUT which may contains several Components or Transactors serving multiple purposes or tasks supporting the activities happening inside the Verification Environment. If you have not already visited, you may like to refer one of my previous posts to know more about the UVM Verification Components. In the whole given Testbench setup, once Reset process is started, the default state of the Testbench components as well as DUT needs to be achieved. The Reset process could be triggered by the <strong>initial Reset</strong> or <strong>intermediate Reset</strong> occurred during the Sequences execution in UVM. Since multiple Resets can occur in a single simulation, hence we should ensure that the DUT and Testbench can handle multiple Reset conditions.</p>
+<p>In this post, we’ll see how to generate the Reset signal from the <strong>UVC</strong>(Universal Verification Component) which is also popularly called <strong>VIP</strong>(Verification IP) developed using <strong>UVM</strong>. The primary focus in this post is – How to use the <strong>UVM Phasing Mechanism</strong> to generate the Reset Assertion and De-Assertion conditions. Along with Reset generation, we’ll also see – How to handle the <strong>Reset handling</strong> inside UVM Testbench components like <strong>Driver, Monitor, Scoreboard &amp; Sequences</strong> along with smooth resetting of various defined <strong>Variables, Data Structures e.g. Queues, Arrays</strong> and/or <strong>temporary Memory elements</strong> whichever exists as part of the Testbench.</p>
+<h2 id="3-UVM-Phases"><a href="#3-UVM-Phases" class="headerlink" title="3) UVM Phases:"></a>3) UVM Phases:</h2><p>Since we’re going to use UVM Phases to handle Reset generation, so at this point, lets quickly recap the UVM Phases here in brief:</p>
+<p>For more detailed information on <strong>UMV Phases</strong>, you may like to visit my another post i.e. UVM Phasing.</p>
+<p>Broadly UVM Phases are categorized into <strong>3 categories</strong>:</p>
+<ol>
+<li><strong>Build Phases</strong></li>
+<li><strong>Run Phases</strong></li>
+<li><strong>Clean-up Phases</strong></li>
+</ol>
+<p>Let’s see these categories using Figure 1 shown below:</p>
+<p><img src="/2019/08/13/How-to-handle-Reset-in-UVM/uvm_phases.gif" alt="uvm_phases"></p>
+<p>​                                                     <strong>Figure 1: UVM Phases (with reset phase)</strong></p>
+<p>In the above Figure 1, we can see that <strong>Run Phase</strong> is partitioned into <strong>12 Sub-phases</strong>. All of these 12 Sub-phases are “<strong>tasks</strong>” in nature. It means, time can be consumed by these Sub-phases.</p>
+<p>Since we know that <strong>UVM foundation principle</strong> is the <strong>automated flow of execution</strong> of these <strong>3 Phases i.e. Build, Run &amp; Cleanup Phases</strong> &amp; the proper synchronization between the Phases. There is an order of execution of different Phases which is shown in the above <strong>Figure 1</strong>. The execution sequence is designed by the Industry Experts  to cater the need of a Design to be verified. <strong>All the 12 Run Sub-phases executes in the shown order.</strong> It means once the Build Phases is over, the first Sub-phase in the Run Phase is “<strong>Reset</strong>” Phase. This Phase is being partitioned further into 3 Sub-phase i.e. <strong>pre_reset_phase()</strong>, <strong>reset_phase()</strong> &amp; <strong>post_reset_phase()</strong>.</p>
+<h2 id="4-Reset-generation-using-UVM-reset-phase-Phase"><a href="#4-Reset-generation-using-UVM-reset-phase-Phase" class="headerlink" title="4) Reset generation using UVM reset_phase() Phase:"></a>4) Reset generation using UVM reset_phase() Phase:</h2><p>Lets first see the definitions of <strong>3 UVM Reset Sub-phases</strong>:</p>
+<hr>
+<h3 id="pre-reset"><a href="#pre-reset" class="headerlink" title="pre_reset:"></a>pre_reset:</h3><p>pre_reset phase starts at the same time as the run phase. Its purpose is to take care of any activity that should occur before the reset. E.g. waiting for a power signal to go active.</p>
+<h3 id="reset"><a href="#reset" class="headerlink" title="reset:"></a>reset:</h3><p>As name indicates, reset phase is specially for DUT or Interface specific reset behavior. This phase would be used to generate reset to put the DUT/Interface into a default state.</p>
+<h3 id="post-reset"><a href="#post-reset" class="headerlink" title="post_reset:"></a>post_reset:</h3><p>This phase is intended for any activity required just after the reset phase.</p>
+<hr>
+<p>Since all the Run Sub-phase are to be declared as <strong>Tasks</strong> &amp; we know that a Task <strong>can consume time</strong> in the simulation process. Hence we can utilize the <strong>reset_phase()</strong> task to generate the Reset from the <strong>UVC</strong>. Both <strong>pre_reset_phase()</strong> and <strong>post_reset_phase()</strong> are there to <strong>support</strong> the Reset process in the environment.</p>
+<p>Lets see below a piece of UVM code to comprehend it more clearly:</p>
+<h4 id="Driver-Code"><a href="#Driver-Code" class="headerlink" title="Driver Code:"></a>Driver Code:</h4><hr>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-comment">/// Driver Definition </span><br><span class="hljs-keyword">class</span> my_driver <span class="hljs-keyword">extends</span> uvm_driver <span class="hljs-variable">#(my_transaction)</span>;<br>   <span class="hljs-meta">`uvm_component_utils(my_driver)</span><br><br>...<br>...<br><br>  <span class="hljs-comment">/// Pre-reset Phase Task </span><br><span class="hljs-keyword">task</span> pre_reset_phase (uvm_phase phase);<br>  phase<span class="hljs-variable">.raise_objection</span>(<span class="hljs-keyword">this</span>);<br>  dut_vi<span class="hljs-variable">.reset</span> = <span class="hljs-number">1'b1</span>;<br>  #<span class="hljs-number">1</span>;<br>  phase<span class="hljs-variable">.drop_objection</span>(<span class="hljs-keyword">this</span>);<br><span class="hljs-keyword">endtask</span>: pre_reset_phase<br><br><span class="hljs-comment">/// Reset Phase Task, reset is Active LOW</span><br><span class="hljs-keyword">task</span> reset_phase(uvm_phase phase);<br>  phase<span class="hljs-variable">.raise_objection</span>(<span class="hljs-keyword">this</span>);<br>  dut_vi<span class="hljs-variable">.reset</span> = <span class="hljs-number">1'b0</span>;<br>  #<span class="hljs-number">13</span>;<br>  dut_vi<span class="hljs-variable">.reset</span> = <span class="hljs-number">1'b1</span>;<br>  phase<span class="hljs-variable">.drop_objection</span>(<span class="hljs-keyword">this</span>);<br><span class="hljs-keyword">endtask</span>: reset_phase <br><br><span class="hljs-keyword">endclass</span>: my_driver<br></code></pre></td></tr></table></figure>
+<hr>
+<p>From the above UVM Driver code inside the <strong>reset_phase</strong>(), its evident that Reset signal (i.e. <strong>dut_vi.reset</strong>) will be driven <strong>LOW</strong> (Active LOW) to assert the Reset and after some time (i.e. <strong>13ns</strong>) the Reset signal is driven <strong>HIGH</strong>to de-assert the Reset and DUT will be out of reset at this point of time.</p>
+<p>Note: “<strong>dut_vi</strong>” is the <strong>Virtual Interface declaration</strong> made inside the <strong>Driver</strong>.</p>
+<h2 id="5-Multiple-Reset-generation-using-UVM-Phasing"><a href="#5-Multiple-Reset-generation-using-UVM-Phasing" class="headerlink" title="5) Multiple Reset generation using UVM Phasing:"></a>5) Multiple Reset generation using UVM Phasing:</h2><p>We’ve seen above how to generate the Reset after the power is ON. There is a Test scenario where we may want to reset the DUT after the 1st Sequence is over &amp; run the same or different Sequence to test DUT behavior without getting it power down. So basically a new Reset is triggered without coming out of the UVM Phases.</p>
+<p>Following UVM code inside the “<strong>Test”</strong> can be helpful to achieve this:</p>
+<hr>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs verilog"> <span class="hljs-comment">/// Test Definition</span><br><span class="hljs-keyword">class</span> my_test <span class="hljs-keyword">extends</span> uvm_test;<br> <span class="hljs-meta">`uvm_component_utils(my_test)</span><br><br>...<br>...<br><br><span class="hljs-comment">/// phase_ready_to_end function</span><br> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> phase_ready_to_end(uvm_phase phase);<br>   <span class="hljs-keyword">super</span><span class="hljs-variable">.phase_ready_to_end</span>(phase);<br>    <span class="hljs-keyword">if</span>(phase<span class="hljs-variable">.get_imp</span>() == uvm_shutdown_phase::get()) <span class="hljs-keyword">begin</span><br>     <span class="hljs-keyword">if</span> (run_count &lt;= <span class="hljs-meta">`no_of_runs) begin</span><br>      phase<span class="hljs-variable">.jump</span>(uvm_pre_reset_phase::get());<br>      run_count++;<br>    <span class="hljs-keyword">end</span><br>   <span class="hljs-keyword">end</span> <br> <br>  <span class="hljs-keyword">endfunction</span><br><br><span class="hljs-keyword">endclass</span>: my_test<br></code></pre></td></tr></table></figure>
+<hr>
+<p>We know in UVM, the Test ending mechanism is via <strong>Raise Objections</strong> and <strong>Drop Objections</strong>. So the indication of finishing a Sequence is that all the Raised Objections are Dropped and the Objection counter value will be <strong>zero</strong> at this point. Now <strong>phase_ready_to_end</strong>() function defined above comes into action. <strong>phase_ready_to_end</strong>() is called whenever the total objection count for the current phase decrements to <strong>0</strong>.</p>
+<p>From the above code, its clear that once the phase is <strong>shutdown_phase</strong>(which is last Sub-phase out of the 12 Run Sub-phases) &amp; there is no pending Objection, phase_ready_to_end is activated and make a <strong>JUMP</strong> to the <strong>pre_reset_phase()</strong>. From there on, the whole cycle is repeated. This way, the whole process is <strong>re-started again</strong> &amp; a new RESET is generated.</p>
+<p>This approach can be further extended to Test the scenario where Reset is triggered in-between of the Sequence execution instead of after completing the Sequence.</p>
+<h2 id="6-Reset-handling-for-different-Testbench-components"><a href="#6-Reset-handling-for-different-Testbench-components" class="headerlink" title="6) Reset handling for different Testbench components:"></a>6) Reset handling for different Testbench components:</h2><p>Once Reset is generated inside the UVM Testbench Environment, we must take care of various different <strong>Testbench component’s</strong> behavior with respect to the Reset signal.  Following components (<strong>Static or Dynamic</strong>) needs to be prepared for Reset handling:</p>
+<ul>
+<li><strong>Monitor</strong></li>
+<li><strong>Sequencer</strong></li>
+<li><strong>Scoreboard</strong></li>
+<li><strong>Sequences</strong></li>
+<li><strong>Assertions</strong></li>
+</ul>
+<p>Now, lets see what can be done to make these UVM components Reset ready:</p>
+<h3 id="Monitor"><a href="#Monitor" class="headerlink" title="Monitor:"></a>Monitor:</h3><p>Whether the UVM Agent is <strong>ACTIVE</strong> or <strong>PASSIVE</strong>, a Monitor needs to be present in both of them. Monitor’s primary job is to receive the pin-level interface signals and based on the other Control signals like “<strong>valid_txn</strong>” or <strong>any other</strong> it transforms the <strong>pin-level signals</strong> into <strong>Transaction Objects</strong>. So as soon as the Reset signal is asserted, Monitor should disable the process of collection data from the Interfaces.</p>
+<p>Lets see how this is achieved using the UVM code for Monitor:</p>
+<hr>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-comment">/// Monitor Defintion</span><br><span class="hljs-keyword">class</span> my_monitor <span class="hljs-keyword">extends</span> uvm_monitor <span class="hljs-variable">#(my_transaction)</span>;<br> <span class="hljs-meta">`uvm_component_utils(my_monitor)</span><br><br>...<br>...<br> <br> <span class="hljs-comment">/// Run Task</span><br>  <span class="hljs-keyword">task</span> run_phase (uvm_phase phase);<br>   <span class="hljs-keyword">forever</span> <span class="hljs-keyword">begin</span><br>   @(<span class="hljs-keyword">posedge</span> dut_vi<span class="hljs-variable">.reset</span>);<br>   <span class="hljs-keyword">fork</span><br>     monitor_items();<br>   <span class="hljs-keyword">join_none</span><br> <br>   @(<span class="hljs-keyword">negedge</span> dut_vi<span class="hljs-variable">.reset</span>);<br>    <span class="hljs-keyword">disable</span> <span class="hljs-keyword">fork</span>;<br>   <span class="hljs-keyword">end</span><br>  <span class="hljs-keyword">endtask</span>: run_phase<br><br><span class="hljs-keyword">endclass</span>: my_monitor<br></code></pre></td></tr></table></figure>
+<hr>
+<p>Here we can see that inside the <strong>run_phase</strong> task <strong>forever</strong> loop, <strong>monitor_items</strong>() task is waiting for the <strong>dut_vi.reset</strong> signal <strong>positive</strong> edge (Reset de-asserted for Active LOW reset). Once the condition met, monitor_items is spawned from the fork..join_none and Monitor starts collecting the transactions. Now if there is any upcoming or intermediate Reset comes in  i.e. the <strong>negedge</strong> of the <strong>dut_vi.reset</strong> (Active LOW), the <strong>fork process</strong> is <strong>disabled</strong> which stops the monitor_items task. This is exactly what we want when RESET occurs i.e. not to collect any transactions either from Input or Output ports because only valide transactions have to be passed to the Scoreboard.</p>
+<h3 id="Sequencer"><a href="#Sequencer" class="headerlink" title="Sequencer:"></a>Sequencer:</h3><p>UVM Phases are very handy &amp; automated in terms of handling different UVM components. Whenever there is UVM Phase <strong>JUMP</strong> instruction (as shown in point 5 above) it stops all the ongoing transactions and clears out the <strong>internal FIFOs</strong> which are involved to hold the running transactions on that Sequencer.</p>
+<h3 id="Scoreboard"><a href="#Scoreboard" class="headerlink" title="Scoreboard:"></a>Scoreboard:</h3><p>Usually <strong>Queues</strong>, the <strong>data structure</strong>, being used inside the Scoreboards to hold the <strong>incoming stream of transactions</strong>. Once Reset occurs in the system, the declared Queues inside the Scoreboard MUST be cleared and all the existing elements needs to be flushed out. Since Scoreboard does not have direct access to the Interface and it works with UVM <strong>analysis imports</strong> and deals with <strong>transaction objects.</strong> Now again, we can utilize UVM Phases which are <strong>automated</strong> in terms of execution. So <strong>Queues</strong> can be flushed out once <strong>pre_reset_phase()</strong> occurs. It’ll be helpful in multiple RESET generation scenario.</p>
+<hr>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-comment">/// Scoreboard Definition</span><br><span class="hljs-keyword">class</span> my_scoreboard <span class="hljs-keyword">extends</span> uvm_scoreboard;<br>  <span class="hljs-meta">`uvm_component_utils(my_scoreboard)</span><br> <br>  ...<br>  ...<br><br>  <span class="hljs-comment">/// A Queue declaration to hold DUT I/P &amp; O/P data</span><br>  my_transaction scb_q [$];<br>  my_transaction scb_q_o [$];<br><br>  <span class="hljs-comment">/// During reset phase Queues must be cleaned</span><br>  <span class="hljs-keyword">task</span> pre_reset_phase (uvm_phase phase);<br>   scb_q<span class="hljs-variable">.delete</span>();<br>   scb_q_o<span class="hljs-variable">.delete</span>();<br>  <span class="hljs-keyword">endtask</span><br><br><span class="hljs-keyword">endclass</span>: my_scoreboard<br></code></pre></td></tr></table></figure>
+<hr>
+<h3 id="Sequence"><a href="#Sequence" class="headerlink" title="Sequence:"></a>Sequence:</h3><p>Sequence is the UVM Environment <strong>dynamic</strong> <strong>component</strong> which generates Stimulus for the DUT. In terms of <strong>multiple Reset handling</strong>, definitely Sequence <strong>must be stopped</strong> once Reset is asserted and Sequence should be restarted automatically once Reset is de-asserted. UVM Phases can help us greatly to achieve what is expected out here.</p>
+<p>Lets see below the UVM code for the <strong>Test</strong>:</p>
+<hr>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-comment">/// Test Definition</span><br><span class="hljs-keyword">class</span> my_test <span class="hljs-keyword">extends</span> uvm_test;<br>  <span class="hljs-meta">`uvm_component_utils(my_test)</span><br><br>...<br>...<br><span class="hljs-comment">/// Main Phase Task</span><br> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">task</span> main_phase(uvm_phase phase);<br>   my_sequence seq;<br>   seq = my_sequence::type_id::create(<span class="hljs-string">"seq"</span>);<br>   <span class="hljs-keyword">if</span>( !seq<span class="hljs-variable">.randomize</span>() ) <br>     <span class="hljs-meta">`uvm_error("", "Randomize failed")</span><br>   seq<span class="hljs-variable">.starting_phase</span> = phase;<br>   phase<span class="hljs-variable">.raise_objection</span>(<span class="hljs-keyword">this</span>);<br>   seq<span class="hljs-variable">.start</span>( m_env<span class="hljs-variable">.m_agnt</span><span class="hljs-variable">.m_seqr</span> );<br>   phase<span class="hljs-variable">.drop_objection</span>(<span class="hljs-keyword">this</span>);<br> <span class="hljs-keyword">endtask</span><br><br><span class="hljs-keyword">endclass</span>: my_test<br></code></pre></td></tr></table></figure>
+<hr>
+<p>In the above UVM Test code, Sequence is started on the <strong>Sequencer</strong> i.e. <strong>m_seqr</strong> once the <strong>main_phase</strong> is entered. So if we’re able to recycle the UVM Phasing flow, Sequence will be automatically started on the defined Sequencer.</p>
+<h3 id="Assertions"><a href="#Assertions" class="headerlink" title="Assertions:"></a>Assertions:</h3><p>We know that Assertions are to capture the live status of signals weather its <strong>Immediate</strong> or <strong>Concurrent</strong> Assertions. Assertions are most commonly used as <strong>Interface Protocol Checkers</strong> &amp; are placed inside the <strong>Interfaces</strong>or <strong>Monitors</strong>. Once <strong>Reset</strong> appears, we might want to <strong>kill</strong> the running Assertions. This can be achieved by adding following code:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-comment">/// Assertion 1: grant0 &amp; grant1 should NOT be asserted together</span><br> <span class="hljs-keyword">assert</span> <span class="hljs-keyword">property</span> (@(<span class="hljs-keyword">posedge</span> clk) <br>                  <span class="hljs-keyword">disable</span> <span class="hljs-keyword">iff</span> (~reset) !(grant0 &amp; grant1));<br></code></pre></td></tr></table></figure>
+<p>In the above code, once Reset appears (Active LOW), this Assertion/Property will be <strong>disabled</strong> and will not check the required condition. It will avoid flashing <strong>false errors</strong> during the <strong>RESET</strong> period.</p>
+<hr>
+<p>With this, we reached to the end of this post. I would like to conclude here this post on “<strong>How to handle Reset using UVM Phasing</strong>“.</p>
+<p>As a recap, we discussed how to utilize the automated &amp; sequential Phase based execution flow and use how to use <strong>reset_phase</strong>() inside a UVM <strong>Driver</strong> to generate Reset. We touched base with different UVM Phases. We discussed how to generate multiple Resets once a Sequence is executed. Later we analyzed the different UVM environment components which needs attention &amp; work towards Reset handling situations.</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2019/08/13/How-to-handle-Reset-in-UVM/" title="How to handle Reset in UVM?">http://118.25.122.94:8080/2019/08/13/How-to-handle-Reset-in-UVM/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/08/13/UVM-1-2中弃用的功能/" rel="next" title="UVM-1.2中弃用的功能"><i class="fas fa-angle-left"></i><span class="nav-title">UVM-1.2中弃用的功能</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/08/13/Interrupt-Handling-in-UVM/" rel="prev" title="Interrupt Handling in UVM"><span class="nav-title">Interrupt Handling in UVM</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">87</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">10</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">35</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-Introduction"><span class="toc-text">1) Introduction:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-Reset-generation-for-Module-Verification-by-UVC"><span class="toc-text">2) Reset generation for Module Verification by UVC:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-UVM-Phases"><span class="toc-text">3) UVM Phases:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#4-Reset-generation-using-UVM-reset-phase-Phase"><span class="toc-text">4) Reset generation using UVM reset_phase() Phase:</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#pre-reset"><span class="toc-text">pre_reset:</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#reset"><span class="toc-text">reset:</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#post-reset"><span class="toc-text">post_reset:</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Driver-Code"><span class="toc-text">Driver Code:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#5-Multiple-Reset-generation-using-UVM-Phasing"><span class="toc-text">5) Multiple Reset generation using UVM Phasing:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#6-Reset-handling-for-different-Testbench-components"><span class="toc-text">6) Reset handling for different Testbench components:</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Monitor"><span class="toc-text">Monitor:</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Sequencer"><span class="toc-text">Sequencer:</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Scoreboard"><span class="toc-text">Scoreboard:</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Sequence"><span class="toc-text">Sequence:</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Assertions"><span class="toc-text">Assertions:</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chisel/">Chisel</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL/">RTL</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">47</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/">Verilog</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tig/">tig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xargs/">xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
