@@ -135,7 +135,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>标签: awk | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+    <title>uvm_barrier使用~ | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -183,24 +183,159 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tag" class="tag page">
-  <h1 class="page-title">awk</h1>
+<div id="post" class="page">
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/08/09/awk使用频率最多的用法总结/" itemprop="url">awk使用频率最多的用法总结</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-09T16:56:16+08:00">08-09</time>
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/08/14/uvm-barrier使用/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
       </span>
-      
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">uvm_barrier使用~</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-14T14:04:28+08:00">2019-08-14 14:04:28</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">321字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">1分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
     </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>UVM提供uvm_barrier对多个组件进行同步协调，同时为了解决组件独立运作的封闭性需要，定义了新的类uvm_barrier_pool来全局管理uvm_barrier对象。</p>
+<p>uvm_barrier 可以设置一定的等待阈值，仅在有不少于该阈值的进程在等待该对象时才会触发该事件，同时激活所有正在等待的进程，使其基础进行。 </p>
+<p><strong>wait_for</strong>                  Waits for enough processes to reach the barrier before continuing.<br><strong>reset</strong>                        Resets the barrier.<br><strong>set_auto_reset</strong>       Determines if the barrier should reset itself after the threshold is reached.<br><strong>set_threshold</strong>         Sets the process threshold.<br><strong>get_threshold</strong>         Gets the current threshold setting for the barrier.<br><strong>get_num_waiters</strong>    Returns the number of processes currently waiting at the barrier.<br><strong>cancel</strong>                       Decrements the waiter count by one.</p>
+<p>例子：</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-comment">//----------------------------------------------------------------------</span><br><span class="hljs-comment">//component1</span><br><span class="hljs-comment">//----------------------------------------------------------------------</span><br><br><span class="hljs-keyword">class</span> comp1 <span class="hljs-keyword">extends</span> uvm_component;<br>  uvm_barrier b1;<br>  ...<br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.build_phase</span>(phase);<br>    b1 = uvm_barrier_pool::get_global(<span class="hljs-string">"b1"</span>);<br>  <span class="hljs-keyword">endfunction</span><br>  <span class="hljs-keyword">task</span> run_phase(phase);<br>    #<span class="hljs-number">5</span>ns;<br>    b1<span class="hljs-variable">.wait_for</span>();<br>  <span class="hljs-keyword">endtask</span><br><span class="hljs-keyword">endclass</span><br><br><span class="hljs-comment">//----------------------------------------------------------------------</span><br><span class="hljs-comment">//component2</span><br><span class="hljs-comment">//----------------------------------------------------------------------</span><br><br><span class="hljs-keyword">class</span> comp2 <span class="hljs-keyword">extends</span> uvm_component;<br>  uvm_barrier b1;<br>  ...<br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.build_phase</span>(phase);<br>    b1 = uvm_barrier_pool::get_global(<span class="hljs-string">"b1"</span>);<br>  <span class="hljs-keyword">endfunction</span><br>  <span class="hljs-keyword">task</span> run_phase(phase);<br>    #<span class="hljs-number">10</span>ns;<br>    b1<span class="hljs-variable">.wait_for</span>();<br>  <span class="hljs-keyword">endtask</span><br><span class="hljs-keyword">endclass</span><br><span class="hljs-comment">//----------------------------------------------------------------------</span><br><span class="hljs-comment">//env</span><br><span class="hljs-comment">//----------------------------------------------------------------------</span><br><br><span class="hljs-keyword">class</span> env <span class="hljs-keyword">extends</span> uvm_env;<br>  comp1 c1;<br>  comp2 c2;<br>  uvm_barrier b1;<br>  ...<br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.build_phase</span>(phase);<br>    c1 = comp1::type_id::create(<span class="hljs-string">"c1"</span>,<span class="hljs-keyword">this</span>);<br>    c2 = comp1::type_id::create(<span class="hljs-string">"c2"</span>,<span class="hljs-keyword">this</span>);<br>    b1 = uvm_barrier_pool::get_global(<span class="hljs-string">"b1"</span>);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-keyword">task</span> run_phase(phase);<br>    b1<span class="hljs-variable">.set_threshold</span>(<span class="hljs-number">3</span>);<br>    #<span class="hljs-number">20</span>ns;<br>    b1<span class="hljs-variable">.set_threshold</span>(<span class="hljs-number">2</span>);<br>    <span class="hljs-meta">`uvm_info("BAR",$sformatf("set b1 thrd %0d at %0t fs",b1.get_threshold(),$time),UVM_NONE)</span><br>  <span class="hljs-keyword">endtask</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>为了同步c1和c2而定义了b1,b1为c1,c2和env共享。c1和c2通过wait_for()来等待激活，env通过设置阈值来调控“开闸”的时间。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+      </div>
+      
+    </footer>
   </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2019/08/14/uvm-barrier使用/" title="uvm_barrier使用~">http://118.25.122.94:8080/2019/08/14/uvm-barrier使用/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/08/13/Wait-for-Interface-Signals-in-UVM/" rel="next" title="Wait for Interface Signals in UVM"><i class="fas fa-angle-left"></i><span class="nav-title">Wait for Interface Signals in UVM</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
   
   
 </div>
+
+
+
+  
+</footer></div>
 
           </div>
           
@@ -265,6 +400,11 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
     
     
     <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>

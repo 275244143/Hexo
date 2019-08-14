@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-08-13T01:36:20.396Z</updated>
+  <updated>2019-08-14T06:07:44.073Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>uvm_barrier使用~</title>
+    <link href="http://118.25.122.94:8080/2019/08/14/uvm-barrier%E4%BD%BF%E7%94%A8/"/>
+    <id>http://118.25.122.94:8080/2019/08/14/uvm-barrier使用/</id>
+    <published>2019-08-14T06:04:28.000Z</published>
+    <updated>2019-08-14T06:07:44.073Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;UVM提供uvm_barrier对多个组件进行同步协调，同时为了解决组件独立运作的封闭性需要，定义了新的类uvm_barrier_pool来全局管理uvm_barrier对象。&lt;/p&gt;
+&lt;p&gt;uvm_barrier
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>Wait for Interface Signals in UVM</title>
@@ -585,38 +614,6 @@
         
         
           &lt;h4 id=&quot;新需求太多，改动多，Chisel通过多种方法进行快速迭代生成代码，如下例子新需求：SpiMaster需要把读取的数据延迟可配&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>尝试用Chisel写个SpiMaster~</title>
-    <link href="http://118.25.122.94:8080/2019/07/11/%E5%B0%9D%E8%AF%95%E7%94%A8Chisel%E5%86%99%E4%B8%AASpiMaster/"/>
-    <id>http://118.25.122.94:8080/2019/07/11/尝试用Chisel写个SpiMaster/</id>
-    <published>2019-07-11T09:37:52.000Z</published>
-    <updated>2019-07-12T09:34:46.898Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;刚开始写，非常不顺手，难度很大。对接口类代码确实不如verilog快，而且代码出来不易读，不过在算法，架构，CPU，GPU，图像，AI等方面应该是很快的。出来还得靠DVer把关。&quot;&gt;&lt;a
         
       
     
