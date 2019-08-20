@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>YAML快速入门 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/08/20/YAML快速入门/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">YAML快速入门</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-20T19:13:44+08:00">2019-08-20 19:13:44</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">1.6k字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">6分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h2 id="YAML快速入门"><a href="#YAML快速入门" class="headerlink" title="YAML快速入门"></a>YAML快速入门</h2><h4 id="yaml文件在做验证配置的时候是个好东西，引用配置是好东西"><a href="#yaml文件在做验证配置的时候是个好东西，引用配置是好东西" class="headerlink" title="yaml文件在做验证配置的时候是个好东西，引用配置是好东西~"></a>yaml文件在做验证配置的时候是个好东西，引用配置是好东西~</h4><p>下面立刻展示YAML最基本，最常用的一些使用格式：<br> 首先YAML中允许表示三种格式，分别是常量值，对象和数组<br> 例如：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment">#即表示url属性值；</span><br><span class="hljs-attr">url:</span> <span class="hljs-attr">http://www.wolfcode.cn</span> <br><span class="hljs-comment">#即表示server.host属性的值；</span><br><span class="hljs-attr">server:</span><br><span class="hljs-attr">    host:</span> <span class="hljs-attr">http://www.wolfcode.cn</span> <br><span class="hljs-comment">#数组，即表示server为[a,b,c]</span><br><span class="hljs-attr">server:</span><br><span class="hljs-bullet">    -</span> <span class="hljs-number">120.168</span><span class="hljs-number">.117</span><span class="hljs-number">.21</span><br><span class="hljs-bullet">    -</span> <span class="hljs-number">120.168</span><span class="hljs-number">.117</span><span class="hljs-number">.22</span><br><span class="hljs-bullet">    -</span> <span class="hljs-number">120.168</span><span class="hljs-number">.117</span><span class="hljs-number">.23</span><br><span class="hljs-comment">#常量</span><br><span class="hljs-attr">pi:</span> <span class="hljs-number">3.14</span>   <span class="hljs-comment">#定义一个数值3.14</span><br><span class="hljs-attr">hasChild:</span> <span class="hljs-literal">true</span>  <span class="hljs-comment">#定义一个boolean值</span><br><span class="hljs-attr">name:</span> <span class="hljs-string">'你好YAML'</span>   <span class="hljs-comment">#定义一个字符串</span><br></code></pre></td></tr></table></figure>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>和properties相同，使用#作为注释，YAML中只有行注释。</p>
+<h4 id="基本格式要求"><a href="#基本格式要求" class="headerlink" title="基本格式要求"></a>基本格式要求</h4><p>1，YAML大小写敏感；<br> 2，使用缩进代表层级关系；<br> 3，缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐（一般2个或4个空格）</p>
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>使用冒号代表，格式为key: value。冒号后面要加一个空格：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">key:</span> <span class="hljs-string">value</span><br></code></pre></td></tr></table></figure>
+<p>可以使用缩进表示层级关系；</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">key:</span> <br><span class="hljs-attr">    child-key:</span> <span class="hljs-string">value</span><br><span class="hljs-attr">    child-key2:</span> <span class="hljs-string">value2</span><br></code></pre></td></tr></table></figure>
+<p>YAML中还支持流式(flow)语法表示对象，比如上面例子可以写为：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">key:</span> <span class="hljs-string">&#123;child-key:</span> <span class="hljs-string">value,</span> <span class="hljs-attr">child-key2:</span> <span class="hljs-string">value2&#125;</span><br></code></pre></td></tr></table></figure>
+<p>较为复杂的对象格式，可以使用问号加一个空格代表一个复杂的key，配合一个冒号加一个空格代表一个value：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">?</span>  <br><span class="hljs-bullet">    -</span> <span class="hljs-string">complexkey1</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">complexkey2</span><br><span class="hljs-string">:</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">complexvalue1</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">complexvalue2</span><br></code></pre></td></tr></table></figure>
+<p>意思即对象的属性是一个数组[complexkey1,complexkey2]，对应的值也是一个数组[complexvalue1,complexvalue2]</p>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>使用一个短横线加一个空格代表一个数组项：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">hobby:</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">Java</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">LOL</span><br></code></pre></td></tr></table></figure>
+<p>当然也可以有这样的写法：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-bullet">-</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">Java</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">LOL</span><br></code></pre></td></tr></table></figure>
+<p>可以简单理解为：[[Java,LOL]]<br> 一个相对复杂的例子：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">companies:</span><br><span class="hljs-bullet">    -</span><br><span class="hljs-attr">        id:</span> <span class="hljs-number">1</span><br><span class="hljs-attr">        name:</span> <span class="hljs-string">company1</span><br><span class="hljs-attr">        price:</span> <span class="hljs-number">200</span><span class="hljs-string">W</span><br><span class="hljs-bullet">    -</span><br><span class="hljs-attr">        id:</span> <span class="hljs-number">2</span><br><span class="hljs-attr">        name:</span> <span class="hljs-string">company2</span><br><span class="hljs-attr">        price:</span> <span class="hljs-number">500</span><span class="hljs-string">W</span><br></code></pre></td></tr></table></figure>
+<p>意思是companies属性是一个数组，每一个数组元素又是由id,name,price三个属性构成；<br> 数组也可以使用流式(flow)的方式表示：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">companies:</span> <span class="hljs-string">[&#123;id:</span> <span class="hljs-number">1</span><span class="hljs-string">,name:</span> <span class="hljs-string">company1,price:</span> <span class="hljs-number">200</span><span class="hljs-string">W&#125;,&#123;id:</span> <span class="hljs-number">2</span><span class="hljs-string">,name:</span> <span class="hljs-string">company2,price:</span> <span class="hljs-number">500</span><span class="hljs-string">W&#125;]</span><br></code></pre></td></tr></table></figure>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><p>YAML中提供了多种常量结构，包括：整数，浮点数，字符串，NULL，日期，布尔，时间。下面使用一个例子来快速了解常量的基本使用：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">boolean:</span> <br><span class="hljs-bullet">    -</span> <span class="hljs-literal">TRUE</span>  <span class="hljs-comment">#true,True都可以</span><br><span class="hljs-bullet">    -</span> <span class="hljs-literal">FALSE</span>  <span class="hljs-comment">#false，False都可以</span><br><span class="hljs-attr">float:</span><br><span class="hljs-bullet">    -</span> <span class="hljs-number">3.14</span><br><span class="hljs-bullet">    -</span> <span class="hljs-number">6.8523015e+5</span>  <span class="hljs-comment">#可以使用科学计数法</span><br><span class="hljs-attr">int:</span><br><span class="hljs-bullet">    -</span> <span class="hljs-number">123</span><br><span class="hljs-bullet">    -</span> <span class="hljs-number">0</span><span class="hljs-string">b1010_0111_0100_1010_1110</span>    <span class="hljs-comment">#二进制表示</span><br><span class="hljs-attr">null:</span><br><span class="hljs-attr">    nodeName:</span> <span class="hljs-string">'node'</span><br><span class="hljs-attr">    parent:</span> <span class="hljs-string">~</span>  <span class="hljs-comment">#使用~表示null</span><br><span class="hljs-attr">string:</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">哈哈</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">'Hello world'</span>  <span class="hljs-comment">#可以使用双引号或者单引号包裹特殊字符</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">newline</span><br>      <span class="hljs-string">newline2</span>    <span class="hljs-comment">#字符串可以拆成多行，每一行会被转化成一个空格</span><br><span class="hljs-attr">date:</span><br><span class="hljs-bullet">    -</span> <span class="hljs-number">2018</span><span class="hljs-bullet">-02</span><span class="hljs-bullet">-17</span>    <span class="hljs-comment">#日期必须使用ISO 8601格式，即yyyy-MM-dd</span><br><span class="hljs-attr">datetime:</span> <br><span class="hljs-bullet">    -</span>  <span class="hljs-number">2018</span><span class="hljs-bullet">-02</span><span class="hljs-bullet">-17</span><span class="hljs-attr">T15:02:31+08:00</span>    <span class="hljs-comment">#时间使用ISO 8601格式，时间和日期之间使用T连接，最后使用+代表时区</span><br></code></pre></td></tr></table></figure>
+<h4 id="一些特殊符号"><a href="#一些特殊符号" class="headerlink" title="一些特殊符号"></a>一些特殊符号</h4><p>YAML中提供了很多特殊符号，在这里简单介绍常用的一些：<br> 1，—  YAML可以在同一个文件中，使用—表示一个文档的开始；比如Springboot中profile的定义：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">server:</span><br><span class="hljs-attr">    address:</span> <span class="hljs-number">192.168</span><span class="hljs-number">.1</span><span class="hljs-number">.100</span><br><span class="hljs-meta">---</span><br><span class="hljs-attr">spring:</span><br><span class="hljs-attr">    profiles:</span> <span class="hljs-string">development</span><br><span class="hljs-attr">    server:</span><br><span class="hljs-attr">        address:</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span><br><span class="hljs-meta">---</span><br><span class="hljs-attr">spring:</span><br><span class="hljs-attr">    profiles:</span> <span class="hljs-string">production</span><br><span class="hljs-attr">    server:</span><br><span class="hljs-attr">        address:</span> <span class="hljs-number">192.168</span><span class="hljs-number">.1</span><span class="hljs-number">.120</span><br></code></pre></td></tr></table></figure>
+<p>代表定义了两个profile，一个是development，一个production；也常常使用—来分割不同的内容，比如记录日志：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">Time:</span> <span class="hljs-number">2018</span><span class="hljs-bullet">-02</span><span class="hljs-bullet">-17</span><span class="hljs-attr">T15:02:31+08:00</span><br><span class="hljs-attr">User:</span> <span class="hljs-string">ed</span><br><span class="hljs-attr">Warning:</span><br>     <span class="hljs-string">This</span> <span class="hljs-string">is</span> <span class="hljs-string">an</span> <span class="hljs-string">error</span> <span class="hljs-string">message</span> <span class="hljs-string">for</span> <span class="hljs-string">the</span> <span class="hljs-string">log</span> <span class="hljs-string">file</span><br><span class="hljs-meta">---</span><br><span class="hljs-attr">Time:</span> <span class="hljs-number">2018</span><span class="hljs-bullet">-02</span><span class="hljs-bullet">-17</span><span class="hljs-attr">T15:05:21+08:00</span><br><span class="hljs-attr">User:</span> <span class="hljs-string">ed</span><br><span class="hljs-attr">Warning:</span><br>    <span class="hljs-string">A</span> <span class="hljs-string">slightly</span> <span class="hljs-string">different</span> <span class="hljs-string">error</span> <span class="hljs-string">message.</span><br></code></pre></td></tr></table></figure>
+<p>2，… 和—配合使用，在一个配置文件中代表一个文件的结束：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">time:</span> <span class="hljs-number">20</span><span class="hljs-string">:03:20</span><br><span class="hljs-attr">player:</span> <span class="hljs-string">Sammy</span> <span class="hljs-string">Sosa</span><br><span class="hljs-attr">action:</span> <span class="hljs-string">strike</span> <span class="hljs-string">(miss)</span><br><span class="hljs-string">...</span><br><span class="hljs-meta">---</span><br><span class="hljs-attr">time:</span> <span class="hljs-number">20</span><span class="hljs-string">:03:47</span><br><span class="hljs-attr">player:</span> <span class="hljs-string">Sammy</span> <span class="hljs-string">Sosa</span><br><span class="hljs-attr">action:</span> <span class="hljs-string">grand</span> <span class="hljs-string">slam</span><br><span class="hljs-string">...</span><br></code></pre></td></tr></table></figure>
+<p>相当于在一个yaml文件中连续写了两个yaml配置项。</p>
+<p>3，!! YAML中使用!!做类型强行转换：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">string:</span><br><span class="hljs-bullet">    -</span> <span class="hljs-type">!!str</span> <span class="hljs-number">54321</span><br><span class="hljs-bullet">    -</span> <span class="hljs-type">!!str</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<p>相当于把数字和布尔类型强转为字符串。当然允许转型的类型很多，比如：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-bullet">-</span><span class="hljs-bullet">--</span> <span class="hljs-type">!!set</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Mark</span> <span class="hljs-attr">McGwire:</span> <span class="hljs-number">65</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Sammy</span> <span class="hljs-attr">Sosa:</span> <span class="hljs-number">63</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Sammy</span> <span class="hljs-attr">Sosa:</span> <span class="hljs-number">63</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Ken</span> <span class="hljs-attr">Griffy:</span> <span class="hljs-number">58</span><br></code></pre></td></tr></table></figure>
+<p>将数组解析为set，简单理解，转化的内容就是：[{Ken Griffy=58}, {Mark McGwire=65}, {Sammy Sosa=63}]，重复的Sammy Sosa去掉；</p>
+<p>4，&gt;在字符串中折叠换行，| 保留换行符，这两个符号是YAML中字符串经常使用的符号，比如：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">accomplishment:</span> <span class="hljs-string">&gt;<br> Mark set a major league<br> home run record in 1998.<br></span><span class="hljs-attr">stats:</span> <span class="hljs-string">|<br> 65 Home Runs<br> 0.278 Batting Average</span><br></code></pre></td></tr></table></figure>
+<p>那么结果是：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">stats=65</span> <span class="hljs-string">Home</span> <span class="hljs-string">Runs</span><br> <span class="hljs-number">0.278</span> <span class="hljs-string">Batting</span> <span class="hljs-string">Average,</span><br></code></pre></td></tr></table></figure>
+<p>即| 符号保留了换行符，而accomplishment的结果为：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">accomplishment=Mark</span> <span class="hljs-string">set</span> <span class="hljs-string">a</span> <span class="hljs-string">major</span> <span class="hljs-string">league</span> <span class="hljs-string">home</span> <span class="hljs-string">run</span> <span class="hljs-string">record</span> <span class="hljs-string">in</span> <span class="hljs-number">1998.</span><br></code></pre></td></tr></table></figure>
+<p>即将换行符转化成了空格；要注意一点的是，每行的文本前一定要有一个空格。<br> |符号常见用于在YAML中配置HTML片段：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">phraseTemplate:</span> <span class="hljs-string">|<br>  &lt;p style="color: red"&gt;<br>    some template $&#123;msg&#125;<br>  &lt;/p&gt;</span><br></code></pre></td></tr></table></figure>
+<p>5，引用。重复的内容在YAML中可以使用&amp;来完成锚点定义，使用*来完成锚点引用，例如：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">hr:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Mark</span> <span class="hljs-string">McGwire</span><br><span class="hljs-bullet">-</span> <span class="hljs-meta">&amp;SS</span> <span class="hljs-string">Sammy</span> <span class="hljs-string">Sosa</span><br><span class="hljs-attr">rbi:</span><br><span class="hljs-bullet">-</span> <span class="hljs-meta">*SS</span> <br><span class="hljs-bullet">-</span> <span class="hljs-string">Ken</span> <span class="hljs-string">Griffey</span><br></code></pre></td></tr></table></figure>
+<p>可以看到，在hr中，使用&amp;SS为Sammy Sosa设置了一个锚点（引用），名称为SS，在rbi中，使用*SS完成了锚点使用，那么结果为：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">&#123;rbi=[Sammy</span> <span class="hljs-string">Sosa,</span> <span class="hljs-string">Ken</span> <span class="hljs-string">Griffey],</span> <span class="hljs-string">hr=[Mark</span> <span class="hljs-string">McGwire,</span> <span class="hljs-string">Sammy</span> <span class="hljs-string">Sosa]&#125;</span><br></code></pre></td></tr></table></figure>
+<p>我们也可以这样定义：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">SS:</span> <span class="hljs-meta">&amp;SS</span> <span class="hljs-string">Sammy</span> <span class="hljs-string">Sosa</span><br><span class="hljs-attr">hr:</span><br><span class="hljs-bullet"> -</span> <span class="hljs-string">Mark</span> <span class="hljs-string">McGwire</span><br><span class="hljs-bullet"> -</span> <span class="hljs-meta">*SS</span><br><span class="hljs-attr">rbi:</span><br><span class="hljs-bullet"> -</span> <span class="hljs-meta">*SS</span> <br><span class="hljs-bullet"> -</span> <span class="hljs-string">Ken</span> <span class="hljs-string">Griffey</span><br></code></pre></td></tr></table></figure>
+<p>注意，不能独立的定义锚点，比如不能直接这样写： &amp;SS  Sammy Sosa；另外，锚点能够定义更复杂的内容，比如：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">default:</span> <span class="hljs-meta">&amp;default</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">Mark</span> <span class="hljs-string">McGwire</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">Sammy</span> <span class="hljs-string">Sosa</span><br><span class="hljs-attr">hr:</span> <span class="hljs-meta">*default</span><br></code></pre></td></tr></table></figure>
+<p>那么hr相当于引用了default的数组，注意，hr: *default要写在同一行。</p>
+<p>6，合并内容。主要和锚点配合使用，可以将一个锚点内容直接合并到一个对象中。来看一个示例：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">merge:</span><br><span class="hljs-bullet">  -</span> <span class="hljs-meta">&amp;CENTER</span> <span class="hljs-string">&#123;</span> <span class="hljs-attr">x:</span> <span class="hljs-number">1</span><span class="hljs-string">,</span> <span class="hljs-attr">y:</span> <span class="hljs-number">2</span> <span class="hljs-string">&#125;</span><br><span class="hljs-bullet">  -</span> <span class="hljs-meta">&amp;LEFT</span> <span class="hljs-string">&#123;</span> <span class="hljs-attr">x:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span> <span class="hljs-attr">y:</span> <span class="hljs-number">2</span> <span class="hljs-string">&#125;</span><br><span class="hljs-bullet">  -</span> <span class="hljs-meta">&amp;BIG</span> <span class="hljs-string">&#123;</span> <span class="hljs-attr">r:</span> <span class="hljs-number">10</span> <span class="hljs-string">&#125;</span><br><span class="hljs-bullet">  -</span> <span class="hljs-meta">&amp;SMALL</span> <span class="hljs-string">&#123;</span> <span class="hljs-attr">r:</span> <span class="hljs-number">1</span> <span class="hljs-string">&#125;</span><br>  <br><span class="hljs-attr">sample1:</span> <br>    <span class="hljs-string">&lt;&lt;:</span> <span class="hljs-meta">*CENTER</span><br><span class="hljs-attr">    r:</span> <span class="hljs-number">10</span><br>    <br><span class="hljs-attr">sample2:</span><br>    <span class="hljs-string">&lt;&lt;</span> <span class="hljs-string">:</span> <span class="hljs-string">[</span> <span class="hljs-string">*CENTER,</span> <span class="hljs-meta">*BIG</span> <span class="hljs-string">]</span><br><span class="hljs-attr">    other:</span> <span class="hljs-string">haha</span><br>    <br><span class="hljs-attr">sample3:</span><br>    <span class="hljs-string">&lt;&lt;</span> <span class="hljs-string">:</span> <span class="hljs-string">[</span> <span class="hljs-string">*CENTER,</span> <span class="hljs-meta">*BIG</span> <span class="hljs-string">]</span><br><span class="hljs-attr">    r:</span> <span class="hljs-number">100</span><br></code></pre></td></tr></table></figure>
+<p>在merge中，定义了四个锚点，分别在sample中使用。<br> sample1中，&lt;&lt;: *CENTER意思是引用{x: 1,y: 2}，并且合并到sample1中，那么合并的结果为：sample1={r=10, y=2, x=1}</p>
+<p>sample2中，&lt;&lt;: [<em>CENTER, </em>BIG] 意思是联合引用{x: 1,y: 2}和{r: 10}，并且合并到sample2中，那么合并的结果为：sample2={other=haha, x=1, y=2, r=10}</p>
+<p>sample3中，引入了<em>CENTER, </em>BIG，还使用了r: 100覆盖了引入的r: 10，所以sample3值为：sample3={r=100, y=2, x=1}</p>
+<p>有了合并，我们就可以在配置中，把相同的基础配置抽取出来，在不同的子配置中合并引用即可。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/shell/" rel="tag"><i class="fas fa-tags"></i>shell</a>
+        
+        <a class="post-tag button" href="/tags/yaml/" rel="tag"><i class="fas fa-tags"></i>yaml</a>
+        
+        <a class="post-tag button" href="/tags/python/" rel="tag"><i class="fas fa-tags"></i>python</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2019/08/20/YAML快速入门/" title="YAML快速入门">http://118.25.122.94:8080/2019/08/20/YAML快速入门/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/08/15/LFSR妙用/" rel="next" title="LFSR妙用~"><i class="fas fa-angle-left"></i><span class="nav-title">LFSR妙用~</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">90</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">11</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#YAML快速入门"><span class="toc-text">YAML快速入门</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#yaml文件在做验证配置的时候是个好东西，引用配置是好东西"><span class="toc-text">yaml文件在做验证配置的时候是个好东西，引用配置是好东西~</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#注释"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#基本格式要求"><span class="toc-text">基本格式要求</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#对象"><span class="toc-text">对象</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#数组"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#常量"><span class="toc-text">常量</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#一些特殊符号"><span class="toc-text">一些特殊符号</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chisel/">Chisel</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LFSR/">LFSR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL/">RTL</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">56</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">48</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/">Verilog</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tig/">tig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xargs/">xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yaml/">yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

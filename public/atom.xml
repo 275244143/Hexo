@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-08-14T06:07:44.073Z</updated>
+  <updated>2019-08-20T11:17:14.105Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>YAML快速入门</title>
+    <link href="http://118.25.122.94:8080/2019/08/20/YAML%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"/>
+    <id>http://118.25.122.94:8080/2019/08/20/YAML快速入门/</id>
+    <published>2019-08-20T11:13:44.000Z</published>
+    <updated>2019-08-20T11:17:14.105Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;YAML快速入门&quot;&gt;&lt;a href=&quot;#YAML快速入门&quot; class=&quot;headerlink&quot; title=&quot;YAML快速入门&quot;&gt;&lt;/a&gt;YAML快速入门&lt;/h2&gt;&lt;h4 id=&quot;yaml文件在做验证配置的时候是个好东西，引用配置是好东西&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
+    
+      <category term="yaml" scheme="http://118.25.122.94:8080/tags/yaml/"/>
+    
+      <category term="python" scheme="http://118.25.122.94:8080/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LFSR妙用~</title>
+    <link href="http://118.25.122.94:8080/2019/08/15/LFSR%E5%A6%99%E7%94%A8/"/>
+    <id>http://118.25.122.94:8080/2019/08/15/LFSR妙用/</id>
+    <published>2019-08-15T01:29:49.000Z</published>
+    <updated>2019-08-15T01:49:00.530Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;/2019/08/15/LFSR妙用/LFSR（一）：基本结构与概念.jpg&quot; alt=&quot;lfsr1&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2019/08/15/LFSR妙用/LFSR（二）：LFSR在CRC中的应用.png&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
+    
+      <category term="LFSR" scheme="http://118.25.122.94:8080/tags/LFSR/"/>
+    
+  </entry>
   
   <entry>
     <title>uvm_barrier使用~</title>
@@ -550,70 +608,6 @@
         
         
           &lt;h4 id=&quot;从命令行切到IJ-IDE了，提高下coding效率&quot;&gt;&lt;a href=&quot;#从命令行切到IJ-IDE了，提高下coding效率&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chisel模块多端口扩展</title>
-    <link href="http://118.25.122.94:8080/2019/07/14/Chisel%E6%A8%A1%E5%9D%97%E5%A4%9A%E7%AB%AF%E5%8F%A3%E6%89%A9%E5%B1%95/"/>
-    <id>http://118.25.122.94:8080/2019/07/14/Chisel模块多端口扩展/</id>
-    <published>2019-07-14T01:55:58.000Z</published>
-    <updated>2019-07-14T02:06:58.521Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;端口可以继承也可以通过实验性的MultiIOModule进行扩展&quot;&gt;&lt;a href=&quot;#端口可以继承也可以通过实验性的MultiIOModule进行扩展&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>快速迭代开发SpiMaster新功能~</title>
-    <link href="http://118.25.122.94:8080/2019/07/12/%E5%BF%AB%E9%80%9F%E8%BF%AD%E4%BB%A3%E5%BC%80%E5%8F%91SpiMaster%E6%96%B0%E5%8A%9F%E8%83%BD/"/>
-    <id>http://118.25.122.94:8080/2019/07/12/快速迭代开发SpiMaster新功能/</id>
-    <published>2019-07-12T09:43:20.000Z</published>
-    <updated>2019-07-12T09:54:36.089Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;新需求太多，改动多，Chisel通过多种方法进行快速迭代生成代码，如下例子新需求：SpiMaster需要把读取的数据延迟可配&quot;&gt;&lt;a
         
       
     
