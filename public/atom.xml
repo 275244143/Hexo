@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-08-20T11:17:14.105Z</updated>
+  <updated>2019-08-27T07:58:46.023Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>采用Cocotb快速uniTest~</title>
+    <link href="http://118.25.122.94:8080/2019/08/27/%E9%87%87%E7%94%A8Cocotb%E5%BF%AB%E9%80%9FuniTest/"/>
+    <id>http://118.25.122.94:8080/2019/08/27/采用Cocotb快速uniTest/</id>
+    <published>2019-08-27T07:47:04.000Z</published>
+    <updated>2019-08-27T07:58:46.023Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;SV语言太多，UVM太复杂&quot;&gt;&lt;a href=&quot;#SV语言太多，UVM太复杂&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+      <category term="python" scheme="http://118.25.122.94:8080/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>YAML快速入门</title>
@@ -576,38 +606,6 @@
         
         
           &lt;h4 id=&quot;在ASIC-FPGA中有很多现成的IP，快速调用方法&quot;&gt;&lt;a href=&quot;#在ASIC-FPGA中有很多现成的IP，快速调用方法&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chisel模块多端口可配置</title>
-    <link href="http://118.25.122.94:8080/2019/07/14/Chisel%E6%A8%A1%E5%9D%97%E5%A4%9A%E7%AB%AF%E5%8F%A3%E5%8F%AF%E9%85%8D%E7%BD%AE/"/>
-    <id>http://118.25.122.94:8080/2019/07/14/Chisel模块多端口可配置/</id>
-    <published>2019-07-14T02:54:34.000Z</published>
-    <updated>2019-07-15T02:03:48.893Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;从命令行切到IJ-IDE了，提高下coding效率&quot;&gt;&lt;a href=&quot;#从命令行切到IJ-IDE了，提高下coding效率&quot; class=&quot;headerlink&quot;
         
       
     
