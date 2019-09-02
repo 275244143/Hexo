@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-08-27T07:58:46.023Z</updated>
+  <updated>2019-09-02T04:15:48.476Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>通过绑定引用module中的task和function~</title>
+    <link href="http://118.25.122.94:8080/2019/09/02/%E9%80%9A%E8%BF%87%E7%BB%91%E5%AE%9A%E5%BC%95%E7%94%A8module%E4%B8%AD%E7%9A%84task%E5%92%8Cfunction/"/>
+    <id>http://118.25.122.94:8080/2019/09/02/通过绑定引用module中的task和function/</id>
+    <published>2019-09-02T03:42:08.000Z</published>
+    <updated>2019-09-02T04:15:48.476Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>采用Cocotb快速uniTest~</title>
@@ -574,38 +596,6 @@
         
           &lt;p&gt;There are several reasons why a name may be disappearing.&lt;/p&gt;
 &lt;h2 id=&quot;Constant-Propagation&quot;&gt;&lt;a href=&quot;#Constant-Propagation&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>快速使用已有的IP模块并嵌入Chisel中</title>
-    <link href="http://118.25.122.94:8080/2019/07/15/%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E5%B7%B2%E6%9C%89%E7%9A%84IP%E6%A8%A1%E5%9D%97%E5%B9%B6%E5%B5%8C%E5%85%A5Chisel%E4%B8%AD/"/>
-    <id>http://118.25.122.94:8080/2019/07/15/快速使用已有的IP模块并嵌入Chisel中/</id>
-    <published>2019-07-15T01:52:30.000Z</published>
-    <updated>2019-07-15T02:06:54.641Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;在ASIC-FPGA中有很多现成的IP，快速调用方法&quot;&gt;&lt;a href=&quot;#在ASIC-FPGA中有很多现成的IP，快速调用方法&quot; class=&quot;headerlink&quot;
         
       
     
