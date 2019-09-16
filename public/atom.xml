@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-09-02T04:15:48.476Z</updated>
+  <updated>2019-09-16T10:16:13.018Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,108 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SV实现状态机模式</title>
+    <link href="http://118.25.122.94:8080/2019/09/16/SV%E5%AE%9E%E7%8E%B0%E7%8A%B6%E6%80%81%E6%9C%BA%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://118.25.122.94:8080/2019/09/16/SV实现状态机模式/</id>
+    <published>2019-09-16T10:12:27.000Z</published>
+    <updated>2019-09-16T10:16:13.018Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;FSM的高层实现，应对特殊的仿真场景&quot;&gt;&lt;a href=&quot;#FSM的高层实现，应对特殊的仿真场景&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SystemVerilog中如何自动生成setter和getter？</title>
+    <link href="http://118.25.122.94:8080/2019/09/12/SystemVerilog%E4%B8%AD%E5%A6%82%E4%BD%95%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90setter%E5%92%8Cgetter/"/>
+    <id>http://118.25.122.94:8080/2019/09/12/SystemVerilog中如何自动生成setter和getter/</id>
+    <published>2019-09-12T08:30:54.000Z</published>
+    <updated>2019-09-12T08:47:00.208Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python虚拟化virtualenv</title>
+    <link href="http://118.25.122.94:8080/2019/09/10/python%E8%99%9A%E6%8B%9F%E5%8C%96virtualenv/"/>
+    <id>http://118.25.122.94:8080/2019/09/10/python虚拟化virtualenv/</id>
+    <published>2019-09-10T02:55:48.000Z</published>
+    <updated>2019-09-10T03:12:39.465Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;（转）&quot;&gt;&lt;a href=&quot;#（转）&quot; class=&quot;headerlink&quot; title=&quot;（转）&quot;&gt;&lt;/a&gt;（转）&lt;/h3&gt;&lt;h3 id=&quot;virtualenv&quot;&gt;&lt;a href=&quot;#virtualenv&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://118.25.122.94:8080/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
+    
+      <category term="python" scheme="http://118.25.122.94:8080/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>加速python模型方法~</title>
+    <link href="http://118.25.122.94:8080/2019/09/04/%E5%8A%A0%E9%80%9Fpython%E6%A8%A1%E5%9E%8B%E6%96%B9%E6%B3%95/"/>
+    <id>http://118.25.122.94:8080/2019/09/04/加速python模型方法/</id>
+    <published>2019-09-04T06:13:18.000Z</published>
+    <updated>2019-09-04T06:36:30.158Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+      <category term="python" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/python/"/>
+    
+    
+      <category term="python" scheme="http://118.25.122.94:8080/tags/python/"/>
+    
+      <category term="c/c++" scheme="http://118.25.122.94:8080/tags/c-c/"/>
+    
+  </entry>
   
   <entry>
     <title>通过绑定引用module中的task和function~</title>
@@ -467,135 +569,6 @@
         
           &lt;h4 id=&quot;Queue等抽象类型使用&quot;&gt;&lt;a href=&quot;#Queue等抽象类型使用&quot; class=&quot;headerlink&quot; title=&quot;Queue等抽象类型使用&quot;&gt;&lt;/a&gt;Queue等抽象类型使用&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Queue&lt;/strong&gt;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>向量IO的Slice赋值</title>
-    <link href="http://118.25.122.94:8080/2019/07/16/%E5%90%91%E9%87%8FIO%E7%9A%84Slice%E8%B5%8B%E5%80%BC/"/>
-    <id>http://118.25.122.94:8080/2019/07/16/向量IO的Slice赋值/</id>
-    <published>2019-07-16T01:26:22.000Z</published>
-    <updated>2019-07-16T02:03:07.563Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;IO端口切片选择方法&quot;&gt;&lt;a href=&quot;#IO端口切片选择方法&quot; class=&quot;headerlink&quot; title=&quot;IO端口切片选择方法&quot;&gt;&lt;/a&gt;IO端口切片选择方法&lt;/h4&gt;&lt;figure class=&quot;hljs highlight
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chisel多Module级联</title>
-    <link href="http://118.25.122.94:8080/2019/07/15/Chisel%E5%A4%9AModule%E7%BA%A7%E8%81%94/"/>
-    <id>http://118.25.122.94:8080/2019/07/15/Chisel多Module级联/</id>
-    <published>2019-07-15T07:25:40.000Z</published>
-    <updated>2019-07-15T07:28:42.658Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;多模块等可以通过各种map，reduce，fold方法实现&quot;&gt;&lt;a href=&quot;#多模块等可以通过各种map，reduce，fold方法实现&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实现Inout端口~</title>
-    <link href="http://118.25.122.94:8080/2019/07/15/%E5%AE%9E%E7%8E%B0Inout%E7%AB%AF%E5%8F%A3/"/>
-    <id>http://118.25.122.94:8080/2019/07/15/实现Inout端口/</id>
-    <published>2019-07-15T06:55:26.000Z</published>
-    <updated>2019-07-15T06:58:35.646Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;verilog的inout实现相对麻烦点，采用Analog&quot;&gt;&lt;a href=&quot;#verilog的inout实现相对麻烦点，采用Analog&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chisel在生成Verilog时如何保留所有变量名?</title>
-    <link href="http://118.25.122.94:8080/2019/07/15/Chisel%E5%9C%A8%E7%94%9F%E6%88%90Verilog%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%9D%E7%95%99%E6%89%80%E6%9C%89%E5%8F%98%E9%87%8F%E5%90%8D/"/>
-    <id>http://118.25.122.94:8080/2019/07/15/Chisel在生成Verilog时如何保留所有变量名/</id>
-    <published>2019-07-15T06:51:55.000Z</published>
-    <updated>2019-07-15T06:53:04.798Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;There are several reasons why a name may be disappearing.&lt;/p&gt;
-&lt;h2 id=&quot;Constant-Propagation&quot;&gt;&lt;a href=&quot;#Constant-Propagation&quot;
         
       
     

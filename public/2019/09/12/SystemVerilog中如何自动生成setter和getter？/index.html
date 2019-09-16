@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>SystemVerilog中如何自动生成setter和getter？ | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2019/09/12/SystemVerilog中如何自动生成setter和getter？/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">SystemVerilog中如何自动生成setter和getter？</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-09-12T16:30:54+08:00">2019-09-12 16:30:54</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">255字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">1分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="~友情QQ红包，发送密码~">
+    <label for="pass">~友情QQ红包，发送密码~</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+U2FsdGVkX1+W7D8LaiszO7Rdc5aw2DlTODKCg81eebtUhl3LTrWIkw3oou71yg4u20csxdT+w6LtFek8WpkVSmldeZWxeCGQC2t3LUQAc0U0ebSvHmDhbQRYGd9nYe8aFz8aIxeZo3+dcENnx07uu2WChqZ+7BwiOlKUpBHkGCq4c9xdlbtQIgJzBJs1F+o7lmC5ViQk7SrZGyMyqKaab0ojm9ew7YFhQPJovAN47uCW3a+MhiC3/fWGdgPDmfMd14tgDNBbATx+vjkdtqtFfgcGJAIpzf5HS+LDcX9EhXQ3+424zGt27DkbI4wGrWggu2SDiuJsjCqQtonRO8FmE55RI1iCCbIlDE0JAVvMceEhxaII5sgZrvxL7ndrs1FmXBFjqRllRVZzU2u3bEPtp3QXSvAJ2wSYU2xXMjfCxCptJ4U7kU2ao1wpJEClWCiXpCPFneD4OAiMToUmTra95rkTP/TYm6T/guUbnBP1lD26E2xYNZABVh8T6HZPi1jYqvG6gDz2mIQIm3E4FmoIRCfxSxBmCW+zB3jXhYC8fluXK6/F8xxYvK2k7ZoYjr3pjTwi9rY8UyrRRd1BqW12uq9V1hJlsVojQ/3GUPe5RbEOLMfc/YBSce/VEpIrep1K/sZB7VvYLo3Ng75mOcZ9eImpMVfZqC6nb3FztHqKhAAzz2C7WjpXW4YDApX1/OinDYT3t7F5/n9gIWJyBZ3GszN+WrJH7l7uKsptmQ5/UOzHg51AH2fawr8hLME2sQHHpStIpPdJhvktHUtiCjUqCQeSzbZfLXZ3Rx02YdamiO81KeclQHKE1ThAgf1h8D9vgPUleHCIt/Q3WzjcFWD0UEuPSypVUSp8X6kx6Zc8rdKjWHvDAD10hbdtynoL4/5GidC4urQ2u9gQpn26N0n3owVNVcOn/p5/luaQtHj9SNXgrqE2T5pccxj0RS9breg52mL7EmvqDSwfsTitpC2SWeKQCOjb4zOwkEmtsKdQKwbYY3z9P208OGVXXg8jBzk4BbG5wdLgekGajuYRYvCYndd2wjjUcK0tTd6cLh8Yj3sdS28yMWzSruQSl/qRrC/tin7wkxPz+QnEG6Ve5x8ylcWgAfeQBKBq4hi6HkwZksCSjC/GW4c2Qjj/T+rz2W0blYj3S3wY6MAXDVaPBsV9xb1ZVIwQl/TqZKCHqMCO3oSy8gWoA8gESylnv9nCoGxVO8g+1I+zvcvoaAJ/zijnWD5VubPQNmLY91pqPw8tGQGS/lq641LbkV9tPg/CB9KYh/WHD+mOL+AJET+HnyFxElwvUPlJe+TblgpB45ZHr+RT+fE2+s3HDJU5qQ3lAJjwzaeRGk/CSlupG8aGdBZ9V7P+2R4VLk3flCfExdPviMWecymqufB88+QnOYFR3NRD890x95YhIpmJPY38SCenssoRM/te+dUizQWlm4DuOqni7VJKcC+WYUcB1riZX7BaM7OPAwhIksrclo7cIdJA8tJvoXLvDPR/Vv90MaNmQuMW8kOBD0XFfXgu3zI7zbIL5mnhGWQm3Xp0CgF6y4TLYM5AhinGWZD9aZnP1OvXb8Xm+MR2kL8dU54qMY+q2pV2Jc+c99/RUzZgg7Ij8wK4OqhDeXmmC80h9z0UHap6SK8XnEj8hcYqiHYAZUUM5erpmoEhyEuu/IJlfcsYUFkK/W2/OBIGDNLd+XNK5oPYi9ypqVe9WWjXh6TtKZKEDKwkdRuqzoGrSK+qAEtvXjX6rsF/bfBhKh3Syh1XXNA1hNp+xNfuK7sn2GD/xLH+Tbvp2cZkzw0Rta/SYLJr0u1ub7ri86sNa7svayoFGHBqBkBSO0fidioWDaEmbCAS7A1urV41WJzAhufRxDTaRpSYfW/Z4eGQqult0GW5ZPE1XOoiC8HB2of4Bit5HFoGE1e/F+POJ+emIC8Xv2aGnN/CcpHmF38vU8NjU7Nhsy6bMTL++d5VQIZ/pDNvO4krCfmEz4/qu2DdypEvz0R4XofQRV9HxgmIeJDiIXHyDtpHlEFjW4aXmrMQ/g1XXALyqTzYR5aO47rJ+0MZ5s/U63JjE/NKEcoW80ciDOMp4+S2rX2bj8M0cuQq4JGDhNj34bJgvmT6uk4MhucvD0OYnccI+3hi58HPSx29WxSfx/tIdwbuYd7v54B/KDsDg6qJt61axIT98+lqTr6d48+Ls1fXqbjQ/Wm5O3hLXlQcyODFnfLuVC6TL6R/70AVX81tajAn1IKUUHB6Sx4X8J73J8fSZoA9caA7qWzrMSHqtkeSYHNorXsZXc0S4jF7t3830uEf0NM/z1rx5bKNznzU+nlIq3oPHFyZiS9tJh0T6dmXzDMI2i4itvoBWAOXNHeOL9TvUDZxjD7IR827Py5r4bimDcbSMfgl4zKJiuC3SAMjvXoH9QOhS+AclPe5tmxntt3oXkPw6VMWVXFDF0h8TvNvBcNMQjbo8id2LqH12GPFWUBR86RQQI9eFeY0eIKpyop0C5phymvzbEmiG8K/yWAEZogi7fd9SJoL+Pw/VVs+qA2RCtYMvIGZYNdyqTphQdAXRxDUGX7OFCm5SZet1pTB5x2I6zvZpvpsmjVxObXeQn+HlfzypsitA4ORKusy6AwbEMVe8UKN5fBElQwu00YCvuVpGb0nX967jd+yhn3jkFTXcXiIwDHaIOpL8NsRLHVnReIFpgxaPHoByFLdLjk3yUhJnK3+nHTOYRUWCyqKaggqisL3sBd7HJ6URX8RrqUrPsgUNVitfq069L+WTmmdyMii/oVJLRbAG0iQ2aIXcmqvpNzEvsM3bMs9cqJeGFLT0ANLMOwylcgiHd+gKQ4qqkaf8G6exoA/xFviJGS7cAYSvSKbTyQTZvI978wKeKXYEmPLDbYdb6YNT7Zb/g9dAIW6LOqgZiZE+UuC6Y2r/lPEp1mhEX9K6Aaciidknk3DE42driT7QDAMtydLNEk8eDlWRuV+nW+eKizFSAbuL8GnnFtN8qPFp5HASY/wVdM0RY+HK67NQfC5+wPs40wapVJ+FuPZI/lIjHL3JwOhZs2iDA6Zsv8w2Q7p10dUgHkMJMCTIRzDIC0NBEY+JA43pvx4Bs05IgaaCFTbQzhuDQwAcfniiO2GvBwK5ljpXpnBywdT54k5lbgPaSQ9vE2EcqMqXt8ZxftOE6t3tp/9vAYqKukN3N4xMfNPALWc5Zv0F/n4qAitOVQzvQ2Kc8DfKBLsMU1for3klmq8fXlu6q1Y/8NIvgx1WVTp74TLywVXf65p9cd1A07NRr3ss5YMF/Fq+kg/n0OFASzeDvWb5vL9McHhMJvkTUBm/mWLVuZ2StT315/yjkABOiVMV/gfykbLOhhs1VH3llhbXlGtTMIg02iN7pTNtpSLlB0bYo02Dx31QzVGf6N/IDvDfgOgUQvBgkDVSdqFozX3k5YielxJcOmIkWoCJ9wsFmK1Q/hW1aBep7OnFWtvvnGjgz6CriGAkVH2kR2eIHRD7ecYMxFlS6LNlArlJSyBh/8vK9Gs3RSPIb2G/Sn21Si7YwfouvRXi4UoLvLsJFvbiUGOcnjSSiYoDlzctsxIn4A86IJcGxnQU6pRtFZoDAyv7H3c1G818SQ9qmDLHtARupwsPLknhOAv7ESgeEDZ6/rV18lh+Rh1Ufsx8mDeTi7Xu3D0QpYjTDaOWy8fTc8fhr44GZ4u70FFwRSAB6mV+5vNtbRuC3GI1LeCGRePcm2j+fCq9ZHRxNisfpaeWgKKmFj9fgwrmtzu0/ZdikdEvI7zyuRzwE6gyGRRmrxX6GwRFaep21XBmsQTxkTHcq4Sjtm43jisQ3WQ52q6g/0GqefjHMvU5B8i6B3VhCVjtGWwSnl2flm/sdBBzlFxaHw5pd8YpuCnpTRh/IcyMeben5O/K9+VBNCvcJA2T1Zc3+bpB1OhIwmKqHy6kedSZDL6RdJl0Tln3X8mVq6qHQgk3f6L4HNoESVFq5k6kB+VwVUJowoJHNwTj0g0S9angWmNkpdM9PdwZyvcTO+1qiBplbLij02ogTPuzR1ghKm0ytWGBMF/clamWFYlemrQCZSxpnhXBZ+fhiyxgueU+ITO5Z9aJJb/0vAP5vN32QwdRBiG4E3/5/1/VRAJyfEQgxDitxY/nq5xHol7uYMZHlknN+7oRyWE9YrBwmU62++dEGjesJprTx94HYphb6ku4ZyHj06EbPsIGB+qCcbIAxQEHtUnqJ4HhEiud/H2AfLU+5TfrIh7mtvbL0VpMYlAFfDOah0ybPfijlqNKB/aVNbY/HOWDjJzIzLShtPwgThbNJGwj0VXb6p1mSVPlo4F9NwWrVFHaEHPr4GjS2ePTzxKe76fb7zubIOHiJ591xkFBihHpylrjxLi0Rnp0Oo+7dudgIAGh2xvlnBAz+2rEfI/D28fUmvEM2WP5uQ3jAt6lkgRag8iz3yA+BlBL7A5q7YK3q5lk50Xe5ohwA9KhiUQy8bBYXl023Zml+Zt9XTx6oag59Z5hbRhl0etfzCdW9EYY33sW1kKaA3+S/+PWRBumg15dq92NLsXN7NQ4ytsg1asOYKw3M8l7n93Ba4z5QjmJlnn8hLJLhe+qbwrTlXzrGEhyO8m8utMMDRcfYjxh71/XMlFHc+D7xs6lYkTBf0euy/YLJeJ3jyKd3ZpaZl5mwYLuySv8vVHcQzYdTwHyXfmAhr2v12s5h2zJwYkfvSgv3yuMfEV4yIwmZtOSDTl1ZXEw9yAbvBYBSss/1UHJJRRbf4otOfWwWY1+Ccg+5SsEdv15q05NmqFMCQo8/1dQHBhTvvGFr98BwsEm34ZwQgIXFTLAoTgfVLFfG9REyTOdeSc/fjGyLqk43m5SdKZ9/B3FtRMht8bALn0nybC23ezZTwJFp5z4VXGJi0zv+kphapv1pHN5zzqiXkPhV3O9dlcJ3iBT6pLz090TYXWMsGKnreujaa+zp7UfXWx16qYHagbaVWAVlNT72HZizjHfsczdwwVuXR16Wp0DHvuIL5qEWOSk5gryvn01Aagizley390yESy52mFpTmgwfM3hXQJIsYNlLTcpWWl/XYCW7EfJET2cx46rISIe3v8+ggxf3cFCgoMuD0dyzijTtUle/r8nMx04dJJNxjYz0eJMf13aN21wzV27HKDgkLzzrze5uKMS84iyL6cxp5alNhwWHNSTu8ZfjWkEh90mYznNQgOv+oEQZ/oDfSY4b0OwEq/CZmMT7JKzHwjX8FDuafiAubOMyarDRvdyslHXnQpwzMMGYsMjbxdwbl/lIriUs+BoloiaIlkaEmMUhJpAtRmMrsD7MRaXhlRKtMF5ZQjv2/QxXUKsQXniz6DZAAJ1D2TEVqoT6w0OWX8ahEb9GAeQmE59m6xOV1yeBRZWkknDRFt4qt30ir37PGM+yv4O7RxrnDo7uNOrM/JMG0UW3bDVUK/9XtOBm1wus3iAgKLl9ahQR2cBdxqEuXjc7ZL+DMjX4PDpOJXDbDnKdMKBL8Rbl7rkIevYb7bWhnY9GYw2Chrnpn/iGby08gf7BEg0q4oxJv5bbet3c5JSNqe6fD7r43bBhbfVt3b6ApdhdLmg9Ir0BwbPYQX9bU8vWRlcle0BOTgIFma2tAzcdJR36gfEj1WL4S9JdFaZOktkajC3ScW21J1PMhNEHK8V1HOSBBn57IkfcCa8FpvfczHUIVhpucNiT9jqc2C3xihBj/J0KyWZVEKwMwX7s4ba9IDbxxNOntmSwU1rlxGmjRT0q0FFlDbvQLnAjaRmeMz4+k8AZbuU9hJAbWctJRYN5ewJkGqHVrlyKCgeaK9FhK0QnViCcbCq+i6abdWcq8inVhcsvNGYEIBlSUrGWqx7WY8PuNTJVg7VNVCL5YA61Km6B+G0HcL6JcknyyMJhhllXXJH4dMg3XDJybpyqSWrLPvHsUwBTKOtUaNX5+5F7lXJbCYEr9DjpQRtVmtO7uE6lknVehZgIofRWXrchIH1X1Usem6nIIbMTzIWazbJwDLQzbRa5Rl3HPbWQO0UBvJ+XFqABZ7hMmBVvnw9XIY40Q0qQfJUnm3T/vtxMku9u1UEr3ueAayS5nAgXotoB4nXRmXWMul3fGaGixOsky2NeJsSYTgkrBkV0EEhbrpjJGUtfyA5E0N7chd+ASuGZRsHTQKbnVChQV75vdZ8eXMElUYFtK1kA7edw53WfYU+gfv10ByaYcrFRK57sYvDqg6/MreSbIg1xv22+tcKT3vPXmmCJ8Wg70II/9Kv/K5dGZ0K3ZOsDl1+KsLASKXaN06tuN6RjM7FClPPLwjQSSDEucuMruVs2luJGB+jAjrYOXmDpkR81sKdh7rG3n1FLLx8+tUd6IP8SWN8kInw4uBELcQhnLo+O3QuUH0uS8VubQojigBLwWfndmDWjwCTWVE3NMufcX33QqWPsGzB+6haqnDPBhKvCyizYUYHuckpxaRy0jvROa6l7dhVgDVnkvT+Tm8YkEnpXgz2RiTlu96Ss1Y5ycgow84c2JR4h/fT9TsB+ZqDGe+9vmFFE2FxzzZSfSQ6AFTdsegyd1/SJ/57s+hJatUD9MuAJsUG6k4UfG/cjGX/zd99M94RL3I5LYcpYF8CmFUNsbwvUQAxaZ79EMwDNRZ5b1IOZ8QftEUBKDtVC+urxMndEzeaUfVjVK6Yur0lSKf+edAYQRtgABXK/f64LxS6eSjmyHMYjArK6g3GSMY3Ml1xsdYH5bI7f2if3wO22dDX+EN3T7kXbzl3RgHLYc65FEiwCkURJvh0/khl3xOEccZZCtcqB5aQvEcTsBcblbpYMDodZqSidgwhyZRUMZ0XooOjmHfpbOQlTY5sdgmad18WUe0Y+COQeAajxIsmXf+lGyOY+mEdWzFHQZn0lPd64IAo+/X6TXyoj1WwNdMtFX8RzPKOBBumfcpD0wNGA/y6gZOqicCqWqmpKD0mmdGvCpcM3BHWt8usoP/JLUA38hBdjUvmh/2F24WekMX4EY1y783ElG5ewDhdsy8XKzZ3mctOas2sxhVQeDguKst0ZQzcOHJaNbYwvObYOl97gL31RVOcliKu3HWFI6QHIq/B0Hi4RG5KD/LVKbI2qTpeU9f5s3/CX8WTTMfuP0uTlHBSpLQrpmI34EmziOsMt+HjJ75MkAoGJo72bo06//V5azPGZl1yY+JyXz//Y8FLrKmS4uuxEesmlncEnpwRUZW7lyQ3Se/oL84OXZwTQj91whU/ZFxfiDYiO7ePr1L9DXIwtJ70DwEoHrIrLyXBu7Rm+XQckkQPAfnuw8LIy1pFkEfLICvpZU4C+6q0ZjKVm76KTJZ4DeqvZHdWXlPKKVhd2rKTWLokovoGuBqM+o8HExzq4JEDs/9k9la6B8MCwj0hnKM/g==
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2019/09/12/SystemVerilog中如何自动生成setter和getter？/" title="SystemVerilog中如何自动生成setter和getter？">http://118.25.122.94:8080/2019/09/12/SystemVerilog中如何自动生成setter和getter？/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/09/10/python虚拟化virtualenv/" rel="next" title="python虚拟化virtualenv"><i class="fas fa-angle-left"></i><span class="nav-title">python虚拟化virtualenv</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">95</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">12</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">39</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chisel/">Chisel</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LFSR/">LFSR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL/">RTL</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">59</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">51</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/">Verilog</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tig/">tig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xargs/">xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yaml/">yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
