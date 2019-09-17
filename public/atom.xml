@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-09-16T10:16:13.018Z</updated>
+  <updated>2019-09-17T04:21:01.589Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SV实现装饰器模式</title>
+    <link href="http://118.25.122.94:8080/2019/09/17/SV%E5%AE%9E%E7%8E%B0%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://118.25.122.94:8080/2019/09/17/SV实现装饰器模式/</id>
+    <published>2019-09-17T03:11:49.000Z</published>
+    <updated>2019-09-17T04:21:01.589Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;装饰器模式进行扩展功能而不需要修改原代码。&quot;&gt;&lt;a href=&quot;#装饰器模式进行扩展功能而不需要修改原代码。&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>SV实现状态机模式</title>
@@ -536,39 +564,6 @@
         
         
           &lt;h1 id=&quot;chisel设计规范&quot;&gt;&lt;a href=&quot;#chisel设计规范&quot; class=&quot;headerlink&quot; title=&quot;chisel设计规范&quot;&gt;&lt;/a&gt;chisel设计规范&lt;/h1&gt;&lt;h2 id=&quot;Overall-goal&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Queue,Valid等使用</title>
-    <link href="http://118.25.122.94:8080/2019/07/16/Queue-Valid%E7%AD%89%E4%BD%BF%E7%94%A8/"/>
-    <id>http://118.25.122.94:8080/2019/07/16/Queue-Valid等使用/</id>
-    <published>2019-07-16T10:31:47.000Z</published>
-    <updated>2019-07-16T10:45:52.794Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;Queue等抽象类型使用&quot;&gt;&lt;a href=&quot;#Queue等抽象类型使用&quot; class=&quot;headerlink&quot; title=&quot;Queue等抽象类型使用&quot;&gt;&lt;/a&gt;Queue等抽象类型使用&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Queue&lt;/strong&gt;
         
       
     
