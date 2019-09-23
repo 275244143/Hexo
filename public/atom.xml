@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-09-17T04:21:01.589Z</updated>
+  <updated>2019-09-23T10:40:56.002Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SV实现观察者模式</title>
+    <link href="http://118.25.122.94:8080/2019/09/23/SV%E5%AE%9E%E7%8E%B0%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://118.25.122.94:8080/2019/09/23/SV实现观察者模式/</id>
+    <published>2019-09-23T10:38:26.000Z</published>
+    <updated>2019-09-23T10:40:56.002Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;观察者模式可以在注册、触发中起到不错的作用。&quot;&gt;&lt;a href=&quot;#观察者模式可以在注册、触发中起到不错的作用。&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>SV实现装饰器模式</title>
@@ -532,38 +560,6 @@
         
         
           &lt;h4 id=&quot;引入多种高级语言的测试套件功能&quot;&gt;&lt;a href=&quot;#引入多种高级语言的测试套件功能&quot; class=&quot;headerlink&quot; title=&quot;引入多种高级语言的测试套件功能~&quot;&gt;&lt;/a&gt;引入多种高级语言的测试套件功能~&lt;/h4&gt;&lt;figure
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chisel设计规范</title>
-    <link href="http://118.25.122.94:8080/2019/07/17/Chisel%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/"/>
-    <id>http://118.25.122.94:8080/2019/07/17/Chisel设计规范/</id>
-    <published>2019-07-17T01:27:52.000Z</published>
-    <updated>2019-07-17T02:14:07.437Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;chisel设计规范&quot;&gt;&lt;a href=&quot;#chisel设计规范&quot; class=&quot;headerlink&quot; title=&quot;chisel设计规范&quot;&gt;&lt;/a&gt;chisel设计规范&lt;/h1&gt;&lt;h2 id=&quot;Overall-goal&quot;&gt;&lt;a
         
       
     
