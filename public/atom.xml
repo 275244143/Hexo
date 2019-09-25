@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-09-24T05:51:03.892Z</updated>
+  <updated>2019-09-25T07:50:47.286Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>采用策略模式进行UVM-PORT-DEBUG</title>
+    <link href="http://118.25.122.94:8080/2019/09/25/%E9%87%87%E7%94%A8%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F%E8%BF%9B%E8%A1%8CUVM-PORT-DEBUG/"/>
+    <id>http://118.25.122.94:8080/2019/09/25/采用策略模式进行UVM-PORT-DEBUG/</id>
+    <published>2019-09-25T07:45:14.000Z</published>
+    <updated>2019-09-25T07:50:47.286Z</updated>
+    
+    <summary type="html">
+    
+      欢迎光临~
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>SV实现新的FSM方法模式</title>
@@ -535,34 +557,6 @@
       <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
     
       <category term="awk" scheme="http://118.25.122.94:8080/tags/awk/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>xargs妙用~</title>
-    <link href="http://118.25.122.94:8080/2019/08/08/xargs%E5%A6%99%E7%94%A8/"/>
-    <id>http://118.25.122.94:8080/2019/08/08/xargs妙用/</id>
-    <published>2019-08-08T06:05:02.000Z</published>
-    <updated>2019-08-08T06:06:52.193Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、标准输入与管道命令&quot;&gt;&lt;a href=&quot;#一、标准输入与管道命令&quot; class=&quot;headerlink&quot; title=&quot;一、标准输入与管道命令&quot;&gt;&lt;/a&gt;一、标准输入与管道命令&lt;/h2&gt;&lt;p&gt;Unix
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
-    
-    
-      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
-    
-      <category term="xargs" scheme="http://118.25.122.94:8080/tags/xargs/"/>
     
   </entry>
   
