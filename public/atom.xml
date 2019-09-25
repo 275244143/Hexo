@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-09-23T10:48:08.851Z</updated>
+  <updated>2019-09-24T05:51:03.892Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SV实现新的FSM方法模式</title>
+    <link href="http://118.25.122.94:8080/2019/09/24/SV%E5%AE%9E%E7%8E%B0%E6%96%B0%E7%9A%84FSM%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://118.25.122.94:8080/2019/09/24/SV实现新的FSM方法模式/</id>
+    <published>2019-09-24T05:48:02.000Z</published>
+    <updated>2019-09-24T05:51:03.892Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;在状态模式中，类的行为是基于它的状态改变的。这种类型的设计模式属于行为型模式。&quot;&gt;&lt;a href=&quot;#在状态模式中，类的行为是基于它的状态改变的。这种类型的设计模式属于行为型模式。&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SV实现Template方法模式</title>
+    <link href="http://118.25.122.94:8080/2019/09/24/SV%E5%AE%9E%E7%8E%B0Template%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://118.25.122.94:8080/2019/09/24/SV实现Template方法模式/</id>
+    <published>2019-09-24T01:42:00.000Z</published>
+    <updated>2019-09-24T05:47:31.145Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;模板模式，一个抽象类公开定义了执行它的方法的方式-模板。它的子类可以按需要重写方法实现，但调用将以抽象类中定义的方式进行。这种类型的设计模式属于行为型模式。&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SV实现命令模式</title>
+    <link href="http://118.25.122.94:8080/2019/09/24/SV%E5%AE%9E%E7%8E%B0%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://118.25.122.94:8080/2019/09/24/SV实现命令模式/</id>
+    <published>2019-09-24T01:20:04.000Z</published>
+    <updated>2019-09-24T05:44:22.794Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;命令模式是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>SV实现观察者模式</title>
@@ -479,102 +563,6 @@
       <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
     
       <category term="xargs" scheme="http://118.25.122.94:8080/tags/xargs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chisel的BDD测试</title>
-    <link href="http://118.25.122.94:8080/2019/07/25/Chisel%E7%9A%84BDD%E6%B5%8B%E8%AF%95/"/>
-    <id>http://118.25.122.94:8080/2019/07/25/Chisel的BDD测试/</id>
-    <published>2019-07-25T08:34:56.000Z</published>
-    <updated>2019-07-25T08:47:37.628Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;SV的CRV，Chisel的BDD！&quot;&gt;&lt;a href=&quot;#SV的CRV，Chisel的BDD！&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RawModule定制化~</title>
-    <link href="http://118.25.122.94:8080/2019/07/18/RawModule%E5%AE%9A%E5%88%B6%E5%8C%96/"/>
-    <id>http://118.25.122.94:8080/2019/07/18/RawModule定制化/</id>
-    <published>2019-07-18T02:05:19.000Z</published>
-    <updated>2019-07-18T02:09:18.185Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;恼人的io-xx，定制化才是最好的&quot;&gt;&lt;a href=&quot;#恼人的io-xx，定制化才是最好的&quot; class=&quot;headerlink&quot; title=&quot;恼人的io_xx，定制化才是最好的~&quot;&gt;&lt;/a&gt;恼人的io_xx，定制化才是最好的~&lt;/h4&gt;&lt;figure
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chisel引入敏捷迭代测试~</title>
-    <link href="http://118.25.122.94:8080/2019/07/17/Chisel%E5%BC%95%E5%85%A5%E6%95%8F%E6%8D%B7%E8%BF%AD%E4%BB%A3%E6%B5%8B%E8%AF%95/"/>
-    <id>http://118.25.122.94:8080/2019/07/17/Chisel引入敏捷迭代测试/</id>
-    <published>2019-07-17T06:48:41.000Z</published>
-    <updated>2019-07-17T07:02:23.678Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;引入多种高级语言的测试套件功能&quot;&gt;&lt;a href=&quot;#引入多种高级语言的测试套件功能&quot; class=&quot;headerlink&quot; title=&quot;引入多种高级语言的测试套件功能~&quot;&gt;&lt;/a&gt;引入多种高级语言的测试套件功能~&lt;/h4&gt;&lt;figure
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Chisel" scheme="http://118.25.122.94:8080/tags/Chisel/"/>
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://118.25.122.94:8080/tags/RTL/"/>
     
   </entry>
   
