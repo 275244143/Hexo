@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-09-25T07:50:47.286Z</updated>
+  <updated>2019-10-11T04:16:38.169Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>xxd妙用</title>
+    <link href="http://118.25.122.94:8080/2019/10/11/xxd%E5%A6%99%E7%94%A8/"/>
+    <id>http://118.25.122.94:8080/2019/10/11/xxd妙用/</id>
+    <published>2019-10-11T03:43:30.000Z</published>
+    <updated>2019-10-11T04:16:38.169Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;Bin文件生成技巧&quot;&gt;&lt;a href=&quot;#Bin文件生成技巧&quot; class=&quot;headerlink&quot; title=&quot;Bin文件生成技巧~&quot;&gt;&lt;/a&gt;Bin文件生成技巧~&lt;/h4&gt;&lt;figure class=&quot;hljs highlight
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://118.25.122.94:8080/tags/Linux/"/>
+    
+      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>采用策略模式进行UVM-PORT-DEBUG</title>
@@ -528,35 +556,6 @@
       <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
     
       <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>awk使用频率最多的用法总结</title>
-    <link href="http://118.25.122.94:8080/2019/08/09/awk%E4%BD%BF%E7%94%A8%E9%A2%91%E7%8E%87%E6%9C%80%E5%A4%9A%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/"/>
-    <id>http://118.25.122.94:8080/2019/08/09/awk使用频率最多的用法总结/</id>
-    <published>2019-08-09T08:56:16.000Z</published>
-    <updated>2019-08-09T08:59:03.511Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;code&gt;awk&lt;/code&gt;是处理文本文件的一个应用程序，几乎所有 Linux 系统都自带这个程序。&lt;/p&gt;
-&lt;p&gt;它依次处理文件的每一行，并读取里面的每一个字段。对于日志、CSV
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
-    
-    
-      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
-    
-      <category term="awk" scheme="http://118.25.122.94:8080/tags/awk/"/>
     
   </entry>
   
