@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-10-11T04:16:38.169Z</updated>
+  <updated>2019-10-14T10:51:51.502Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>精细化控制process~</title>
+    <link href="http://118.25.122.94:8080/2019/10/14/%E7%B2%BE%E7%BB%86%E5%8C%96%E6%8E%A7%E5%88%B6process/"/>
+    <id>http://118.25.122.94:8080/2019/10/14/精细化控制process/</id>
+    <published>2019-10-14T10:49:28.000Z</published>
+    <updated>2019-10-14T10:51:51.502Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;啥也不说，做个轮子&quot;&gt;&lt;a href=&quot;#啥也不说，做个轮子&quot; class=&quot;headerlink&quot; title=&quot;啥也不说，做个轮子~&quot;&gt;&lt;/a&gt;啥也不说，做个轮子~&lt;/h4&gt;&lt;figure class=&quot;hljs highlight
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>各种代码统计</title>
+    <link href="http://118.25.122.94:8080/2019/10/14/%E5%90%84%E7%A7%8D%E4%BB%A3%E7%A0%81%E7%BB%9F%E8%AE%A1/"/>
+    <id>http://118.25.122.94:8080/2019/10/14/各种代码统计/</id>
+    <published>2019-10-14T06:41:08.000Z</published>
+    <updated>2019-10-14T06:43:34.447Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;啥都不说，就这样&quot;&gt;&lt;a href=&quot;#啥都不说，就这样&quot; class=&quot;headerlink&quot; title=&quot;啥都不说，就这样~&quot;&gt;&lt;/a&gt;啥都不说，就这样~&lt;/h4&gt;&lt;figure class=&quot;hljs highlight
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>xxd妙用</title>
@@ -489,62 +545,6 @@
         
         
           &lt;p&gt;&lt;strong&gt;Interrupt handling&lt;/strong&gt; is a well known feature of any SoC which usually comprises of CPU, Bus Fabric, several Controllers,
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How to handle Reset in UVM?</title>
-    <link href="http://118.25.122.94:8080/2019/08/13/How-to-handle-Reset-in-UVM/"/>
-    <id>http://118.25.122.94:8080/2019/08/13/How-to-handle-Reset-in-UVM/</id>
-    <published>2019-08-13T01:27:15.000Z</published>
-    <updated>2019-08-13T01:34:43.747Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-Introduction&quot;&gt;&lt;a href=&quot;#1-Introduction&quot; class=&quot;headerlink&quot; title=&quot;1) Introduction:&quot;&gt;&lt;/a&gt;1) Introduction:&lt;/h2&gt;&lt;p&gt;One of the
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UVM-1.2中弃用的功能</title>
-    <link href="http://118.25.122.94:8080/2019/08/13/UVM-1-2%E4%B8%AD%E5%BC%83%E7%94%A8%E7%9A%84%E5%8A%9F%E8%83%BD/"/>
-    <id>http://118.25.122.94:8080/2019/08/13/UVM-1-2中弃用的功能/</id>
-    <published>2019-08-13T01:18:49.000Z</published>
-    <updated>2019-08-13T01:19:48.814Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;There are many features which are deprecated in latest &lt;strong&gt;&lt;em&gt;UVM 1.2 standard&lt;/em&gt;&lt;/strong&gt;. If you’re switching to use UVM 1.2 in
         
       
     
