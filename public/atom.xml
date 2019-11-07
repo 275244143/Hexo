@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-11-05T09:35:05.791Z</updated>
+  <updated>2019-11-06T11:30:34.859Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>升级glibc动态库</title>
+    <link href="http://118.25.122.94:8080/2019/11/06/%E5%8D%87%E7%BA%A7glibc%E5%8A%A8%E6%80%81%E5%BA%93/"/>
+    <id>http://118.25.122.94:8080/2019/11/06/升级glibc动态库/</id>
+    <published>2019-11-06T11:22:28.000Z</published>
+    <updated>2019-11-06T11:30:34.859Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;(转)&lt;/p&gt;
+&lt;p&gt;glibc是gnu发布的libc库，即c运行库，glibc是linux系统中最底层的api，几乎其它任何运行库都会依赖于glibc。glibc除了封装linux操作系统所提供的系统服务外，它本身也提供了许多其它一些必要功能服务的实现。很多linux的基
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://118.25.122.94:8080/tags/Linux/"/>
+    
+      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>误删除Linux中libc.so.6文件急救办法~</title>
@@ -527,35 +556,6 @@
       <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
     
       <category term="LFSR" scheme="http://118.25.122.94:8080/tags/LFSR/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>uvm_barrier使用~</title>
-    <link href="http://118.25.122.94:8080/2019/08/14/uvm-barrier%E4%BD%BF%E7%94%A8/"/>
-    <id>http://118.25.122.94:8080/2019/08/14/uvm-barrier使用/</id>
-    <published>2019-08-14T06:04:28.000Z</published>
-    <updated>2019-08-14T06:07:44.073Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;UVM提供uvm_barrier对多个组件进行同步协调，同时为了解决组件独立运作的封闭性需要，定义了新的类uvm_barrier_pool来全局管理uvm_barrier对象。&lt;/p&gt;
-&lt;p&gt;uvm_barrier
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
     
   </entry>
   
