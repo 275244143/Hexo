@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-11-06T11:30:34.859Z</updated>
+  <updated>2019-11-15T09:00:31.984Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>emacs+evil偶数行合并到奇数行</title>
+    <link href="http://118.25.122.94:8080/2019/11/15/emacs-evil%E5%81%B6%E6%95%B0%E8%A1%8C%E5%90%88%E5%B9%B6%E5%88%B0%E5%A5%87%E6%95%B0%E8%A1%8C/"/>
+    <id>http://118.25.122.94:8080/2019/11/15/emacs-evil偶数行合并到奇数行/</id>
+    <published>2019-11-15T08:54:30.000Z</published>
+    <updated>2019-11-15T09:00:31.984Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;emacs-强大实时显示-vim编辑的快速，niubility&quot;&gt;&lt;a href=&quot;#emacs-强大实时显示-vim编辑的快速，niubility&quot; class=&quot;headerlink&quot; title=&quot;emacs
+        
+      
+    
+    </summary>
+    
+      <category term="emacs" scheme="http://118.25.122.94:8080/categories/emacs/"/>
+    
+      <category term="vim" scheme="http://118.25.122.94:8080/categories/emacs/vim/"/>
+    
+    
+      <category term="evil" scheme="http://118.25.122.94:8080/tags/evil/"/>
+    
+  </entry>
   
   <entry>
     <title>升级glibc动态库</title>
@@ -528,34 +556,6 @@
       <category term="yaml" scheme="http://118.25.122.94:8080/tags/yaml/"/>
     
       <category term="python" scheme="http://118.25.122.94:8080/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LFSR妙用~</title>
-    <link href="http://118.25.122.94:8080/2019/08/15/LFSR%E5%A6%99%E7%94%A8/"/>
-    <id>http://118.25.122.94:8080/2019/08/15/LFSR妙用/</id>
-    <published>2019-08-15T01:29:49.000Z</published>
-    <updated>2019-08-15T01:49:00.530Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;img src=&quot;/2019/08/15/LFSR妙用/LFSR（一）：基本结构与概念.jpg&quot; alt=&quot;lfsr1&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2019/08/15/LFSR妙用/LFSR（二）：LFSR在CRC中的应用.png&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="设计" scheme="http://118.25.122.94:8080/categories/%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Verilog" scheme="http://118.25.122.94:8080/tags/Verilog/"/>
-    
-      <category term="LFSR" scheme="http://118.25.122.94:8080/tags/LFSR/"/>
     
   </entry>
   
