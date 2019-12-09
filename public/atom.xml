@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-11-15T09:00:31.984Z</updated>
+  <updated>2019-12-09T10:31:35.765Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>emacs-vim加入lsp-mode成为最强ide~</title>
+    <link href="http://118.25.122.94:8080/2019/12/09/emacs-vim%E5%8A%A0%E5%85%A5lsp-mode%E6%88%90%E4%B8%BA%E6%9C%80%E5%BC%BAide/"/>
+    <id>http://118.25.122.94:8080/2019/12/09/emacs-vim加入lsp-mode成为最强ide/</id>
+    <published>2019-12-09T10:25:19.000Z</published>
+    <updated>2019-12-09T10:31:35.765Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;emacs-vim-hack已经停不下来了，启动快，ide，各种好处，以前排斥，现在欣然学习接受&quot;&gt;&lt;a href=&quot;#emacs-vim-hack已经停不下来了，启动快，ide，各种好处，以前排斥，现在欣然学习接受&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+    
+    
+      <category term="emacs" scheme="http://118.25.122.94:8080/tags/emacs/"/>
+    
+      <category term="vim" scheme="http://118.25.122.94:8080/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vim该说再见了，留下编辑思想~</title>
+    <link href="http://118.25.122.94:8080/2019/11/20/vim%E8%AF%A5%E8%AF%B4%E5%86%8D%E8%A7%81%E4%BA%86%EF%BC%8C%E7%95%99%E4%B8%8B%E7%BC%96%E8%BE%91%E6%80%9D%E6%83%B3/"/>
+    <id>http://118.25.122.94:8080/2019/11/20/vim该说再见了，留下编辑思想/</id>
+    <published>2019-11-20T07:13:30.000Z</published>
+    <updated>2019-11-20T07:17:24.362Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;vim该说再见了，留下编辑思想&quot;&gt;&lt;a href=&quot;#vim该说再见了，留下编辑思想&quot; class=&quot;headerlink&quot; title=&quot;vim该说再见了，留下编辑思想~&quot;&gt;&lt;/a&gt;vim该说再见了，留下编辑思想~&lt;/h3&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+    
+    
+      <category term="emacs" scheme="http://118.25.122.94:8080/tags/emacs/"/>
+    
+      <category term="vim" scheme="http://118.25.122.94:8080/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打印用户下所有的git仓库</title>
+    <link href="http://118.25.122.94:8080/2019/11/20/%E6%89%93%E5%8D%B0%E7%94%A8%E6%88%B7%E4%B8%8B%E6%89%80%E6%9C%89%E7%9A%84git%E4%BB%93%E5%BA%93/"/>
+    <id>http://118.25.122.94:8080/2019/11/20/打印用户下所有的git仓库/</id>
+    <published>2019-11-20T01:41:18.000Z</published>
+    <updated>2019-11-20T01:59:42.257Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+    
+    
+      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
+    
+      <category term="git" scheme="http://118.25.122.94:8080/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>emacs+evil偶数行合并到奇数行</title>
@@ -474,88 +558,6 @@
       <category term="python" scheme="http://118.25.122.94:8080/tags/python/"/>
     
       <category term="c/c++" scheme="http://118.25.122.94:8080/tags/c-c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>通过绑定引用module中的task和function~</title>
-    <link href="http://118.25.122.94:8080/2019/09/02/%E9%80%9A%E8%BF%87%E7%BB%91%E5%AE%9A%E5%BC%95%E7%94%A8module%E4%B8%AD%E7%9A%84task%E5%92%8Cfunction/"/>
-    <id>http://118.25.122.94:8080/2019/09/02/通过绑定引用module中的task和function/</id>
-    <published>2019-09-02T03:42:08.000Z</published>
-    <updated>2019-09-02T04:15:48.476Z</updated>
-    
-    <summary type="html">
-    
-      欢迎光临~
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>采用Cocotb快速uniTest~</title>
-    <link href="http://118.25.122.94:8080/2019/08/27/%E9%87%87%E7%94%A8Cocotb%E5%BF%AB%E9%80%9FuniTest/"/>
-    <id>http://118.25.122.94:8080/2019/08/27/采用Cocotb快速uniTest/</id>
-    <published>2019-08-27T07:47:04.000Z</published>
-    <updated>2019-08-27T07:58:46.023Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;SV语言太多，UVM太复杂&quot;&gt;&lt;a href=&quot;#SV语言太多，UVM太复杂&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-      <category term="python" scheme="http://118.25.122.94:8080/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>YAML快速入门</title>
-    <link href="http://118.25.122.94:8080/2019/08/20/YAML%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"/>
-    <id>http://118.25.122.94:8080/2019/08/20/YAML快速入门/</id>
-    <published>2019-08-20T11:13:44.000Z</published>
-    <updated>2019-08-20T11:17:14.105Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;YAML快速入门&quot;&gt;&lt;a href=&quot;#YAML快速入门&quot; class=&quot;headerlink&quot; title=&quot;YAML快速入门&quot;&gt;&lt;/a&gt;YAML快速入门&lt;/h2&gt;&lt;h4 id=&quot;yaml文件在做验证配置的时候是个好东西，引用配置是好东西&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
-    
-      <category term="yaml" scheme="http://118.25.122.94:8080/tags/yaml/"/>
-    
-      <category term="python" scheme="http://118.25.122.94:8080/tags/python/"/>
     
   </entry>
   
