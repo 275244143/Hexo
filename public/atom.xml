@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2019-12-09T10:31:35.765Z</updated>
+  <updated>2019-12-10T08:08:52.749Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git clone断点续传</title>
+    <link href="http://118.25.122.94:8080/2019/12/10/git-clone%E6%96%AD%E7%82%B9%E7%BB%AD%E4%BC%A0/"/>
+    <id>http://118.25.122.94:8080/2019/12/10/git-clone断点续传/</id>
+    <published>2019-12-10T08:05:16.000Z</published>
+    <updated>2019-12-10T08:08:52.749Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;编译后端&quot;&gt;&lt;a href=&quot;#编译后端&quot; class=&quot;headerlink&quot; title=&quot;编译后端&quot;&gt;&lt;/a&gt;编译后端&lt;/h3&gt;&lt;p&gt;打开终端(假设你已经安装好了 git 和 cmake， gcc 或者 clang）&lt;/p&gt;
+&lt;figure
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+    
+    
+      <category term="emacs" scheme="http://118.25.122.94:8080/tags/emacs/"/>
+    
+      <category term="vim" scheme="http://118.25.122.94:8080/tags/vim/"/>
+    
+  </entry>
   
   <entry>
     <title>emacs-vim加入lsp-mode成为最强ide~</title>
@@ -534,30 +563,6 @@
       <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
     
       <category term="python" scheme="http://118.25.122.94:8080/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>加速python模型方法~</title>
-    <link href="http://118.25.122.94:8080/2019/09/04/%E5%8A%A0%E9%80%9Fpython%E6%A8%A1%E5%9E%8B%E6%96%B9%E6%B3%95/"/>
-    <id>http://118.25.122.94:8080/2019/09/04/加速python模型方法/</id>
-    <published>2019-09-04T06:13:18.000Z</published>
-    <updated>2019-09-04T06:36:30.158Z</updated>
-    
-    <summary type="html">
-    
-      欢迎光临~
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="python" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/python/"/>
-    
-    
-      <category term="python" scheme="http://118.25.122.94:8080/tags/python/"/>
-    
-      <category term="c/c++" scheme="http://118.25.122.94:8080/tags/c-c/"/>
     
   </entry>
   
