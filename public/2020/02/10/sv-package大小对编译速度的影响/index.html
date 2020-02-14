@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>sv-package大小对编译速度的影响 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2020/02/10/sv-package大小对编译速度的影响/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">sv-package大小对编译速度的影响</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-02-10T23:27:38+08:00">2020-02-10 23:27:38</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">2.3k字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">14分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>(转)</p>
+<h1 id="Bigger-Is-Not-Always-Better-Builds-Are-Faster-with-Smaller-Packages"><a href="#Bigger-Is-Not-Always-Better-Builds-Are-Faster-with-Smaller-Packages" class="headerlink" title="Bigger Is Not Always Better: Builds Are Faster with Smaller Packages"></a>Bigger Is Not Always Better: Builds Are Faster with Smaller Packages</h1><p>One trend over the past few years is that the projects I’ve been working on tend to get bigger and more complicated. Bigger projects come with new challenges. Among these are the fact that it’s much more difficult to keep the entire project in one’s head, the need to synchronize with more developers because team sizes grow, a higher risk of having to re-write code because of poorly understood requirements or because some requirements change, and many more.</p>
+<p>There’s one thing, though, that crept up on me: compile times get much bigger. While this doesn’t sound like a big deal, I’ve found that long build times are an absolute drain on productivity. I use <a href="http://agilesoc.com/open-source-projects/svunit/" target="_blank" rel="noopener">SVUnit</a> a lot, so I’m used to having a very short path between making a change and seeing the effects of that change. Ideally, there should be no delay between starting the test script and getting the result. A delay of a couple of seconds is tolerable. More than 10 seconds becomes noticeable. After exceeding the one minute mark, the temptation to switch to something else (like the Internet browser) becomes very high. This slowdown happens gradually, with each new class that is added, decreasing development speed.</p>
+<p>In this post I’d like to talk about compilation. This topic has a tendency to be trivialized and underestimated, even more so in the hardware industry, where it’s common to have design flows already set up to deal with this process.</p>
+<h2 id="Full-vs-incremental-builds"><a href="#Full-vs-incremental-builds" class="headerlink" title="Full vs. incremental builds"></a>Full vs. incremental builds</h2><p>A build is the process of taking the source code and producing an executable object. When talking about builds, there are two terms we need to be familiar with: full builds and incremental builds. A full build is performed when there isn’t any build output, which requires the entire source code to be built. This is either the case when starting in a new workspace (for example, after cloning the source repository) or after deleting the previous build output. An incremental build only builds the parts of the source code that have changed since the previous build. Because only parts of the project are rebuilt in this case, this means that, generally, the process is faster.</p>
+<p>We’ll limit our discussion about builds to SystemVerilog packages, though the same concepts also apply to modules and interfaces.</p>
+<p>Let’s say we have two packages, <em>package0</em> and <em>package1</em>, which we use in our verification environment:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-comment">// File: package0.sv</span><br><br><span class="hljs-keyword">package</span> package0;<br><br>  <span class="hljs-keyword">class</span> some_base_class;<br>  <span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">endpackage</span><br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-comment">// File: package1.sv</span><br><br><span class="hljs-keyword">package</span> package1;<br><br>  <span class="hljs-keyword">import</span> package0::*;<br><br>  <span class="hljs-keyword">class</span> some_derived_class <span class="hljs-keyword">extends</span> some_base_class;<br>  <span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">endpackage</span><br></code></pre></td></tr></table></figure>
+<p>Compiling these two packages using an EDA tool is pretty straightforward:</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">compiler package0.sv package1.sv<br></code></pre></td></tr></table></figure>
+<p>The very first time we run this command, the tool will parse the two source files and generate the data structures it uses to represent the compiler output. Since we didn’t have any build output when we ran the command, we were performing a full build.</p>
+<p>If we add a new class to <em>package1</em> and run the compiler again, we will be performing an incremental build:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">package</span> package1;<br><br>  <span class="hljs-keyword">import</span> package0::*;<br><br>  <span class="hljs-keyword">class</span> some_derived_class <span class="hljs-keyword">extends</span> some_base_class;<br>  <span class="hljs-keyword">endclass</span><br><br>  <span class="hljs-keyword">class</span> some_other_class;<br>  <span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">endpackage</span><br></code></pre></td></tr></table></figure>
+<p>The tool will only recompile <em>package1</em>. It won’t touch <em>package0</em>, since it didn’t change. If compilation for <em>package0</em> takes a lot of time, this will saves us that time.</p>
+<h2 id="A-deeper-dive-into-SystemVerilog-compilation"><a href="#A-deeper-dive-into-SystemVerilog-compilation" class="headerlink" title="A deeper dive into SystemVerilog compilation"></a>A deeper dive into SystemVerilog compilation</h2><p>Before we continue with our main discussion, it makes sense to look a bit deeper into how SystemVerilog compilation works. Before I investigated this topic I had some misplaced ideas, which I would like to dispel.</p>
+<p>I have only ever really looked at the behavior of one particular EDA tool, but I assume that other simulators behave similarly, as they all have a common heritage. Some SystemVerilog tools differentiate between compilation and elaboration. These defintions depend on the tool you’re using. I’ve seen compilation used to mean parsing the code and generating syntax trees. Elaboration takes these syntax trees and generates executable code that is run in the simulator. I’ll use the term <em>compile</em> to mean both of these steps.</p>
+<p>Let’s start small, with a single package that contains only one class:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">package</span> package0;<br><br>  <span class="hljs-keyword">class</span> some_base_class;<br>  <span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">endpackage</span><br></code></pre></td></tr></table></figure>
+<p>After we compile the package, we will have performed a full build. Now, let’s add another class to the package:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">package</span> package0;<br><br>  <span class="hljs-keyword">class</span> some_base_class;<br>  <span class="hljs-keyword">endclass</span><br><br>  <span class="hljs-keyword">class</span> some_base_class2;<br>  <span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">endpackage</span><br></code></pre></td></tr></table></figure>
+<p>In this case, you’ll notice that the tool compiles both classes. I’m a bit cautious about posting the log files and how I can tell that it’s compiling both classes. Some tools make this easier to see than others. One clear sign is that compile takes longer. You can try it out by adding more and more classes and recompiling. </p>
+<p>In this case, an incremental compile takes about as much time as a full build, which suggests that nothing is being reused from previous build attempts. Even if we only add classes, the build output for previously built classes is discarded.</p>
+<p>What did we learn from this? That tools only organize build output using packages as their most granular unit. Changes within packages are “lost”, from an incremental build point of view.</p>
+<p>You could argue that from the previous experiment we could infer that tools organize build output based on files. If we were to put each file in its own class and include them in the package, then the tool would be able to somehow behave differently. This isn’t, the case, though. <em>`include</em> directives are handled by the pre-processor. It interleaves all of the files together and gives the compiler a big file with all the class definitions inline (the situation we had previously).</p>
+<p>We can do another experiment to convince ourselves that builds aren’t organized by files. Let’s put two packages inside the same file:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">package</span> package0;<br><span class="hljs-keyword">endpackage</span><br><br><span class="hljs-keyword">package</span> package1;<br><span class="hljs-keyword">endpackage</span><br></code></pre></td></tr></table></figure>
+<p>Let’s modify <em>package1</em> by adding a new variable:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">package</span> package0;<br><span class="hljs-keyword">endpackage</span><br><br><span class="hljs-keyword">package</span> package1;<br>  <span class="hljs-keyword">bit</span> some_var;<br><span class="hljs-keyword">endpackage</span><br></code></pre></td></tr></table></figure>
+<p>When rebuilding, we’ll notice that only <em>package1</em> gets rebuilt, but <em>package0</em> is left alone. (This is also the behavior we would have liked to have for classes inside a package.)</p>
+<p>Now let’s also modify <em>package0</em> by adding a variable to it:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">package</span> package0;<br>  <span class="hljs-keyword">bit</span> some_var;<br><span class="hljs-keyword">endpackage</span><br><br><span class="hljs-keyword">package</span> package1;<br>  <span class="hljs-keyword">bit</span> some_var;<br><span class="hljs-keyword">endpackage</span><br></code></pre></td></tr></table></figure>
+<p>When rebuilding, we’ll see that <em>package0</em> is being rebuilt, as we expected, but, surprisingly, so is <em>package1</em>. This is very confusing initially, but obvious once you know the explanation. Because we shifted the lines where <em>package1</em> and its items are defined in the file, the tool has to update debug information regarding line numbers. This is important for debuggers and for messages that contain line numbers (like assertion erros, <em>$info(…)</em> calls, etc.). This, by the way, is a very good reason to only define one element (package, interface, module) per file.</p>
+<p>Let’s look at one more thing. Let’s take two packages that have a dependency relationship:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">package</span> package0;<br><br>  <span class="hljs-keyword">class</span> some_base_class;<br>  <span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">endpackage</span><br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">package</span> package1;<br><br>  <span class="hljs-keyword">import</span> package0::*;<br><br>  <span class="hljs-keyword">class</span> some_derived_class <span class="hljs-keyword">extends</span> some_base_class;<br>  <span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">endpackage</span><br></code></pre></td></tr></table></figure>
+<p>It’s clear that changes to <em>package1</em> shouldn’t (and indeed won’t) cause rebuilds of <em>package0</em>. It’s also clear that changing <em>some_base_class</em> will have to trigger a rebuild of <em>package1</em>. Now, let’s add a new class to <em>package0</em>:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">package</span> package0;<br><br>  <span class="hljs-keyword">class</span> some_base_class;<br>  <span class="hljs-keyword">endclass</span><br><br>  <span class="hljs-keyword">class</span> some_base_class2;<br>  <span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">endpackage</span><br></code></pre></td></tr></table></figure>
+<p>At this point, we shouldn’t be surprised anymore that both packages are rebuilt in this case. This is because the tool only understands changes at the package level. <em>package1</em> depends on <em>package0</em>, so any change to <em>package0</em> will lead to a rebuild of <em>package1</em>, regardless if this is really needed. Unfortunately, this isn’t the behavior we would like to have.</p>
+<p>Contrast the way SystemVerilog builds work to C++, where files are compiled individually and are linked together in a separate step (a gross over-simplifaction). Changes to one class don’t cause recompiles of other classes in the same namespace, if the two classes are unrelated. This is because C++ classes are split between the header (which declares which functions a class provides) and the implementation (which contain the function bodies). A class that depends on another class includes its header, to let the compiler know that it relies on the other class. Only changes in a class’s header cause recompiles of dependent classes, while changes to its implementation don’t. Because of this setup, C++ builds are much more powerful when it comes to build avoidance, by only rebuilding the parts that they absolutely have to build. This allows for guidelines that incremental builds should take between 5-10 seconds and that full builds (including tests) should take between 1-2 minutes, according to <a href="http://www.bitsnbites.eu/faster-c-builds/" target="_blank" rel="noopener">http://www.bitsnbites.eu/faster-c-builds/</a>, numbers which are incredibly low by SystemVerilog standards, where merely starting the simulator takes double digit numbers of seconds.</p>
+<h2 id="Case-study"><a href="#Case-study" class="headerlink" title="Case study"></a>Case study</h2><p>The classic testbench structure for an IP block consists of one or more interface verification components (IVCs), that contain code related to the signal protocols used by the design, and one module verification component (MVC), that contains code for aspects related to the design functionality.</p>
+<p>IVCs typically consist of a package and one or more interfaces. We don’t usually make changes to the IVCs, so once we’ve built them via a full build, they won’t have any impact on subsequent incremental builds.</p>
+<p>Most of our work is focused on the MVC. As we’ve seen above, if we place our MVC code into one package, then any change we make to it will trigger a new build, because of the way SystemVerilog tools handle incremental builds. This isn’t going to be very efficient, as an incremental build of the package after each change will take about as long as a full build.</p>
+<p>What would happen if we could split our big MVC package into multiple smaller packages?</p>
+<p>It’s experiment time again! We’ll assume that we can split the code such that building each package takes the same amount of time. We’ll also ignore any extra costs from building multiple packages instead of one single package. This means that if an incremental build of the entire <em>mvc</em> package would have taken <em>N</em> seconds, then by splitting it into <em>P</em> packages each of the smaller packages would take <em>N/P</em> seconds to build. We’ll also assume that we are just as likely to make changes to any of the smaller packages. This means that the probablity to change any package is <em>1/P</em>.</p>
+<p>Let’s assume that we can create two independent packages, <em>p0</em> and <em>p1</em>. We can misuse UML to visualize the package topology:<br><img src="/2020/02/10/sv-package大小对编译速度的影响/1.png" alt="1"><br>Any change we make to <em>p0</em> won’t cause rebuilds of <em>p1</em> and vice-versa. We can compute the average incremental build time in this case. Building any of the packages takes <em>N/2</em> seconds, but we do it only half of the time (since in the other half we change the other package). The average incremental build time is the mean: <em>N/2 \</em> 1/2 + N/2 <em> 1/2 = N/2</em>. By splitting the code into two independent packages, we’ve managed to half our incremental build time. It’s not very realistic, though, that we could manage to do such a split on a real project.</p>
+<p>Let’s have a look at something closer to reality. Let’s assume that we can split our MVC into two packages, <em>p0</em> and <em>p1</em>, but <em>p1</em> depends on <em>p0</em>:<br><img src="/2020/02/10/sv-package大小对编译速度的影响/2.png" alt="2"><br>An incremental build of <em>p1</em> would still take only <em>N/2</em> seconds, because changing anything in <em>p1</em> doesn’t have any effect on <em>p0</em>. A change in <em>p0</em> would mean that we also have to rebuild <em>p1</em>, which means that it would take <em>N/2 + N/2 = N</em> seconds. On average, we would need <em>N/2 \</em> 1/2 + N <em> 1/2 = 3/4 </em> N* seconds.</p>
+<p>We should try to structure our code in such a way as to increase the number of packages without any dependencies to each other. Let’s say we can split <em>p1</em> from the previous example into two independent packages, <em>p1_0</em> and <em>p1_1</em>:<br><img src="/2020/02/10/sv-package大小对编译速度的影响/3.png" alt="3"><br>In this case, changing anything in either <em>p1_0</em> or <em>p1_1</em> would take <em>N/3</em> seconds. A change in <em>p0</em> would require all three packages to be rebuilt and would take the full <em>N</em> seconds. On average, a change would take <em>N/3 \</em> 1/3 + N/3 <em> 1/3 + N </em> 1/3 = 7/9 <em> N</em> seconds.</p>
+<p>We could go on further with deeper package hierarchies, but I think you get the idea.</p>
+<p>MVC code lends itself nicely to such a structure. We typically have some “common” code that models the basics of our DUT, from which we can model different higher level aspects, relating to the features of the DUT. We would use our models inside checks or coverage, which could be built independently from each other:<br><img src="/2020/02/10/sv-package大小对编译速度的影响/4.png" alt="4"></p>
+<h2 id="Conclusions"><a href="#Conclusions" class="headerlink" title="Conclusions"></a>Conclusions</h2><p>Splitting code across multiple packages will generally be better for compilation speed. There are also other advantages. It could make the code base easier to understand, by grouping code by theme (code for <em>X</em> goes in package <em>p_x</em>, code for <em>Y</em> goes in package <em>p_y</em>). It could also make development easier, by allowing developers to specialize in only a handful of the packages, instead of having to deal with the entire code base.</p>
+<p>Having to manage multiple packages brings its own set of challenges, though. It could make the code base more difficult to understand if the boundaries between packages are arbitrary (where does code for <em>X</em> go, in <em>p0</em> or <em>p1</em>?). More packages, especially when they have intricate dependency relationships, also make compilation more difficult to set up.</p>
+<p>I’m not going to recommend making one package per class, just to improve build times. Ideally, SystemVerilog compilers should evolve to better handle incremental compilation, by working at levels lower than just packages. At the same time, you should care about turnaround time, so dumping all code into one package shouldn’t be your default mode of operation.</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2020/02/10/sv-package大小对编译速度的影响/" title="sv-package大小对编译速度的影响">http://118.25.122.94:8080/2020/02/10/sv-package大小对编译速度的影响/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/12/10/git-clone断点续传/" rel="next" title="git clone断点续传"><i class="fas fa-angle-left"></i><span class="nav-title">git clone断点续传</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">114</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">14</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">43</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#Bigger-Is-Not-Always-Better-Builds-Are-Faster-with-Smaller-Packages"><span class="toc-text">Bigger Is Not Always Better: Builds Are Faster with Smaller Packages</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Full-vs-incremental-builds"><span class="toc-text">Full vs. incremental builds</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#A-deeper-dive-into-SystemVerilog-compilation"><span class="toc-text">A deeper dive into SystemVerilog compilation</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Case-study"><span class="toc-text">Case study</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Conclusions"><span class="toc-text">Conclusions</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chisel/">Chisel</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GLIBC/">GLIBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LFSR/">LFSR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL/">RTL</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">70</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/">Verilog</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/evil/">evil</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tig/">tig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xargs/">xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yaml/">yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2020</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
