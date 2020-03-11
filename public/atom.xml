@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2020-03-06T02:38:12.281Z</updated>
+  <updated>2020-03-11T01:44:38.211Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DPI-C调用class中的TF</title>
+    <link href="http://118.25.122.94:8080/2020/03/11/DPI-C%E8%B0%83%E7%94%A8class%E4%B8%AD%E7%9A%84TF/"/>
+    <id>http://118.25.122.94:8080/2020/03/11/DPI-C调用class中的TF/</id>
+    <published>2020-03-11T01:38:59.000Z</published>
+    <updated>2020-03-11T01:44:38.211Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;代码demo&quot;&gt;&lt;a href=&quot;#代码demo&quot; class=&quot;headerlink&quot; title=&quot;代码demo&quot;&gt;&lt;/a&gt;代码demo&lt;/h3&gt;&lt;p&gt;You can create a static instance of your sequence,
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>SV约束中const的妙用</title>
@@ -531,34 +559,6 @@
         
         
           &lt;h4 id=&quot;装饰器模式进行扩展功能而不需要修改原代码。&quot;&gt;&lt;a href=&quot;#装饰器模式进行扩展功能而不需要修改原代码。&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SV实现状态机模式</title>
-    <link href="http://118.25.122.94:8080/2019/09/16/SV%E5%AE%9E%E7%8E%B0%E7%8A%B6%E6%80%81%E6%9C%BA%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://118.25.122.94:8080/2019/09/16/SV实现状态机模式/</id>
-    <published>2019-09-16T10:12:27.000Z</published>
-    <updated>2019-09-16T10:16:13.018Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;FSM的高层实现，应对特殊的仿真场景&quot;&gt;&lt;a href=&quot;#FSM的高层实现，应对特殊的仿真场景&quot; class=&quot;headerlink&quot;
         
       
     
