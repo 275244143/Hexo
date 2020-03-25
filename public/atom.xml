@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2020-03-11T01:44:38.211Z</updated>
+  <updated>2020-03-25T06:57:50.241Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>相见恨晚的Org-mode</title>
+    <link href="http://118.25.122.94:8080/2020/03/25/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/"/>
+    <id>http://118.25.122.94:8080/2020/03/25/相见恨晚的Org-mode/</id>
+    <published>2020-03-25T07:52:54.000Z</published>
+    <updated>2020-03-25T06:57:50.241Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;___________________
+
+ ORG-MODE 简明手册
+   (转载)
+
+   神秘人
+___________________
+
+
+   2020-03-25 Wed
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Table of
+        
+      
+    
+    </summary>
+    
+      <category term="emacs" scheme="http://118.25.122.94:8080/categories/emacs/"/>
+    
+    
+      <category term="org-mode" scheme="http://118.25.122.94:8080/tags/org-mode/"/>
+    
+      <category term="gtd" scheme="http://118.25.122.94:8080/tags/gtd/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://118.25.122.94:8080/2020/03/25/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/"/>
+    <id>http://118.25.122.94:8080/2020/03/25/相见恨晚的Org-mode/相见恨晚的Org-mode/</id>
+    <published>2020-03-25T06:05:28.004Z</published>
+    <updated>2020-03-25T06:13:19.276Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>DPI-C调用class中的TF</title>
@@ -503,62 +564,6 @@
         
         
           &lt;h4 id=&quot;命令模式是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SV实现观察者模式</title>
-    <link href="http://118.25.122.94:8080/2019/09/23/SV%E5%AE%9E%E7%8E%B0%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://118.25.122.94:8080/2019/09/23/SV实现观察者模式/</id>
-    <published>2019-09-23T10:38:26.000Z</published>
-    <updated>2019-09-23T10:48:08.851Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;观察者模式可以在注册、触发中起到不错的作用。&quot;&gt;&lt;a href=&quot;#观察者模式可以在注册、触发中起到不错的作用。&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SV实现装饰器模式</title>
-    <link href="http://118.25.122.94:8080/2019/09/17/SV%E5%AE%9E%E7%8E%B0%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://118.25.122.94:8080/2019/09/17/SV实现装饰器模式/</id>
-    <published>2019-09-17T03:11:49.000Z</published>
-    <updated>2019-09-17T04:21:01.589Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;装饰器模式进行扩展功能而不需要修改原代码。&quot;&gt;&lt;a href=&quot;#装饰器模式进行扩展功能而不需要修改原代码。&quot; class=&quot;headerlink&quot;
         
       
     
