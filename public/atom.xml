@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2020-03-25T06:57:50.241Z</updated>
+  <updated>2020-03-30T06:39:04.500Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Random Constraint</title>
+    <link href="http://118.25.122.94:8080/2020/03/30/Random-Constraint/"/>
+    <id>http://118.25.122.94:8080/2020/03/30/Random-Constraint/</id>
+    <published>2020-03-30T06:28:23.000Z</published>
+    <updated>2020-03-30T06:39:04.500Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;(转)&lt;/p&gt;
+&lt;h3 id=&quot;Constrained-random-thoughts-on-SystemVerilog-e-and-more&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>相见恨晚的Org-mode</title>
@@ -536,34 +565,6 @@ ___________________
         
         
           &lt;h4 id=&quot;模板模式，一个抽象类公开定义了执行它的方法的方式-模板。它的子类可以按需要重写方法实现，但调用将以抽象类中定义的方式进行。这种类型的设计模式属于行为型模式。&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SV实现命令模式</title>
-    <link href="http://118.25.122.94:8080/2019/09/24/SV%E5%AE%9E%E7%8E%B0%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://118.25.122.94:8080/2019/09/24/SV实现命令模式/</id>
-    <published>2019-09-24T01:20:04.000Z</published>
-    <updated>2019-09-24T05:44:22.794Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;命令模式是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。&quot;&gt;&lt;a
         
       
     

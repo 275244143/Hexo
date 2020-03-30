@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>Random Constraint | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2020/03/30/Random-Constraint/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">Random Constraint</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-03-30T14:28:23+08:00">2020-03-30 14:28:23</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">2.5k字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">15分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>(转)</p>
+<h3 id="Constrained-random-thoughts-on-SystemVerilog-e-and-more"><a href="#Constrained-random-thoughts-on-SystemVerilog-e-and-more" class="headerlink" title="Constrained random thoughts on SystemVerilog, e and more"></a>Constrained random thoughts on SystemVerilog, e and more</h3><p>Simulation is currently the dominant functional verification technique, with constrained random verification the most widely used methodology. While producing random data is a big part of it, letting the solver blindly generate stimulus isn’t going to be very efficient. Constraints are needed to guide the stimulus toward interesting scenarios.</p>
+<p>A good constrained random test suite contains a mixture of tests with varying degrees of randomness. This is achieved by progressively adding constraints to tests to reduce their randomness. This is best explained with an example.</p>
+<p>Let’s assume we’re verifying a device that can handle read and write accesses to locations in its address map. These accesses can either be done in secure mode or in non-secure mode. We model an access using a UVM sequence item:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> sequence_item <span class="hljs-keyword">extends</span> uvm_sequence_item;<br><br>  <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">enum</span> &#123;<br>    READ,<br>    WRITE<br>  &#125; direction_e;<br><br>  <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">enum</span> &#123;<br>    SECURE,<br>    NONSECURE<br>  &#125; sec_mode_e;<br><br>  <span class="hljs-keyword">rand</span> direction_e direction;<br>  <span class="hljs-keyword">rand</span> <span class="hljs-keyword">bit</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] address;<br>  <span class="hljs-keyword">rand</span> sec_mode_e sec_mode;<br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Not all accesses are legal and illegal accesses would be rejected by the device.</p>
+<p>Only certain address ranges are mapped, while accesses to unmapped addresses are illegal. If we were to write a test that only accesses mapped addresses, we would have to add the following constraints to generated items:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">constraint</span> only_mapped_addresses &#123;<br>  address <span class="hljs-keyword">inside</span> &#123;<br>      [CODE_START_ADDR:CODE_END_ADDR],<br>      [SRAM_START_ADDR:SRAM_END_ADDR],<br>      [PERIPHERAL_START_ADDR:PERIPHERAL_END_ADDR] &#125;;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Our device also only allows writes to aligned addresses. For a 32-bit bus, this would mean that the lowest two address bits have to be 0:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">constraint</span> only_writes_to_aligned_addresses &#123;<br>  direction == WRITE;<br>  address[<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] == <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Lastly, certain ranges of our device’s address map are restricted to secure code. Let’s assume that the address map is split into 16 regions of 256 MB each. Within each of these regions, the lower half is reserved for secure accesses. This means that bit 27 of the address is always 0 for a secure access:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">constraint</span> only_secure_accesses_to_lower_half_of_range &#123;<br>  sec_mode == SECURE;<br>  address[<span class="hljs-number">27</span>] == <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>The test suite for this device would contain a random test where unconstrained items are generated. One test would be directed toward generating accesses to mapped addresses, another test would only perform writes to aligned addresses, while another test would perform only secure accesses. At the same time, we would also need tests that lie at the intersection of the three features, so we would want tests that do pairwise combinations: aligned writes to mapped addresses, aligned writes in secure mode and secure access to mapped addresses. Finally, we also need a test that combines all three and only does secure writes to mapped addresses.</p>
+<p>(While a real test suite would definitely need a lot more classes of tests, this post isn’t focused on verification planning, but on the mechanical aspects of implementing a robust constraint management strategy, so please ignore the simplicity of the example.)</p>
+<p>It might be the case that these behaviors will get tweaked over time as the project moves forward or as a new derivative of the device is developed. The address map might change as regions are moved, removed or resized, or new regions are added. The bus width might change, which would change which addresses are aligned, or we could get a feature request to implement writes of other granularities (e.g. half-word). The definition of secure regions could also change or they could become configurable via special function registers. Any of these changes should be easy to handle and shouldn’t require massive changes to the verification code.</p>
+<p>Let’s skip the obvious idea of putting all constraints into the sequence item class and activating/deactivating them selectively based on the test. This won’t scale for real projects, where we would have many more constraints, which would make the code unreadable.</p>
+<h2 id="Using-mixins"><a href="#Using-mixins" class="headerlink" title="Using mixins"></a>Using mixins</h2><p>The mixin approach is flexible, because it allows us to handle each aspect individually. Instead of having all constraints in a single class, we can have one mixin for each constrained feature.</p>
+<p>We need one for mapped addresses:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> only_mapped_addresses_mixin <span class="hljs-variable">#(type T = sequence_item)</span> <span class="hljs-keyword">extends</span> T;<br><br>  <span class="hljs-keyword">constraint</span> only_mapped_addresses &#123;<br>    address <span class="hljs-keyword">inside</span> &#123;<br>        [CODE_START_ADDR:CODE_END_ADDR],<br>        [SRAM_START_ADDR:SRAM_END_ADDR],<br>        [PERIPHERAL_START_ADDR:PERIPHERAL_END_ADDR] &#125;;<br>  &#125;<br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>We also need one for writes:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> only_legal_writes_mixin <span class="hljs-variable">#(type T = sequence_item)</span> <span class="hljs-keyword">extends</span> T;<br><br>  <span class="hljs-keyword">constraint</span> only_writes_to_aligned_addresses &#123;<br>    direction == WRITE;<br>    address[<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] == <span class="hljs-number">0</span>;<br>  &#125;<br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Finally, we need a mixin for secure accesses:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> only_legal_secure_accesses_mixin <span class="hljs-variable">#(type T = sequence_item)</span> <span class="hljs-keyword">extends</span> T;<br><br>  <span class="hljs-keyword">constraint</span> only_secure_accesses_to_lower_half_of_range &#123;<br>    sec_mode == SECURE;<br>    address[<span class="hljs-number">27</span>] == <span class="hljs-number">0</span>;<br>  &#125;<br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Assuming that we have a random test that starts regular sequence items, we would use these mixins to write our more directed tests by replacing the original sequence item type with one with constraints mixed in.</p>
+<p>The test that only accesses mapped addresses would do the following factory override:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> test_mapped_addresses <span class="hljs-keyword">extends</span> test_all_random;<br><br>  <span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set_factory_overrides();<br>    sequence_item::type_id::set_type_override(<br>        only_mapped_addresses_mixin <span class="hljs-variable">#(sequence_item)::get_type())</span>;<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The other two feature tests would look similar, but would use their respective mixins.</p>
+<p>To only perform writes to mapped addresses we would need to chain the two mixins:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> test_legal_writes_to_mapped_addresses <span class="hljs-keyword">extends</span> test_all_random;<br><br>  <span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set_factory_overrides();<br>    sequence_item::type_id::set_type_override(<br>        only_legal_writes_mixin <span class="hljs-variable">#(only_mapped_addresses_mixin #(sequence_item))::get_type())</span>;<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Of course, we would do the same to handle the other two pairs.</p>
+<p>Similarly, we could use the same principle to combine all three features:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> test_legal_writes_to_mapped_addresses_in_secure_mode <span class="hljs-keyword">extends</span> test_all_random;<br><br>  <span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set_factory_overrides();<br>    sequence_item::type_id::set_type_override(<br>        only_legal_writes_mixin #(<br>            only_mapped_addresses_mixin #(<br>                only_legal_secure_accesses_mixin <span class="hljs-variable">#(sequence_item)))::get_type())</span>;<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The mixin approach comes with some issues, though.</p>
+<p>Constraints are always polymorphic, so we have to be very careful to use unique constraint names across all mixins. Applying two different mixins that use the same constraint name would result in only the outer mixin’s constraints being applied, because it would override the constraint defined in the inner mixin. It’s very easy to run into this issue when using copy/paste to define a new mixin and forgetting to change the name of the constraint. Frustration will follow, as the code looks right, but leads to unexpected results. Moreover, the more mixins are used in the code base, the easier it is for constraint name collisions to happen.</p>
+<p>Chaining of mixins is not particularly readable. It is bearable for one or two levels, but the more levels there are, the worse it’s going to get.</p>
+<p>Finally, using mixins will cause the number of types in our code to explode. Each mixin on top of a class will create a new type. From a coding standpoint this isn’t such a big deal, as we won’t be referencing those types directly. The more types we have, though, the longer our compile times are going to get. Also, note that for the compiler <em>mixin1 #(mixin2 #(some_class))</em> is a distinct type from <em>mixin2 #(mixin1 #(some_class))</em>, regardless if it results in the “same” class. It’s very easy to use <em>mixin1 #(mixin2 #(some_class))</em> in one test, but use <em>mixin3 #(mixin2 #(mixin1 #(some_class)))</em> in another, which would make the compiler “see” an extra type.</p>
+<p>The mixin pattern uses inheritance, which doesn’t match the call to action in the post title, so obviously we’re not going to stop here.</p>
+<h2 id="Using-aspect-oriented-programming"><a href="#Using-aspect-oriented-programming" class="headerlink" title="Using aspect oriented programming"></a>Using aspect oriented programming</h2><p>It’s much easier to write our test family using aspect oriented programming (AOP). AOP allows us to alter the definition of a class from a different file. Even though SystemSystemverilog doesn’t support AOP, I’d still like to show an example in e, as it can provide us with some hints into how we could improve the mixin-base solution.</p>
+<p>(Please note that the following code may not be idiomatic, so don’t take it as a reference on how to handle constraints in e.)</p>
+<p>Our sequence item definition would look similar:</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;&apos;<br>struct sequence_item like any_sequence_item &#123;<br><br>  direction: direction_e;<br>  address: uint(bits: 32);<br>  sec_mode: sec_mode_e;<br><br>&#125;;<br>&apos;&gt;<br></code></pre></td></tr></table></figure>
+<p>In our test that only does mapped accesses, we would tell the compiler to add the constraint to the sequence item:</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;&apos;<br>import test_all_random;<br><br>extend sequence_item &#123;<br>  keep address in [CODE_START_ADDR..CODE_END_ADDR] or<br>      address in [SRAM_START_ADDR..SRAM_END_ADDR] or<br>      address in [PERIPHERAL_START_ADDR..PERIPHERAL_END_ADDR];<br>&#125;;<br>&apos;&gt;<br></code></pre></td></tr></table></figure>
+<p>This does not result in a new type. It tweaks the existing <em>sequence_item</em> type for the duration of that test.</p>
+<p>If we would like to reuse the constraint in the test that only writes to mapped addresses, we could put the extension into its own file. We could do the same for the other extensions that handle the other features. This would allow each test to load the relevant extension files. For example, for legal writes to mapped addresses we would have:</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;&apos;<br>import test_all_random;<br>import constraints/only_legal_writes;<br>import constraints/only_mapped_addresses;<br>&apos;&gt;<br></code></pre></td></tr></table></figure>
+<p>The file structure is similar to what we had when we used mixins, but the code is much cleaner.</p>
+<p>Pay special attention to the natural language description of what we are doing: in <em>test_mapped_addresses</em> we are adding the constraint to the <em>sequence_item</em> type.</p>
+<h2 id="Using-constraint-objects"><a href="#Using-constraint-objects" class="headerlink" title="Using constraint objects"></a>Using constraint objects</h2><p>Regular object oriented programming doesn’t allow us to change type definitions. What we can do, however, is build our code in such a way as to allow it to be extended when it is being used.</p>
+<p>Back in 2015, there was an presented how to add constraints using composition. It showed how to add additional constraints to an instance of an object without changing the type of that object. This is done by encapsulating the constraints into their own objects which extend the behavior of the original object’s <em>randomize()</em> function. Have a quick look at the paper before proceeding, to understand the exact way this is done.</p>
+<p>While the paper shows how to add constraints to object instances, we can extend the approach to add constraints globally, to all instances of a type. If we look back at the AOP case from before, this would be conceptually similar to what we were doing there. We would be emulating the addition of constraints to the <em>sequence_item</em> type.</p>
+<p>The paper makes an attempt at global constraints in its final section, by using the UVM configuration DB. While that approach works, I feel that it is not expressive enough. A better API, consisting of a static function to add constraints globally, would make the code much more readable than a very verbose config DB <em>set(…)</em> call.</p>
+<p>To get the extensibility we want, we have to set up the necessary infrastructure for it. If the sequence item class is under our control, we can modify it directly. Alternatively, if the sequence item is part of an external UVC package, we can define a sub-class which contains the necessary code.</p>
+<p>We’ll assume that <em>sequence_item</em> can’t be changed and we’ll create a new <em>constrained_sequence_item</em> class. We would either use this sub-class in our sequences directly or use a factory override.</p>
+<p>To execute code that affects all instances, the sequence item class needs a static function through which constraints are added:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> constrained_sequence_item <span class="hljs-keyword">extends</span> sequence_item;<br><br>  <span class="hljs-keyword">static</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> add_global_constraint(abstract_constraint c);<br>    <span class="hljs-comment">// ...</span><br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The <em>abstract_constraint</em> class would be the base class for our constraints and would provide us with a reference to the object that is being randomized:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">class</span> abstract_constraint;<br><br>  <span class="hljs-keyword">protected</span> sequence_item object;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set_object(sequence_item object);<br>    <span class="hljs-keyword">this</span><span class="hljs-variable">.object</span> = object;<br>  <span class="hljs-keyword">endfunction</span><br><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The code to handle global constraints is similar to the one presented in the paper. We store all global constraints in a static array:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> constrained_sequence_item <span class="hljs-keyword">extends</span> sequence_item;<br><br>  <span class="hljs-keyword">local</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">rand</span> abstract_constraint global_constraints[$];<br><br>  <span class="hljs-keyword">static</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> add_global_constraint(abstract_constraint c);<br>     global_constraints<span class="hljs-variable">.push_back</span>(c);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Before randomizing a sequence item instance, we have to set up the constraint objects to point to it:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> constrained_sequence_item <span class="hljs-keyword">extends</span> sequence_item;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> pre_randomize();<br>    <span class="hljs-keyword">foreach</span> (global_constraints[i])<br>      global_constraints[i]<span class="hljs-variable">.set_object</span>(<span class="hljs-keyword">this</span>);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>With the infrastructure set up, we can move on. We encapsulate the constraints for our features into their own constraint classes:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> only_mapped_addresses_constraint <span class="hljs-keyword">extends</span> abstract_constraint <span class="hljs-variable">#(sequence_item)</span>;<br><br>  <span class="hljs-keyword">constraint</span> c &#123;<br>    object<span class="hljs-variable">.address</span> <span class="hljs-keyword">inside</span> &#123;<br>        [CODE_START_ADDR:CODE_END_ADDR],<br>        [SRAM_START_ADDR:SRAM_END_ADDR],<br>        [PERIPHERAL_START_ADDR:PERIPHERAL_END_ADDR] &#125;;<br>  &#125;<br><br><span class="hljs-keyword">endclass</span><br><span class="hljs-keyword">class</span> only_legal_writes_constraint <span class="hljs-keyword">extends</span> abstract_constraint <span class="hljs-variable">#(sequence_item)</span>;<br><br>  <span class="hljs-keyword">constraint</span> c &#123;<br>    object<span class="hljs-variable">.direction</span> == sequence_item::WRITE;<br>    object<span class="hljs-variable">.address</span>[<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] == <span class="hljs-number">0</span>;<br>  &#125;<br><br><span class="hljs-keyword">endclass</span><br><span class="hljs-keyword">class</span> only_legal_secure_accesses_constraint <span class="hljs-keyword">extends</span> abstract_constraint <span class="hljs-variable">#(sequence_item)</span>;<br><br>  <span class="hljs-keyword">constraint</span> c &#123;<br>    object<span class="hljs-variable">.sec_mode</span> == sequence_item::SECURE;<br>    object<span class="hljs-variable">.address</span>[<span class="hljs-number">27</span>] == <span class="hljs-number">0</span>;<br>  &#125;<br><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>In the test that only accesses mapped addresses we would make sure to add the required constraints:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> test_mapped_addresses <span class="hljs-keyword">extends</span> test_all_random;<br><br>  <span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> add_constraints();<br>    only_mapped_addresses_constraint c = <span class="hljs-keyword">new</span>();<br>    constrained_sequence_item::add_global_constraint(c);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The <em>add_constraints()</em> function should be called before any sequence items are started. A good place to call it from is the <em>end_of_elaboration_phase(…)</em> function.</p>
+<p>In the other feature oriented tests we would simply add their respective constraints.</p>
+<p>For the test that does writes to mapped addresses we just need to make sure that both constraints are added. We could do this by extending the random test and making two <em>add_global_constraint(…)</em> calls, one for each constraint object:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> test_legal_writes_to_mapped_addresses <span class="hljs-keyword">extends</span> test_random;<br><br>  <span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> add_constraints();<br>    only_legal_writes_constraint c0 = <span class="hljs-keyword">new</span>();<br>    only_mapped_addresses_constraint c1 = <span class="hljs-keyword">new</span>();<br>    constrained_sequence_item::add_global_constraint(c0);<br>    constrained_sequence_item::add_global_constraint(c1);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>We could also extend the test that only does legal writes and add the constraints for mapped addresses:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> test_legal_writes_to_mapped_addresses <span class="hljs-keyword">extends</span> test_legal_writes;<br><br>  <span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> add_constraints();<br>    only_mapped_addresses_constraint c = <span class="hljs-keyword">new</span>();<br>    <span class="hljs-keyword">super</span><span class="hljs-variable">.add_constraints</span>();<br>    constrained_sequence_item::add_global_constraint(c);<br>  <span class="hljs-keyword">endfunction</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>Of course, this approach can be used to handle all combinations of constraints.</p>
+<p>Adding constraints dynamically has the same advantages as the mixin approach we looked at earlier.</p>
+<p>It doesn’t suffer from the same readability issue, because we don’t rely on long parameterization chains. It suffers from a bit too much verboseness due to the multiple <em>add_global_constraint(…)</em> calls, though this could be improved by adding a variant of the function that accepts a list of constraint objects.</p>
+<p>This approach also avoids the type explosion issue that mixins have and is potentially faster to compile.</p>
+<p>There is a bit of boilerplate code required for the infrastructure. This can be extracted into a reusable library.</p>
+<p>The first thing we need to do is to make the abstract constraint class parameterizable:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">class</span> abstract_constraint <span class="hljs-variable">#(type T = int)</span>;<br><br>  <span class="hljs-keyword">protected</span> T object;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set_object(T object);<br>    <span class="hljs-keyword">this</span><span class="hljs-variable">.object</span> = object;<br>  <span class="hljs-keyword">endfunction</span><br><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+<p>The package should expose a macro to handle the constraint infrastructure:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> constraints_utils(TYPE) \</span><br>  <span class="hljs-keyword">static</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> add_global_constraint(constraints::abstract_constraint <span class="hljs-variable">#(TYPE) c)</span>; \<br>  <span class="hljs-comment">// ...</span><br></code></pre></td></tr></table></figure>
+<p>There was a subtle issue with the simplistic infrastructure code we looked at before. It wasn’t able to handle randomization of multiple instances at the same time (for example, when randomizing an array of sequence items). As this is a more exotic use case, the problem won’t show up immediately. It’s a simple fix to make, but it would be very annoying to have to make it in mutiple projects. Even when the code might look deceptively simple and have us think it’s not worth the hassle to put into an own library, doing so makes it easier to implement and propagate fixes for such issues.</p>
+<p>The macro makes the definition of <em>constrained_sequence_item</em> much cleaner:</p>
+<figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">class</span> constrained_sequence_item <span class="hljs-keyword">extends</span> sequence_item;<br><br>  <span class="hljs-meta">`constraints_utils(sequence_item)</span><br><br>  <span class="hljs-comment">// ...</span><br><span class="hljs-keyword">endclass</span><br></code></pre></td></tr></table></figure>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2020/03/30/Random-Constraint/" title="Random Constraint">http://118.25.122.94:8080/2020/03/30/Random-Constraint/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2020/03/25/相见恨晚的Org-mode/" rel="next" title="相见恨晚的Org-mode"><i class="fas fa-angle-left"></i><span class="nav-title">相见恨晚的Org-mode</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">119</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">14</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">45</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Constrained-random-thoughts-on-SystemVerilog-e-and-more"><span class="toc-text">Constrained random thoughts on SystemVerilog, e and more</span></a></li></ol><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Using-mixins"><span class="toc-text">Using mixins</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Using-aspect-oriented-programming"><span class="toc-text">Using aspect oriented programming</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Using-constraint-objects"><span class="toc-text">Using constraint objects</span></a></li></div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chisel/">Chisel</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GLIBC/">GLIBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LFSR/">LFSR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL/">RTL</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">73</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">65</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/">Verilog</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/evil/">evil</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gtd/">gtd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tig/">tig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xargs/">xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yaml/">yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2020</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
