@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2020-03-30T06:39:04.500Z</updated>
+  <updated>2020-04-09T07:54:21.630Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SV实现的链表(我是搬运工)</title>
+    <link href="http://118.25.122.94:8080/2020/04/09/SV%E5%AE%9E%E7%8E%B0%E7%9A%84%E9%93%BE%E8%A1%A8-%E6%88%91%E6%98%AF%E6%90%AC%E8%BF%90%E5%B7%A5/"/>
+    <id>http://118.25.122.94:8080/2020/04/09/SV实现的链表-我是搬运工/</id>
+    <published>2020-04-09T07:53:00.000Z</published>
+    <updated>2020-04-09T07:54:21.630Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight verilog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>Random Constraint</title>
@@ -537,34 +565,6 @@ ___________________
         
         
           &lt;h4 id=&quot;在状态模式中，类的行为是基于它的状态改变的。这种类型的设计模式属于行为型模式。&quot;&gt;&lt;a href=&quot;#在状态模式中，类的行为是基于它的状态改变的。这种类型的设计模式属于行为型模式。&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SV实现Template方法模式</title>
-    <link href="http://118.25.122.94:8080/2019/09/24/SV%E5%AE%9E%E7%8E%B0Template%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://118.25.122.94:8080/2019/09/24/SV实现Template方法模式/</id>
-    <published>2019-09-24T01:42:00.000Z</published>
-    <updated>2019-09-24T05:47:31.145Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;模板模式，一个抽象类公开定义了执行它的方法的方式-模板。它的子类可以按需要重写方法实现，但调用将以抽象类中定义的方式进行。这种类型的设计模式属于行为型模式。&quot;&gt;&lt;a
         
       
     

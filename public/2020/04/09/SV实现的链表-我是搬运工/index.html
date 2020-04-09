@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>SV实现的链表(我是搬运工) | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2020/04/09/SV实现的链表-我是搬运工/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">SV实现的链表(我是搬运工)</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-04-09T15:53:00+08:00">2020-04-09 15:53:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">1.4k字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">8分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <figure class="hljs highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><br><br><span class="hljs-meta">`<span class="hljs-meta-keyword">ifndef</span> LIST_VH</span><br><span class="hljs-meta">`<span class="hljs-meta-keyword">define</span> LIST_VH</span><br><br><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">class</span> BaseNode <span class="hljs-variable">#(type T = int)</span>;<br><br>	<span class="hljs-keyword">typedef</span> BaseNode<span class="hljs-variable">#(T)</span> this_type;<br>	<br>	<span class="hljs-keyword">protected</span> BaseNode<span class="hljs-variable">#(T)</span> n_prev,n_next;<br><br><br>	<span class="hljs-comment">// Item constructor</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>();<br>	<span class="hljs-keyword">endfunction</span> : <span class="hljs-keyword">new</span><br><br><br>	<span class="hljs-keyword">function</span> BaseNode<span class="hljs-variable">#(T) prev()</span>;<br>		<span class="hljs-keyword">return</span> n_prev;<br>	<span class="hljs-keyword">endfunction</span> : prev<br><br><br>	<span class="hljs-keyword">function</span> BaseNode<span class="hljs-variable">#(T) next()</span>;<br>		<span class="hljs-keyword">return</span> n_next;<br>	<span class="hljs-keyword">endfunction</span> : next<br><br><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> assign_prev(BaseNode<span class="hljs-variable">#(T) n)</span>;<br>		<span class="hljs-built_in">$cast</span>(n_prev,n);<br>	<span class="hljs-keyword">endfunction</span> : assign_prev<br><br><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> assign_next(BaseNode<span class="hljs-variable">#(T) n)</span>;<br>		<span class="hljs-built_in">$cast</span>(n_next,n);<br>	<span class="hljs-keyword">endfunction</span> : assign_next<br><br><br>	<span class="hljs-keyword">pure</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> T <span class="hljs-number">_</span>value();<br>	<br>	<span class="hljs-keyword">pure</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">int</span> empty_node();<br><br><span class="hljs-keyword">endclass</span><br><br><span class="hljs-keyword">class</span> Node <span class="hljs-variable">#(type T = int) extends BaseNode#(T)</span>;<br><br>	<span class="hljs-keyword">protected</span> T value;<br><br><br>	<span class="hljs-comment">// ************************************</span><br><br><br>	<span class="hljs-comment">// Item constructor</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(T v_in);<br>		value = v_in;<br>	<span class="hljs-keyword">endfunction</span> : <span class="hljs-keyword">new</span><br><br><br>	<span class="hljs-comment">// Returns node value.</span><br>	<span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> T <span class="hljs-number">_</span>value();<br>		<span class="hljs-keyword">return</span> value;<br>	<span class="hljs-keyword">endfunction</span> : <span class="hljs-number">_</span>value<br><br><br>	<span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">int</span> empty_node();<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">endfunction</span><br><br><span class="hljs-keyword">endclass</span> : Node<br><br><br><span class="hljs-keyword">class</span> EndNode <span class="hljs-variable">#(type T = int) extends BaseNode#(T)</span>;<br><br>	<span class="hljs-comment">// Item constructor</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>();<br>	<span class="hljs-keyword">endfunction</span> : <span class="hljs-keyword">new</span><br><br><br>	<span class="hljs-comment">// Returns node value.</span><br>	<span class="hljs-keyword">function</span> T <span class="hljs-number">_</span>value();<br>		T value;<br>		<span class="hljs-keyword">assert</span>(<span class="hljs-number">0</span>);<br>		<span class="hljs-keyword">return</span> value;<br>	<span class="hljs-keyword">endfunction</span> : <span class="hljs-number">_</span>value<br><br><br>	<span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">int</span> empty_node();<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">endfunction</span><br><br><span class="hljs-keyword">endclass</span>: EndNode<br><br><br><br><span class="hljs-keyword">class</span> List_Iterator<span class="hljs-variable">#(type T = int)</span>;<br><br>	<span class="hljs-keyword">protected</span> BaseNode<span class="hljs-variable">#(T)</span> n;<br><br><br>	<span class="hljs-comment">// ************************************</span><br><br><br>	<span class="hljs-comment">// Moves an iterator to the next position on the list (++i)</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> inc();<br>		<span class="hljs-keyword">assert</span>(n!=<span class="hljs-literal">null</span>);<br>		<span class="hljs-keyword">begin</span><br>			BaseNode<span class="hljs-variable">#(T)</span> n_item;<br>	<br>			n_item = n<span class="hljs-variable">.next</span>();<br>			n = n<span class="hljs-variable">.next</span>();<br><span class="hljs-meta">`<span class="hljs-meta-keyword">ifdef</span> DEBUG</span><br>			<span class="hljs-keyword">if</span> (n_item<span class="hljs-variable">.empty_node</span>())<br>				<span class="hljs-built_in">$display</span>(<span class="hljs-string">"%m Empty node reached"</span>);<br><span class="hljs-meta">`<span class="hljs-meta-keyword">endif</span></span><br>		<span class="hljs-keyword">end</span><br>	<span class="hljs-keyword">endfunction</span> : inc<br><br><br>	<span class="hljs-comment">// Moves an iterator to the previous position on the list (--i)</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> dec();<br>		<span class="hljs-keyword">assert</span>(n!=<span class="hljs-literal">null</span>);<br>		<span class="hljs-keyword">begin</span><br>			BaseNode<span class="hljs-variable">#(T)</span> n_item;<br>	<br>			n_item = n<span class="hljs-variable">.prev</span>();<br>			n = n<span class="hljs-variable">.prev</span>();<br><span class="hljs-meta">`<span class="hljs-meta-keyword">ifdef</span> DEBUG</span><br>			<span class="hljs-keyword">if</span> (n_item<span class="hljs-variable">.empty_node</span>())<br>				<span class="hljs-built_in">$display</span>(<span class="hljs-string">"%m Empty node reached"</span>);<br><span class="hljs-meta">`<span class="hljs-meta-keyword">endif</span></span><br>		<span class="hljs-keyword">end</span><br>	<span class="hljs-keyword">endfunction</span> : dec<br><br><br>	<span class="hljs-comment">// Returns the implementation item of the current iterator</span><br>	<span class="hljs-keyword">function</span> BaseNode<span class="hljs-variable">#(T) node_item()</span>;<br>		<span class="hljs-keyword">return</span> n;<br>	<span class="hljs-keyword">endfunction</span> : node_item<br><br><br>	<span class="hljs-comment">// Constructor.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(BaseNode<span class="hljs-variable">#(T) n_item)</span>;<br>		n = n_item;<br>	<span class="hljs-keyword">endfunction</span> : <span class="hljs-keyword">new</span><br><br><br>	<span class="hljs-comment">// Changes the iterator so that it refers to the next element in the list.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> next();<br>		<span class="hljs-keyword">assert</span>(n!=<span class="hljs-literal">null</span>);<br>		n = n<span class="hljs-variable">.next</span>();<br>	<span class="hljs-keyword">endfunction</span> : next<br><br><br>	<span class="hljs-comment">// Changes the iterator so that it refers to the previous element in the list.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> prev();<br>		<span class="hljs-keyword">assert</span>(n!=<span class="hljs-literal">null</span>);<br>		n = n<span class="hljs-variable">.prev</span>();<br>	<span class="hljs-keyword">endfunction</span> : prev<br><br><br>	<span class="hljs-comment">// Compares two iterators and returns 1 if both iterators refer to the same list element.</span><br>	<span class="hljs-comment">//Otherwise, it returns 0.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">int</span> eq( List_Iterator<span class="hljs-variable">#(T) iter )</span>;<br>		<span class="hljs-keyword">assert</span>(iter!=<span class="hljs-literal">null</span>);<br>		<span class="hljs-keyword">return</span> (n == iter<span class="hljs-variable">.n</span>);<br>	<span class="hljs-keyword">endfunction</span> : eq<br><br><br>	<span class="hljs-comment">// The negation of eq(); it compares two iterators and returns 0 if both iterators refer to</span><br>	<span class="hljs-comment">//the same list element. Otherwise, it returns 1.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">int</span> neq( List_Iterator<span class="hljs-variable">#(T) iter )</span>;<br>		<span class="hljs-keyword">assert</span>(iter!=<span class="hljs-literal">null</span>);<br>		<span class="hljs-keyword">return</span> !(n == iter<span class="hljs-variable">.n</span>);<br>	<span class="hljs-keyword">endfunction</span> : neq<br><br><br>	<span class="hljs-comment">// Returns the data stored in the element at the given iterator location.</span><br>	<span class="hljs-keyword">function</span> T data();<br>		<span class="hljs-keyword">assert</span>(n!=<span class="hljs-literal">null</span>);<br>		<span class="hljs-keyword">return</span> n<span class="hljs-variable">._value</span>();<br>	<span class="hljs-keyword">endfunction</span> : data<br><br><span class="hljs-keyword">endclass</span><br><br><br><span class="hljs-keyword">class</span> List#(<span class="hljs-keyword">parameter</span> <span class="hljs-keyword">type</span> T=<span class="hljs-keyword">int</span>);<br><br><br>	BaseNode <span class="hljs-variable">#(T)</span> head, tail;<br>	EndNode <span class="hljs-variable">#(T)</span> posttail;<br><br><br>	<span class="hljs-comment">// ************************************</span><br><br><br>	<span class="hljs-comment">// Returns an iterator pointing to the beginning of the list</span><br>	<span class="hljs-keyword">function</span> 	List_Iterator<span class="hljs-variable">#(T) start()</span>;<br>		List_Iterator<span class="hljs-variable">#(T) i_item = new(head)</span>;<br>		<span class="hljs-keyword">return</span> i_item;<br>	<span class="hljs-keyword">endfunction</span> : start<br><br><br>	<span class="hljs-comment">// Returns an iterator pointing to the end of the list</span><br>	<span class="hljs-keyword">function</span> List_Iterator<span class="hljs-variable">#(T) finish()</span>;<br>		<span class="hljs-comment">//List_Iterator#(T) i_item = new(null);</span><br>		List_Iterator<span class="hljs-variable">#(T) i_item = new(posttail)</span>;<br>		<span class="hljs-keyword">return</span> i_item;<br>	<span class="hljs-keyword">endfunction</span> : finish<br><br><br>	<span class="hljs-comment">// Constructor</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>();<br>	<span class="hljs-keyword">endfunction</span><br><br><br>	<span class="hljs-comment">// Returns the number of elements stored in the list.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">int</span> size();<br>		List_Iterator<span class="hljs-variable">#(T)</span> i_item;<br>		List_Iterator<span class="hljs-variable">#(T)</span> i_end;<br>		<span class="hljs-keyword">int</span> k;<br>	<br>		i_item = start();<br>		i_end = finish();<br>		<span class="hljs-keyword">while</span>(!i_item<span class="hljs-variable">.eq</span>(i_end))<br>		<span class="hljs-keyword">begin</span><br>			++k;<br>			i_item<span class="hljs-variable">.inc</span>();<br>		<span class="hljs-keyword">end</span><br>		<span class="hljs-keyword">return</span> k;<br>	<span class="hljs-keyword">endfunction</span> : size<br><br><br>	<span class="hljs-comment">// Returns 1 if the number elements stored in the list is zero and 0 otherwise.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">int</span> empty();<br>		<span class="hljs-keyword">return</span> head==<span class="hljs-literal">null</span>;<br>	<span class="hljs-keyword">endfunction</span> : empty<br><br><br>	<span class="hljs-comment">// Inserts the specified value at the front of the list.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> push_front( T value );<br>		Node<span class="hljs-variable">#(T) n_item = new(value)</span>;<br>		<span class="hljs-keyword">if</span> (tail == <span class="hljs-literal">null</span>)<br>		<span class="hljs-keyword">begin</span><br>			EndNode<span class="hljs-variable">#(T)</span> e_item=<span class="hljs-keyword">new</span>;<br>	<br>			tail = n_item;<br>			posttail = e_item;<br>	<br>			head=tail;<br>	<br>			head<span class="hljs-variable">.assign_next</span>(posttail);<br>			head<span class="hljs-variable">.assign_prev</span>(posttail);<br>	<br>			posttail<span class="hljs-variable">.assign_prev</span>(head);<br>			posttail<span class="hljs-variable">.assign_next</span>(head);<br>		<span class="hljs-keyword">end</span><br>		<span class="hljs-keyword">else</span><br>		<span class="hljs-keyword">begin</span><br>			head<span class="hljs-variable">.assign_prev</span>(n_item);<br>			n_item<span class="hljs-variable">.assign_next</span>(head);<br>		<span class="hljs-keyword">end</span><br>		head = n_item;<br>	<span class="hljs-keyword">endfunction</span> : push_front<br><br><br>	<span class="hljs-comment">// Inserts the specified value at the end of the list.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> push_back(T value );<br>		Node<span class="hljs-variable">#(T) n_item = new(value)</span>;<br>		<span class="hljs-keyword">if</span> (head == <span class="hljs-literal">null</span>)<br>		<span class="hljs-keyword">begin</span><br>			EndNode <span class="hljs-variable">#(T)</span> e_item=<span class="hljs-keyword">new</span>;<br>	<br>			head = n_item;<br>			posttail = e_item;<br>	<br>			head<span class="hljs-variable">.assign_next</span>(posttail);<br>			head<span class="hljs-variable">.assign_prev</span>(posttail);<br>			posttail<span class="hljs-variable">.assign_prev</span>(head);<br>			posttail<span class="hljs-variable">.assign_next</span>(head);<br>			tail=head;<br>		<span class="hljs-keyword">end</span><br>		<span class="hljs-keyword">else</span><br>		<span class="hljs-keyword">begin</span><br>			tail<span class="hljs-variable">.assign_next</span>(n_item);<br>			n_item<span class="hljs-variable">.assign_prev</span>(tail);<br>			n_item<span class="hljs-variable">.assign_next</span>(posttail);<br>			posttail<span class="hljs-variable">.assign_prev</span>(n_item);<br>		<span class="hljs-keyword">end</span><br>		tail = n_item;<br>	<span class="hljs-keyword">endfunction</span> : push_back<br><br><br>	<span class="hljs-comment">// Returns the data stored in the first element of the list (valid only if the list is not empty).</span><br>	<span class="hljs-keyword">function</span> T front();<br>		<span class="hljs-keyword">assert</span> (head!=<span class="hljs-literal">null</span>);<br>		<span class="hljs-keyword">return</span> head<span class="hljs-variable">._value</span>();<br>	<span class="hljs-keyword">endfunction</span> : front<br><br><br>	<span class="hljs-comment">// Returns the data stored in the last element of the list (valid only if the list is not empty).</span><br>	<span class="hljs-keyword">function</span> T back();<br>		<span class="hljs-keyword">assert</span>(tail!=<span class="hljs-literal">null</span>);<br>		<span class="hljs-keyword">return</span> tail<span class="hljs-variable">._value</span>();<br>	<span class="hljs-keyword">endfunction</span> : back<br><br><br>	<span class="hljs-comment">// Removes the first element of the list. If the list is empty, this method is illegal and can generate an error.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> pop_front();<br>		<span class="hljs-keyword">assert</span>(head != <span class="hljs-literal">null</span>);<br>		head = head<span class="hljs-variable">.next</span>();<br>		posttail<span class="hljs-variable">.assign_next</span>(head);<br>		<span class="hljs-keyword">if</span> (head==<span class="hljs-literal">null</span>)<br>			tail = <span class="hljs-literal">null</span>;<br>	<span class="hljs-keyword">endfunction</span> : pop_front<br><br><br>	<span class="hljs-comment">// Returns the data stored in the last element of the list (valid only if the list is not empty).</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> pop_back();<br>		<span class="hljs-keyword">assert</span>(tail != <span class="hljs-literal">null</span>);<br>	<br>		<span class="hljs-keyword">begin</span> : body<br>			tail = tail<span class="hljs-variable">.prev</span>();<br>			tail<span class="hljs-variable">.assign_next</span>(posttail);<br>			posttail<span class="hljs-variable">.assign_prev</span>(tail);<br>			<span class="hljs-keyword">if</span> (tail==<span class="hljs-literal">null</span>)<br>				head = <span class="hljs-literal">null</span>;<br>		<span class="hljs-keyword">end</span> : body<br>	<span class="hljs-keyword">endfunction</span> : pop_back<br><br><br>	<span class="hljs-comment">// Inserts the given data (value) into the list at the position specified by the iterator</span><br>	<span class="hljs-comment">// (before the element, if any, that was previously at the iterator's position). If the iterator is not a valid position</span><br>	<span class="hljs-comment">// within the list, then this operation is illegal and can generate an error.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> insert( List_Iterator<span class="hljs-variable">#(T) position, T value )</span>;<br>		<span class="hljs-keyword">assert</span>(position!=<span class="hljs-literal">null</span>);<br>	<br>		<span class="hljs-keyword">begin</span> : body<br>			BaseNode<span class="hljs-variable">#(T)</span> n_item;<br>			n_item= position<span class="hljs-variable">.node_item</span>();<br>	<br>			<span class="hljs-keyword">if</span> (n_item==<span class="hljs-literal">null</span>)<br>			<span class="hljs-keyword">begin</span> : front_insert<br>				push_back(value);<br>			<span class="hljs-keyword">end</span> : front_insert<br>			<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (n_item == head)<br>			<span class="hljs-keyword">begin</span> : back_insert<br>				push_front(value);<br>			<span class="hljs-keyword">end</span> : back_insert<br>			<span class="hljs-keyword">else</span><br>			<span class="hljs-keyword">begin</span> : middle_insert<br>				List_Iterator<span class="hljs-variable">#(T)</span> i_item;<br>				BaseNode<span class="hljs-variable">#(T)</span> n_item1,n_item2;<br>				Node<span class="hljs-variable">#(T) _n = new(value)</span>;<br>	<br>				n_item1 = <span class="hljs-number">_</span>n;<br>				n_item1<span class="hljs-variable">.assign_next</span>(n_item);<br>				n_item1<span class="hljs-variable">.assign_prev</span>( n_item<span class="hljs-variable">.prev</span>());<br>				n_item2 = n_item<span class="hljs-variable">.prev</span>();<br>				n_item2<span class="hljs-variable">.assign_next</span>(n_item1);<br>				n_item<span class="hljs-variable">.assign_prev</span>(n_item1);<br>			<span class="hljs-keyword">end</span> : middle_insert<br>		<span class="hljs-keyword">end</span> : body<br>	<span class="hljs-keyword">endfunction</span> : insert<br><br><br>	<span class="hljs-comment">// Inserts the items from the range [first, last) before the position i_pos. If the last iterator refers to</span><br>	<span class="hljs-comment">// an element before the first iterator, the range wraps around the end of the list.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> insert_range (List_Iterator<span class="hljs-variable">#(T) position, List_Iterator#(T) first, List_Iterator#(T) last)</span>;<br>		<span class="hljs-keyword">assert</span>(position!=<span class="hljs-literal">null</span>);<br>		<span class="hljs-keyword">assert</span>(first!=<span class="hljs-literal">null</span>);<br>		<span class="hljs-keyword">assert</span>(last!=<span class="hljs-literal">null</span>);<br>	<br>		<span class="hljs-keyword">if</span> (! first<span class="hljs-variable">.eq</span>(last))<br>		<span class="hljs-keyword">begin</span> : if_block<br>			List_Iterator<span class="hljs-variable">#(T)</span> i_item;<br>			BaseNode<span class="hljs-variable">#(T)</span> n_item;<br>			i_item = first;<br>			insert(position,first<span class="hljs-variable">.data</span>());<br>			first<span class="hljs-variable">.inc</span>();<br>			<span class="hljs-keyword">while</span> (! i_item<span class="hljs-variable">.eq</span>(last))<br>			<span class="hljs-keyword">begin</span><br>				n_item = i_item<span class="hljs-variable">.node_item</span>();<br>				<span class="hljs-keyword">if</span> (!n_item<span class="hljs-variable">.empty_node</span>())<br>					insert(position,i_item<span class="hljs-variable">.data</span>());<br>				i_item<span class="hljs-variable">.inc</span>();<br>			<span class="hljs-keyword">end</span><br>		<span class="hljs-keyword">end</span> : if_block<br>	<span class="hljs-keyword">endfunction</span> : insert_range<br><br><br>	<span class="hljs-comment">// Removes from the list the element at the specified position. After erase() returns, the position iterator becomes invalid.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> erase( List_Iterator<span class="hljs-variable">#(T) position )</span>;<br>		<span class="hljs-keyword">assert</span>(position!=<span class="hljs-literal">null</span>);<br>	<br>		<span class="hljs-keyword">begin</span> : body<br>			BaseNode<span class="hljs-variable">#(T)</span> n_item, n_pos;<br>	<br>			n_pos = position<span class="hljs-variable">.node_item</span>();<br>			<span class="hljs-keyword">if</span> (!(n_pos==head))<br>			<span class="hljs-keyword">begin</span><br>				n_item = n_pos<span class="hljs-variable">.prev</span>();<br>				n_item<span class="hljs-variable">.assign_next</span>(n_pos<span class="hljs-variable">.next</span>());<br>			<span class="hljs-keyword">end</span><br>			<span class="hljs-keyword">else</span><br>			<span class="hljs-keyword">begin</span><br>				head = n_pos<span class="hljs-variable">.next</span>();<br>			<span class="hljs-keyword">end</span><br>			<span class="hljs-keyword">if</span> (n_pos<span class="hljs-variable">.next</span>())<br>			<span class="hljs-keyword">begin</span><br>				n_item = n_pos<span class="hljs-variable">.next</span>();<br>				n_item<span class="hljs-variable">.assign_prev</span>(n_pos<span class="hljs-variable">.prev</span>());<br>			<span class="hljs-keyword">end</span><br>			<span class="hljs-keyword">else</span><br>			<span class="hljs-keyword">begin</span><br>				<span class="hljs-keyword">assert</span>(n_pos==tail);<br>				tail = n_pos<span class="hljs-variable">.prev</span>();<br>			<span class="hljs-keyword">end</span><br>		<span class="hljs-keyword">end</span> : body<br>	<span class="hljs-keyword">endfunction</span> : erase<br><br><br>	<span class="hljs-comment">// Erases the range of items [first, last). If the last iterator refers to an element</span><br>	<span class="hljs-comment">// before the first iterator, the range wraps around the end of the list.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> erase_range(List_Iterator<span class="hljs-variable">#(T) first, List_Iterator#(T) last)</span>;<br>	<br>		<span class="hljs-keyword">assert</span>(first!=<span class="hljs-literal">null</span>);<br>		<span class="hljs-keyword">assert</span>(last!=<span class="hljs-literal">null</span>);<br>		<span class="hljs-keyword">assert</span>(!first<span class="hljs-variable">.eq</span>(last));<br>	<br>		<span class="hljs-keyword">if</span> (! first<span class="hljs-variable">.eq</span>(last))<br>		<span class="hljs-keyword">begin</span> : if_block<br>			List_Iterator<span class="hljs-variable">#(T)</span> i_item, i_pos;<br>			BaseNode<span class="hljs-variable">#(T)</span> n_item;<br>	<br>			i_item = first;<br>			i_pos = i_item;<br>			erase(i_pos);<br>			i_item<span class="hljs-variable">.inc</span>();<br>			<span class="hljs-keyword">while</span> (! i_item<span class="hljs-variable">.eq</span>(last))<br>			<span class="hljs-keyword">begin</span><br>				i_pos = i_item;<br>				n_item = i_item<span class="hljs-variable">.node_item</span>();<br>				<span class="hljs-keyword">if</span> (!n_item<span class="hljs-variable">.empty_node</span>())<br>					erase(i_pos);<br><span class="hljs-meta">`<span class="hljs-meta-keyword">ifdef</span> DEBUG</span><br>				<span class="hljs-keyword">else</span><br>					<span class="hljs-built_in">$display</span>(<span class="hljs-string">"%m Empty node reached"</span>);<br><span class="hljs-meta">`<span class="hljs-meta-keyword">endif</span></span><br>				i_item<span class="hljs-variable">.inc</span>();<br>			<span class="hljs-keyword">end</span><br>		<span class="hljs-keyword">end</span> : if_block<br>	<span class="hljs-keyword">endfunction</span> : erase_range<br><br><br>	<span class="hljs-comment">// Assigns to the list object the elements that lie in the range specified by the [first,last) iterators.</span><br>	<span class="hljs-comment">// After this method returns, the modified list shall have a size equal to the range specified by first and last.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set( List_Iterator<span class="hljs-variable">#(T) first, last )</span>;<br>			<span class="hljs-keyword">assert</span>(first!=<span class="hljs-literal">null</span>);<br>			<span class="hljs-keyword">assert</span>(last!=<span class="hljs-literal">null</span>);<br>	<br>			<span class="hljs-keyword">begin</span> : body<br>				List_Iterator<span class="hljs-variable">#(T)</span> i_item;<br>	<br>				<span class="hljs-keyword">this</span><span class="hljs-variable">.clear</span>();<br>	<br>				<span class="hljs-keyword">if</span> (!first<span class="hljs-variable">.eq</span>(last))<br>				<span class="hljs-keyword">begin</span> : copy_loop<br>					i_item = first;<br>	<br>					<span class="hljs-keyword">while</span>(! i_item<span class="hljs-variable">.eq</span>(last))<br>					<span class="hljs-keyword">begin</span><br>						<span class="hljs-keyword">this</span><span class="hljs-variable">.push_back</span>(i_item<span class="hljs-variable">.data</span>());<br>						i_item<span class="hljs-variable">.inc</span>();<br>					<span class="hljs-keyword">end</span><br>				<span class="hljs-keyword">end</span> : copy_loop<br>			<span class="hljs-keyword">end</span> : body<br>	<span class="hljs-keyword">endfunction</span> : set<br><br><br>	<span class="hljs-comment">// Swaps the contents of two lists</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> swap( List<span class="hljs-variable">#(T) lst )</span>;<br>		<span class="hljs-keyword">assert</span>(lst!=<span class="hljs-literal">null</span>);<br>	<br>		<span class="hljs-keyword">begin</span> : body<br>			BaseNode<span class="hljs-variable">#(T)</span> head_temp,tail_temp;<br>			EndNode<span class="hljs-variable">#(T)</span> posttail_temp;<br>	<br>			head_temp = <span class="hljs-keyword">this</span><span class="hljs-variable">.head</span>;<br>			tail_temp = <span class="hljs-keyword">this</span><span class="hljs-variable">.tail</span>;<br>			posttail_temp = <span class="hljs-keyword">this</span><span class="hljs-variable">.posttail</span>;<br>			<span class="hljs-keyword">this</span><span class="hljs-variable">.head</span> = lst<span class="hljs-variable">.head</span>;<br>			<span class="hljs-keyword">this</span><span class="hljs-variable">.tail</span> = lst<span class="hljs-variable">.tail</span>;<br>			<span class="hljs-keyword">this</span><span class="hljs-variable">.posttail</span> = lst<span class="hljs-variable">.posttail</span>;<br>			lst<span class="hljs-variable">.head</span> = head_temp;<br>			lst<span class="hljs-variable">.tail</span> = tail_temp;<br>			lst<span class="hljs-variable">.posttail</span> = posttail_temp;<br>		<span class="hljs-keyword">end</span> : body<br>	<span class="hljs-keyword">endfunction</span> : swap<br><br><br>	<span class="hljs-comment">// Erases all of the list's elements.</span><br>	<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> clear();<br>		head = <span class="hljs-literal">null</span>;<br>		tail = <span class="hljs-literal">null</span>;<br>		posttail = <span class="hljs-literal">null</span>;<br>	<span class="hljs-keyword">endfunction</span> : clear<br><br><br><span class="hljs-keyword">endclass</span><br><br><span class="hljs-meta">`<span class="hljs-meta-keyword">endif</span></span><br></code></pre></td></tr></table></figure>
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2020/04/09/SV实现的链表-我是搬运工/" title="SV实现的链表(我是搬运工)">http://118.25.122.94:8080/2020/04/09/SV实现的链表-我是搬运工/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2020/03/30/Random-Constraint/" rel="next" title="Random Constraint"><i class="fas fa-angle-left"></i><span class="nav-title">Random Constraint</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">120</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">14</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">45</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chisel/">Chisel</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GLIBC/">GLIBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LFSR/">LFSR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL/">RTL</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">74</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">66</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/">Verilog</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/evil/">evil</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gtd/">gtd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tig/">tig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xargs/">xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yaml/">yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2020</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
