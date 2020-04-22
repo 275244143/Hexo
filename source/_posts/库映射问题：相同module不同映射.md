@@ -43,3 +43,6 @@ date: 2019-05-09 09:40:51
 	irun -compcnfg  -top mycfg -libverbose -work mylib -libmap lib.map top.v ./beh/add.v ./rtl/add.v mycfg.v
 ```
 ### VCS类似：略去。
+### 参考
+[库映射问题：相同module不同映射](SystemVerilog Configurations and Tool Flow Using SCons.pdf)
+

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2020-04-09T07:54:21.630Z</updated>
+  <updated>2020-04-22T08:30:52.414Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Altera fifo/ram_2port ip脚本生成</title>
+    <link href="http://118.25.122.94:8080/2020/04/22/Altera-fifo-ram-2port-ip%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90/"/>
+    <id>http://118.25.122.94:8080/2020/04/22/Altera-fifo-ram-2port-ip脚本生成/</id>
+    <published>2020-04-22T08:26:21.000Z</published>
+    <updated>2020-04-22T08:30:52.414Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;fifo&quot;&gt;&lt;a href=&quot;#fifo&quot; class=&quot;headerlink&quot; title=&quot;fifo&quot;&gt;&lt;/a&gt;fifo&lt;/h2&gt;&lt;figure class=&quot;hljs highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="FPGA" scheme="http://118.25.122.94:8080/categories/FPGA/"/>
+    
+    
+      <category term="bash" scheme="http://118.25.122.94:8080/tags/bash/"/>
+    
+      <category term="Altera" scheme="http://118.25.122.94:8080/tags/Altera/"/>
+    
+  </entry>
   
   <entry>
     <title>SV实现的链表(我是搬运工)</title>
@@ -539,34 +567,6 @@ ___________________
     <summary type="html">
     
       欢迎光临~
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SV实现新的FSM方法模式</title>
-    <link href="http://118.25.122.94:8080/2019/09/24/SV%E5%AE%9E%E7%8E%B0%E6%96%B0%E7%9A%84FSM%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://118.25.122.94:8080/2019/09/24/SV实现新的FSM方法模式/</id>
-    <published>2019-09-24T05:48:02.000Z</published>
-    <updated>2019-09-24T05:51:03.892Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;在状态模式中，类的行为是基于它的状态改变的。这种类型的设计模式属于行为型模式。&quot;&gt;&lt;a href=&quot;#在状态模式中，类的行为是基于它的状态改变的。这种类型的设计模式属于行为型模式。&quot; class=&quot;headerlink&quot;
-        
-      
     
     </summary>
     

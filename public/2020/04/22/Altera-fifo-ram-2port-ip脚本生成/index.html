@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>Altera fifo/ram_2port ip脚本生成 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://118.25.122.94:8080/2020/04/22/Altera-fifo-ram-2port-ip脚本生成/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">Altera fifo/ram_2port ip脚本生成</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-04-22T16:26:21+08:00">2020-04-22 16:26:21</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/FPGA/" itemprop="url" rel="index"><span itemprop="name">FPGA</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">1.4k字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">8分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h2 id="fifo"><a href="#fifo" class="headerlink" title="fifo"></a>fifo</h2><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span>! /usr/bin/env bash<br><span class="hljs-meta">#</span>//============================================================================<br><span class="hljs-meta">#</span>     FileName: ipgen_fifo.sh<br><span class="hljs-meta">#</span>         Desc: 采用GPL许可版权，请注意版权使用～<br><span class="hljs-meta">#</span>   LastChange: 2020-04-21 16:00:47<br><span class="hljs-meta">#</span>      History: 1. 增加双时钟以及ram类型<br><span class="hljs-meta">#</span>//============================================================================<br><span class="hljs-meta"><br>#</span>set -x<br>read -p "Setting Quartus install path(default:/home/soft/Quartus-pro-19.3): " quartus_path<br>read -p "Setting Device name(default:1SG280LN2F43E1VG): " device_name<br>read -p "Setting Device Family name(default:Stratix 10): " device_family<br>read -p "Setting fifo name(default:fifo_d64_inw8_outw8): " fifo_name<br>read -p "Setting fifo clock_type(default:1 =&gt; 0:single,1:double): " clock_type<br>read -p "Setting fifo depth(default:64): " fifo_depth<br>read -p "Setting fifo in data width(default:8): " fifo_din_width<br>read -p "Setting fifo out data width(default:8): " fifo_dout_width<br>read -p "Setting fifo almost_full(default:0): " almost_full<br>read -p "Setting fifo almost_empty(default:0): " almost_empty<br>read -p "Setting fifo ram_block_type(default:Auto(MLAB,M20K,M144K)): " ram_block_type<br><br>echo "################################"<br>echo "Generate FIFOName:$&#123;fifo_name:=fifo_d64_inw8_outw8&#125;<br>         ClockType:$&#123;clock_type:=1&#125;<br>         Depth:$&#123;fifo_depth:=64&#125;<br>         InDataWidth:$&#123;fifo_din_width:=8&#125;<br>         OutDataWidth:$&#123;fifo_dout_width:=8&#125;<br>         AlmostFull:$&#123;almost_full:=0&#125;<br>         AlmostEmpty:$&#123;almost_empty:=0&#125;<br>         ram_block_type:$&#123;ram_block_type:=Auto&#125;<br>         QuartusPath:$&#123;quartus_path:=/home/soft/Quartus-pro-19.3&#125;<br>         DeviceName:$&#123;device_name:=1SG280LN2F43E1VG&#125;<br>         DeviceFamily:$&#123;device_family:=Stratix 10&#125;"<br>echo "################################"<br><br><br>cat &gt; $&#123;fifo_name&#125;.tcl &lt;&lt; __EOF__<br>package require -exact qsys 18.0<br><br>proc do_create_$&#123;fifo_name&#125; &#123;&#125; &#123;<br><span class="hljs-meta">	#</span> create the system<br>	create_system $&#123;fifo_name&#125;<br>	set_project_property DEVICE &#123;$&#123;device_name&#125;&#125;<br>	set_project_property DEVICE_FAMILY &#123;$&#123;device_family&#125;&#125;<br>	set_project_property HIDE_FROM_IP_CATALOG &#123;false&#125;<br>	set_use_testbench_naming_pattern 0 &#123;&#125;<br><span class="hljs-meta"><br>	#</span> add the components<br>	add_component fifo ip/$&#123;fifo_name&#125;/$&#123;fifo_name&#125;_fifo.ip fifo fifo 19.1<br>	load_component fifo<br>	set_component_parameter_value GUI_AlmostEmpty &#123;$&#123;almost_empty&#125;&#125;<br>	set_component_parameter_value GUI_AlmostEmptyThr &#123;1&#125;<br>	set_component_parameter_value GUI_AlmostFull &#123;$&#123;almost_full&#125;&#125;<br>	set_component_parameter_value GUI_AlmostFullThr &#123;1&#125;<br>	set_component_parameter_value GUI_CLOCKS_ARE_SYNCHRONIZED &#123;0&#125;<br>	set_component_parameter_value GUI_Clock &#123;$&#123;clock_type&#125;&#125;<br>	set_component_parameter_value GUI_DISABLE_DCFIFO_EMBEDDED_TIMING_CONSTRAINT &#123;1&#125;<br>	set_component_parameter_value GUI_Depth &#123;$&#123;fifo_depth&#125;&#125;<br>	set_component_parameter_value GUI_ENABLE_ECC &#123;0&#125;<br>	set_component_parameter_value GUI_Empty &#123;1&#125;<br>	set_component_parameter_value GUI_Full &#123;1&#125;<br>	set_component_parameter_value GUI_LE_BasedFIFO &#123;0&#125;<br>	set_component_parameter_value GUI_LegacyRREQ &#123;1&#125;<br>	set_component_parameter_value GUI_MAX_DEPTH &#123;Auto&#125;<br>	set_component_parameter_value GUI_MAX_DEPTH_BY_9 &#123;0&#125;<br>	set_component_parameter_value GUI_OVERFLOW_CHECKING &#123;0&#125;<br>	set_component_parameter_value GUI_Optimize &#123;0&#125;<br>	set_component_parameter_value GUI_Optimize_max &#123;0&#125;<br>	set_component_parameter_value GUI_RAM_BLOCK_TYPE &#123;$&#123;ram_block_type&#125;&#125;<br>	set_component_parameter_value GUI_TESTBENCH &#123;0&#125;<br>	set_component_parameter_value GUI_UNDERFLOW_CHECKING &#123;0&#125;<br>	set_component_parameter_value GUI_UsedW &#123;1&#125;<br>	set_component_parameter_value GUI_Width &#123;$&#123;fifo_din_width&#125;&#125;<br>	set_component_parameter_value GUI_dc_aclr &#123;0&#125;<br>	set_component_parameter_value GUI_delaypipe &#123;4&#125;<br>	set_component_parameter_value GUI_diff_widths &#123;0&#125;<br>	set_component_parameter_value GUI_msb_usedw &#123;0&#125;<br>	set_component_parameter_value GUI_output_width &#123;$&#123;fifo_dout_width&#125;&#125;<br>	set_component_parameter_value GUI_read_aclr_synch &#123;0&#125;<br>	set_component_parameter_value GUI_rsEmpty &#123;1&#125;<br>	set_component_parameter_value GUI_rsFull &#123;0&#125;<br>	set_component_parameter_value GUI_rsUsedW &#123;0&#125;<br>	set_component_parameter_value GUI_sc_aclr &#123;0&#125;<br>	set_component_parameter_value GUI_sc_sclr &#123;0&#125;<br>	set_component_parameter_value GUI_synStage &#123;3&#125;<br>	set_component_parameter_value GUI_write_aclr_synch &#123;0&#125;<br>	set_component_parameter_value GUI_wsEmpty &#123;0&#125;<br>	set_component_parameter_value GUI_wsFull &#123;1&#125;<br>	set_component_parameter_value GUI_wsUsedW &#123;0&#125;<br>	set_component_project_property HIDE_FROM_IP_CATALOG &#123;false&#125;<br>	save_component<br>	load_instantiation fifo<br><span class="hljs-meta">	<br>	#</span> set the the module properties<br>	set_module_property BONUS_DATA &#123;&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>&lt;bonusData&gt;<br> &lt;element __value="fifo"&gt;<br>  &lt;datum __value="_sortIndex" value="2" type="int" /&gt;<br>  &lt;datum __value="sopceditor_expanded" value="1" type="boolean" /&gt;<br> &lt;/element&gt;<br>&lt;/bonusData&gt;<br>&#125;<br>	set_module_property FILE &#123;$&#123;fifo_name&#125;.qsys&#125;<br>	set_module_property GENERATION_ID &#123;0x00000000&#125;<br>	set_module_property NAME &#123;$&#123;fifo_name&#125;&#125;<br><span class="hljs-meta"><br>	#</span> save the system<br>	sync_sysinfo_parameters<br>	save_system $&#123;fifo_name&#125;<br>&#125;<br><span class="hljs-meta"><br>#</span> create all the systems, from bottom up<br><span class="hljs-meta">do_create_$</span>&#123;fifo_name&#125;<br><br>__EOF__<br><br><br>if [[ -e "$&#123;fifo_name&#125;.qpf" ]]; then<br>    $&#123;quartus_path&#125;/qsys/bin/qsys-script --script=$&#123;fifo_name&#125;.tcl --quartus-project=$&#123;fifo_name&#125;.qpf<br>else<br>    $&#123;quartus_path&#125;/qsys/bin/qsys-script --script=$&#123;fifo_name&#125;.tcl --new-quartus-project=$&#123;fifo_name&#125;.qpf<br>fi<br><span class="hljs-meta">$</span>&#123;quartus_path&#125;/qsys/bin/qsys-generate $&#123;fifo_name&#125;.qsys  --simulation --synthesis --testbench --testbench-simulation --parallel --quartus-project=$&#123;fifo_name&#125;.qpf<br><br>rm -rf ./$&#123;fifo_name&#125;* ./qdb<br>echo "##########################################################"<br>echo "FIFO IP Finish:$&#123;fifo_name&#125; is in ./ip/$&#123;fifo_name&#125;"<br>echo "##########################################################"<br></code></pre></td></tr></table></figure>
+<h2 id="ram-2port"><a href="#ram-2port" class="headerlink" title="ram_2port"></a>ram_2port</h2><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span>! /usr/bin/env bash<br><span class="hljs-meta">#</span>//============================================================================<br><span class="hljs-meta">#</span>     FileName: ipgen_ram_2port.sh<br><span class="hljs-meta">#</span>         Desc: 采用GPL许可版权，请注意版权使用～<br><span class="hljs-meta">#</span>      Version: 0.0.1<br><span class="hljs-meta">#</span>   LastChange: 2020-04-21 16:00:47<br><span class="hljs-meta">#</span>      History: 1. 增加双时钟以及ram类型<br><span class="hljs-meta">#</span>//============================================================================<br><span class="hljs-meta"><br>#</span>set -xf<br>read -p "Setting Quartus install path(default:/home/soft/Quartus-pro-19.3): " quartus_path<br>read -p "Setting Device name(default:1SG280LN2F43E1VG): " device_name<br>read -p "Setting Device Family name(default:Stratix 10): " device_family<br>read -p "Setting ram_2port name(default:ram2p_dw8_mword32_mbit256_qab8): " ram_2port_name<br>read -p "Setting ram_2port CLOCK_TYPE(default:1 =&gt; 0:single,1:double): " clock_type<br>read -p "Setting ram_2port DATAA_WIDTH(default:8): " dataa_width<br>read -p "Setting ram_2port QA_WIDTH(default:8): " qa_width<br>read -p "Setting ram_2port MEMSIZE_WORDS(default:32): " memsize_words<br>read -p "Setting ram_2port MEMSIZE_BITS(default:256): " memsize_bits<br>read -p "Setting ram_2port RAM_BLOCK_TYPE(default:Auto(MLAB,M20K,LCs)): " ram_block_type<br><br>echo "################################"<br>echo "Generate RAM_2PORTName:$&#123;ram_2port_name:=ram2p_dw8_mword32_mbit256_qab8&#125;<br>         CLOCK_TYPE:$&#123;clock_type:=1&#125;<br>         DATAA_WIDTH:$&#123;dataa_width:=8&#125;<br>         QA_WIDTH:$&#123;qa_width:=8&#125;<br>         MEMSIZE_WORDS:$&#123;memsize_words:=32&#125;<br>         MEMSIZE_BITS:$&#123;memsize_bits:=256&#125;<br>         RAM_BLOCK_TYPE:$&#123;ram_block_type:=Auto&#125;<br>         QuartusPath:$&#123;quartus_path:=/home/soft/Quartus-pro-19.3&#125;<br>         DeviceName:$&#123;device_name:=1SG280LN2F43E1VG&#125;<br>         DeviceFamily:$&#123;device_family:=Stratix 10&#125;"<br>echo "################################"<br><br><br>cat &gt; $&#123;ram_2port_name&#125;.tcl &lt;&lt; __EOF__<br><br>package require -exact qsys 18.0<br><br>proc do_create_$&#123;ram_2port_name&#125; &#123;&#125; &#123;<br><span class="hljs-meta">	#</span> create the system<br>	create_system $&#123;ram_2port_name&#125;<br>	set_project_property DEVICE &#123;$&#123;device_name&#125;&#125;<br>	set_project_property DEVICE_FAMILY &#123;$&#123;device_family&#125;&#125;<br>	set_project_property HIDE_FROM_IP_CATALOG &#123;false&#125;<br>	set_use_testbench_naming_pattern 0 &#123;&#125;<br><span class="hljs-meta"><br>	#</span> add the components<br>	add_component ram_2port ip/$&#123;ram_2port_name&#125;/$&#123;ram_2port_name&#125;_ram_2port.ip ram_2port ram_2port 19.2.0<br>	load_component ram_2port<br>	set_component_parameter_value GUI_ACLR_READ_INPUT_RDADDRESS &#123;0&#125;<br>	set_component_parameter_value GUI_ACLR_READ_OUTPUT_QA &#123;0&#125;<br>	set_component_parameter_value GUI_ACLR_READ_OUTPUT_QB &#123;0&#125;<br>	set_component_parameter_value GUI_BLANK_MEMORY &#123;0&#125;<br>	set_component_parameter_value GUI_BYTE_ENABLE_A &#123;0&#125;<br>	set_component_parameter_value GUI_BYTE_ENABLE_B &#123;0&#125;<br>	set_component_parameter_value GUI_BYTE_ENABLE_WIDTH &#123;8&#125;<br>	set_component_parameter_value GUI_CLKEN_ADDRESS_STALL_A &#123;0&#125;<br>	set_component_parameter_value GUI_CLKEN_ADDRESS_STALL_B &#123;0&#125;<br>	set_component_parameter_value GUI_CLKEN_INPUT_REG_A &#123;0&#125;<br>	set_component_parameter_value GUI_CLKEN_INPUT_REG_B &#123;0&#125;<br>	set_component_parameter_value GUI_CLKEN_OUTPUT_REG_A &#123;0&#125;<br>	set_component_parameter_value GUI_CLKEN_OUTPUT_REG_B &#123;0&#125;<br>	set_component_parameter_value GUI_CLKEN_RDADDRESSSTALL &#123;0&#125;<br>	set_component_parameter_value GUI_CLKEN_READ_INPUT_REG &#123;0&#125;<br>	set_component_parameter_value GUI_CLKEN_READ_OUTPUT_REG &#123;0&#125;<br>	set_component_parameter_value GUI_CLKEN_WRADDRESSSTALL &#123;0&#125;<br>	set_component_parameter_value GUI_CLKEN_WRITE_INPUT_REG &#123;0&#125;<br>	set_component_parameter_value GUI_CLOCK_TYPE &#123;$&#123;clock_type&#125;&#125;<br>	set_component_parameter_value GUI_COHERENT_READ &#123;0&#125;<br>	set_component_parameter_value GUI_CONSTRAINED_DONT_CARE &#123;1&#125;<br>	set_component_parameter_value GUI_DATAA_WIDTH &#123;$&#123;dataa_width&#125;&#125;<br>	set_component_parameter_value GUI_DIFFERENT_CLKENS &#123;0&#125;<br>	set_component_parameter_value GUI_ECCENCBYPASS &#123;0&#125;<br>	set_component_parameter_value GUI_ECC_DOUBLE &#123;0&#125;<br>	set_component_parameter_value GUI_ECC_PIPELINE &#123;0&#125;<br>	set_component_parameter_value GUI_ECC_TRIPLE &#123;0&#125;<br>	set_component_parameter_value GUI_FILE_REFERENCE &#123;0&#125;<br>	set_component_parameter_value GUI_FORCE_TO_ZERO &#123;0&#125;<br>	set_component_parameter_value GUI_INIT_FILE_LAYOUT &#123;PORT_B&#125;<br>	set_component_parameter_value GUI_INIT_SIM_TO_X &#123;0&#125;<br>	set_component_parameter_value GUI_LC_IMPLEMENTION_OPTIONS &#123;0&#125;<br>	set_component_parameter_value GUI_MAX_DEPTH &#123;Auto&#125;<br>	set_component_parameter_value GUI_MEMSIZE_BITS &#123;$&#123;memsize_bits&#125;&#125;<br>	set_component_parameter_value GUI_MEMSIZE_WORDS &#123;$&#123;memsize_words&#125;&#125;<br>	set_component_parameter_value GUI_MEM_IN_BITS &#123;0&#125;<br>	set_component_parameter_value GUI_MIF_FILENAME &#123;&#125;<br>	set_component_parameter_value GUI_MODE &#123;0&#125;<br>	set_component_parameter_value GUI_NBE_A &#123;1&#125;<br>	set_component_parameter_value GUI_NBE_B &#123;1&#125;<br>	set_component_parameter_value GUI_OPTIMIZATION_OPTION &#123;0&#125;<br>	set_component_parameter_value GUI_PR &#123;0&#125;<br>	set_component_parameter_value GUI_QA_WIDTH &#123;$&#123;qa_width&#125;&#125;<br>	set_component_parameter_value GUI_QB_WIDTH &#123;$&#123;qa_width&#125;&#125;<br>	set_component_parameter_value GUI_Q_PORT_MODE &#123;2&#125;<br>	set_component_parameter_value GUI_RAM_BLOCK_TYPE &#123;$&#123;ram_block_type&#125;&#125;<br>	set_component_parameter_value GUI_RDEN_DOUBLE &#123;0&#125;<br>	set_component_parameter_value GUI_RDEN_SINGLE &#123;0&#125;<br>	set_component_parameter_value GUI_RDW_A_MODE &#123;New Data&#125;<br>	set_component_parameter_value GUI_RDW_B_MODE &#123;New Data&#125;<br>	set_component_parameter_value GUI_READ_INPUT_RDADDRESS &#123;1&#125;<br>	set_component_parameter_value GUI_READ_OUTPUT_QA &#123;1&#125;<br>	set_component_parameter_value GUI_READ_OUTPUT_QB &#123;1&#125;<br>	set_component_parameter_value GUI_SCLR_READ_OUTPUT_QA &#123;0&#125;<br>	set_component_parameter_value GUI_SCLR_READ_OUTPUT_QB &#123;0&#125;<br>	set_component_parameter_value GUI_TBENCH &#123;0&#125;<br>	set_component_parameter_value GUI_TDP_EMULATE &#123;0&#125;<br>	set_component_parameter_value GUI_VAR_WIDTH &#123;0&#125;<br>	set_component_parameter_value GUI_WIDTH_ECCENCPARITY &#123;8&#125;<br>	set_component_parameter_value GUI_WRITE_INPUT_PORTS &#123;1&#125;<br>	set_component_project_property HIDE_FROM_IP_CATALOG &#123;false&#125;<br>	save_component<br>	load_instantiation ram_2port<br><span class="hljs-meta">	<br>	#</span> set the the module properties<br>	set_module_property BONUS_DATA &#123;&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>&lt;bonusData&gt;<br> &lt;element __value="ram_2port"&gt;<br>  &lt;datum __value="_sortIndex" value="2" type="int" /&gt;<br> &lt;/element&gt;<br>&lt;/bonusData&gt;<br>&#125;<br>	set_module_property FILE &#123;$&#123;ram_2port_name&#125;.qsys&#125;<br>	set_module_property GENERATION_ID &#123;0x00000000&#125;<br>	set_module_property NAME &#123;$&#123;ram_2port_name&#125;&#125;<br><span class="hljs-meta"><br>	#</span> save the system<br>	sync_sysinfo_parameters<br>	save_system $&#123;ram_2port_name&#125;<br>&#125;<br><span class="hljs-meta"><br>#</span> create all the systems, from bottom up<br><span class="hljs-meta">do_create_$</span>&#123;ram_2port_name&#125;<br><br><br>__EOF__<br><br><br>if [[ -e "$&#123;ram_2port_name&#125;.qpf" ]]; then<br>    $&#123;quartus_path&#125;/qsys/bin/qsys-script --script=$&#123;ram_2port_name&#125;.tcl --quartus-project=$&#123;ram_2port_name&#125;.qpf<br>else<br>    $&#123;quartus_path&#125;/qsys/bin/qsys-script --script=$&#123;ram_2port_name&#125;.tcl --new-quartus-project=$&#123;ram_2port_name&#125;.qpf<br>fi<br><span class="hljs-meta">$</span>&#123;quartus_path&#125;/qsys/bin/qsys-generate $&#123;ram_2port_name&#125;.qsys  --simulation --synthesis --testbench --testbench-simulation --parallel --quartus-project=$&#123;ram_2port_name&#125;.qpf<br><br>rm -rf ./$&#123;ram_2port_name&#125;* ./qdb<br>echo "##########################################################"<br>echo "RAM_2PORT IP Finish:$&#123;ram_2port_name&#125; is in ./ip/$&#123;ram_2port_name&#125;"<br>echo "##########################################################"<br></code></pre></td></tr></table></figure>
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/bash/" rel="tag"><i class="fas fa-tags"></i>bash</a>
+        
+        <a class="post-tag button" href="/tags/Altera/" rel="tag"><i class="fas fa-tags"></i>Altera</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2020/04/22/Altera-fifo-ram-2port-ip脚本生成/" title="Altera fifo/ram_2port ip脚本生成">http://118.25.122.94:8080/2020/04/22/Altera-fifo-ram-2port-ip脚本生成/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2020/04/09/SV实现的链表-我是搬运工/" rel="next" title="SV实现的链表(我是搬运工)"><i class="fas fa-angle-left"></i><span class="nav-title">SV实现的链表(我是搬运工)</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">121</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">15</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">46</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#fifo"><span class="toc-text">fifo</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#ram-2port"><span class="toc-text">ram_2port</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altera/">Altera</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chisel/">Chisel</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GLIBC/">GLIBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LFSR/">LFSR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL/">RTL</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">74</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">66</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/">Verilog</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/evil/">evil</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gtd/">gtd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tig/">tig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xargs/">xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yaml/">yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2020</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
