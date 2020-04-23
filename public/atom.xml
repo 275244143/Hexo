@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://118.25.122.94:8080/"/>
-  <updated>2020-04-22T08:30:52.414Z</updated>
+  <updated>2020-04-23T02:33:21.262Z</updated>
   <id>http://118.25.122.94:8080/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gnu parallel入门</title>
+    <link href="http://118.25.122.94:8080/2020/04/23/Gnu-parallel%E5%85%A5%E9%97%A8/"/>
+    <id>http://118.25.122.94:8080/2020/04/23/Gnu-parallel入门/</id>
+    <published>2020-04-23T02:26:39.000Z</published>
+    <updated>2020-04-23T02:33:21.262Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;how&quot;&gt;&lt;a href=&quot;#how&quot; class=&quot;headerlink&quot; title=&quot;how&quot;&gt;&lt;/a&gt;how&lt;/h2&gt;&lt;p&gt;最简单的方法就是类比&lt;code&gt;xargs&lt;/code&gt;。在xargs里面有一个参数
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+    
+    
+      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
+    
+      <category term="并行" scheme="http://118.25.122.94:8080/tags/%E5%B9%B6%E8%A1%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>Altera fifo/ram_2port ip脚本生成</title>
@@ -411,9 +439,9 @@ ___________________
       <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://118.25.122.94:8080/tags/Linux/"/>
-    
       <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
+    
+      <category term="Linux" scheme="http://118.25.122.94:8080/tags/Linux/"/>
     
   </entry>
   
@@ -551,31 +579,9 @@ ___________________
       <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://118.25.122.94:8080/tags/Linux/"/>
-    
       <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
     
-  </entry>
-  
-  <entry>
-    <title>采用策略模式进行UVM-PORT-DEBUG</title>
-    <link href="http://118.25.122.94:8080/2019/09/25/%E9%87%87%E7%94%A8%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F%E8%BF%9B%E8%A1%8CUVM-PORT-DEBUG/"/>
-    <id>http://118.25.122.94:8080/2019/09/25/采用策略模式进行UVM-PORT-DEBUG/</id>
-    <published>2019-09-25T07:45:14.000Z</published>
-    <updated>2019-09-25T07:50:47.286Z</updated>
-    
-    <summary type="html">
-    
-      欢迎光临~
-    
-    </summary>
-    
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+      <category term="Linux" scheme="http://118.25.122.94:8080/tags/Linux/"/>
     
   </entry>
   
