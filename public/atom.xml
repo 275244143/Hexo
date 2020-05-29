@@ -5,9 +5,9 @@
   <subtitle>人的智慧不用就会枯萎。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://118.25.122.94:8080/"/>
-  <updated>2020-04-23T02:33:21.262Z</updated>
-  <id>http://118.25.122.94:8080/</id>
+  <link href="http://192.154.218.26/"/>
+  <updated>2020-05-29T11:33:56.809Z</updated>
+  <id>http://192.154.218.26/</id>
   
   <author>
     <name>神秘人</name>
@@ -17,9 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>多线程自动查找顶层.v文件包含的文件列表</title>
+    <link href="http://192.154.218.26/2020/05/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%87%AA%E5%8A%A8%E6%9F%A5%E6%89%BE%E9%A1%B6%E5%B1%82-v%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/"/>
+    <id>http://192.154.218.26/2020/05/29/多线程自动查找顶层-v文件包含的文件列表/</id>
+    <published>2020-05-29T11:27:57.000Z</published>
+    <updated>2020-05-29T11:33:56.809Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;下面代码就是流水账，不是最佳的，一堆可以优化，凑合用。&quot;&gt;&lt;a href=&quot;#下面代码就是流水账，不是最佳的，一堆可以优化，凑合用。&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="Verilog" scheme="http://192.154.218.26/tags/Verilog/"/>
+    
+      <category term="RTL" scheme="http://192.154.218.26/tags/RTL/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Gnu parallel入门</title>
-    <link href="http://118.25.122.94:8080/2020/04/23/Gnu-parallel%E5%85%A5%E9%97%A8/"/>
-    <id>http://118.25.122.94:8080/2020/04/23/Gnu-parallel入门/</id>
+    <link href="http://192.154.218.26/2020/04/23/Gnu-parallel%E5%85%A5%E9%97%A8/"/>
+    <id>http://192.154.218.26/2020/04/23/Gnu-parallel入门/</id>
     <published>2020-04-23T02:26:39.000Z</published>
     <updated>2020-04-23T02:33:21.262Z</updated>
     
@@ -35,19 +65,19 @@
     
     </summary>
     
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
     
     
-      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
+      <category term="shell" scheme="http://192.154.218.26/tags/shell/"/>
     
-      <category term="并行" scheme="http://118.25.122.94:8080/tags/%E5%B9%B6%E8%A1%8C/"/>
+      <category term="并行" scheme="http://192.154.218.26/tags/%E5%B9%B6%E8%A1%8C/"/>
     
   </entry>
   
   <entry>
     <title>Altera fifo/ram_2port ip脚本生成</title>
-    <link href="http://118.25.122.94:8080/2020/04/22/Altera-fifo-ram-2port-ip%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90/"/>
-    <id>http://118.25.122.94:8080/2020/04/22/Altera-fifo-ram-2port-ip脚本生成/</id>
+    <link href="http://192.154.218.26/2020/04/22/Altera-fifo-ram-2port-ip%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90/"/>
+    <id>http://192.154.218.26/2020/04/22/Altera-fifo-ram-2port-ip脚本生成/</id>
     <published>2020-04-22T08:26:21.000Z</published>
     <updated>2020-04-22T08:30:52.414Z</updated>
     
@@ -63,19 +93,19 @@
     
     </summary>
     
-      <category term="FPGA" scheme="http://118.25.122.94:8080/categories/FPGA/"/>
+      <category term="FPGA" scheme="http://192.154.218.26/categories/FPGA/"/>
     
     
-      <category term="bash" scheme="http://118.25.122.94:8080/tags/bash/"/>
+      <category term="bash" scheme="http://192.154.218.26/tags/bash/"/>
     
-      <category term="Altera" scheme="http://118.25.122.94:8080/tags/Altera/"/>
+      <category term="Altera" scheme="http://192.154.218.26/tags/Altera/"/>
     
   </entry>
   
   <entry>
     <title>SV实现的链表(我是搬运工)</title>
-    <link href="http://118.25.122.94:8080/2020/04/09/SV%E5%AE%9E%E7%8E%B0%E7%9A%84%E9%93%BE%E8%A1%A8-%E6%88%91%E6%98%AF%E6%90%AC%E8%BF%90%E5%B7%A5/"/>
-    <id>http://118.25.122.94:8080/2020/04/09/SV实现的链表-我是搬运工/</id>
+    <link href="http://192.154.218.26/2020/04/09/SV%E5%AE%9E%E7%8E%B0%E7%9A%84%E9%93%BE%E8%A1%A8-%E6%88%91%E6%98%AF%E6%90%AC%E8%BF%90%E5%B7%A5/"/>
+    <id>http://192.154.218.26/2020/04/09/SV实现的链表-我是搬运工/</id>
     <published>2020-04-09T07:53:00.000Z</published>
     <updated>2020-04-09T07:54:21.630Z</updated>
     
@@ -91,19 +121,19 @@
     
     </summary>
     
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
   <entry>
     <title>Random Constraint</title>
-    <link href="http://118.25.122.94:8080/2020/03/30/Random-Constraint/"/>
-    <id>http://118.25.122.94:8080/2020/03/30/Random-Constraint/</id>
+    <link href="http://192.154.218.26/2020/03/30/Random-Constraint/"/>
+    <id>http://192.154.218.26/2020/03/30/Random-Constraint/</id>
     <published>2020-03-30T06:28:23.000Z</published>
     <updated>2020-03-30T06:39:04.500Z</updated>
     
@@ -120,19 +150,19 @@
     
     </summary>
     
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
   <entry>
     <title>相见恨晚的Org-mode</title>
-    <link href="http://118.25.122.94:8080/2020/03/25/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/"/>
-    <id>http://118.25.122.94:8080/2020/03/25/相见恨晚的Org-mode/</id>
+    <link href="http://192.154.218.26/2020/03/25/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/"/>
+    <id>http://192.154.218.26/2020/03/25/相见恨晚的Org-mode/</id>
     <published>2020-03-25T07:52:54.000Z</published>
     <updated>2020-03-25T06:57:50.241Z</updated>
     
@@ -158,19 +188,19 @@ ___________________
     
     </summary>
     
-      <category term="emacs" scheme="http://118.25.122.94:8080/categories/emacs/"/>
+      <category term="emacs" scheme="http://192.154.218.26/categories/emacs/"/>
     
     
-      <category term="org-mode" scheme="http://118.25.122.94:8080/tags/org-mode/"/>
+      <category term="org-mode" scheme="http://192.154.218.26/tags/org-mode/"/>
     
-      <category term="gtd" scheme="http://118.25.122.94:8080/tags/gtd/"/>
+      <category term="gtd" scheme="http://192.154.218.26/tags/gtd/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="http://118.25.122.94:8080/2020/03/25/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/"/>
-    <id>http://118.25.122.94:8080/2020/03/25/相见恨晚的Org-mode/相见恨晚的Org-mode/</id>
+    <link href="http://192.154.218.26/2020/03/25/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/"/>
+    <id>http://192.154.218.26/2020/03/25/相见恨晚的Org-mode/相见恨晚的Org-mode/</id>
     <published>2020-03-25T06:05:28.004Z</published>
     <updated>2020-03-25T06:13:19.276Z</updated>
     
@@ -192,8 +222,8 @@ ___________________
   
   <entry>
     <title>DPI-C调用class中的TF</title>
-    <link href="http://118.25.122.94:8080/2020/03/11/DPI-C%E8%B0%83%E7%94%A8class%E4%B8%AD%E7%9A%84TF/"/>
-    <id>http://118.25.122.94:8080/2020/03/11/DPI-C调用class中的TF/</id>
+    <link href="http://192.154.218.26/2020/03/11/DPI-C%E8%B0%83%E7%94%A8class%E4%B8%AD%E7%9A%84TF/"/>
+    <id>http://192.154.218.26/2020/03/11/DPI-C调用class中的TF/</id>
     <published>2020-03-11T01:38:59.000Z</published>
     <updated>2020-03-11T01:44:38.211Z</updated>
     
@@ -209,19 +239,19 @@ ___________________
     
     </summary>
     
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
   <entry>
     <title>SV约束中const的妙用</title>
-    <link href="http://118.25.122.94:8080/2020/03/06/SV%E7%BA%A6%E6%9D%9F%E4%B8%ADconst%E7%9A%84%E5%A6%99%E7%94%A8/"/>
-    <id>http://118.25.122.94:8080/2020/03/06/SV约束中const的妙用/</id>
+    <link href="http://192.154.218.26/2020/03/06/SV%E7%BA%A6%E6%9D%9F%E4%B8%ADconst%E7%9A%84%E5%A6%99%E7%94%A8/"/>
+    <id>http://192.154.218.26/2020/03/06/SV约束中const的妙用/</id>
     <published>2020-03-06T02:37:35.000Z</published>
     <updated>2020-03-06T02:38:12.281Z</updated>
     
@@ -237,19 +267,19 @@ ___________________
     
     </summary>
     
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
   <entry>
     <title>sv-package大小对编译速度的影响</title>
-    <link href="http://118.25.122.94:8080/2020/02/10/sv-package%E5%A4%A7%E5%B0%8F%E5%AF%B9%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E7%9A%84%E5%BD%B1%E5%93%8D/"/>
-    <id>http://118.25.122.94:8080/2020/02/10/sv-package大小对编译速度的影响/</id>
+    <link href="http://192.154.218.26/2020/02/10/sv-package%E5%A4%A7%E5%B0%8F%E5%AF%B9%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6%E7%9A%84%E5%BD%B1%E5%93%8D/"/>
+    <id>http://192.154.218.26/2020/02/10/sv-package大小对编译速度的影响/</id>
     <published>2020-02-10T15:27:38.000Z</published>
     <updated>2020-03-06T02:29:16.371Z</updated>
     
@@ -266,19 +296,19 @@ ___________________
     
     </summary>
     
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
   <entry>
     <title>git clone断点续传</title>
-    <link href="http://118.25.122.94:8080/2019/12/10/git-clone%E6%96%AD%E7%82%B9%E7%BB%AD%E4%BC%A0/"/>
-    <id>http://118.25.122.94:8080/2019/12/10/git-clone断点续传/</id>
+    <link href="http://192.154.218.26/2019/12/10/git-clone%E6%96%AD%E7%82%B9%E7%BB%AD%E4%BC%A0/"/>
+    <id>http://192.154.218.26/2019/12/10/git-clone断点续传/</id>
     <published>2019-12-10T08:05:16.000Z</published>
     <updated>2019-12-10T08:08:52.749Z</updated>
     
@@ -295,19 +325,19 @@ ___________________
     
     </summary>
     
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
     
     
-      <category term="emacs" scheme="http://118.25.122.94:8080/tags/emacs/"/>
+      <category term="emacs" scheme="http://192.154.218.26/tags/emacs/"/>
     
-      <category term="vim" scheme="http://118.25.122.94:8080/tags/vim/"/>
+      <category term="vim" scheme="http://192.154.218.26/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>emacs-vim加入lsp-mode成为最强ide~</title>
-    <link href="http://118.25.122.94:8080/2019/12/09/emacs-vim%E5%8A%A0%E5%85%A5lsp-mode%E6%88%90%E4%B8%BA%E6%9C%80%E5%BC%BAide/"/>
-    <id>http://118.25.122.94:8080/2019/12/09/emacs-vim加入lsp-mode成为最强ide/</id>
+    <link href="http://192.154.218.26/2019/12/09/emacs-vim%E5%8A%A0%E5%85%A5lsp-mode%E6%88%90%E4%B8%BA%E6%9C%80%E5%BC%BAide/"/>
+    <id>http://192.154.218.26/2019/12/09/emacs-vim加入lsp-mode成为最强ide/</id>
     <published>2019-12-09T10:25:19.000Z</published>
     <updated>2019-12-09T10:31:35.765Z</updated>
     
@@ -323,19 +353,19 @@ ___________________
     
     </summary>
     
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
     
     
-      <category term="emacs" scheme="http://118.25.122.94:8080/tags/emacs/"/>
+      <category term="emacs" scheme="http://192.154.218.26/tags/emacs/"/>
     
-      <category term="vim" scheme="http://118.25.122.94:8080/tags/vim/"/>
+      <category term="vim" scheme="http://192.154.218.26/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>vim该说再见了，留下编辑思想~</title>
-    <link href="http://118.25.122.94:8080/2019/11/20/vim%E8%AF%A5%E8%AF%B4%E5%86%8D%E8%A7%81%E4%BA%86%EF%BC%8C%E7%95%99%E4%B8%8B%E7%BC%96%E8%BE%91%E6%80%9D%E6%83%B3/"/>
-    <id>http://118.25.122.94:8080/2019/11/20/vim该说再见了，留下编辑思想/</id>
+    <link href="http://192.154.218.26/2019/11/20/vim%E8%AF%A5%E8%AF%B4%E5%86%8D%E8%A7%81%E4%BA%86%EF%BC%8C%E7%95%99%E4%B8%8B%E7%BC%96%E8%BE%91%E6%80%9D%E6%83%B3/"/>
+    <id>http://192.154.218.26/2019/11/20/vim该说再见了，留下编辑思想/</id>
     <published>2019-11-20T07:13:30.000Z</published>
     <updated>2019-11-20T07:17:24.362Z</updated>
     
@@ -351,19 +381,19 @@ ___________________
     
     </summary>
     
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
     
     
-      <category term="emacs" scheme="http://118.25.122.94:8080/tags/emacs/"/>
+      <category term="emacs" scheme="http://192.154.218.26/tags/emacs/"/>
     
-      <category term="vim" scheme="http://118.25.122.94:8080/tags/vim/"/>
+      <category term="vim" scheme="http://192.154.218.26/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>打印用户下所有的git仓库</title>
-    <link href="http://118.25.122.94:8080/2019/11/20/%E6%89%93%E5%8D%B0%E7%94%A8%E6%88%B7%E4%B8%8B%E6%89%80%E6%9C%89%E7%9A%84git%E4%BB%93%E5%BA%93/"/>
-    <id>http://118.25.122.94:8080/2019/11/20/打印用户下所有的git仓库/</id>
+    <link href="http://192.154.218.26/2019/11/20/%E6%89%93%E5%8D%B0%E7%94%A8%E6%88%B7%E4%B8%8B%E6%89%80%E6%9C%89%E7%9A%84git%E4%BB%93%E5%BA%93/"/>
+    <id>http://192.154.218.26/2019/11/20/打印用户下所有的git仓库/</id>
     <published>2019-11-20T01:41:18.000Z</published>
     <updated>2019-11-20T01:59:42.257Z</updated>
     
@@ -379,19 +409,19 @@ ___________________
     
     </summary>
     
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
     
     
-      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
+      <category term="shell" scheme="http://192.154.218.26/tags/shell/"/>
     
-      <category term="git" scheme="http://118.25.122.94:8080/tags/git/"/>
+      <category term="git" scheme="http://192.154.218.26/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>emacs+evil偶数行合并到奇数行</title>
-    <link href="http://118.25.122.94:8080/2019/11/15/emacs-evil%E5%81%B6%E6%95%B0%E8%A1%8C%E5%90%88%E5%B9%B6%E5%88%B0%E5%A5%87%E6%95%B0%E8%A1%8C/"/>
-    <id>http://118.25.122.94:8080/2019/11/15/emacs-evil偶数行合并到奇数行/</id>
+    <link href="http://192.154.218.26/2019/11/15/emacs-evil%E5%81%B6%E6%95%B0%E8%A1%8C%E5%90%88%E5%B9%B6%E5%88%B0%E5%A5%87%E6%95%B0%E8%A1%8C/"/>
+    <id>http://192.154.218.26/2019/11/15/emacs-evil偶数行合并到奇数行/</id>
     <published>2019-11-15T08:54:30.000Z</published>
     <updated>2019-11-15T09:00:31.984Z</updated>
     
@@ -407,19 +437,19 @@ ___________________
     
     </summary>
     
-      <category term="emacs" scheme="http://118.25.122.94:8080/categories/emacs/"/>
+      <category term="emacs" scheme="http://192.154.218.26/categories/emacs/"/>
     
-      <category term="vim" scheme="http://118.25.122.94:8080/categories/emacs/vim/"/>
+      <category term="vim" scheme="http://192.154.218.26/categories/emacs/vim/"/>
     
     
-      <category term="evil" scheme="http://118.25.122.94:8080/tags/evil/"/>
+      <category term="evil" scheme="http://192.154.218.26/tags/evil/"/>
     
   </entry>
   
   <entry>
     <title>升级glibc动态库</title>
-    <link href="http://118.25.122.94:8080/2019/11/06/%E5%8D%87%E7%BA%A7glibc%E5%8A%A8%E6%80%81%E5%BA%93/"/>
-    <id>http://118.25.122.94:8080/2019/11/06/升级glibc动态库/</id>
+    <link href="http://192.154.218.26/2019/11/06/%E5%8D%87%E7%BA%A7glibc%E5%8A%A8%E6%80%81%E5%BA%93/"/>
+    <id>http://192.154.218.26/2019/11/06/升级glibc动态库/</id>
     <published>2019-11-06T11:22:28.000Z</published>
     <updated>2019-11-06T11:30:34.859Z</updated>
     
@@ -436,19 +466,19 @@ ___________________
     
     </summary>
     
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
     
     
-      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
+      <category term="shell" scheme="http://192.154.218.26/tags/shell/"/>
     
-      <category term="Linux" scheme="http://118.25.122.94:8080/tags/Linux/"/>
+      <category term="Linux" scheme="http://192.154.218.26/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>误删除Linux中libc.so.6文件急救办法~</title>
-    <link href="http://118.25.122.94:8080/2019/11/05/%E8%AF%AF%E5%88%A0%E9%99%A4Linux%E4%B8%ADlibc-so-6%E6%96%87%E4%BB%B6%E6%80%A5%E6%95%91%E5%8A%9E%E6%B3%95/"/>
-    <id>http://118.25.122.94:8080/2019/11/05/误删除Linux中libc-so-6文件急救办法/</id>
+    <link href="http://192.154.218.26/2019/11/05/%E8%AF%AF%E5%88%A0%E9%99%A4Linux%E4%B8%ADlibc-so-6%E6%96%87%E4%BB%B6%E6%80%A5%E6%95%91%E5%8A%9E%E6%B3%95/"/>
+    <id>http://192.154.218.26/2019/11/05/误删除Linux中libc-so-6文件急救办法/</id>
     <published>2019-11-05T09:29:12.000Z</published>
     <updated>2019-11-05T09:35:05.791Z</updated>
     
@@ -464,19 +494,19 @@ ___________________
     
     </summary>
     
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
+      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
     
     
-      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
+      <category term="shell" scheme="http://192.154.218.26/tags/shell/"/>
     
-      <category term="GLIBC" scheme="http://118.25.122.94:8080/tags/GLIBC/"/>
+      <category term="GLIBC" scheme="http://192.154.218.26/tags/GLIBC/"/>
     
   </entry>
   
   <entry>
     <title>emacs+vim刀剑合并~</title>
-    <link href="http://118.25.122.94:8080/2019/10/31/emacs-vim%E5%88%80%E5%89%91%E5%90%88%E5%B9%B6/"/>
-    <id>http://118.25.122.94:8080/2019/10/31/emacs-vim刀剑合并/</id>
+    <link href="http://192.154.218.26/2019/10/31/emacs-vim%E5%88%80%E5%89%91%E5%90%88%E5%B9%B6/"/>
+    <id>http://192.154.218.26/2019/10/31/emacs-vim刀剑合并/</id>
     <published>2019-10-31T07:24:51.000Z</published>
     <updated>2019-10-31T07:29:46.050Z</updated>
     
@@ -492,19 +522,19 @@ ___________________
     
     </summary>
     
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
   <entry>
     <title>精细化控制process~</title>
-    <link href="http://118.25.122.94:8080/2019/10/14/%E7%B2%BE%E7%BB%86%E5%8C%96%E6%8E%A7%E5%88%B6process/"/>
-    <id>http://118.25.122.94:8080/2019/10/14/精细化控制process/</id>
+    <link href="http://192.154.218.26/2019/10/14/%E7%B2%BE%E7%BB%86%E5%8C%96%E6%8E%A7%E5%88%B6process/"/>
+    <id>http://192.154.218.26/2019/10/14/精细化控制process/</id>
     <published>2019-10-14T10:49:28.000Z</published>
     <updated>2019-10-14T10:51:51.502Z</updated>
     
@@ -520,19 +550,19 @@ ___________________
     
     </summary>
     
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
   <entry>
     <title>各种代码统计</title>
-    <link href="http://118.25.122.94:8080/2019/10/14/%E5%90%84%E7%A7%8D%E4%BB%A3%E7%A0%81%E7%BB%9F%E8%AE%A1/"/>
-    <id>http://118.25.122.94:8080/2019/10/14/各种代码统计/</id>
+    <link href="http://192.154.218.26/2019/10/14/%E5%90%84%E7%A7%8D%E4%BB%A3%E7%A0%81%E7%BB%9F%E8%AE%A1/"/>
+    <id>http://192.154.218.26/2019/10/14/各种代码统计/</id>
     <published>2019-10-14T06:41:08.000Z</published>
     <updated>2019-10-14T06:43:34.447Z</updated>
     
@@ -548,40 +578,12 @@ ___________________
     
     </summary>
     
-      <category term="验证" scheme="http://118.25.122.94:8080/categories/%E9%AA%8C%E8%AF%81/"/>
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
-      <category term="UVM" scheme="http://118.25.122.94:8080/tags/UVM/"/>
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
-      <category term="SystemVerilog" scheme="http://118.25.122.94:8080/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>xxd妙用</title>
-    <link href="http://118.25.122.94:8080/2019/10/11/xxd%E5%A6%99%E7%94%A8/"/>
-    <id>http://118.25.122.94:8080/2019/10/11/xxd妙用/</id>
-    <published>2019-10-11T03:43:30.000Z</published>
-    <updated>2019-10-11T04:16:38.169Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;Bin文件生成技巧&quot;&gt;&lt;a href=&quot;#Bin文件生成技巧&quot; class=&quot;headerlink&quot; title=&quot;Bin文件生成技巧~&quot;&gt;&lt;/a&gt;Bin文件生成技巧~&lt;/h4&gt;&lt;figure class=&quot;hljs highlight
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://118.25.122.94:8080/categories/Linux/"/>
-    
-    
-      <category term="shell" scheme="http://118.25.122.94:8080/tags/shell/"/>
-    
-      <category term="Linux" scheme="http://118.25.122.94:8080/tags/Linux/"/>
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   

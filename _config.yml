@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://118.25.122.94:8080/
+url: http://192.154.218.26/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -98,8 +98,7 @@ feed:
 deploy:
   type: git
   repo: 
-    shanghai: root@118.25.122.94:/home/ubuntu/blog.git
-	#chengdu: root@148.70.238.123:/home/ubuntu/blog.git
+    usa: root@192.154.218.26:/home/ubuntu/blog.git
   branch: master
 
 # 配置版权
