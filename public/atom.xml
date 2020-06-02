@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2020-05-29T11:33:56.809Z</updated>
+  <updated>2020-06-02T03:29:02.562Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SV追踪Log的堆栈</title>
+    <link href="http://192.154.218.26/2020/06/02/SV%E8%BF%BD%E8%B8%AALog%E7%9A%84%E5%A0%86%E6%A0%88/"/>
+    <id>http://192.154.218.26/2020/06/02/SV追踪Log的堆栈/</id>
+    <published>2020-06-02T03:21:52.000Z</published>
+    <updated>2020-06-02T03:29:02.562Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;没有堆栈的跟踪定位，有时候真的是不知道错在那个线程的哪个函数里面&quot;&gt;&lt;a href=&quot;#没有堆栈的跟踪定位，有时候真的是不知道错在那个线程的哪个函数里面&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>多线程自动查找顶层.v文件包含的文件列表</title>
@@ -469,9 +497,9 @@ ___________________
       <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
     
     
-      <category term="shell" scheme="http://192.154.218.26/tags/shell/"/>
-    
       <category term="Linux" scheme="http://192.154.218.26/tags/Linux/"/>
+    
+      <category term="shell" scheme="http://192.154.218.26/tags/shell/"/>
     
   </entry>
   
@@ -545,34 +573,6 @@ ___________________
         
         
           &lt;h4 id=&quot;啥也不说，做个轮子&quot;&gt;&lt;a href=&quot;#啥也不说，做个轮子&quot; class=&quot;headerlink&quot; title=&quot;啥也不说，做个轮子~&quot;&gt;&lt;/a&gt;啥也不说，做个轮子~&lt;/h4&gt;&lt;figure class=&quot;hljs highlight
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>各种代码统计</title>
-    <link href="http://192.154.218.26/2019/10/14/%E5%90%84%E7%A7%8D%E4%BB%A3%E7%A0%81%E7%BB%9F%E8%AE%A1/"/>
-    <id>http://192.154.218.26/2019/10/14/各种代码统计/</id>
-    <published>2019-10-14T06:41:08.000Z</published>
-    <updated>2019-10-14T06:43:34.447Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;啥都不说，就这样&quot;&gt;&lt;a href=&quot;#啥都不说，就这样&quot; class=&quot;headerlink&quot; title=&quot;啥都不说，就这样~&quot;&gt;&lt;/a&gt;啥都不说，就这样~&lt;/h4&gt;&lt;figure class=&quot;hljs highlight
         
       
     
