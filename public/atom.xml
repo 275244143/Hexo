@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2020-06-02T03:29:02.562Z</updated>
+  <updated>2020-06-05T08:15:05.013Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VCD中快速查找信号命</title>
+    <link href="http://192.154.218.26/2020/06/05/VCD%E4%B8%AD%E5%BF%AB%E9%80%9F%E6%9F%A5%E6%89%BE%E4%BF%A1%E5%8F%B7%E5%91%BD/"/>
+    <id>http://192.154.218.26/2020/06/05/VCD中快速查找信号命/</id>
+    <published>2020-06-05T07:30:55.000Z</published>
+    <updated>2020-06-05T08:15:05.013Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Verdi打开太慢了&quot;&gt;&lt;a href=&quot;#Verdi打开太慢了&quot; class=&quot;headerlink&quot; title=&quot;Verdi打开太慢了~~~&quot;&gt;&lt;/a&gt;Verdi打开太慢了~~~&lt;/h3&gt;&lt;figure class=&quot;hljs highlight
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
+    
+      <category term="脚本" scheme="http://192.154.218.26/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
   
   <entry>
     <title>SV追踪Log的堆栈</title>
@@ -545,34 +573,6 @@ ___________________
         
         
           &lt;h4 id=&quot;Vim重度用户已经无法满足了和emacs这只怪物合并提升层级-效率高&quot;&gt;&lt;a href=&quot;#Vim重度用户已经无法满足了和emacs这只怪物合并提升层级-效率高&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>精细化控制process~</title>
-    <link href="http://192.154.218.26/2019/10/14/%E7%B2%BE%E7%BB%86%E5%8C%96%E6%8E%A7%E5%88%B6process/"/>
-    <id>http://192.154.218.26/2019/10/14/精细化控制process/</id>
-    <published>2019-10-14T10:49:28.000Z</published>
-    <updated>2019-10-14T10:51:51.502Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;啥也不说，做个轮子&quot;&gt;&lt;a href=&quot;#啥也不说，做个轮子&quot; class=&quot;headerlink&quot; title=&quot;啥也不说，做个轮子~&quot;&gt;&lt;/a&gt;啥也不说，做个轮子~&lt;/h4&gt;&lt;figure class=&quot;hljs highlight
         
       
     
