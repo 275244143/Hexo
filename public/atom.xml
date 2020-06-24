@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2020-06-05T08:15:05.013Z</updated>
+  <updated>2020-06-24T09:58:55.741Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Perl匹配打印</title>
+    <link href="http://192.154.218.26/2020/06/24/Perl%E5%8C%B9%E9%85%8D%E6%89%93%E5%8D%B0/"/>
+    <id>http://192.154.218.26/2020/06/24/Perl匹配打印/</id>
+    <published>2020-06-24T09:54:48.000Z</published>
+    <updated>2020-06-24T09:58:55.741Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Perl匹配打印功能，当然是抄的，然后修改&quot;&gt;&lt;a href=&quot;#Perl匹配打印功能，当然是抄的，然后修改&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="脚本" scheme="http://192.154.218.26/categories/%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
+    
+      <category term="Regx" scheme="http://192.154.218.26/tags/Regx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Altera IP sim filelist Gen PerlScript</title>
+    <link href="http://192.154.218.26/2020/06/22/Altera-IP-sim-filelist-Gen-PerlScript/"/>
+    <id>http://192.154.218.26/2020/06/22/Altera-IP-sim-filelist-Gen-PerlScript/</id>
+    <published>2020-06-22T10:29:37.000Z</published>
+    <updated>2020-06-22T10:31:50.597Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;服务器未备份，损失惨重，自动化查找了&quot;&gt;&lt;a href=&quot;#服务器未备份，损失惨重，自动化查找了&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
+    
+      <category term="FPGA" scheme="http://192.154.218.26/tags/FPGA/"/>
+    
+  </entry>
   
   <entry>
     <title>VCD中快速查找信号命</title>
@@ -528,62 +584,6 @@ ___________________
       <category term="shell" scheme="http://192.154.218.26/tags/shell/"/>
     
       <category term="Linux" scheme="http://192.154.218.26/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>误删除Linux中libc.so.6文件急救办法~</title>
-    <link href="http://192.154.218.26/2019/11/05/%E8%AF%AF%E5%88%A0%E9%99%A4Linux%E4%B8%ADlibc-so-6%E6%96%87%E4%BB%B6%E6%80%A5%E6%95%91%E5%8A%9E%E6%B3%95/"/>
-    <id>http://192.154.218.26/2019/11/05/误删除Linux中libc-so-6文件急救办法/</id>
-    <published>2019-11-05T09:29:12.000Z</published>
-    <updated>2019-11-05T09:35:05.791Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;转：大坑啊&quot;&gt;&lt;a href=&quot;#转：大坑啊&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
-    
-    
-      <category term="shell" scheme="http://192.154.218.26/tags/shell/"/>
-    
-      <category term="GLIBC" scheme="http://192.154.218.26/tags/GLIBC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>emacs+vim刀剑合并~</title>
-    <link href="http://192.154.218.26/2019/10/31/emacs-vim%E5%88%80%E5%89%91%E5%90%88%E5%B9%B6/"/>
-    <id>http://192.154.218.26/2019/10/31/emacs-vim刀剑合并/</id>
-    <published>2019-10-31T07:24:51.000Z</published>
-    <updated>2019-10-31T07:29:46.050Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;Vim重度用户已经无法满足了和emacs这只怪物合并提升层级-效率高&quot;&gt;&lt;a href=&quot;#Vim重度用户已经无法满足了和emacs这只怪物合并提升层级-效率高&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
