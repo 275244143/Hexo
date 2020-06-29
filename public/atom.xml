@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2020-06-24T09:58:55.741Z</updated>
+  <updated>2020-06-29T08:31:19.216Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Perl拆解One-Liner</title>
+    <link href="http://192.154.218.26/2020/06/29/Perl%E6%8B%86%E8%A7%A3One-Liner/"/>
+    <id>http://192.154.218.26/2020/06/29/Perl拆解One-Liner/</id>
+    <published>2020-06-29T08:26:12.000Z</published>
+    <updated>2020-06-29T08:31:19.216Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Perl一行式如何定位问题？&quot;&gt;&lt;a href=&quot;#Perl一行式如何定位问题？&quot; class=&quot;headerlink&quot; title=&quot;Perl一行式如何定位问题？&quot;&gt;&lt;/a&gt;Perl一行式如何定位问题？&lt;/h3&gt;&lt;figure class=&quot;hljs
+        
+      
+    
+    </summary>
+    
+      <category term="脚本" scheme="http://192.154.218.26/categories/%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
+    
+  </entry>
   
   <entry>
     <title>Perl匹配打印</title>
@@ -555,35 +581,6 @@ ___________________
     
     
       <category term="evil" scheme="http://192.154.218.26/tags/evil/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>升级glibc动态库</title>
-    <link href="http://192.154.218.26/2019/11/06/%E5%8D%87%E7%BA%A7glibc%E5%8A%A8%E6%80%81%E5%BA%93/"/>
-    <id>http://192.154.218.26/2019/11/06/升级glibc动态库/</id>
-    <published>2019-11-06T11:22:28.000Z</published>
-    <updated>2019-11-06T11:30:34.859Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;(转)&lt;/p&gt;
-&lt;p&gt;glibc是gnu发布的libc库，即c运行库，glibc是linux系统中最底层的api，几乎其它任何运行库都会依赖于glibc。glibc除了封装linux操作系统所提供的系统服务外，它本身也提供了许多其它一些必要功能服务的实现。很多linux的基
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
-    
-    
-      <category term="shell" scheme="http://192.154.218.26/tags/shell/"/>
-    
-      <category term="Linux" scheme="http://192.154.218.26/tags/Linux/"/>
     
   </entry>
   
