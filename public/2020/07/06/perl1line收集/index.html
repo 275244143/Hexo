@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>perl1line收集 | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://192.154.218.26/2020/07/06/perl1line收集/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">perl1line收集</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-07-06T13:42:26+08:00">2020-07-06 13:42:26</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/脚本/" itemprop="url" rel="index"><span itemprop="name">脚本</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">3.2k字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">19分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h3 id="转"><a href="#转" class="headerlink" title="转"></a>转</h3><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br></pre></td><td class="code"><pre><code class="hljs shell">Useful One-Line Scripts for Perl                    Jan 27 2019 | version 1.12<br>--------------------------------                    -----------   ------------<br><br>Compiled by Peter Krumins (peter@catonmat.net, @pkrumins on twitter)<br>https://www.catonmat.net -- good coders code, great coders reuse<br><br>Latest version of this file is always at:<br><br>    https://catonmat.net/ftp/perl1line.txt<br><br>This file is also available in other languages:<br><br>    Chinese: https://github.com/vinian/perl1line.txt<br><br>    Please email me peter@catonmat.net if you want to translate it.<br><br>Perl One-Liners on Github:<br> <br>    https://github.com/pkrumins/perl1line.txt<br><br>    You can send me pull requests over GitHub! I accept bug fixes,<br>    new one-liners, translations and everything else related.<br><br>I have also written "Perl One-Liners Explained" ebook that's based on<br>this file. It explains all the one-liners here. Get it at:<br><br>    https://catonmat.net/perl-book<br><br>No Starch Press has published "Perl One-Liners" as a real book too:<br><br>    https://nostarch.com/perloneliners<br><br>These one-liners work both on UNIX systems and Windows. Most likely your<br>UNIX system already has Perl. For Windows get the Strawberry Perl at:<br><br>    http://www.strawberryperl.com<br><br>Table of contents:<br><br>    1. File Spacing<br>    2. Line Numbering<br>    3. Calculations<br>    4. String Creation and Array Creation<br>    5. Text Conversion and Substitution<br>    6. Selective Printing and Deleting of Certain Lines    <br>    7. Handy Regular Expressions<br>    8. Perl tricks<br><br><br>FILE SPACING <br>------------<br><span class="hljs-meta"><br>#</span><span class="bash"> Double space a file</span><br>perl -pe '$\="\n"'<br>perl -pe 'BEGIN &#123; $\="\n" &#125;'<br>perl -pe '$_ .= "\n"'<br>perl -pe 's/$/\n/'<br>perl -nE 'say'<br><span class="hljs-meta"><br>#</span><span class="bash"> Double space a file, except the blank lines</span><br>perl -pe '$_ .= "\n" unless /^$/'<br>perl -pe '$_ .= "\n" if /\S/'<br><span class="hljs-meta"><br>#</span><span class="bash"> Triple space a file</span><br>perl -pe '$\="\n\n"'<br>perl -pe '$_.="\n\n"'<br><span class="hljs-meta"><br>#</span><span class="bash"> N-space a file</span><br>perl -pe '$_.="\n"x7'<br><span class="hljs-meta"><br>#</span><span class="bash"> Add a blank line before every line</span><br>perl -pe 's//\n/'<br><span class="hljs-meta"><br>#</span><span class="bash"> Remove all blank lines</span><br>perl -ne 'print unless /^$/'<br>perl -lne 'print if length'<br>perl -ne 'print if /\S/'<br><span class="hljs-meta"><br>#</span><span class="bash"> Remove all consecutive blank lines, leaving just one</span><br>perl -00 -pe ''<br>perl -00pe0<br><span class="hljs-meta"><br>#</span><span class="bash"> Compress/expand all blank lines into N consecutive ones</span><br>perl -00 -pe '$_.="\n"x4'<br><span class="hljs-meta"><br>#</span><span class="bash"> Fold a file so that every <span class="hljs-built_in">set</span> of 10 lines becomes one tab-separated line</span><br>perl -lpe '$\ = $. % 10 ? "\t" : "\n"'<br><br><br>LINE NUMBERING<br>--------------<br><span class="hljs-meta"><br>#</span><span class="bash"> Number all lines <span class="hljs-keyword">in</span> a file</span><br>perl -pe '$_ = "$. $_"'<br><span class="hljs-meta"><br>#</span><span class="bash"> Number only non-empty lines <span class="hljs-keyword">in</span> a file</span><br>perl -pe '$_ = ++$a." $_" if /./'<br><span class="hljs-meta"><br>#</span><span class="bash"> Number and <span class="hljs-built_in">print</span> only non-empty lines <span class="hljs-keyword">in</span> a file (drop empty lines)</span><br>perl -ne 'print ++$a." $_" if /./'<br><span class="hljs-meta"><br>#</span><span class="bash"> Number all lines but <span class="hljs-built_in">print</span> line numbers only non-empty lines</span><br>perl -pe '$_ = "$. $_" if /./'<br><span class="hljs-meta"><br>#</span><span class="bash"> Number only lines that match a pattern, <span class="hljs-built_in">print</span> others unmodified</span><br>perl -pe '$_ = ++$a." $_" if /regex/'<br><span class="hljs-meta"><br>#</span><span class="bash"> Number and <span class="hljs-built_in">print</span> only lines that match a pattern</span><br>perl -ne 'print ++$a." $_" if /regex/'<br><span class="hljs-meta"><br>#</span><span class="bash"> Number all lines, but <span class="hljs-built_in">print</span> line numbers only <span class="hljs-keyword">for</span> lines that match a pattern</span><br>perl -pe '$_ = "$. $_" if /regex/'<br><span class="hljs-meta"><br>#</span><span class="bash"> Number all lines <span class="hljs-keyword">in</span> a file using a custom format (<span class="hljs-built_in">emulate</span> cat -n)</span><br>perl -ne 'printf "%-5d %s", $., $_'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the total number of lines <span class="hljs-keyword">in</span> a file (<span class="hljs-built_in">emulate</span> wc -l)</span><br>perl -lne 'END &#123; print $. &#125;'<br>perl -le 'print $n=()=&lt;&gt;'<br>perl -le 'print scalar(()=&lt;&gt;)'<br>perl -le 'print scalar(@foo=&lt;&gt;)'<br>perl -ne '&#125;&#123;print $.'<br>perl -nE '&#125;&#123;say $.'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the number of non-empty lines <span class="hljs-keyword">in</span> a file</span><br>perl -le 'print scalar(grep&#123;/./&#125;&lt;&gt;)'<br>perl -le 'print ~~grep&#123;/./&#125;&lt;&gt;'<br>perl -le 'print~~grep/./,&lt;&gt;'<br>perl -E 'say~~grep/./,&lt;&gt;'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the number of empty lines <span class="hljs-keyword">in</span> a file</span><br>perl -lne '$a++ if /^$/; END &#123;print $a+0&#125;'<br>perl -le 'print scalar(grep&#123;/^$/&#125;&lt;&gt;)'<br>perl -le 'print ~~grep&#123;/^$/&#125;&lt;&gt;'<br>perl -E 'say~~grep&#123;/^$/&#125;&lt;&gt;'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the number of lines <span class="hljs-keyword">in</span> a file that match a pattern (<span class="hljs-built_in">emulate</span> grep -c)</span><br>perl -lne '$a++ if /regex/; END &#123;print $a+0&#125;'<br>perl -nE '$a++ if /regex/; END &#123;say $a+0&#125;'<br><br><br>CALCULATIONS<br>------------<br><span class="hljs-meta"><br>#</span><span class="bash"> Check <span class="hljs-keyword">if</span> a number is a prime</span><br>perl -lne '(1x$_) !~ /^1?$|^(11+?)\1+$/ &amp;&amp; print "$_ is prime"'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the sum of all the fields on a line</span><br>perl -MList::Util=sum -alne 'print sum @F'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the sum of all the fields on all lines</span><br>perl -MList::Util=sum -alne 'push @S,@F; END &#123; print sum @S &#125;'<br>perl -MList::Util=sum -alne '$s += sum @F; END &#123; print $s &#125;'<br><span class="hljs-meta"><br>#</span><span class="bash"> Shuffle all fields on a line</span><br>perl -MList::Util=shuffle -alne 'print "@&#123;[shuffle @F]&#125;"'<br>perl -MList::Util=shuffle -alne 'print join " ", shuffle @F'<br><span class="hljs-meta"><br>#</span><span class="bash"> Find the minimum element on a line</span><br>perl -MList::Util=min -alne 'print min @F'<br><span class="hljs-meta"><br>#</span><span class="bash"> Find the minimum element over all the lines</span><br>perl -MList::Util=min -alne '@M = (@M, @F); END &#123; print min @M &#125;'<br>perl -MList::Util=min -alne '$min = min @F; $rmin = $min unless defined $rmin &amp;&amp; $min &gt; $rmin; END &#123; print $rmin &#125;'<br><span class="hljs-meta"><br>#</span><span class="bash"> Find the maximum element on a line</span><br>perl -MList::Util=max -alne 'print max @F'<br><span class="hljs-meta"><br>#</span><span class="bash"> Find the maximum element over all the lines</span><br>perl -MList::Util=max -alne '@M = (@M, @F); END &#123; print max @M &#125;'<br><span class="hljs-meta"><br>#</span><span class="bash"> Replace each field with its absolute value</span><br>perl -alne 'print "@&#123;[map &#123; abs &#125; @F]&#125;"'<br><span class="hljs-meta"><br>#</span><span class="bash"> Find the total number of fields (words) on each line</span><br>perl -alne 'print scalar @F'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the total number of fields (words) on each line followed by the line</span><br>perl -alne 'print scalar @F, " $_"'<br><span class="hljs-meta"><br>#</span><span class="bash"> Find the total number of fields (words) on all lines</span><br>perl -alne '$t += @F; END &#123; print $t&#125;'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the total number of fields that match a pattern</span><br>perl -alne 'map &#123; /regex/ &amp;&amp; $t++ &#125; @F; END &#123; print $t &#125;'<br>perl -alne '$t += /regex/ for @F; END &#123; print $t &#125;'<br>perl -alne '$t += grep /regex/, @F; END &#123; print $t &#125;'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the total number of lines that match a pattern</span><br>perl -lne '/regex/ &amp;&amp; $t++; END &#123; print $t &#125;'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the number PI to n decimal places</span><br>perl -Mbignum=bpi -le 'print bpi(n)'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the number PI to 39 decimal places</span><br>perl -Mbignum=PI -le 'print PI'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the number E to n decimal places</span><br>perl -Mbignum=bexp -le 'print bexp(1,n+1)'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the number E to 39 decimal places</span><br>perl -Mbignum=e -le 'print e'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print UNIX time (seconds since Jan 1, 1970, 00:00:00 UTC)</span><br>perl -le 'print time'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print GMT (Greenwich Mean Time) and <span class="hljs-built_in">local</span> computer time</span><br>perl -le 'print scalar gmtime'<br>perl -le 'print scalar localtime'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print <span class="hljs-built_in">local</span> computer time <span class="hljs-keyword">in</span> H:M:S format</span><br>perl -le 'print join ":", (localtime)[2,1,0]'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print yesterday<span class="hljs-string">'s date</span></span><br>perl -MPOSIX -le '@now = localtime; $now[3] -= 1; print scalar localtime mktime @now'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Print date 14 months, 9 days and 7 seconds ago</span></span><br>perl -MPOSIX -le '@now = localtime; $now[0] -= 7; $now[4] -= 14; $now[7] -= 9; print scalar localtime mktime @now'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Prepend timestamps to stdout (GMT, localtime)</span></span><br>tail -f logfile | perl -ne 'print scalar gmtime," ",$_'<br>tail -f logfile | perl -ne 'print scalar localtime," ",$_'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Calculate factorial of 5</span></span><br>perl -MMath::BigInt -le 'print Math::BigInt-&gt;new(5)-&gt;bfac()'<br>perl -le '$f = 1; $f *= $_ for 1..5; print $f'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Calculate greatest common divisor (GCM)</span></span><br>perl -MMath::BigInt=bgcd -le 'print bgcd(@list_of_numbers)'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Calculate GCM of numbers 20 and 35 using Euclid'</span>s algorithm</span><br>perl -le '$n = 20; $m = 35; ($m,$n) = ($n,$m%$n) while $n; print $m'<br><span class="hljs-meta"><br>#</span><span class="bash"> Calculate least common multiple (LCM) of numbers 35, 20 and 8</span><br>perl -MMath::BigInt=blcm -le 'print blcm(35,20,8)'<br><span class="hljs-meta"><br>#</span><span class="bash"> Calculate LCM of 20 and 35 using Euclid<span class="hljs-string">'s formula: n*m/gcd(n,m)</span></span><br>perl -le '$a = $n = 20; $b = $m = 35; ($m,$n) = ($n,$m%$n) while $n; print $a*$b/$m'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Generate 10 random numbers between 5 and 15 (excluding 15)</span></span><br>perl -le '$n=10; $min=5; $max=15; $, = " "; print map &#123; int(rand($max-$min))+$min &#125; 1..$n'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Find and print all permutations of a list</span></span><br>perl -MAlgorithm::Permute -le '$l = [1,2,3,4,5]; $p = Algorithm::Permute-&gt;new($l); print @r while @r = $p-&gt;next'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Generate the power set</span></span><br>perl -MList::PowerSet=powerset -le '@l = (1,2,3,4,5); for (@&#123;powerset(@l)&#125;) &#123; print "@$_" &#125;'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Convert an IP address to unsigned integer</span></span><br>perl -le '$i=3; $u += ($_&lt;&lt;8*$i--) for "127.0.0.1" =~ /(\d+)/g; print $u'<br>perl -le '$ip="127.0.0.1"; $ip =~ s/(\d+)\.?/sprintf("%02x", $1)/ge; print hex($ip)'<br>perl -le 'print unpack("N", 127.0.0.1)'<br>perl -MSocket -le 'print unpack("N", inet_aton("127.0.0.1"))'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Convert an unsigned integer to an IP address</span></span><br>perl -MSocket -le 'print inet_ntoa(pack("N", 2130706433))'<br>perl -le '$ip = 2130706433; print join ".", map &#123; (($ip&gt;&gt;8*($_))&amp;0xFF) &#125; reverse 0..3'<br>perl -le '$ip = 2130706433; $, = "."; print map &#123; (($ip&gt;&gt;8*($_))&amp;0xFF) &#125; reverse 0..3'<br><br><br>STRING CREATION AND ARRAY CREATION<br>----------------------------------<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Generate and print the alphabet</span></span><br>perl -le 'print a..z'<br>perl -le 'print ("a".."z")'<br>perl -le '$, = ","; print ("a".."z")'<br>perl -le 'print join ",", ("a".."z")'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Generate and print all the strings from "a" to "zz"</span></span><br>perl -le 'print ("a".."zz")'<br>perl -le 'print "aa".."zz"'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Create a hex lookup table</span></span><br>@hex = (0..9, "a".."f")<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Convert a decimal number to hex using @hex lookup table</span></span><br>perl -le '$num = 255; @hex = (0..9, "a".."f"); while ($num) &#123; $s = $hex[($num%16)&amp;15].$s; $num = int $num/16 &#125; print $s'<br>perl -le '$hex = sprintf("%x", 255); print $hex'<br>perl -le '$num = "ff"; print hex $num'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Generate a random 8 character password</span></span><br>perl -le 'print map &#123; ("a".."z")[rand 26] &#125; 1..8'<br>perl -le 'print map &#123; ("a".."z", 0..9)[rand 36] &#125; 1..8'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Create a string of specific length</span></span><br>perl -le 'print "a"x50'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Create a repeated list of elements</span></span><br>perl -le '@list = (1,2)x20; print "@list"'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Create an array from a string</span></span><br>@months = split ' ', "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec"<br>@months = qw/Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec/<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Create a string from an array</span></span><br>@stuff = ("hello", 0..9, "world"); $string = join '-', @stuff<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Find the numeric values for characters in the string</span></span><br>perl -le 'print join ", ", map &#123; ord &#125; split //, "hello world"'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Convert a list of numeric ASCII values into a string</span></span><br>perl -le '@ascii = (99, 111, 100, 105, 110, 103); print pack("C*", @ascii)'<br>perl -le '@ascii = (99, 111, 100, 105, 110, 103); print map &#123; chr &#125; @ascii'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Generate an array with odd numbers from 1 to 100</span></span><br>perl -le '@odd = grep &#123;$_ % 2 == 1&#125; 1..100; print "@odd"'<br>perl -le '@odd = grep &#123; $_ &amp; 1 &#125; 1..100; print "@odd"'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Generate an array with even numbers from 1 to 100</span></span><br>perl -le '@even = grep &#123;$_ % 2 == 0&#125; 1..100; print "@even"'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Find the length of the string</span></span><br>perl -le 'print length "one-liners are great"'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Find the number of elements in an array</span></span><br>perl -le '@array = ("a".."z"); print scalar @array'<br>perl -le '@array = ("a".."z"); print $#array + 1'<br><br><br>TEXT CONVERSION AND SUBSTITUTION<br>--------------------------------<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> ROT13 a string</span></span><br>'y/A-Za-z/N-ZA-Mn-za-m/'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> ROT 13 a file</span></span><br>perl -lpe 'y/A-Za-z/N-ZA-Mn-za-m/' file<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Base64 encode a string</span></span><br>perl -MMIME::Base64 -e 'print encode_base64("string")'<br>perl -MMIME::Base64 -0777 -ne 'print encode_base64($_)' file<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Base64 decode a string</span></span><br>perl -MMIME::Base64 -le 'print decode_base64("base64string")'<br>perl -MMIME::Base64 -ne 'print decode_base64($_)' file<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> URL-escape a string</span></span><br>perl -MURI::Escape -le 'print uri_escape($string)'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> URL-unescape a string</span></span><br>perl -MURI::Escape -le 'print uri_unescape($string)'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> HTML-encode a string</span></span><br>perl -MHTML::Entities -le 'print encode_entities($string)'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> HTML-decode a string</span></span><br>perl -MHTML::Entities -le 'print decode_entities($string)'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Convert all text to uppercase</span></span><br>perl -nle 'print uc'<br>perl -ple '$_=uc'<br>perl -nle 'print "\U$_"'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Convert all text to lowercase</span></span><br>perl -nle 'print lc'<br>perl -ple '$_=lc'<br>perl -nle 'print "\L$_"'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Uppercase only the first word of each line</span></span><br>perl -nle 'print ucfirst lc'<br>perl -nle 'print "\u\L$_"'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Invert the letter case</span></span><br>perl -ple 'y/A-Za-z/a-zA-Z/'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Camel case each line</span></span><br>perl -ple 's/(\w+)/\u$1/g'<br>perl -ple 's/(?&lt;![\'])(\w+)/\u\1/g'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Strip leading whitespace (spaces, tabs) from the beginning of each line</span></span><br>perl -ple 's/^[ \t]+//'<br>perl -ple 's/^\s+//'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Strip trailing whitespace (space, tabs) from the end of each line</span></span><br>perl -ple 's/[ \t]+$//'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Strip whitespace from the beginning and end of each line</span></span><br>perl -ple 's/^[ \t]+|[ \t]+$//g'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Convert UNIX newlines to DOS/Windows newlines</span></span><br>perl -pe 's|\n|\r\n|'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Convert DOS/Windows newlines to UNIX newlines</span></span><br>perl -pe 's|\r\n|\n|'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Convert UNIX newlines to Mac newlines</span></span><br>perl -pe 's|\n|\r|'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Substitute (find and replace) "foo" with "bar" on each line</span></span><br>perl -pe 's/foo/bar/'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Substitute (find and replace) all "foo"s with "bar" on each line</span></span><br>perl -pe 's/foo/bar/g'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Substitute (find and replace) "foo" with "bar" on lines that match "baz"</span></span><br>perl -pe '/baz/ &amp;&amp; s/foo/bar/'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Binary patch a file (find and replace a given array of bytes as hex numbers)</span></span><br>perl -pi -e 's/\x89\xD8\x48\x8B/\x90\x90\x48\x8B/g' file<br><br><br>SELECTIVE PRINTING AND DELETING OF CERTAIN LINES<br>------------------------------------------------<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Print the first line of a file (emulate head -1)</span></span><br>perl -ne 'print; exit'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Print the first 10 lines of a file (emulate head -10)</span></span><br>perl -ne 'print if $. &lt;= 10'<br>perl -ne '$. &lt;= 10 &amp;&amp; print'<br>perl -ne 'print if 1..10'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Print the last line of a file (emulate tail -1)</span></span><br>perl -ne '$last = $_; END &#123; print $last &#125;'<br>perl -ne 'print if eof'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Print the last 10 lines of a file (emulate tail -10)</span></span><br>perl -ne 'push @a, $_; @a = @a[@a-10..$#a]; END &#123; print @a &#125;'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Print only lines that match a regular expression</span></span><br>perl -ne '/regex/ &amp;&amp; print'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Print only lines that do not match a regular expression</span></span><br>perl -ne '!/regex/ &amp;&amp; print'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Print the line before a line that matches a regular expression</span></span><br>perl -ne '/regex/ &amp;&amp; $last &amp;&amp; print $last; $last = $_'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Print the line after a line that matches a regular expression</span></span><br>perl -ne 'if ($p) &#123; print; $p = 0 &#125; $p++ if /regex/'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Print lines that match regex AAA and regex BBB in any order</span></span><br>perl -ne '/AAA/ &amp;&amp; /BBB/ &amp;&amp; print'<br><span class="hljs-meta"><br>#</span><span class="bash"><span class="hljs-string"> Print lines that don'</span>t match match regexes AAA and BBB</span><br>perl -ne '!/AAA/ &amp;&amp; !/BBB/ &amp;&amp; print'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print lines that match regex AAA followed by regex BBB followed by CCC</span><br>perl -ne '/AAA.*BBB.*CCC/ &amp;&amp; print'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print lines that are 80 chars or longer</span><br>perl -ne 'print if length &gt;= 80'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print lines that are less than 80 chars <span class="hljs-keyword">in</span> length</span><br>perl -ne 'print if length &lt; 80'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print only line 13</span><br>perl -ne '$. == 13 &amp;&amp; print &amp;&amp; exit'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print all lines except line 27</span><br>perl -ne '$. != 27 &amp;&amp; print'<br>perl -ne 'print if $. != 27'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print only lines 13, 19 and 67</span><br>perl -ne 'print if $. == 13 || $. == 19 || $. == 67'<br>perl -ne 'print if int($.) ~~ (13, 19, 67)' <br><span class="hljs-meta"><br>#</span><span class="bash"> Print all lines between two regexes (including lines that match regex)</span><br>perl -ne 'print if /regex1/../regex2/'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print all lines from line 17 to line 30</span><br>perl -ne 'print if $. &gt;= 17 &amp;&amp; $. &lt;= 30'<br>perl -ne 'print if int($.) ~~ (17..30)'<br>perl -ne 'print if grep &#123; $_ == $. &#125; 17..30'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the longest line</span><br>perl -ne '$l = $_ if length($_) &gt; length($l); END &#123; print $l &#125;'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the shortest line</span><br>perl -ne '$s = $_ if $. == 1; $s = $_ if length($_) &lt; length($s); END &#123; print $s &#125;'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print all lines that contain a number</span><br>perl -ne 'print if /\d/'<br><span class="hljs-meta"><br>#</span><span class="bash"> Find all lines that contain only a number</span><br>perl -ne 'print if /^\d+$/'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print all lines that contain only characters</span><br>perl -ne 'print if /^[[:alpha:]]+$/'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print every second line</span><br>perl -ne 'print if $. % 2'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print every second line, starting the second line</span><br>perl -ne 'print if $. % 2 == 0'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print all lines that repeat</span><br>perl -ne 'print if ++$a&#123;$_&#125; == 2'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print all unique lines</span><br>perl -ne 'print unless $a&#123;$_&#125;++'<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the first field (word) of every line (<span class="hljs-built_in">emulate</span> cut -f 1 -d <span class="hljs-string">' '</span>)</span><br>perl -alne 'print $F[0]'<br><br><br>HANDY REGULAR EXPRESSIONS<br>-------------------------<br><span class="hljs-meta"><br>#</span><span class="bash"> Match something that looks like an IP address</span><br>/^\d&#123;1,3&#125;\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;$/<br>/^(\d&#123;1,3&#125;\.)&#123;3&#125;\d&#123;1,3&#125;$/<br><span class="hljs-meta"><br>#</span><span class="bash"> Test <span class="hljs-keyword">if</span> a number is <span class="hljs-keyword">in</span> range 0-255</span><br>/^([0-9]|[0-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$/<br><span class="hljs-meta"><br>#</span><span class="bash"> Match an IP address</span><br>my $ip_part = qr|([0-9]|[0-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|;<br>if ($ip =~ /^($ip_part\.)&#123;3&#125;$ip_part$/) &#123;<br> say "valid ip";<br>&#125;<br><span class="hljs-meta"><br>#</span><span class="bash"> Check <span class="hljs-keyword">if</span> the string looks like an email address</span><br>/\S+@\S+\.\S+/<br><span class="hljs-meta"><br>#</span><span class="bash"> Check <span class="hljs-keyword">if</span> the string is a decimal number</span><br>/^\d+$/<br>/^[+-]?\d+$/<br>/^[+-]?\d+\.?\d*$/<br><span class="hljs-meta"><br>#</span><span class="bash"> Check <span class="hljs-keyword">if</span> the string is a hexadecimal number</span><br>/^0x[0-9a-f]+$/i<br><span class="hljs-meta"><br>#</span><span class="bash"> Check <span class="hljs-keyword">if</span> the string is an octal number</span><br>/^0[0-7]+$/<br><span class="hljs-meta"><br>#</span><span class="bash"> Check <span class="hljs-keyword">if</span> the string is binary</span><br>/^[01]+$/<br><span class="hljs-meta"><br>#</span><span class="bash"> Check <span class="hljs-keyword">if</span> a word appears twice <span class="hljs-keyword">in</span> the string</span><br>/(word).*\1/<br><span class="hljs-meta"><br>#</span><span class="bash"> Increase all numbers by one <span class="hljs-keyword">in</span> the string</span><br><span class="hljs-meta">$</span><span class="bash">str =~ s/(\d+)/<span class="hljs-variable">$1</span>+1/ge</span><br><span class="hljs-meta"><br>#</span><span class="bash"> Extract HTTP User-Agent string from the HTTP headers</span><br>/^User-Agent: (.+)$/<br><span class="hljs-meta"><br>#</span><span class="bash"> Match printable ASCII characters</span><br>/[ -~]/<br><span class="hljs-meta"><br>#</span><span class="bash"> Match unprintable ASCII characters</span><br>/[^ -~]/<br><span class="hljs-meta"><br>#</span><span class="bash"> Match text between two HTML tags</span><br>m|&lt;strong&gt;([^&lt;]*)&lt;/strong&gt;|<br>m|&lt;strong&gt;(.*?)&lt;/strong&gt;|<br><span class="hljs-meta"><br>#</span><span class="bash"> Replace all &lt;b&gt; tags with &lt;strong&gt;</span><br><span class="hljs-meta">$</span><span class="bash">html =~ s|&lt;(/)?b&gt;|&lt;<span class="hljs-variable">$1strong</span>&gt;|g</span><br><span class="hljs-meta"><br>#</span><span class="bash"> Extract all matches from a regular expression</span><br>my @matches = $text =~ /regex/g;<br><br><br>PERL TRICKS<br>-----------<br><span class="hljs-meta"><br>#</span><span class="bash"> Print the version of a Perl module</span><br>perl -MModule -le 'print $Module::VERSION'<br>perl -MLWP::UserAgent -le 'print $LWP::UserAgent::VERSION'<br><br><br>PERL ONE-LINERS EXPLAINED E-BOOK<br>--------------------------------<br><br>I have written an ebook based on the one-liners in this file. If you want to<br>support my work and learn more about these one-liners, you can get a copy<br>of my ebook at:<br><br>    https://catonmat.net/perl-book<br><br>The ebook is based on the 7-part article series that I wrote on my blog.<br>In the ebook I reviewed all the one-liners, improved explanations, added<br>new ones, and added two new chapters - introduction to Perl one-liners<br>and summary of commonly used special variables.<br><br>You can read the original article series here:<br><br>    https://catonmat.net/perl-one-liners-explained-part-one<br>    https://catonmat.net/perl-one-liners-explained-part-two<br>    https://catonmat.net/perl-one-liners-explained-part-three<br>    https://catonmat.net/perl-one-liners-explained-part-four<br>    https://catonmat.net/perl-one-liners-explained-part-five<br>    https://catonmat.net/perl-one-liners-explained-part-six<br>    https://catonmat.net/perl-one-liners-explained-part-seven<br><br><br>CREDITS<br>-------<br><br>Andy Lester       http://www.petdance.com<br>Shlomi Fish       http://www.shlomifish.org<br>Madars Virza      http://www.madars.org<br>caffecaldo        https://github.com/caffecaldo<br>Kirk Kimmel       https://github.com/kimmel<br>avar              https://github.com/avar<br>rent0n<br><br><br>FOUND A BUG? HAVE ANOTHER ONE-LINER?<br>------------------------------------<br><br>Email bugs and new one-liners to me at peter@catonmat.net.<br><br><br>HAVE FUN<br>--------<br><br>I hope you found these one-liners useful. Have fun and see ya!<br><span class="hljs-meta"><br>#</span><span class="bash">---end of file---</span><br></code></pre></td></tr></table></figure>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/Perl/" rel="tag"><i class="fas fa-tags"></i>Perl</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2020/07/06/perl1line收集/" title="perl1line收集">http://118.25.122.94:8080/2020/07/06/perl1line收集/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2020/06/29/Perl拆解One-Liner/" rel="next" title="Perl拆解One-Liner"><i class="fas fa-angle-left"></i><span class="nav-title">Perl拆解One-Liner</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2020/07/09/ncsim波形显示glitch/" rel="prev" title="ncsim波形显示glitch"><span class="nav-title">ncsim波形显示glitch</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">130</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">15</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">51</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#转"><span class="toc-text">转</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altera/">Altera</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chisel/">Chisel</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/">FPGA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GLIBC/">GLIBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LFSR/">LFSR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Perl/">Perl</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL/">RTL</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Regx/">Regx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">76</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">68</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/">Verilog</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/evil/">evil</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gtd/">gtd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ncsim/">ncsim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tig/">tig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xargs/">xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yaml/">yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/并行/">并行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2020</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
