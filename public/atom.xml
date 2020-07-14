@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2020-07-09T10:53:38.423Z</updated>
+  <updated>2020-07-13T03:07:25.153Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>相关库查找技巧</title>
+    <link href="http://192.154.218.26/2020/07/13/%E7%9B%B8%E5%85%B3%E5%BA%93%E6%9F%A5%E6%89%BE%E6%8A%80%E5%B7%A7/"/>
+    <id>http://192.154.218.26/2020/07/13/相关库查找技巧/</id>
+    <published>2020-07-13T02:59:17.000Z</published>
+    <updated>2020-07-13T03:07:25.153Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;perl安装库WEB浏览&quot;&gt;&lt;a href=&quot;#perl安装库WEB浏览&quot; class=&quot;headerlink&quot; title=&quot;perl安装库WEB浏览&quot;&gt;&lt;/a&gt;perl安装库WEB浏览&lt;/h3&gt;&lt;figure class=&quot;hljs highlight
+        
+      
+    
+    </summary>
+    
+      <category term="脚本" scheme="http://192.154.218.26/categories/%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="perl" scheme="http://192.154.218.26/tags/perl/"/>
+    
+      <category term="库" scheme="http://192.154.218.26/tags/%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>ncsim波形显示glitch</title>
@@ -540,34 +568,6 @@ ___________________
         
         
           &lt;h4 id=&quot;emacs-vim-hack已经停不下来了，启动快，ide，各种好处，以前排斥，现在欣然学习接受&quot;&gt;&lt;a href=&quot;#emacs-vim-hack已经停不下来了，启动快，ide，各种好处，以前排斥，现在欣然学习接受&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
-    
-    
-      <category term="emacs" scheme="http://192.154.218.26/tags/emacs/"/>
-    
-      <category term="vim" scheme="http://192.154.218.26/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vim该说再见了，留下编辑思想~</title>
-    <link href="http://192.154.218.26/2019/11/20/vim%E8%AF%A5%E8%AF%B4%E5%86%8D%E8%A7%81%E4%BA%86%EF%BC%8C%E7%95%99%E4%B8%8B%E7%BC%96%E8%BE%91%E6%80%9D%E6%83%B3/"/>
-    <id>http://192.154.218.26/2019/11/20/vim该说再见了，留下编辑思想/</id>
-    <published>2019-11-20T07:13:30.000Z</published>
-    <updated>2019-11-20T07:17:24.362Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;vim该说再见了，留下编辑思想&quot;&gt;&lt;a href=&quot;#vim该说再见了，留下编辑思想&quot; class=&quot;headerlink&quot; title=&quot;vim该说再见了，留下编辑思想~&quot;&gt;&lt;/a&gt;vim该说再见了，留下编辑思想~&lt;/h3&gt;&lt;p&gt;&lt;img
         
       
     
