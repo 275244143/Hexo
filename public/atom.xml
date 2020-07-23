@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2020-07-13T03:07:25.153Z</updated>
+  <updated>2020-07-22T02:07:05.271Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何实例化Parameterized test</title>
+    <link href="http://192.154.218.26/2020/07/22/%E5%A6%82%E4%BD%95%E5%AE%9E%E4%BE%8B%E5%8C%96Parameterized-test/"/>
+    <id>http://192.154.218.26/2020/07/22/如何实例化Parameterized-test/</id>
+    <published>2020-07-22T01:46:46.000Z</published>
+    <updated>2020-07-22T02:07:05.271Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;不错，就转载一下。&quot;&gt;&lt;a href=&quot;#不错，就转载一下。&quot; class=&quot;headerlink&quot; title=&quot;不错，就转载一下。&quot;&gt;&lt;/a&gt;不错，就转载一下。&lt;/h3&gt;&lt;p&gt;I have a few questions regarding
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>相关库查找技巧</title>
@@ -540,34 +568,6 @@ ___________________
         
           &lt;h3 id=&quot;编译后端&quot;&gt;&lt;a href=&quot;#编译后端&quot; class=&quot;headerlink&quot; title=&quot;编译后端&quot;&gt;&lt;/a&gt;编译后端&lt;/h3&gt;&lt;p&gt;打开终端(假设你已经安装好了 git 和 cmake， gcc 或者 clang）&lt;/p&gt;
 &lt;figure
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
-    
-    
-      <category term="emacs" scheme="http://192.154.218.26/tags/emacs/"/>
-    
-      <category term="vim" scheme="http://192.154.218.26/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>emacs-vim加入lsp-mode成为最强ide~</title>
-    <link href="http://192.154.218.26/2019/12/09/emacs-vim%E5%8A%A0%E5%85%A5lsp-mode%E6%88%90%E4%B8%BA%E6%9C%80%E5%BC%BAide/"/>
-    <id>http://192.154.218.26/2019/12/09/emacs-vim加入lsp-mode成为最强ide/</id>
-    <published>2019-12-09T10:25:19.000Z</published>
-    <updated>2019-12-09T10:31:35.765Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;emacs-vim-hack已经停不下来了，启动快，ide，各种好处，以前排斥，现在欣然学习接受&quot;&gt;&lt;a href=&quot;#emacs-vim-hack已经停不下来了，启动快，ide，各种好处，以前排斥，现在欣然学习接受&quot; class=&quot;headerlink&quot;
         
       
     
