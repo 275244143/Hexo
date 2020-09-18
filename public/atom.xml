@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2020-08-27T09:25:25.363Z</updated>
+  <updated>2020-09-18T10:22:31.020Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>脚本化自动插端口延迟</title>
+    <link href="http://192.154.218.26/2020/09/18/%E8%84%9A%E6%9C%AC%E5%8C%96%E8%87%AA%E5%8A%A8%E6%8F%92%E7%AB%AF%E5%8F%A3%E5%BB%B6%E8%BF%9F/"/>
+    <id>http://192.154.218.26/2020/09/18/脚本化自动插端口延迟/</id>
+    <published>2020-09-18T10:16:09.000Z</published>
+    <updated>2020-09-18T10:22:31.020Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight perl&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>signal延迟模块RTL</title>
+    <link href="http://192.154.218.26/2020/09/18/signal%E5%BB%B6%E8%BF%9F%E6%A8%A1%E5%9D%97RTL/"/>
+    <id>http://192.154.218.26/2020/09/18/signal延迟模块RTL/</id>
+    <published>2020-09-18T10:14:59.000Z</published>
+    <updated>2020-09-18T10:18:25.617Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight verilog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="Verilog" scheme="http://192.154.218.26/tags/Verilog/"/>
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>Perl模块验证环境使用</title>
@@ -528,57 +588,6 @@ ___________________
       <category term="org-mode" scheme="http://192.154.218.26/tags/org-mode/"/>
     
       <category term="gtd" scheme="http://192.154.218.26/tags/gtd/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://192.154.218.26/2020/03/25/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/"/>
-    <id>http://192.154.218.26/2020/03/25/相见恨晚的Org-mode/相见恨晚的Org-mode/</id>
-    <published>2020-03-25T06:05:28.004Z</published>
-    <updated>2020-03-25T06:13:19.276Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>DPI-C调用class中的TF</title>
-    <link href="http://192.154.218.26/2020/03/11/DPI-C%E8%B0%83%E7%94%A8class%E4%B8%AD%E7%9A%84TF/"/>
-    <id>http://192.154.218.26/2020/03/11/DPI-C调用class中的TF/</id>
-    <published>2020-03-11T01:38:59.000Z</published>
-    <updated>2020-03-11T01:44:38.211Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;代码demo&quot;&gt;&lt;a href=&quot;#代码demo&quot; class=&quot;headerlink&quot; title=&quot;代码demo&quot;&gt;&lt;/a&gt;代码demo&lt;/h3&gt;&lt;p&gt;You can create a static instance of your sequence,
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
