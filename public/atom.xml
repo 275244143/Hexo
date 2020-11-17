@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2020-09-18T10:22:31.020Z</updated>
+  <updated>2020-11-17T06:47:34.953Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Slurm分布式资源管理初试用~</title>
+    <link href="http://192.154.218.26/2020/11/17/Slurm%E5%88%86%E5%B8%83%E5%BC%8F%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%88%9D%E8%AF%95%E7%94%A8/"/>
+    <id>http://192.154.218.26/2020/11/17/Slurm分布式资源管理初试用/</id>
+    <published>2020-11-17T06:42:07.000Z</published>
+    <updated>2020-11-17T06:47:34.953Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;个人PC已经开玩-只能说牛逼&quot;&gt;&lt;a href=&quot;#个人PC已经开玩-只能说牛逼&quot; class=&quot;headerlink&quot; title=&quot;个人PC已经开玩~只能说牛逼~&quot;&gt;&lt;/a&gt;个人PC已经开玩~只能说牛逼~&lt;/h2&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Slurm" scheme="http://192.154.218.26/categories/Slurm/"/>
+    
+    
+      <category term="分布式" scheme="http://192.154.218.26/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+      <category term="LSF" scheme="http://192.154.218.26/tags/LSF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>脚本化自动插端口延迟</title>
     <link href="http://192.154.218.26/2020/09/18/%E8%84%9A%E6%9C%AC%E5%8C%96%E8%87%AA%E5%8A%A8%E6%8F%92%E7%AB%AF%E5%8F%A3%E5%BB%B6%E8%BF%9F/"/>
     <id>http://192.154.218.26/2020/09/18/脚本化自动插端口延迟/</id>
     <published>2020-09-18T10:16:09.000Z</published>
-    <updated>2020-09-18T10:22:31.020Z</updated>
+    <updated>2020-09-21T07:05:31.278Z</updated>
     
     <summary type="html">
     
@@ -550,44 +578,6 @@
       <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
       <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>相见恨晚的Org-mode</title>
-    <link href="http://192.154.218.26/2020/03/25/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/"/>
-    <id>http://192.154.218.26/2020/03/25/相见恨晚的Org-mode/</id>
-    <published>2020-03-25T07:52:54.000Z</published>
-    <updated>2020-03-25T06:57:50.241Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre&gt;&lt;code&gt;___________________
-
- ORG-MODE 简明手册
-   (转载)
-
-   神秘人
-___________________
-
-
-   2020-03-25 Wed
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Table of
-        
-      
-    
-    </summary>
-    
-      <category term="emacs" scheme="http://192.154.218.26/categories/emacs/"/>
-    
-    
-      <category term="org-mode" scheme="http://192.154.218.26/tags/org-mode/"/>
-    
-      <category term="gtd" scheme="http://192.154.218.26/tags/gtd/"/>
     
   </entry>
   
