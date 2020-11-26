@@ -201,3 +201,75 @@ irun -sv test.sv my_cmd.c -I/mnt/data0/ies152/tools/include -I/mnt/data0/python3
 被坑了多次，导入各种库时，py文件和so生成的文件绝对不要放在一个位置，否则ncsim找不到库~
 所以：在DPI 文件夹下面的pycode放py文件，DPI文件下放C文件和so文件,相关脚本运行仿真必须在DPI上一层，否则找不到py文件。
 
+#### SV-EXPORT
+* svdpi_export.c
+```c
+extern void sv_uvm_info(const char *tag, const char *msg);
+void c_uvm_info(const char *tag, const char *msg);
+
+//如下必须设置svdpi的scope，不然找不到dpi export sv函数
+void c_uvm_info(const char *tag, const char *msg) {
+  svScope gscope = svGetScopeFromName("macros_pkg::");
+  svSetScope(gscope);
+  sv_uvm_info(tag, msg);
+}
+```
+* macros_pkg.sv
+```verilog
+package macro_pkg;
+	export "DPI-C" function sv_uvm_info;
+	function void sv_uvm_info(string tag, string msg);
+    	`uvm_info(tag,msg,UVM_NONE);
+	endfunction
+endpackage
+```
+* python3使用导出的SV-C函数
+```python
+svdpi = cdll.LoadLibrary("./DPI/svdpi_export.so")
+uvm_info = svdpi.c_uvm_info
+def py_EthPktGen(cmd, show=0, pfile="scapy"):
+    llist = []
+    cnt = 0
+    try:
+        pkt_cmd = eval(cmd)
+        if show >= 1:
+            mstr = "[Py_EthPktGen_Cmd]:------>:[%0s]" % (cmd)
+        allpkt = [p for p in pkt_cmd]
+        ##############################################################
+        for pkt in allpkt:
+            cnt += 1
+            if show == 1:
+                pkt.show2()
+                hexdump(pkt)
+            elif show == 2:
+                pkt.show()
+            elif show == 3:
+                ls(pkt)
+            elif show == 4:
+                mstr = "Pkt[%0d] Len:->%0d" % (cnt, len(pkt))
+            elif show == 5:
+                pkt.pdfdump("%0s_%0d" % (pfile, cnt))
+            ##############################################################
+            pkt = bytes(pkt)
+            mlist = []
+            for i in pkt:
+                mlist.append("%02x" % (i))
+            llist.append(":".join(mlist))
+        #重点str在python3默认是unicode~，必须转为bytes~
+        #uvm_info(b"py_EthPktGen", bytes("#".join(llist), 'ascii'))
+        return "#".join(llist)
+    except Exception:
+        mstr = (
+            "Line:"
+            + str(sys._getframe().f_lineno)
+            + "-->:Error:\n"
+            + traceback.format_exc()
+        )
+        mstr = mstr + "\nCmd string is:" + cmd
+        sys.exit(1)
+```
+* ncsim仿真输出到log
+```shell
+<<UVM_INFO>> ./TB/CBB/macros_pkg.sv(2560) @ 0.001625 ms: reporter [py_EthPktGen] 11:11:11:11:11:11:22:22:22:22:22:22:08:00:45:00:00:33:00:01:40:00:01:06:73:bf:01:01:01:01:02:02:02:02:22:22:11:11:00:00:00:00:00:00:00:00:50:ff:20:00:87:65:00:00:c2:a5:c2:a5:c2:a5:c2:a5:c2:a5:01
+```
+

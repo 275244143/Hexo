@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2020-11-25T11:57:23.868Z</updated>
+  <updated>2020-11-26T09:11:28.267Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://192.154.218.26/2020/11/25/python2-3-sv-dpi/"/>
     <id>http://192.154.218.26/2020/11/25/python2-3-sv-dpi/</id>
     <published>2020-11-25T11:14:40.000Z</published>
-    <updated>2020-11-25T11:57:23.868Z</updated>
+    <updated>2020-11-26T09:11:28.267Z</updated>
     
     <summary type="html">
     
@@ -94,11 +94,11 @@
       <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
-      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
-    
       <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
       <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
     
   </entry>
   
@@ -154,11 +154,11 @@
       <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
-      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
-    
       <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
       <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
     
   </entry>
   
