@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2020-11-26T09:11:28.267Z</updated>
+  <updated>2021-01-26T01:42:59.165Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,96 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>get_response() with UVM RAL</title>
+    <link href="http://192.154.218.26/2021/01/25/get-response-with-UVM-RAL/"/>
+    <id>http://192.154.218.26/2021/01/25/get-response-with-UVM-RAL/</id>
+    <published>2021-01-25T11:14:04.000Z</published>
+    <updated>2021-01-26T01:42:59.165Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h3&gt;&lt;p&gt;“Response queue overflow, response is dropped”&lt;/p&gt;
+&lt;p&gt;Got the above
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+      <category term="RAL" scheme="http://192.154.218.26/tags/RAL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UVM Instance override for UVM objects</title>
+    <link href="http://192.154.218.26/2021/01/25/UVM-Instance-override-for-UVM-objects/"/>
+    <id>http://192.154.218.26/2021/01/25/UVM-Instance-override-for-UVM-objects/</id>
+    <published>2021-01-25T10:45:48.000Z</published>
+    <updated>2021-01-25T10:48:47.602Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h3&gt;&lt;p&gt;what is the right way to override a uvm_object with instance
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>命令行快速查询</title>
+    <link href="http://192.154.218.26/2020/12/24/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E6%9F%A5%E8%AF%A2/"/>
+    <id>http://192.154.218.26/2020/12/24/命令行快速查询/</id>
+    <published>2020-12-24T08:26:51.000Z</published>
+    <updated>2020-12-24T08:40:21.905Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;老了记不住就只能查了&quot;&gt;&lt;a href=&quot;#老了记不住就只能查了&quot; class=&quot;headerlink&quot; title=&quot;老了记不住就只能查了&quot;&gt;&lt;/a&gt;老了记不住就只能查了&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;cheat.sh
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+      <category term="Linux" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/Linux/"/>
+    
+    
+      <category term="shell" scheme="http://192.154.218.26/tags/shell/"/>
+    
+      <category term="命令查询" scheme="http://192.154.218.26/tags/%E5%91%BD%E4%BB%A4%E6%9F%A5%E8%AF%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>python2&amp;3-sv-dpi</title>
@@ -94,11 +184,11 @@
       <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
+      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
+    
       <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
       <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
     
   </entry>
   
@@ -154,11 +244,11 @@
       <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
+      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
+    
       <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
       <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
     
   </entry>
   
@@ -491,90 +581,6 @@
       <category term="Verilog" scheme="http://192.154.218.26/tags/Verilog/"/>
     
       <category term="RTL" scheme="http://192.154.218.26/tags/RTL/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Gnu parallel入门</title>
-    <link href="http://192.154.218.26/2020/04/23/Gnu-parallel%E5%85%A5%E9%97%A8/"/>
-    <id>http://192.154.218.26/2020/04/23/Gnu-parallel入门/</id>
-    <published>2020-04-23T02:26:39.000Z</published>
-    <updated>2020-04-23T02:33:21.262Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;how&quot;&gt;&lt;a href=&quot;#how&quot; class=&quot;headerlink&quot; title=&quot;how&quot;&gt;&lt;/a&gt;how&lt;/h2&gt;&lt;p&gt;最简单的方法就是类比&lt;code&gt;xargs&lt;/code&gt;。在xargs里面有一个参数
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
-    
-    
-      <category term="shell" scheme="http://192.154.218.26/tags/shell/"/>
-    
-      <category term="并行" scheme="http://192.154.218.26/tags/%E5%B9%B6%E8%A1%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Altera fifo/ram_2port ip脚本生成</title>
-    <link href="http://192.154.218.26/2020/04/22/Altera-fifo-ram-2port-ip%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90/"/>
-    <id>http://192.154.218.26/2020/04/22/Altera-fifo-ram-2port-ip脚本生成/</id>
-    <published>2020-04-22T08:26:21.000Z</published>
-    <updated>2020-04-22T08:30:52.414Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;fifo&quot;&gt;&lt;a href=&quot;#fifo&quot; class=&quot;headerlink&quot; title=&quot;fifo&quot;&gt;&lt;/a&gt;fifo&lt;/h2&gt;&lt;figure class=&quot;hljs highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-      <category term="FPGA" scheme="http://192.154.218.26/categories/FPGA/"/>
-    
-    
-      <category term="bash" scheme="http://192.154.218.26/tags/bash/"/>
-    
-      <category term="Altera" scheme="http://192.154.218.26/tags/Altera/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SV实现的链表(我是搬运工)</title>
-    <link href="http://192.154.218.26/2020/04/09/SV%E5%AE%9E%E7%8E%B0%E7%9A%84%E9%93%BE%E8%A1%A8-%E6%88%91%E6%98%AF%E6%90%AC%E8%BF%90%E5%B7%A5/"/>
-    <id>http://192.154.218.26/2020/04/09/SV实现的链表-我是搬运工/</id>
-    <published>2020-04-09T07:53:00.000Z</published>
-    <updated>2020-04-09T07:54:21.630Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;figure class=&quot;hljs highlight verilog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
       <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
