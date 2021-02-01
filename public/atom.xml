@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2021-01-26T01:42:59.165Z</updated>
+  <updated>2021-01-29T02:42:20.633Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SV&amp;C&amp;PYTHON</title>
+    <link href="http://192.154.218.26/2021/01/29/SV-C-PYTHON/"/>
+    <id>http://192.154.218.26/2021/01/29/SV-C-PYTHON/</id>
+    <published>2021-01-29T02:38:44.000Z</published>
+    <updated>2021-01-29T02:42:20.633Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h3&gt;&lt;p&gt;We built a high level model in python, we made use of the scipy
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>time unit in the set_timeout()</title>
+    <link href="http://192.154.218.26/2021/01/28/time-unit-in-the-set-timeout/"/>
+    <id>http://192.154.218.26/2021/01/28/time-unit-in-the-set-timeout/</id>
+    <published>2021-01-28T02:11:04.000Z</published>
+    <updated>2021-01-28T02:37:07.088Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h3&gt;&lt;p&gt;Need some clarification on the time value passed to
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>get_response() with UVM RAL</title>
@@ -525,64 +581,6 @@
       <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
     
       <category term="脚本" scheme="http://192.154.218.26/tags/%E8%84%9A%E6%9C%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SV追踪Log的堆栈</title>
-    <link href="http://192.154.218.26/2020/06/02/SV%E8%BF%BD%E8%B8%AALog%E7%9A%84%E5%A0%86%E6%A0%88/"/>
-    <id>http://192.154.218.26/2020/06/02/SV追踪Log的堆栈/</id>
-    <published>2020-06-02T03:21:52.000Z</published>
-    <updated>2020-06-02T03:29:02.562Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;没有堆栈的跟踪定位，有时候真的是不知道错在那个线程的哪个函数里面&quot;&gt;&lt;a href=&quot;#没有堆栈的跟踪定位，有时候真的是不知道错在那个线程的哪个函数里面&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>多线程自动查找顶层.v文件包含的文件列表</title>
-    <link href="http://192.154.218.26/2020/05/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%87%AA%E5%8A%A8%E6%9F%A5%E6%89%BE%E9%A1%B6%E5%B1%82-v%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/"/>
-    <id>http://192.154.218.26/2020/05/29/多线程自动查找顶层-v文件包含的文件列表/</id>
-    <published>2020-05-29T11:27:57.000Z</published>
-    <updated>2020-05-29T11:33:56.809Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;下面代码就是流水账，不是最佳的，一堆可以优化，凑合用。&quot;&gt;&lt;a href=&quot;#下面代码就是流水账，不是最佳的，一堆可以优化，凑合用。&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="Verilog" scheme="http://192.154.218.26/tags/Verilog/"/>
-    
-      <category term="RTL" scheme="http://192.154.218.26/tags/RTL/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   

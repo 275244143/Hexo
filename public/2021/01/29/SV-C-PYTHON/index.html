@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="UVM, SystemVerilog/Verilog, ABV/FPV, C/C++/SystemC, Python/Perl/Shell/Tcl, 验证, IC/FPGA">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="验证技术博客@神秘人" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>SV&C&PYTHON | 验证技术博客@神秘人 - 人的智慧不用就会枯萎。</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">验证技术博客@神秘人</a></h1>
+        <h2 class="subtitle">人的智慧不用就会枯萎。</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/hyperlink/"><i class="fas fa-link"></i><span class="menu-text">链接</span></a></li>
+        
+        <li role="menuitem"><a href="/books"><i class="fas fa-book"></i><span class="menu-text">读书</span></a></li>
+        
+        <li role="menuitem"><a href="/movies"><i class="fas fa-film"></i><span class="menu-text">电影</span></a></li>
+        
+        <li role="menuitem"><a href="/guessbook/"><i class="fas fa-user-edit"></i><span class="menu-text">留言</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://192.154.218.26/2021/01/29/SV-C-PYTHON/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="神秘人">
+       <meta itemprop="description" content="在人生中最艰难的是选择。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="验证技术博客@神秘人">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">SV&C&PYTHON</h1>
+      <div class="post-meta">
+         
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2021-01-29T10:38:44+08:00">2021-01-29 10:38:44</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/验证/" itemprop="url" rel="index"><span itemprop="name">验证</span></a></span>
+        </span>
+	<span class="post-meta-item-text">  字数统计: </span>
+	<span class="post-count">3.6k字</span>
+	<span class="post-meta-item-text">  阅读时长: </span>
+	<span class="post-count">22分</span>
+	<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h3 id="QA"><a href="#QA" class="headerlink" title="QA"></a>QA</h3><p>We built a high level model in python, we made use of the scipy library to quickly test some things. Now we’re building a verification environment in SystemVerilog using the OVM. We would like to use the python implementation as a golden model. Therefor we need to cosimulate python and SystemVerilog, but I couldn’t find any documentation whether this is possible? (We’re using Questa). Any ideas?</p>
+<h3 id="ANS"><a href="#ANS" class="headerlink" title="ANS"></a>ANS</h3><p>@@@</p>
+<p>EXAMPLE<br><strong>SV-CODE</strong></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs undefined"> ////////////////////////////////////////////////////////////////////////<br> //IMPORT FUNCTION DPI DECLARATION FROM C<br> ////////////////////////////////////////////////////////////////////////            <br>import &quot;DPI-C&quot; function void python_sign_msg(string key_file_name, string msg_file_name, string signed_file_name );<br>import &quot;DPI-C&quot; function string return_string_in_c(string text, inout string output_txt);    <br> <br> <br>typedef class keycontrol_seq_handles;<br>//-----------------------<br>class keycontrol_predictor#(int PARAM_PLACEHOLDER = 1) extends pve_predictor#(keycontrol_seq_handles);//extends uvm_component;<br>………..<br>//////////////////////<br>//USE OF DPI<br>//////////////////////<br>string output_c,output2_c;<br>output_c = return_string_in_c(&quot;This text&quot;,output2_c); <br>python_sign_msg(&quot;file.txt&quot;,&quot;bla&quot;,&quot;blo&quot;);<br> <br>endclass<br></code></pre></td></tr></table></figure>
+<p><strong>C-CODE</strong></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><code class="hljs undefined">//include DPI<br>#include &quot;svdpi.h&quot;<br>//include the IO files<br>#include &lt;stdio.h&gt;<br>//include string functions<br>#include &lt;string.h&gt;<br>//include use of malloc<br>#include &lt;stdlib.h&gt;<br>//include Phyton embed lib<br>#include &lt;Python.h&gt;<br> <br> <br>//to add the ability to use printf<br>// same inputs as defined in SV with python path which is the defined surrounded by double quotes &quot;&quot;<br> <br>#ifndef PYTHON_PATH<br>#error You must define the path to the python file in gcc compiler with -D &apos;PYTHON_PATH=&quot;&apos;$PYTHON_DIR&apos;&quot;&apos; or vlog with -ccflags &quot;-I/usr/include/python2.6/ -D &apos;PYTHON_PATH=\&quot;$PYTHON_DIR\&quot;&apos;&quot;<br>#endif<br> <br> /* function declaration */<br>void python_sign_msg( char *key_file_name, char *msg_file_name, char *signed_file_name ) &#123;<br> <br> <br>          char *append_path = malloc(sizeof(char) * 1000);<br>          append_path = PYTHON_PATH&quot;:.&quot;;<br>          printf(&quot;Append to path is:\n%s\n&quot;, append_path);           <br>          setenv(&quot;PYTHONPATH&quot;,append_path,1);//Set PYTHONPATH TO working directory                 char *path = Py_GetPath();<br>          printf(&quot;Python search path is:\n%s\n&quot;, path);<br> <br>          int argc;<br>          char * argv[2];<br>          char *phyton_script_name = malloc(sizeof(char) * 100);<br>          phyton_script_name = &quot;test&quot;;//don&apos;t use the .py extension here<br> <br> <br>          argc = 3;//argument count is 3 arguments<br>          argv[0] = phyton_script_name;//key_file_name;//&quot;mymod&quot;;//the argument value vector is<br>          argv[1] = &quot;4&quot;;<br>          argv[2] = &quot;3&quot;;<br> <br>           Py_Initialize();// Initialize the Python Interpreter<br> <br>           //First import python script module name<br> <br>           PySys_SetArgv(argc, argv);//set the previous arguments as calling arguments of the import module<br>           //PyObject* myPmodule = PyImport_ImportModule(&quot;sign_hmac-sha256&quot;);//don&apos;t put the .py extension here<br>           PyObject* myPmodule = PyImport_ImportModule(phyton_script_name);//IMPORTANT THE MAIN MODULE IS EXECUTED here with the PySys_SetArgv arguments<br>           if(myPmodule==NULL)<br>           &#123;<br>               printf(&quot;Not able to load&amp;execute main phyton script:\n%s\n&quot;, phyton_script_name);<br>               PyErr_Print();<br>           &#125;<br>           ///////////////////////////////<br>           //Extract variables through dict<br>           //////////////////////////////<br>           //retrieve all variables and functions of the module in a namespace or dict<br>           PyObject *module_dict   = PyModule_GetDict(myPmodule);<br> <br>           char *function_name = malloc(sizeof(char) * 100);<br>           function_name = &quot;suma&quot;;//don&apos;t use the .py extension here<br>           //getting the reference to the specific python function you want from the python script<br>           PyObject* myPfunction = PyObject_GetAttrString(myPmodule, function_name);<br> <br>           if (PyCallable_Check(myPfunction))<br>           &#123;<br>               //EXAMPLE CREATE arguments in Python <br>               //PyObject* myPargs=Py_BuildValue(&quot;(z)&quot;,(char*)&quot;something&quot;);<br>               //PyObject* myPargs = PyTuple_Pack(1,PyFloat_FromDouble(2.0));<br>               //ok = PyArg_ParseTuple(args, &quot;lls&quot;, &amp;k, &amp;l, &amp;s); /* Two longs and a string */<br>               //PyObject* myPargs = Py_BuildValue(&quot;sss&quot;,key_file_name,msg_file_name,signed_file_name); /* Three strings */<br>               //Execute the function with arguments directly<br>               //PyObject* result = PyObject_CallObject(myPfunction, (char*)&quot;something&quot;, (char*)&quot;something&quot;, (char*)&quot;something&quot;);/* Three strings */               <br>               //PyObject* myPargs = Py_BuildValue(&quot;zz&quot;,&quot;4&quot; ,&quot;3&quot;);<br>               PyObject* myPargs = Py_BuildValue(&quot;ii&quot;,4 ,3);<br>               PyObject* item=PyTuple_GetItem(myPargs,0);//get the item of the tuple position 0 <br>               printf(&quot;Python tuple: %d\n&quot;, (int)PyInt_AsSsize_t(item)); /*incase an integer*/<br>               //printf(&quot;Python tuple: %s\n&quot;, PyString_AsString(item));<br>               PyErr_Print();               <br>               PyObject* result = PyObject_CallObject(myPfunction, myPargs);//the myPargs must be always be a Pyobject               <br> <br>               PyErr_Print();<br>               Py_DECREF(myPargs);<br>               Py_DECREF(item);<br>               Py_DECREF(result);<br>           &#125; else <br>           &#123;<br>               printf(&quot;The function:\n%s\n&quot;, function_name);<br>               //Pring errors comming from Python<br>               PyErr_Print();<br>           &#125;<br> <br> <br>           ////////////////////////////////////////<br>           // Clean up phase<br>           ////////////////////////////////////////<br>           Py_DECREF(myPmodule);<br>           Py_DECREF(myPfunction);<br> <br> <br> <br>           Py_Finalize();// Finish the Python Interpreter<br>&#125;<br> <br> /* function declaration text char stream passed as pointer value and text2 passed as pointer reference */<br>  char * return_string_in_c( char *text,  char **text2) &#123;<br>    char *fix=&quot;This variable cannot be changed although it is a pointer, just as example&quot;;/*fix allocation and constant*/<br>    char dest[50]=&quot;Variable array created in a function:&quot;;/* String array max 50 chars allocated*/<br>    char *out = malloc(sizeof(char) * 100);/* Dynamic string max 100 chars allocated*/<br>    /* Concatenate input text and put in out of strcat*/<br>    //strcat(out, text);/* initialize out using text string*/<br>    snprintf(out, sizeof(char) * 100, &quot;%s%s&quot;, out,text);<br>    printf(&quot;fix : |%s|,dest : |%s|,text : |%s|,out : |%s|\n&quot;, fix,dest,text,out);<br>    *text2=dest;/* allocate pointer value with dest*/<br>    *text2=out;/* allocate pointer value with out*/<br>    return out;<br>&#125;<br> <br> /* main */<br> void main() &#123;<br>    char text[100]=&quot;from_main_text_variable&quot;;/*max 100 chars allocated*/<br>    char *text2;/* pointer not allocated*/<br>    char *point = return_string_in_c(text, &amp;text2);/* &amp;text2 passing by reference*/<br>    printf(&quot;Final destination string : |%s|\n&quot;, text2);<br>    printf(&quot;point output : |%s|\n&quot;, point);       <br> <br>    printf(&quot;DEFINED PYTHON_PATH: |%s|\n&quot;, PYTHON_PATH);<br>    python_sign_msg(&quot;&quot;,&quot;&quot;,&quot;&quot;);<br>    printf(&quot;Finished python\n&quot;);<br> <br> &#125;<br></code></pre></td></tr></table></figure>
+<p><strong>PYTHON SCRIPT - TEST.py,</strong><br>very important to remove TABS!!!!!!</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs undefined">#!/usr/bin/python<br># This program adds two numbers<br>import sys<br> <br>if( len( sys.argv ) &lt; 3 ) :<br>    raise( Exception( &quot;Usage: test.py number1 number2&quot; ) )<br> <br>num1 = int(sys.argv[ 1 ])<br>print &quot;sys.argv[ 1 ] : &quot;,int(sys.argv[ 1 ])<br>num2 = int(sys.argv[ 2 ])<br>print &quot;sys.argv[ 2 ] : &quot;, int(sys.argv[ 2 ])<br> <br>#the suma function definition<br>def suma( arg1, arg2 ):<br>    # Add both the parameters and return them.&quot;<br>    total = arg1 + arg2; # Here total is local variable.<br>    print &quot;Inside the function local total : &quot;, total<br>    return total;<br> <br># Display the suma<br>print(&apos;The sum using suma function of &#123;0&#125; and &#123;1&#125; is &#123;2&#125;&apos;.format(num1, num2, suma(num1,num2)))<br> <br>#num1 = 1.5<br>#num2 = 6.3<br># Add two numbers<br>sum = float(num1) + float(num2)<br># Display the sum<br>print(&apos;The sum of &#123;0&#125; and &#123;1&#125; is &#123;2&#125;&apos;.format(num1, num2, sum))<br> <br> <br>#a dummy function definition<br>def multiply():<br>   c = 12345*6789<br>   print &apos;The result of 12345 x 6789 :&apos;, c<br>   return c<br></code></pre></td></tr></table></figure>
+<p>Lastly, you have to compile the files using your vendor flow.<br>For example,<br><strong>Questa</strong><br>1) You <strong>compile the C code</strong> using ccflags and introducing the defines you want to add.<br>In our case our C code need the define PYTHON_PATH</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">vlog $DUT_VLOG_ARGS $&#123;TB_DIR&#125;/your_C_code.c -ccflags &quot;-I/usr/include/python2.6/  -D &apos;PYTHON_PATH=\&quot;$PYTHON_DIR\&quot;&apos;&quot;<br></code></pre></td></tr></table></figure>
+<p>2) In Questa if you have python you have to call  including </p>
+<p>You can also use the external DPI flow<br>-        Compile : gcc -g -c -I&lt;&gt;/questasim/include -o tmp.o<br>-        Link :      gcc -shared -fPIC -Bsymbolic -o  .so tmp.o</p>
+<p>Example<br><code>gcc -g -D &#39;PYTHON_PATH=&quot;&#39;$PYTHON_DIR&#39;&quot;&#39; -I/usr/include/python2.6/ -lpython2.6 -fPIC  -I/usr/local/Mentor/Questasim103e/questasim/include/ -o tmp.o   -c ${TB_DIR}/your_C_code.c</code><br><code>gcc -shared -fPIC -Bsymbolic -g -lpython2.6 -o output.so tmp.o</code></p>
+<p>And then load the .so shared file in QUESTA using <strong>-sv_lib</strong>:</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">vsim -c -sv_lib output  -ldflags &apos;-lpython2.6&apos; -voptargs=&quot;+acc&quot;  -onfinish stop +UVM_TESTNAME=yourtest    &lt;yourtop&gt; -do &quot;run -all&quot;<br></code></pre></td></tr></table></figure>
+<p><strong>Synopsys VCS</strong><br>1) You <strong>compile the C code</strong> using ccflags and introducing the defines you want to add.<br>In our case our C code need the define PYTHON_PATH</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">#GCC in two steps for shared object<br>gcc -g -D &apos;PYTHON_PATH=&quot;&apos;$PYTHON_DIR&apos;&quot;&apos;  -fPIC -Wall -I$&#123;VCS_HOME&#125;/include -I/usr/include/python2.6/ -lpython2.6 -c $&#123;PROJECTDIR&#125;/verification/PVE/keycontrol/tb/keycontrol_C_code_wrapper.c <br>gcc -fPIC -shared -o keycontrol_C_code_wrapper.so  keycontrol_C_code_wrapper.o<br></code></pre></td></tr></table></figure>
+<p>2) You do the VCS elaboration linking the python lybrary with -LDFLAGS ‘-lpython2.6’<code>vcs -timescale=1ps/1ps -ntb_opts uvm -lca -kdb -full64 keycontrol_tb_top -debug_access+all+reverse  -LDFLAGS &#39;-lpython2.6&#39;</code>3) You run the created simulation file. You call b]simv[/b] including  to import the C shared object.</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">#RUN C CODE<br>./simv -gui -ucli +DVE +UVM_NO_RELNOTES  -l simv.log  +UVM_TESTNAME=keycontrol_basic_test -do ../../verification/PVE/keycontrol/tools/keycontrol_ucli_init.synopsys -sv_lib keycontrol_C_code_wrapper<br></code></pre></td></tr></table></figure>
+<p>Another tools would have another flow.</p>
+<p>Embedding python is a solution that is <strong>more efficient</strong> than FILE IO in your python script.</p>
+<p>If your python script reads inputs and outputs from files, then the easiest way to call python from Systemverilog is just by doing a <strong>system call</strong>.</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$system(&quot;python yourscript.py filenamein filenameout &quot;)<br></code></pre></td></tr></table></figure>
+<p>You have of course to write in systemverilog your input file and read in systemverilog the output file for comparison.</p>
+<p>@@@</p>
+<p>Hi, i want to provide a <strong>second example</strong>. The example is also doing DPI with Phyton, just to spare time to the verification community :).</p>
+<p>This time i export a dynamic array from Python to C and then to Systemverilog.<br>In order to resize the Systemverilog dynamic array there is a well defined procedure in DPI.<br>This can be seen in the example folder of many EDA tools.<br>The resize of a systemverilog dynamic array requires 2 import DPI function and one export DPI function. We need two DPI import functions because the “C side” needs the correct size for the dynamic array before it is called from SV.</p>
+<p>I have found another example (easier), to do the resize of dynamic arrays in another web, see <a href="https://community.cadence.com/cadence_technology_forums/f/30/t/19377" target="_blank" rel="noopener">https://community.cadence.com/cadence_technology_forums/f/30/t/19377</a>. However, the example on that web will not work for all EDA tools.</p>
+<p>–&gt;EDIT: I have included to the dpi import call an <em>input int select_output_array</em> to select on which dynamic array we want to have/fetch the output of the C calculation. This is useful if you have to call the same DPI function from different places in your test bench parallely and one single output is not enough (could be overwritten).</p>
+<p>EXAMPLE<br><strong>SV-CODE</strong></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs undefined">    ////////////////////////////////////////////////////////////////////////<br>    //IMPORT FUNCTION DPI DECLARATION FROM C<br>    ////////////////////////////////////////////////////////////////////////            <br>    import &quot;DPI-C&quot; context function void python_signature_msg(input byte dpi_data_bytes[],input byte dpi_key_bytes[], input int select_output_array);<br>        // Fetch C data and initialize the SV dynamic array elements with C data.<br>        import &quot;DPI-C&quot; context function void fetch_sv_dynarray_data_from_C(chandle cdata, inout byte dpi_output_signature [], input int size);   <br> <br>        export &quot;DPI-C&quot; function reallocate_size_of_output_openSVarray;<br>        // Define global dynamic array for DPI<br>        byte dpi_output_bytes[];<br>        byte dpi_testcase_out_bytes[];// This is an output for a second DPI call in other part of the testbench<br>        function void reallocate_size_of_output_openSVarray ( input int size, input chandle cdata, input int select_output_array);//chandle is a C pointer type of any type<br>        $display(&quot;SV: allocating new SV DA of size %0d bytes&quot;, size);<br> <br>        if (select_output_array==0) begin<br>            dpi_output_bytes = new[size];<br>            fetch_sv_dynarray_data_from_C(cdata, dpi_output_bytes, size);<br>        end else begin<br>            dpi_testcase_out_bytes = new[size];<br>            fetch_sv_dynarray_data_from_C(cdata, dpi_testcase_out_bytes, size);<br>        end<br>    endfunction<br> <br>//-----------------------<br>class keycontrol_predictor#(int PARAM_PLACEHOLDER = 1) extends pve_predictor#(keycontrol_seq_handles);//extends uvm_component;<br>………..<br>//////////////////////<br>//USE OF DPI<br>//////////////////////<br>dpi_data_bytes = new[10];<br> <br>assert(std::randomize(dpi_data_bytes) with &#123;foreach (dpi_data_bytes[i]) dpi_data_bytes[i] inside  &#123;[0:255]&#125;;&#125;);<br>python_signature_msg(dpi_data_bytes,dpi_data_bytes,0);//execute C code with filling SV dynamic array dpi_output_bytes (select_output_array=0)<br>dpi_output_bytes=dpi_output_bytes;//here we can set a breakpoint to see that the global dynamic array is filled<br> <br>endclass<br></code></pre></td></tr></table></figure>
+<p><strong>C-CODE</strong></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br></pre></td><td class="code"><pre><code class="hljs undefined">//include dpiheader.h<br>//#include &quot;dpiheader.h&quot; //tools are very picky with the type definitions of the DPI functions in C, to avoid autogenerated dpiheader from questa can be used<br>//include the IO files<br>#include &lt;stdio.h&gt;<br>//include DPI<br>#include &quot;svdpi.h&quot;<br>//include strings<br>#include &lt;string.h&gt;<br>//include use of malloc<br>#include &lt;stdlib.h&gt;<br>//include Phyton embed lib<br>#include &lt;Python.h&gt;<br>//this is to support dl function below<br>#include &lt;dlfcn.h&gt;<br>//this is to include prints in the SV transcript using  vpi_printf(&quot;c: Ref model started\n&quot;);<br>#include &quot;vpi_user.h&quot;<br>//to add the ability to use printf<br>// same inputs as defined in SV with default python path<br>#ifndef PYTHON_PATH<br>#error You must define the path to the python file in gcc compiler with -D &apos;PYTHON_PATH=&quot;&apos;$PYTHON_DIR&apos;&quot;&apos; or vlog  with -ccflags &quot;-I/usr/include/python2.6/ -D &apos;PYTHON_PATH=\&quot;$PYTHON_DIR\&quot;&apos;&quot;<br>#endif<br>extern void reallocate_size_of_output_openSVarray(int size, void* cdata, int select_output_array); //this will execute in SV a function that resize the SVopenarray used in the DPI call of python_signature_msg<br> <br> <br>/* function declaration */<br>void fetch_sv_dynarray_data_from_C(void* cdata, const svOpenArrayHandle myopenarray,  int size) &#123;<br>    unsigned char* inputdata = (unsigned  char*) cdata;//input data convert chandle type to char, input the svOpenArrayHandle<br>    int *out = (int *) svGetArrayPtr(myopenarray);//get a pointer to the svOpenArray<br>    memcpy(out, inputdata, sizeof(unsigned char) * size);//allocate to the same memory area of &quot;myopenarray&quot; the content of inputdata. That memory area is the used by the SV tool.<br>&#125;<br> <br>/* function declaration */<br>void python_signature_msg(const svOpenArrayHandle SVopen_vec_data_msg,<br>        const svOpenArrayHandle SVopen_vec_key, int select_output_array) &#123;<br> <br>    //SV_LOGIC_PACKED_ARRAY(8, 8bitsarray); // Implementation specific<br>    //int size = (svHigh(SVopen_vec_data_msg, 1) - svLow(SVopen_vec_data_msg, 1) + 1);<br>    int i;<br>    /////////////////////////////////////////<br>    int nbytes_SV_data_vec = svSizeOfArray(SVopen_vec_data_msg);<br>    printf(&quot;nbytes_SV_data_vec:%0d\n&quot;, nbytes_SV_data_vec);<br> <br>    unsigned char *C_byte_data_msg_vec = malloc(sizeof(unsigned char) * ((nbytes_SV_data_vec *2)+1));/* Dynamic string max nbytes_SV_data_vec chars allocated, data is not converted to hex string but directly sent as binary string*/<br>    /*unsigned char *C_byte_data_msg_vec2 = malloc(sizeof(unsigned char) * (nbytes_SV_data_vec+1));/* Dynamic string max nbytes_SV_data_vec chars allocated, data is not converted to hex string but directly sent as binary string*/<br> <br>    for (i = 0; i &lt; nbytes_SV_data_vec; i++) &#123;<br>       // C_byte_data_msg_vec[i] = *(unsigned char*) svGetArrElemPtr1(SVopen_vec_data_msg, i); //extract the element value of the SV vector and concatenate to double *data = malloc(10 * (sizeof(double))); printf(&quot;%g, &quot;,data[j]);<br>//IMPORTANT: You must use unsigned char and not char for a correct conversion to HEX<br>       // printf(&quot;C_byte_data_msg_vec[%0d]:|%c|\n&quot;, i,C_byte_data_msg_vec[i]);<br>        sprintf(C_byte_data_msg_vec + i * 2, &quot;%02X&quot;, *(unsigned char*) svGetArrElemPtr1(SVopen_vec_data_msg, i)); //convert to hexstr the string byte vector<br>       // sprintf(C_byte_data_msg_vec2+i, &quot;%C&quot;,  *(unsigned char*) svGetArrElemPtr1(SVopen_vec_data_msg, i)); //convert to hexstr the string byte vector<br>    &#125;<br> <br>    ///////////////////////////////////////<br>    /////////////////////////////////////////<br>    int nbytes_SV_key_vec = svSizeOfArray(SVopen_vec_key);<br> <br>    unsigned char *C_byte_key_msg_vec = malloc(sizeof(unsigned char) * ((nbytes_SV_key_vec * 2)+1));/* Dynamic string max nbytes_SV_data_vec unsigned  chars allocated, for hex conversion is 2 characters per byte. we add +1 to the data size because of the end of string character*/<br>    for (i = 0; i &lt; nbytes_SV_key_vec; i++) &#123;<br>        sprintf(C_byte_key_msg_vec + i * 2, &quot;%02X&quot;, *(unsigned char*) svGetArrElemPtr1(SVopen_vec_key, i)); //convert to hexstr the string byte vector<br>    &#125;<br> <br>    ///////////////////////////////////////<br>    //SHOW ME THE PATH<br>    char *append_path = malloc(sizeof(char) * 1000);<br>    append_path = PYTHON_PATH<br>    &quot;:.&quot;;<br>    //append_path = &apos;&quot;&apos;PYTHON_PATH:.&quot;;<br>    setenv(&quot;PYTHONPATH&quot;, append_path, 1); //Set PYTHONPATH TO working directory &lt;a href=&quot;https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.1.0/com.ibm.zos.v2r1.bpxbd00/setenv.htm<br>&quot; rel=&quot;nofollow&quot;&gt;https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.1.0/com.ibm.zos.v2r1.bpxbd00/setenv.htm<br>&lt;/a&gt;    char *path = Py_GetPath();<br>    //printf(&quot;Python search path is:\n%s\n&quot;, path);<br>    ///////////////////////////////////////<br> <br>    int argc;<br>    char * argv[2];<br>    char *phyton_script_name = malloc(sizeof(char) * 100);<br>    phyton_script_name = &quot;sign_hmac-sha256func&quot;;        //don&apos;t use the .py extension here<br> <br>    argc = 3;        //argument count is 3 arguments<br>    argv[0] = phyton_script_name;        //key_file_name;//&quot;mymod&quot;;//the argument value vector is<br>    //PyObject *byte_array = Py_BuildValue(&quot;s#&quot;, C_byte_data_msg_vec, nbytes_SV_data_vec);<br>    printf(&quot;C_byte_data_msg_vec full:|%s|\n&quot;, C_byte_data_msg_vec);<br>    argv[1] = C_byte_key_msg_vec;<br>    argv[2] = C_byte_data_msg_vec;<br> <br> <br> <br> <br>    Py_Initialize(); // Initialize the Python Interpreter<br>/*<br>    ////////////////////////////////////////<br>    // If you have problems with C segmentation fault calling python, then<br>    // use following code instead of Py_Initialize()<br>    //<br>    //void* const libpython_handle = dlopen(&quot;libpython2.6.so&quot;, RTLD_NOW | RTLD_GLOBAL); <br>    // typedef void (*void_func_t)(void);<br>    //void_func_t MyPy_Initialize = dlsym(libpython_handle, &quot;Py_Initialize&quot;);<br>    //MyPy_Initialize();    <br>    //PyGILState_STATE gstate;<br>    //gstate = PyGILState_Ensure();<br>    ////////////////////////////////////////<br> */   <br>    //First import python script module name<br> <br>    PySys_SetArgv(argc, argv); //set the previous arguments as calling arguments of the import module<br>    //PyObject* myPmodule = PyImport_ImportModule(&quot;sign_hmac-sha256&quot;);//don&apos;t put the .py extension here<br>    PyObject* myPmodule = PyImport_ImportModule(phyton_script_name); //IMPORTANT THE MAIN MODULE IS EXECUTED here with the PySys_SetArgv arguments<br>    if (myPmodule == NULL) &#123;<br>        printf(&quot;Not able to load&amp;execute main phyton script:\n%s\n&quot;, phyton_script_name);<br>        PyErr_Print();<br>    &#125; else &#123;<br>        //the module was executed so the python variables contain valuabe info<br>        //signature<br>        PyObject* Pysignature = PyObject_GetAttrString(myPmodule, &quot;signature&quot;);<br>        PyObject* Pydata = PyObject_GetAttrString(myPmodule, &quot;data&quot;);<br>        PyObject* Pykey = PyObject_GetAttrString(myPmodule, &quot;key&quot;);<br> <br> <br> <br>        int nchar_SV_data_vec = PyString_Size(Pydata);<br>        char *C_Pydata = malloc(sizeof(char) * (nbytes_SV_data_vec+1));/*we add +1 to the data size because of the end of string character*/<br>        C_Pydata = PyString_AsString(Pydata);<br> <br> <br>        int nchar_SV_key_vec = PyString_Size(Pykey);<br>        char *C_Pykey = malloc(sizeof(char) * (nbytes_SV_key_vec+1));/*we add +1 to the data size because of the end of string character*/<br>        C_Pykey = PyString_AsString(Pykey);<br> <br>        ////////////////////////////////////////////////////////<br>        //output of Python signature in binary<br>        int nbytes_SV_signature_vec = PyString_Size(Pysignature);<br>        unsigned char *C_Pysignature_hex = malloc(sizeof(char) * ((nbytes_SV_signature_vec * 2)+1));/*we add +1 to the data size because of the end of string character*/<br>        unsigned char *C_Pysignature_hex2 = malloc(sizeof(char) * ((nbytes_SV_signature_vec * 2)+1));/*we add +1 to the data size because of the end of string character*/<br>        unsigned char *C_Pysignature = malloc(sizeof(char) * (nbytes_SV_signature_vec+1));/*we add +1 to the data size because of the end of string character*/<br>        unsigned char *C_Pysignature2 = malloc(sizeof(char) * (nbytes_SV_signature_vec+1));/*we add +1 to the data size because of the end of string character*/<br>        C_Pysignature = PyString_AsString(Pysignature);<br>        for (i = 0; i &lt; nbytes_SV_signature_vec; i++) &#123;<br>            sprintf(C_Pysignature_hex + i * 2, &quot;%02X&quot;, C_Pysignature[i]); //convert to hexstr the uchar string (byte)<br>        &#125;<br>        reallocate_size_of_output_openSVarray(nbytes_SV_signature_vec, (void*) C_Pysignature, select_output_array); //Here we call a SV function that will resize a dynamic array of SV and put the provided information on it<br>        //See more good DPI examples inside Questa instalation directory /opt/Mentor/Questasim10.6b/questasim/examples/systemverilog/dpi/<br> <br> <br>    &#125;<br> <br>    ////////////////////////////////////////<br>    // Clean up phase<br>    ////////////////////////////////////////<br>    Py_DECREF(myPmodule);<br> <br>    Py_Finalize();           // Finish the Python Interpreter<br> <br>/*<br>    ////////////////////////////////////////<br>    // If you have problems with C segmentation fault calling python, then<br>    // use following code instead of Py_Finalize()<br>    ////////////////////////////////////////<br>    //PyGILState_Release(gstate);<br>    //dlclose(libpython_handle); //We don&apos;t use Python functions directly because of python problems see  &lt;a href=&quot;https://stackoverflow.com/questions/14843408/python-c-embedded-segmentation-fault<br>&quot; rel=&quot;nofollow&quot;&gt;https://stackoverflow.com/questions/14843408/python-c-embedded-segmentation-fault<br>&lt;/a&gt;    // Release the thread. No Python API allowed beyond this point. <br>*/<br> <br>&#125;<br>/*HELPER FUNCTION FOR BIT VECTORS from bv to int*/<br>int bv_to_int(const svBitVecVal* bv, int size) &#123;<br>    int val = 0;<br>    int mask = 1;<br>    int i;<br>    for (i = 0; i &lt; size; i++) &#123;<br>        if (svGetBitselBit(bv, i) == sv_1)<br>            val |= mask;<br>        mask &lt;&lt;= 1;<br>    &#125;<br>    return val;<br>&#125;<br>/*HELPER FUNCTION FOR BIT VECTORS fron int to bv*/<br>void int_to_bv(int val, svBitVecVal* bv, int size) &#123;<br>    int mask = 1;<br>    svBit b;<br>    int i;<br>    for (i = 0; i &lt; size; i++) &#123;<br>        b = (val &amp; mask) ? sv_1 : sv_0;<br>        svPutBitselBit(bv, i, b);           //but b in bv on idx i<br>        mask &lt;&lt;= 1;<br>    &#125;<br>&#125;<br> <br>/* main */<br>int main() &#123;<br>    printf(&quot;DEFINED PYTHON_PATH: |%s|\n&quot;, PYTHON_PATH);<br>    //execute<br>    const svOpenArrayHandle openhandle1 = malloc(sizeof(char) * 10);<br>    const svOpenArrayHandle openhandle2 = malloc(sizeof(char) * 10);<br>    svOpenArrayHandle openhandle3 = malloc(sizeof(char) * 10);<br> <br>    python_signature_msg(openhandle1, openhandle2,0);<br> <br>    printf(&quot;Finished python\n&quot;);<br>    return 1;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>PYTHON SCRIPT - TEST.py,</strong><br>very important to remove TABS!!!!!!</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs undefined">#!/usr/bin/env python<br>import sys<br>import hashlib<br>import hmac<br> <br> <br># check usage<br>if( len( sys.argv ) &lt; 3 ) :<br>    raise( Exception( &quot;Usage: hmac-sha256func.py keyhex datahex&quot; ) )<br>#key is 256bits long. it is a byte array<br>key    = sys.argv[ 1 ]<br>print &quot;key hex : &quot;, key   # is a string in hex<br>#data is (256 x n) bits long. it is a byte array<br>data   = sys.argv[ 2 ]  # is a string in binary<br>#print &quot;data hex : &quot;, data   # is a string in binary<br>#data_binary = bytearray.fromhex(data);<br>data_binary = str(bytearray.fromhex(unicode(data)))<br>#print &quot;data utf : &quot;, data_binary   # is a string in binary<br> <br># generate hmac-sha256<br>signature  = hmac.new( key, data_binary, hashlib.sha256 ).digest()<br>#print &quot;hex_signature : &quot;,&apos;&apos;.join(x.encode(&quot;hex&quot;) for x in signature) <br>#print &quot;signature string byte : &quot;, signature <br>#print &quot;type signature:&quot;, type(signature) <br>#print &quot;is string:&quot;, type(signature) is str<br>#print &quot;is bytearray:&quot;, type(signature) is bytearray<br># signature is a binary string<br>#print &quot;hex_signature : &quot;,&apos;&apos;.join(x.encode(&quot;hex&quot;) for x in signature)  #This doesn&apos;t work with embedded python due to a bug in python<br> <br>hex_signature  = hmac.new( key, data_binary, hashlib.sha256 ).hexdigest()<br>print &quot;hex_signature :  &quot;, hex_signature # is a string in hex<br>#signature is 256 bits long . it is a byte array<br># write result to output file<br>signedDate = bytearray( signature + data_binary )<br>#signedDate which is the boot is 512 bits long. it is a byte array<br>#print &quot;bytesignedDate : &quot;, signedDate<br>#print &quot;hex_signedDate : &quot;, &apos;&apos;.join(format(x, &apos;02x&apos;) for x in signedDate)<br>binary = &apos;&apos;.join(format(x, &apos;08b&apos;) for x in signedDate)<br>#print &quot;bin_signedDate : &quot;, binary<br></code></pre></td></tr></table></figure>
+<p>IMPORTANT REMARK:<br>Unfortunately, i couldnt find out how to link the “svdpi.h” SV-library file inside your_code.c file with the C compiler (gcc).<br>That means, if your your_code.c file imports the “svdpi.h” SV-library, then it is not possible to debug your C code only using gcc i.e. gdb.<br>As i understood, the “svdpi.h” DPI SV-library <strong>is automatically linked inside your EDA vendor tool</strong> in elaboration time.<br>Could somebody correct me if i am wrong?<br>It is a pity, that you <strong>have to use a license</strong> of your EDA tool to debug plain C code, just because it uses the “svdpi.h” SV-library.<br>If somebody knows how to link the svdpi.h library with gcc, then i would appreciate it.</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/UVM/" rel="tag"><i class="fas fa-tags"></i>UVM</a>
+        
+        <a class="post-tag button" href="/tags/SystemVerilog/" rel="tag"><i class="fas fa-tags"></i>SystemVerilog</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  <footer class="post-footer"> 
+	<div>    
+	
+	
+	<ul class="post-copyright">
+	<li class="post-copyright-author">
+      <strong>本文作者：</strong>神秘人(275244143@qq.com)
+
+	</li>
+	<li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2021/01/29/SV-C-PYTHON/" title="SV&C&PYTHON">http://118.25.122.94:8080/2021/01/29/SV-C-PYTHON/</a>
+	</li>
+	<li class="post-copyright-license">
+		<strong>版权声明： </strong>
+		转载请注明出处！
+	</li>
+	</ul>
+	
+  
+  
+<div class="reward" id="reward">
+  <p>您的支持是我前进的动力,谢谢QQ红包支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2021/01/28/time-unit-in-the-set-timeout/" rel="next" title="time unit in the set_timeout()"><i class="fas fa-angle-left"></i><span class="nav-title">time unit in the set_timeout()</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+ 
+</div>
+  
+  
+
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];</script>
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "W7WmsjtT2mjSRGNr37ItfPte-gzGzoHsz",
+      "appKey": "PqW79xh6BY4pjdBvo4hrLOvq",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</footer></div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="神秘人">
+  
+  <h1 class="author-name">神秘人</h1>
+  <h2 class="author-description">在人生中最艰难的是选择。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">144</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">17</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">59</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#QA"><span class="toc-text">QA</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#ANS"><span class="toc-text">ANS</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="300" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABV/">ABV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altera/">Altera</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMake/">CMake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chisel/">Chisel</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPI/">DPI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/">EDA</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPGA/">FPGA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FV/">FV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GLIBC/">GLIBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LFSR/">LFSR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LSF/">LSF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NCsim/">NCsim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Perl/">Perl</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python2/">Python2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python3/">Python3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RAL/">RAL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL/">RTL</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Regx/">Regx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synopsys/">Synopsys</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SystemVerilog/">SystemVerilog</a><span class="tag-list-count">87</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UVM/">UVM</a><span class="tag-list-count">79</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VCS/">VCS</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VMware/">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/">Verilog</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/evil/">evil</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gtd/">gtd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ncsim/">ncsim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/">perl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tig/">tig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xargs/">xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yaml/">yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/">zsh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分布式/">分布式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/命令查询/">命令查询</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/并行/">并行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/库/">库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译器/">编译器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/脚本/">脚本</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href target="_blank">E-Mail(275244143@qq.com)</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证公众号(IC_verification)</a></li>
+        
+        <li><i class="fas fa-link"></i><a href target="_blank">验证专业QQ群(231631333)</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=0rv302arua5&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">神秘人</span><span class="year"><i class="far fa-copyright"></i>2021</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a>腾讯云</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">神秘人</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">UVM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+    <script type="text/javascript" src="/js/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
