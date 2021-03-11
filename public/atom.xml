@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2021-01-29T02:42:20.633Z</updated>
+  <updated>2021-03-11T03:21:39.005Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,147 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PlantUML画结构图</title>
+    <link href="http://192.154.218.26/2021/03/11/PlantUML%E7%94%BB%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
+    <id>http://192.154.218.26/2021/03/11/PlantUML画结构图/</id>
+    <published>2021-03-11T03:15:29.000Z</published>
+    <updated>2021-03-11T03:21:39.005Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;结构图&quot;&gt;&lt;a href=&quot;#结构图&quot; class=&quot;headerlink&quot; title=&quot;结构图&quot;&gt;&lt;/a&gt;结构图&lt;/h3&gt;&lt;figure class=&quot;hljs highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>uvm:finish_on_completion</title>
+    <link href="http://192.154.218.26/2021/03/11/uvm-finish-on-completion/"/>
+    <id>http://192.154.218.26/2021/03/11/uvm-finish-on-completion/</id>
+    <published>2021-03-11T01:47:00.000Z</published>
+    <updated>2021-03-11T01:48:41.120Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h3&gt;&lt;p&gt;I observed a code in TB ::&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>set byte_en in register read/write</title>
+    <link href="http://192.154.218.26/2021/02/25/set-byte-en-in-register-read-write/"/>
+    <id>http://192.154.218.26/2021/02/25/set-byte-en-in-register-read-write/</id>
+    <published>2021-02-25T09:27:25.000Z</published>
+    <updated>2021-02-25T09:30:16.058Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;How-can-i-set-byte-en-in-register-read-write&quot;&gt;&lt;a href=&quot;#How-can-i-set-byte-en-in-register-read-write&quot; class=&quot;headerlink&quot; title=&quot;How
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux新手学习</title>
+    <link href="http://192.154.218.26/2021/02/04/Linux%E6%96%B0%E6%89%8B%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://192.154.218.26/2021/02/04/Linux新手学习/</id>
+    <published>2021-02-04T07:33:11.000Z</published>
+    <updated>2021-02-04T07:36:32.949Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;参考：&lt;a href=&quot;https://mp.weixin.qq.com/s/ZralWEfG2WJfZ-G-x9biow&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
+    
+    
+      <category term="shell" scheme="http://192.154.218.26/tags/shell/"/>
+    
+      <category term="脚本" scheme="http://192.154.218.26/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>simulation delay after UVM_MAX_QUIT_COUNT</title>
+    <link href="http://192.154.218.26/2021/02/02/simulation-delay-after-UVM-MAX-QUIT-COUNT/"/>
+    <id>http://192.154.218.26/2021/02/02/simulation-delay-after-UVM-MAX-QUIT-COUNT/</id>
+    <published>2021-02-02T01:43:31.000Z</published>
+    <updated>2021-02-02T01:46:44.032Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;add-simulation-delay-after-UVM-MAX-QUIT-COUNT-reached&quot;&gt;&lt;a href=&quot;#add-simulation-delay-after-UVM-MAX-QUIT-COUNT-reached&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>SV&amp;C&amp;PYTHON</title>
@@ -445,142 +586,6 @@
       <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
       <category term="ncsim" scheme="http://192.154.218.26/tags/ncsim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>perl1line收集</title>
-    <link href="http://192.154.218.26/2020/07/06/perl1line%E6%94%B6%E9%9B%86/"/>
-    <id>http://192.154.218.26/2020/07/06/perl1line收集/</id>
-    <published>2020-07-06T05:42:26.000Z</published>
-    <updated>2020-07-06T05:46:07.341Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;转&quot;&gt;&lt;a href=&quot;#转&quot; class=&quot;headerlink&quot; title=&quot;转&quot;&gt;&lt;/a&gt;转&lt;/h3&gt;&lt;figure class=&quot;hljs highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-      <category term="脚本" scheme="http://192.154.218.26/categories/%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Perl拆解One-Liner</title>
-    <link href="http://192.154.218.26/2020/06/29/Perl%E6%8B%86%E8%A7%A3One-Liner/"/>
-    <id>http://192.154.218.26/2020/06/29/Perl拆解One-Liner/</id>
-    <published>2020-06-29T08:26:12.000Z</published>
-    <updated>2020-06-29T08:31:19.216Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;Perl一行式如何定位问题？&quot;&gt;&lt;a href=&quot;#Perl一行式如何定位问题？&quot; class=&quot;headerlink&quot; title=&quot;Perl一行式如何定位问题？&quot;&gt;&lt;/a&gt;Perl一行式如何定位问题？&lt;/h3&gt;&lt;figure class=&quot;hljs
-        
-      
-    
-    </summary>
-    
-      <category term="脚本" scheme="http://192.154.218.26/categories/%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Perl匹配打印</title>
-    <link href="http://192.154.218.26/2020/06/24/Perl%E5%8C%B9%E9%85%8D%E6%89%93%E5%8D%B0/"/>
-    <id>http://192.154.218.26/2020/06/24/Perl匹配打印/</id>
-    <published>2020-06-24T09:54:48.000Z</published>
-    <updated>2020-06-24T09:58:55.741Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;Perl匹配打印功能，当然是抄的，然后修改&quot;&gt;&lt;a href=&quot;#Perl匹配打印功能，当然是抄的，然后修改&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="脚本" scheme="http://192.154.218.26/categories/%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
-    
-      <category term="Regx" scheme="http://192.154.218.26/tags/Regx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Altera IP sim filelist Gen PerlScript</title>
-    <link href="http://192.154.218.26/2020/06/22/Altera-IP-sim-filelist-Gen-PerlScript/"/>
-    <id>http://192.154.218.26/2020/06/22/Altera-IP-sim-filelist-Gen-PerlScript/</id>
-    <published>2020-06-22T10:29:37.000Z</published>
-    <updated>2020-06-22T10:31:50.597Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;服务器未备份，损失惨重，自动化查找了&quot;&gt;&lt;a href=&quot;#服务器未备份，损失惨重，自动化查找了&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
-    
-      <category term="FPGA" scheme="http://192.154.218.26/tags/FPGA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VCD中快速查找信号命</title>
-    <link href="http://192.154.218.26/2020/06/05/VCD%E4%B8%AD%E5%BF%AB%E9%80%9F%E6%9F%A5%E6%89%BE%E4%BF%A1%E5%8F%B7%E5%91%BD/"/>
-    <id>http://192.154.218.26/2020/06/05/VCD中快速查找信号命/</id>
-    <published>2020-06-05T07:30:55.000Z</published>
-    <updated>2020-06-05T08:15:05.013Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;Verdi打开太慢了&quot;&gt;&lt;a href=&quot;#Verdi打开太慢了&quot; class=&quot;headerlink&quot; title=&quot;Verdi打开太慢了~~~&quot;&gt;&lt;/a&gt;Verdi打开太慢了~~~&lt;/h3&gt;&lt;figure class=&quot;hljs highlight
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="Perl" scheme="http://192.154.218.26/tags/Perl/"/>
-    
-      <category term="脚本" scheme="http://192.154.218.26/tags/%E8%84%9A%E6%9C%AC/"/>
     
   </entry>
   
