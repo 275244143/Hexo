@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2021-03-11T03:21:39.005Z</updated>
+  <updated>2021-03-12T09:15:48.623Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Parameterize DUT and UVMTB</title>
+    <link href="http://192.154.218.26/2021/03/12/Parameterize-DUT-and-UVMTB/"/>
+    <id>http://192.154.218.26/2021/03/12/Parameterize-DUT-and-UVMTB/</id>
+    <published>2021-03-12T08:54:53.000Z</published>
+    <updated>2021-03-12T09:15:48.623Z</updated>
+    
+    <summary type="html">
+    
+      Parameterize DUT and UVMTB
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>round robin arbiter</title>
+    <link href="http://192.154.218.26/2021/03/11/round-robin-arbiter/"/>
+    <id>http://192.154.218.26/2021/03/11/round-robin-arbiter/</id>
+    <published>2021-03-11T11:23:19.000Z</published>
+    <updated>2021-03-11T11:24:58.852Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;轮循仲裁&quot;&gt;&lt;a href=&quot;#轮循仲裁&quot; class=&quot;headerlink&quot; title=&quot;轮循仲裁&quot;&gt;&lt;/a&gt;轮循仲裁&lt;/h3&gt;&lt;figure class=&quot;hljs highlight verilog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>PlantUML画结构图</title>
@@ -530,62 +580,6 @@
       <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
       <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>相关库查找技巧</title>
-    <link href="http://192.154.218.26/2020/07/13/%E7%9B%B8%E5%85%B3%E5%BA%93%E6%9F%A5%E6%89%BE%E6%8A%80%E5%B7%A7/"/>
-    <id>http://192.154.218.26/2020/07/13/相关库查找技巧/</id>
-    <published>2020-07-13T02:59:17.000Z</published>
-    <updated>2020-07-13T03:07:25.153Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;perl安装库WEB浏览&quot;&gt;&lt;a href=&quot;#perl安装库WEB浏览&quot; class=&quot;headerlink&quot; title=&quot;perl安装库WEB浏览&quot;&gt;&lt;/a&gt;perl安装库WEB浏览&lt;/h3&gt;&lt;figure class=&quot;hljs highlight
-        
-      
-    
-    </summary>
-    
-      <category term="脚本" scheme="http://192.154.218.26/categories/%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="perl" scheme="http://192.154.218.26/tags/perl/"/>
-    
-      <category term="库" scheme="http://192.154.218.26/tags/%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ncsim波形显示glitch</title>
-    <link href="http://192.154.218.26/2020/07/09/ncsim%E6%B3%A2%E5%BD%A2%E6%98%BE%E7%A4%BAglitch/"/>
-    <id>http://192.154.218.26/2020/07/09/ncsim波形显示glitch/</id>
-    <published>2020-07-09T10:51:23.000Z</published>
-    <updated>2020-07-09T10:53:38.423Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;NCSIM中如何显示波形中的glitch&quot;&gt;&lt;a href=&quot;#NCSIM中如何显示波形中的glitch&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="ncsim" scheme="http://192.154.218.26/tags/ncsim/"/>
     
   </entry>
   
