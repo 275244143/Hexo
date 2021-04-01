@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2021-03-23T09:04:54.908Z</updated>
+  <updated>2021-03-26T06:17:55.099Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tclsh: Splitting Lists</title>
+    <link href="http://192.154.218.26/2021/03/26/tclsh-Splitting-Lists/"/>
+    <id>http://192.154.218.26/2021/03/26/tclsh-Splitting-Lists/</id>
+    <published>2021-03-26T06:11:46.000Z</published>
+    <updated>2021-03-26T06:17:55.099Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;最近使用modelsim-questasim出现一个tcl传参数展开问题？&quot;&gt;&lt;a href=&quot;#最近使用modelsim-questasim出现一个tcl传参数展开问题？&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+      <category term="tclsh" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/tclsh/"/>
+    
+      <category term="tcl/tk" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/tclsh/tcl-tk/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>How To Hide Your Fields So That Anyone Can Find Them</title>
@@ -543,34 +575,6 @@
       <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
       <category term="RAL" scheme="http://192.154.218.26/tags/RAL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UVM Instance override for UVM objects</title>
-    <link href="http://192.154.218.26/2021/01/25/UVM-Instance-override-for-UVM-objects/"/>
-    <id>http://192.154.218.26/2021/01/25/UVM-Instance-override-for-UVM-objects/</id>
-    <published>2021-01-25T10:45:48.000Z</published>
-    <updated>2021-01-25T10:48:47.602Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h3&gt;&lt;p&gt;what is the right way to override a uvm_object with instance
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
