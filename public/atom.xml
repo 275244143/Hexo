@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2021-03-26T06:17:55.099Z</updated>
+  <updated>2021-04-01T11:42:24.583Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Perl Deparse</title>
+    <link href="http://192.154.218.26/2021/04/01/Perl-Deparse/"/>
+    <id>http://192.154.218.26/2021/04/01/Perl-Deparse/</id>
+    <published>2021-04-01T11:29:20.000Z</published>
+    <updated>2021-04-01T11:42:24.583Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Trick-1&quot;&gt;&lt;a href=&quot;#Trick-1&quot; class=&quot;headerlink&quot; title=&quot;Trick 1&quot;&gt;&lt;/a&gt;Trick 1&lt;/h3&gt;&lt;p&gt;The most interesting use of this module is as a
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+      <category term="perl" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/perl/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>tclsh: Splitting Lists</title>
@@ -544,37 +574,6 @@
       <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
     
       <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>get_response() with UVM RAL</title>
-    <link href="http://192.154.218.26/2021/01/25/get-response-with-UVM-RAL/"/>
-    <id>http://192.154.218.26/2021/01/25/get-response-with-UVM-RAL/</id>
-    <published>2021-01-25T11:14:04.000Z</published>
-    <updated>2021-01-26T01:42:59.165Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h3&gt;&lt;p&gt;“Response queue overflow, response is dropped”&lt;/p&gt;
-&lt;p&gt;Got the above
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-      <category term="RAL" scheme="http://192.154.218.26/tags/RAL/"/>
     
   </entry>
   
