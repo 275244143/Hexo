@@ -98,7 +98,7 @@ feed:
 deploy:
   type: git
   repo: 
-    usa: root@192.154.218.26:/home/ubuntu/blog.git
+    usa: root@43.226.24.26:/home/ubuntu/blog.git
   branch: master
 
 # 配置版权

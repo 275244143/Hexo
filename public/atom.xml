@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2021-04-01T11:42:24.583Z</updated>
+  <updated>2021-07-23T02:40:58.501Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DDRx基础入门</title>
+    <link href="http://192.154.218.26/2021/07/23/DDRx%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"/>
+    <id>http://192.154.218.26/2021/07/23/DDRx基础入门/</id>
+    <published>2021-07-23T02:37:23.000Z</published>
+    <updated>2021-07-23T02:40:58.501Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;深入浅出DDR系列-一-–DDR原理篇&quot;&gt;&lt;a href=&quot;#深入浅出DDR系列-一-–DDR原理篇&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="设计" scheme="http://192.154.218.26/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="DDR" scheme="http://192.154.218.26/tags/DDR/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SEQUENCE DETECTOR</title>
+    <link href="http://192.154.218.26/2021/05/10/SEQUENCE-DETECTOR/"/>
+    <id>http://192.154.218.26/2021/05/10/SEQUENCE-DETECTOR/</id>
+    <published>2021-05-10T10:21:19.000Z</published>
+    <updated>2021-05-10T10:40:08.544Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;转载&quot;&gt;&lt;a href=&quot;#转载&quot; class=&quot;headerlink&quot; title=&quot;转载&quot;&gt;&lt;/a&gt;转载&lt;/h3&gt;&lt;p&gt;Beginning with the simple theory about Sequence Detector. A sequence
+        
+      
+    
+    </summary>
+    
+      <category term="设计" scheme="http://192.154.218.26/categories/%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="Verilog" scheme="http://192.154.218.26/tags/Verilog/"/>
+    
+      <category term="RTL" scheme="http://192.154.218.26/tags/RTL/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>Perl Deparse</title>
@@ -507,62 +565,6 @@
         
         
           &lt;h3 id=&quot;add-simulation-delay-after-UVM-MAX-QUIT-COUNT-reached&quot;&gt;&lt;a href=&quot;#add-simulation-delay-after-UVM-MAX-QUIT-COUNT-reached&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SV&amp;C&amp;PYTHON</title>
-    <link href="http://192.154.218.26/2021/01/29/SV-C-PYTHON/"/>
-    <id>http://192.154.218.26/2021/01/29/SV-C-PYTHON/</id>
-    <published>2021-01-29T02:38:44.000Z</published>
-    <updated>2021-01-29T02:42:20.633Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h3&gt;&lt;p&gt;We built a high level model in python, we made use of the scipy
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>time unit in the set_timeout()</title>
-    <link href="http://192.154.218.26/2021/01/28/time-unit-in-the-set-timeout/"/>
-    <id>http://192.154.218.26/2021/01/28/time-unit-in-the-set-timeout/</id>
-    <published>2021-01-28T02:11:04.000Z</published>
-    <updated>2021-01-28T02:37:07.088Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h3&gt;&lt;p&gt;Need some clarification on the time value passed to
         
       
     
