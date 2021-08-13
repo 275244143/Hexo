@@ -589,3 +589,86 @@ payload:4030201
 payload:8070605
 payload:a09
 ```
+
+## 5 (转)
+
+ 在cocotb仿真里，经常出现三个组件：Driver、Monitor、Scoreboard。今天先看看Driver、Monitor中最里面的Bus的实现。
+
+* Bus
+
+​    cocotb中提供了Bus 类用于抽象归纳设计中的总线(诸如Axi4、AHB等) ，其初始化函数为：
+
+![50](cocotb杂谈/50.png)
+
+​    bus中的信号分为两组：signals和optional_signals。signals为总线中必须存在的信号，而optional_signals则为不一定要求存在的信号(诸如Axi4中的cache、lock等信号不是要求必须使用的)。此外bus中信号的名称为遵循如下规则：
+
+![51](cocotb杂谈/51.png)
+
+​    举个例子：
+
+![52](cocotb杂谈/52.png)
+
+​    busInst0对应的dut中的信号data0，data1，而busInst1则对应dut中的信号pkg_data0,pkg_data1。
+
+​    Bus中提供的方法主要有下面三个：
+
+![53](cocotb杂谈/53.png)
+
+![54](cocotb杂谈/54.png)
+
+​    注释都看得懂，但似乎又很抽象是不是？而手册上又没有什么例子。别急，这里给出一个三个函数的用法           
+
+* DUT
+
+​    这里采用一个简单的dut：
+
+![55](cocotb杂谈/55.png)
+
+* drive
+
+​    drive函数的使用如下所示：
+
+![56](cocotb杂谈/56.png)
+​    drive函数使用关键在于obj参数的输入。drive函数可以封装整个总线的赋值行为。这里我们定义一个inputData类，在类里包含了bus总线对应的in0、in1信号变量。在drive中是按照变量名进行索引的，inputData中的in0的值将会对应赋值给bus中的in0，故而需要一一对应。仿真激励波形如下所示：
+![57](cocotb杂谈/57.png)
+
+​    可见，data_in0被赋值为6，而data_in1被赋值为5，与inputData中的信号赋值情况相同。
+
+​    对于drive中的strict信号，当其为False时，仅会驱动obj中所包含的信号。
+
+* sample
+
+​    sample用于信号的采样，其使用方式如下所示：
+
+![58](cocotb杂谈/58.png)
+
+​    与dirver类似，这里新增定义了一个outData类，其中包含两个变量sum、sub，与busnst中的信号名称保持一致。仿真输出：
+
+```
+sum:11   sub::1
+```
+
+* capture
+
+​    capture使用较为简单，其返回一个dict，其中包含了bus所包含的所有信号及其对应的值。使用方式如下：
+
+![59](cocotb杂谈/59.png)
+
+​    打印结果：
+
+```
+sum:11   sub:1{'in0': 00000110, 'in1': 00000101, 'sum': 00001011, 'sub': 00000001}
+```
+
+* <=
+
+​    除了上面的这些方法之外，还有一个隐藏的方法“<=”。正如单个信号的赋值驱动之外，总线也可以用“<=”进行赋值驱动。如下例所示：
+
+![510](cocotb杂谈/510.png)
+
+​    这里定义了一个data类，在激励输入的时候直接使用<=进行赋值驱动，仿真结果无误：
+
+```bash
+sum:11   sub:5data0:8,data1:3
+```
+
