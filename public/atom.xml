@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2021-08-11T02:24:03.865Z</updated>
+  <updated>2021-08-26T08:05:26.468Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,92 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>根路径空间告急，如何清理？</title>
+    <link href="http://192.154.218.26/2021/08/26/%E6%A0%B9%E8%B7%AF%E5%BE%84%E7%A9%BA%E9%97%B4%E5%91%8A%E6%80%A5%EF%BC%8C%E5%A6%82%E4%BD%95%E6%B8%85%E7%90%86%EF%BC%9F/"/>
+    <id>http://192.154.218.26/2021/08/26/根路径空间告急，如何清理？/</id>
+    <published>2021-08-26T08:01:56.000Z</published>
+    <updated>2021-08-26T08:05:26.468Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;空间变小，先查看哪个文件夹多，发现-var-log&quot;&gt;&lt;a href=&quot;#空间变小，先查看哪个文件夹多，发现-var-log&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://192.154.218.26/categories/Linux/"/>
+    
+    
+      <category term="shell" scheme="http://192.154.218.26/tags/shell/"/>
+    
+      <category term="Linux" scheme="http://192.154.218.26/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript来画时序图</title>
+    <link href="http://192.154.218.26/2021/08/26/JavaScript%E6%9D%A5%E7%94%BB%E6%97%B6%E5%BA%8F%E5%9B%BE/"/>
+    <id>http://192.154.218.26/2021/08/26/JavaScript来画时序图/</id>
+    <published>2021-08-26T02:23:04.000Z</published>
+    <updated>2021-08-26T02:29:46.341Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpinalHDL初探</title>
+    <link href="http://192.154.218.26/2021/08/26/SpinalHDL%E5%88%9D%E6%8E%A2/"/>
+    <id>http://192.154.218.26/2021/08/26/SpinalHDL初探/</id>
+    <published>2021-08-26T01:48:18.000Z</published>
+    <updated>2021-08-26T02:35:32.221Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;很早就学习了Chisel，最近看了某blog推荐SpinalHDL，确实符合硬件思维的人&quot;&gt;&lt;a href=&quot;#很早就学习了Chisel，最近看了某blog推荐SpinalHDL，确实符合硬件思维的人&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+      <category term="Chipsel" scheme="http://192.154.218.26/tags/Chipsel/"/>
+    
+      <category term="SpinalHDL" scheme="http://192.154.218.26/tags/SpinalHDL/"/>
+    
+  </entry>
   
   <entry>
     <title>cocotb杂谈</title>
@@ -126,11 +212,11 @@
       <category term="设计" scheme="http://192.154.218.26/categories/%E8%AE%BE%E8%AE%A1/"/>
     
     
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
       <category term="Verilog" scheme="http://192.154.218.26/tags/Verilog/"/>
     
       <category term="RTL" scheme="http://192.154.218.26/tags/RTL/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
@@ -484,91 +570,6 @@
         
         
           &lt;h3 id=&quot;轮循仲裁&quot;&gt;&lt;a href=&quot;#轮循仲裁&quot; class=&quot;headerlink&quot; title=&quot;轮循仲裁&quot;&gt;&lt;/a&gt;轮循仲裁&lt;/h3&gt;&lt;figure class=&quot;hljs highlight verilog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PlantUML画结构图</title>
-    <link href="http://192.154.218.26/2021/03/11/PlantUML%E7%94%BB%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
-    <id>http://192.154.218.26/2021/03/11/PlantUML画结构图/</id>
-    <published>2021-03-11T03:15:29.000Z</published>
-    <updated>2021-03-11T03:21:39.005Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;结构图&quot;&gt;&lt;a href=&quot;#结构图&quot; class=&quot;headerlink&quot; title=&quot;结构图&quot;&gt;&lt;/a&gt;结构图&lt;/h3&gt;&lt;figure class=&quot;hljs highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>uvm:finish_on_completion</title>
-    <link href="http://192.154.218.26/2021/03/11/uvm-finish-on-completion/"/>
-    <id>http://192.154.218.26/2021/03/11/uvm-finish-on-completion/</id>
-    <published>2021-03-11T01:47:00.000Z</published>
-    <updated>2021-03-11T01:48:41.120Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h3&gt;&lt;p&gt;I observed a code in TB ::&lt;/p&gt;
-&lt;figure class=&quot;hljs highlight
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>set byte_en in register read/write</title>
-    <link href="http://192.154.218.26/2021/02/25/set-byte-en-in-register-read-write/"/>
-    <id>http://192.154.218.26/2021/02/25/set-byte-en-in-register-read-write/</id>
-    <published>2021-02-25T09:27:25.000Z</published>
-    <updated>2021-02-25T09:30:16.058Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;How-can-i-set-byte-en-in-register-read-write&quot;&gt;&lt;a href=&quot;#How-can-i-set-byte-en-in-register-read-write&quot; class=&quot;headerlink&quot; title=&quot;How
         
       
     
