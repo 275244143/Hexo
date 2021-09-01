@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2021-08-26T08:05:26.468Z</updated>
+  <updated>2021-09-01T08:33:42.305Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>macros展开显示</title>
+    <link href="http://192.154.218.26/2021/09/01/macros%E5%B1%95%E5%BC%80%E6%98%BE%E7%A4%BA/"/>
+    <id>http://192.154.218.26/2021/09/01/macros展开显示/</id>
+    <published>2021-09-01T08:32:30.000Z</published>
+    <updated>2021-09-01T08:33:42.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h2&gt;&lt;p&gt;example :&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;define A1 x&lt;/code&gt;define A2
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>根路径空间告急，如何清理？</title>
@@ -212,11 +241,11 @@
       <category term="设计" scheme="http://192.154.218.26/categories/%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
       <category term="Verilog" scheme="http://192.154.218.26/tags/Verilog/"/>
     
       <category term="RTL" scheme="http://192.154.218.26/tags/RTL/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
@@ -544,34 +573,6 @@
     <summary type="html">
     
       Parameterize DUT and UVMTB
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>round robin arbiter</title>
-    <link href="http://192.154.218.26/2021/03/11/round-robin-arbiter/"/>
-    <id>http://192.154.218.26/2021/03/11/round-robin-arbiter/</id>
-    <published>2021-03-11T11:23:19.000Z</published>
-    <updated>2021-03-11T11:24:58.852Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;轮循仲裁&quot;&gt;&lt;a href=&quot;#轮循仲裁&quot; class=&quot;headerlink&quot; title=&quot;轮循仲裁&quot;&gt;&lt;/a&gt;轮循仲裁&lt;/h3&gt;&lt;figure class=&quot;hljs highlight verilog&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
     
     </summary>
     
