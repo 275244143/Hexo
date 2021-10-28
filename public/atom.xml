@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2021-10-21T02:07:57.444Z</updated>
+  <updated>2021-10-28T11:11:15.161Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,136 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GIT CHEATSHEET (中文速查表)</title>
+    <link href="http://192.154.218.26/2021/10/28/GIT-CHEATSHEET-%E4%B8%AD%E6%96%87%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    <id>http://192.154.218.26/2021/10/28/GIT-CHEATSHEET-中文速查表/</id>
+    <published>2021-10-28T11:09:48.000Z</published>
+    <updated>2021-10-28T11:11:15.161Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="速查表" scheme="http://192.154.218.26/categories/%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    
+    
+      <category term="git" scheme="http://192.154.218.26/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GDB CHEATSHEET (中文速查表)</title>
+    <link href="http://192.154.218.26/2021/10/28/GDB-CHEATSHEET-%E4%B8%AD%E6%96%87%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    <id>http://192.154.218.26/2021/10/28/GDB-CHEATSHEET-中文速查表/</id>
+    <published>2021-10-28T11:09:32.000Z</published>
+    <updated>2021-10-28T11:12:18.369Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="速查表" scheme="http://192.154.218.26/categories/%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    
+    
+      <category term="gdb" scheme="http://192.154.218.26/tags/gdb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TMUX CHEATSHEET (中文速查表)</title>
+    <link href="http://192.154.218.26/2021/10/28/TMUX-CHEATSHEET-%E4%B8%AD%E6%96%87%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    <id>http://192.154.218.26/2021/10/28/TMUX-CHEATSHEET-中文速查表/</id>
+    <published>2021-10-28T11:09:16.000Z</published>
+    <updated>2021-10-28T11:13:07.086Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="速查表" scheme="http://192.154.218.26/categories/%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    
+    
+      <category term="tmux" scheme="http://192.154.218.26/tags/tmux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VIM CHEATSHEET (中文速查表)</title>
+    <link href="http://192.154.218.26/2021/10/28/VIM-CHEATSHEET-%E4%B8%AD%E6%96%87%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    <id>http://192.154.218.26/2021/10/28/VIM-CHEATSHEET-中文速查表/</id>
+    <published>2021-10-28T11:05:24.000Z</published>
+    <updated>2021-10-28T11:07:46.838Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="速查表" scheme="http://192.154.218.26/categories/%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    
+    
+      <category term="Vim" scheme="http://192.154.218.26/tags/Vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BASH CHEATSHEET (中文速查表)</title>
+    <link href="http://192.154.218.26/2021/10/28/BASH-CHEATSHEET-%E4%B8%AD%E6%96%87%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    <id>http://192.154.218.26/2021/10/28/BASH-CHEATSHEET-中文速查表/</id>
+    <published>2021-10-28T11:01:15.000Z</published>
+    <updated>2021-10-28T11:06:53.277Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;hljs highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="速查表" scheme="http://192.154.218.26/categories/%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    
+    
+      <category term="Shell" scheme="http://192.154.218.26/tags/Shell/"/>
+    
+  </entry>
   
   <entry>
     <title>如何从regmodel派生多个相同累加名字的寄存器</title>
@@ -269,11 +399,11 @@
       <category term="设计" scheme="http://192.154.218.26/categories/%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
       <category term="Verilog" scheme="http://192.154.218.26/tags/Verilog/"/>
     
       <category term="RTL" scheme="http://192.154.218.26/tags/RTL/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
@@ -437,146 +567,6 @@
         
         
           &lt;p&gt;Even if it sounds like something quite simple, handling reset in an &lt;a href=&quot;http://www.accellera.org/downloads/standards/uvm&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Access Policy Change On The Fly</title>
-    <link href="http://192.154.218.26/2021/03/23/Access-Policy-Change-On-The-Fly/"/>
-    <id>http://192.154.218.26/2021/03/23/Access-Policy-Change-On-The-Fly/</id>
-    <published>2021-03-23T02:25:49.000Z</published>
-    <updated>2021-03-23T02:27:18.387Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h3&gt;&lt;p&gt;I am working on register configuration using RAL and have a
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SystemVerilog UVM Record Wave</title>
-    <link href="http://192.154.218.26/2021/03/23/SystemVerilog-UVM-Record-Wave/"/>
-    <id>http://192.154.218.26/2021/03/23/SystemVerilog-UVM-Record-Wave/</id>
-    <published>2021-03-23T02:25:18.000Z</published>
-    <updated>2021-03-23T03:05:17.625Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;When we say “&lt;a href=&quot;https://en.wikipedia.org/wiki/Debugging&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;debugging&lt;/a&gt;” the first instinct is to
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How to Use Register Callbacks in uvm_reg Library</title>
-    <link href="http://192.154.218.26/2021/03/23/How-to-Use-Register-Callbacks-in-uvm-reg-Library/"/>
-    <id>http://192.154.218.26/2021/03/23/How-to-Use-Register-Callbacks-in-uvm-reg-Library/</id>
-    <published>2021-03-23T01:54:37.000Z</published>
-    <updated>2021-03-23T02:02:59.339Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;One very nice feature of uvm_reg is the &lt;strong&gt;register callback extensions&lt;/strong&gt;. This is just a fancy name for saying that you can
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How to Startup uvm_reg SystemVerilog Library</title>
-    <link href="http://192.154.218.26/2021/03/23/How-to-Startup-uvm-reg-SystemVerilog-Library/"/>
-    <id>http://192.154.218.26/2021/03/23/How-to-Startup-uvm-reg-SystemVerilog-Library/</id>
-    <published>2021-03-23T01:37:54.000Z</published>
-    <updated>2021-03-23T01:52:15.573Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;In this post I will describe all the steps &lt;strong&gt;I take&lt;/strong&gt; to startup the uvm_reg register model. If you do things differently
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>get_objection_total</title>
-    <link href="http://192.154.218.26/2021/03/16/get-objection-total/"/>
-    <id>http://192.154.218.26/2021/03/16/get-objection-total/</id>
-    <published>2021-03-16T01:35:37.000Z</published>
-    <updated>2021-03-16T01:36:49.590Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h3&gt;&lt;p&gt;If you refer to the UVM reference for uvm_objection, you will find
         
       
     
