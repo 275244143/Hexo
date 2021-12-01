@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2021-10-28T11:11:15.161Z</updated>
+  <updated>2021-11-30T08:00:00.567Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>重构列表及坏味道重构速查表</title>
+    <link href="http://192.154.218.26/2021/11/30/%E9%87%8D%E6%9E%84%E5%88%97%E8%A1%A8%E5%8F%8A%E5%9D%8F%E5%91%B3%E9%81%93%E9%87%8D%E6%9E%84%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    <id>http://192.154.218.26/2021/11/30/重构列表及坏味道重构速查表/</id>
+    <published>2021-11-30T07:35:01.000Z</published>
+    <updated>2021-11-30T08:00:00.567Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;重构列表&quot;&gt;&lt;a href=&quot;#重构列表&quot; class=&quot;headerlink&quot; title=&quot;重构列表&quot;&gt;&lt;/a&gt;重构列表&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/2021/11/30/重构列表及坏味道重构速查表/1.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="计算机" scheme="http://192.154.218.26/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="软件" scheme="http://192.154.218.26/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>GIT CHEATSHEET (中文速查表)</title>
@@ -399,11 +426,11 @@
       <category term="设计" scheme="http://192.154.218.26/categories/%E8%AE%BE%E8%AE%A1/"/>
     
     
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
       <category term="Verilog" scheme="http://192.154.218.26/tags/Verilog/"/>
     
       <category term="RTL" scheme="http://192.154.218.26/tags/RTL/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
@@ -539,34 +566,6 @@
         
         
           &lt;p&gt;A while back I wrote an [article] about how to handle the reset in an UVM agent component.&lt;br&gt;Someone asked a [very good question]:
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SystemVerilog: How To Handle Reset In UVM-1?</title>
-    <link href="http://192.154.218.26/2021/03/23/SystemVerilog-How-To-Handle-Reset-In-UVM-1/"/>
-    <id>http://192.154.218.26/2021/03/23/SystemVerilog-How-To-Handle-Reset-In-UVM-1/</id>
-    <published>2021-03-23T07:27:23.000Z</published>
-    <updated>2021-03-23T07:39:13.814Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Even if it sounds like something quite simple, handling reset in an &lt;a href=&quot;http://www.accellera.org/downloads/standards/uvm&quot;
         
       
     
