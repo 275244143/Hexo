@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2021-11-30T08:00:00.567Z</updated>
+  <updated>2021-12-14T01:31:49.211Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>优雅的方式来定义位的范围</title>
+    <link href="http://192.154.218.26/2021/12/14/%E4%BC%98%E9%9B%85%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E5%AE%9A%E4%B9%89%E4%BD%8D%E7%9A%84%E8%8C%83%E5%9B%B4/"/>
+    <id>http://192.154.218.26/2021/12/14/优雅的方式来定义位的范围/</id>
+    <published>2021-12-14T01:30:29.000Z</published>
+    <updated>2021-12-14T01:31:49.211Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;QA&quot;&gt;&lt;a href=&quot;#QA&quot; class=&quot;headerlink&quot; title=&quot;QA&quot;&gt;&lt;/a&gt;QA&lt;/h3&gt;&lt;p&gt;Looking for an elegant way I can define range of bits I am accessing
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
+  </entry>
   
   <entry>
     <title>重构列表及坏味道重构速查表</title>
@@ -426,11 +454,11 @@
       <category term="设计" scheme="http://192.154.218.26/categories/%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
       <category term="Verilog" scheme="http://192.154.218.26/tags/Verilog/"/>
     
       <category term="RTL" scheme="http://192.154.218.26/tags/RTL/"/>
+    
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
@@ -538,34 +566,6 @@
         
         
           &lt;p&gt;UVM registers model comes with a very simple and quite useful feature: &lt;strong&gt;it supports more than one reset
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SystemVerilog: How To Handle Reset In UVM-2?</title>
-    <link href="http://192.154.218.26/2021/03/23/SystemVerilog-How-To-Handle-Reset-In-UVM-2/"/>
-    <id>http://192.154.218.26/2021/03/23/SystemVerilog-How-To-Handle-Reset-In-UVM-2/</id>
-    <published>2021-03-23T07:41:52.000Z</published>
-    <updated>2021-03-23T08:14:52.923Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;A while back I wrote an [article] about how to handle the reset in an UVM agent component.&lt;br&gt;Someone asked a [very good question]:
         
       
     
