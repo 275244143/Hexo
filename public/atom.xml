@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://192.154.218.26/"/>
-  <updated>2021-12-14T01:31:49.211Z</updated>
+  <updated>2022-01-08T15:49:18.419Z</updated>
   <id>http://192.154.218.26/</id>
   
   <author>
@@ -17,11 +17,60 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>调试九法：软硬件错误的排查之道</title>
+    <link href="http://192.154.218.26/2022/01/08/%E8%B0%83%E8%AF%95%E4%B9%9D%E6%B3%95%EF%BC%9A%E8%BD%AF%E7%A1%AC%E4%BB%B6%E9%94%99%E8%AF%AF%E7%9A%84%E6%8E%92%E6%9F%A5%E4%B9%8B%E9%81%93/"/>
+    <id>http://192.154.218.26/2022/01/08/调试九法：软硬件错误的排查之道/</id>
+    <published>2022-01-08T15:38:11.000Z</published>
+    <updated>2022-01-08T15:49:18.419Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;第1章-介简&quot;&gt;&lt;a href=&quot;#第1章-介简&quot; class=&quot;headerlink&quot; title=&quot;第1章 介简&quot;&gt;&lt;/a&gt;第1章 介简&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/2022/01/08/调试九法：软硬件错误的排查之道/debug.png&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
+    
+    
+      <category term="debug" scheme="http://192.154.218.26/tags/debug/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://192.154.218.26/2022/01/08/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/%E7%9B%B8%E8%A7%81%E6%81%A8%E6%99%9A%E7%9A%84Org-mode/"/>
+    <id>http://192.154.218.26/2022/01/08/相见恨晚的Org-mode/相见恨晚的Org-mode/</id>
+    <published>2022-01-08T13:49:04.968Z</published>
+    <updated>2020-03-25T06:13:20.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>优雅的方式来定义位的范围</title>
     <link href="http://192.154.218.26/2021/12/14/%E4%BC%98%E9%9B%85%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E5%AE%9A%E4%B9%89%E4%BD%8D%E7%9A%84%E8%8C%83%E5%9B%B4/"/>
     <id>http://192.154.218.26/2021/12/14/优雅的方式来定义位的范围/</id>
     <published>2021-12-14T01:30:29.000Z</published>
-    <updated>2021-12-14T01:31:49.211Z</updated>
+    <updated>2021-12-14T01:31:50.000Z</updated>
     
     <summary type="html">
     
@@ -49,7 +98,7 @@
     <link href="http://192.154.218.26/2021/11/30/%E9%87%8D%E6%9E%84%E5%88%97%E8%A1%A8%E5%8F%8A%E5%9D%8F%E5%91%B3%E9%81%93%E9%87%8D%E6%9E%84%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
     <id>http://192.154.218.26/2021/11/30/重构列表及坏味道重构速查表/</id>
     <published>2021-11-30T07:35:01.000Z</published>
-    <updated>2021-11-30T08:00:00.567Z</updated>
+    <updated>2021-11-30T08:00:02.000Z</updated>
     
     <summary type="html">
     
@@ -76,7 +125,7 @@
     <link href="http://192.154.218.26/2021/10/28/GIT-CHEATSHEET-%E4%B8%AD%E6%96%87%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
     <id>http://192.154.218.26/2021/10/28/GIT-CHEATSHEET-中文速查表/</id>
     <published>2021-10-28T11:09:48.000Z</published>
-    <updated>2021-10-28T11:11:15.161Z</updated>
+    <updated>2021-10-28T11:11:16.000Z</updated>
     
     <summary type="html">
     
@@ -102,7 +151,7 @@
     <link href="http://192.154.218.26/2021/10/28/GDB-CHEATSHEET-%E4%B8%AD%E6%96%87%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
     <id>http://192.154.218.26/2021/10/28/GDB-CHEATSHEET-中文速查表/</id>
     <published>2021-10-28T11:09:32.000Z</published>
-    <updated>2021-10-28T11:12:18.369Z</updated>
+    <updated>2021-10-28T11:12:20.000Z</updated>
     
     <summary type="html">
     
@@ -128,7 +177,7 @@
     <link href="http://192.154.218.26/2021/10/28/TMUX-CHEATSHEET-%E4%B8%AD%E6%96%87%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
     <id>http://192.154.218.26/2021/10/28/TMUX-CHEATSHEET-中文速查表/</id>
     <published>2021-10-28T11:09:16.000Z</published>
-    <updated>2021-10-28T11:13:07.086Z</updated>
+    <updated>2021-10-28T11:13:08.000Z</updated>
     
     <summary type="html">
     
@@ -154,7 +203,7 @@
     <link href="http://192.154.218.26/2021/10/28/VIM-CHEATSHEET-%E4%B8%AD%E6%96%87%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
     <id>http://192.154.218.26/2021/10/28/VIM-CHEATSHEET-中文速查表/</id>
     <published>2021-10-28T11:05:24.000Z</published>
-    <updated>2021-10-28T11:07:46.838Z</updated>
+    <updated>2021-10-28T11:07:48.000Z</updated>
     
     <summary type="html">
     
@@ -180,7 +229,7 @@
     <link href="http://192.154.218.26/2021/10/28/BASH-CHEATSHEET-%E4%B8%AD%E6%96%87%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
     <id>http://192.154.218.26/2021/10/28/BASH-CHEATSHEET-中文速查表/</id>
     <published>2021-10-28T11:01:15.000Z</published>
-    <updated>2021-10-28T11:06:53.277Z</updated>
+    <updated>2021-10-28T11:06:54.000Z</updated>
     
     <summary type="html">
     
@@ -206,7 +255,7 @@
     <link href="http://192.154.218.26/2021/10/21/%E5%A6%82%E4%BD%95%E4%BB%8Eregmodel%E6%B4%BE%E7%94%9F%E5%A4%9A%E4%B8%AA%E7%9B%B8%E5%90%8C%E7%B4%AF%E5%8A%A0%E5%90%8D%E5%AD%97%E7%9A%84%E5%AF%84%E5%AD%98%E5%99%A8/"/>
     <id>http://192.154.218.26/2021/10/21/如何从regmodel派生多个相同累加名字的寄存器/</id>
     <published>2021-10-21T01:36:40.000Z</published>
-    <updated>2021-10-21T02:07:57.444Z</updated>
+    <updated>2021-10-21T02:07:58.000Z</updated>
     
     <summary type="html">
     
@@ -234,7 +283,7 @@
     <link href="http://192.154.218.26/2021/09/01/macros%E5%B1%95%E5%BC%80%E6%98%BE%E7%A4%BA/"/>
     <id>http://192.154.218.26/2021/09/01/macros展开显示/</id>
     <published>2021-09-01T08:32:30.000Z</published>
-    <updated>2021-09-01T08:33:42.305Z</updated>
+    <updated>2021-09-01T08:33:44.000Z</updated>
     
     <summary type="html">
     
@@ -263,7 +312,7 @@
     <link href="http://192.154.218.26/2021/08/26/%E6%A0%B9%E8%B7%AF%E5%BE%84%E7%A9%BA%E9%97%B4%E5%91%8A%E6%80%A5%EF%BC%8C%E5%A6%82%E4%BD%95%E6%B8%85%E7%90%86%EF%BC%9F/"/>
     <id>http://192.154.218.26/2021/08/26/根路径空间告急，如何清理？/</id>
     <published>2021-08-26T08:01:56.000Z</published>
-    <updated>2021-08-26T08:05:26.468Z</updated>
+    <updated>2021-08-26T08:05:28.000Z</updated>
     
     <summary type="html">
     
@@ -291,7 +340,7 @@
     <link href="http://192.154.218.26/2021/08/26/JavaScript%E6%9D%A5%E7%94%BB%E6%97%B6%E5%BA%8F%E5%9B%BE/"/>
     <id>http://192.154.218.26/2021/08/26/JavaScript来画时序图/</id>
     <published>2021-08-26T02:23:04.000Z</published>
-    <updated>2021-08-26T02:29:46.341Z</updated>
+    <updated>2021-08-26T02:29:48.000Z</updated>
     
     <summary type="html">
     
@@ -319,7 +368,7 @@
     <link href="http://192.154.218.26/2021/08/26/SpinalHDL%E5%88%9D%E6%8E%A2/"/>
     <id>http://192.154.218.26/2021/08/26/SpinalHDL初探/</id>
     <published>2021-08-26T01:48:18.000Z</published>
-    <updated>2021-08-26T02:35:32.221Z</updated>
+    <updated>2021-08-26T02:35:34.000Z</updated>
     
     <summary type="html">
     
@@ -349,7 +398,7 @@
     <link href="http://192.154.218.26/2021/08/02/cocotb%E6%9D%82%E8%B0%88/"/>
     <id>http://192.154.218.26/2021/08/02/cocotb杂谈/</id>
     <published>2021-08-02T01:32:25.000Z</published>
-    <updated>2021-08-11T02:24:03.865Z</updated>
+    <updated>2021-08-11T02:24:04.000Z</updated>
     
     <summary type="html">
     
@@ -379,7 +428,7 @@
     <link href="http://192.154.218.26/2021/07/29/UVM-RAl%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/"/>
     <id>http://192.154.218.26/2021/07/29/UVM-RAl的一些操作说明/</id>
     <published>2021-07-29T05:58:59.000Z</published>
-    <updated>2021-07-29T06:09:04.137Z</updated>
+    <updated>2021-07-29T06:09:06.000Z</updated>
     
     <summary type="html">
     
@@ -409,7 +458,7 @@
     <link href="http://192.154.218.26/2021/07/23/DDRx%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"/>
     <id>http://192.154.218.26/2021/07/23/DDRx基础入门/</id>
     <published>2021-07-23T02:37:23.000Z</published>
-    <updated>2021-07-23T02:40:58.501Z</updated>
+    <updated>2021-07-23T02:41:00.000Z</updated>
     
     <summary type="html">
     
@@ -437,7 +486,7 @@
     <link href="http://192.154.218.26/2021/05/10/SEQUENCE-DETECTOR/"/>
     <id>http://192.154.218.26/2021/05/10/SEQUENCE-DETECTOR/</id>
     <published>2021-05-10T10:21:19.000Z</published>
-    <updated>2021-05-10T10:40:08.544Z</updated>
+    <updated>2021-05-10T10:40:10.000Z</updated>
     
     <summary type="html">
     
@@ -454,11 +503,11 @@
       <category term="设计" scheme="http://192.154.218.26/categories/%E8%AE%BE%E8%AE%A1/"/>
     
     
+      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
+    
       <category term="Verilog" scheme="http://192.154.218.26/tags/Verilog/"/>
     
       <category term="RTL" scheme="http://192.154.218.26/tags/RTL/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
     
   </entry>
   
@@ -467,7 +516,7 @@
     <link href="http://192.154.218.26/2021/04/01/Perl-Deparse/"/>
     <id>http://192.154.218.26/2021/04/01/Perl-Deparse/</id>
     <published>2021-04-01T11:29:20.000Z</published>
-    <updated>2021-04-01T11:42:24.583Z</updated>
+    <updated>2021-04-01T11:42:26.000Z</updated>
     
     <summary type="html">
     
@@ -497,7 +546,7 @@
     <link href="http://192.154.218.26/2021/03/26/tclsh-Splitting-Lists/"/>
     <id>http://192.154.218.26/2021/03/26/tclsh-Splitting-Lists/</id>
     <published>2021-03-26T06:11:46.000Z</published>
-    <updated>2021-03-26T06:17:55.099Z</updated>
+    <updated>2021-03-26T06:17:56.000Z</updated>
     
     <summary type="html">
     
@@ -516,62 +565,6 @@
       <category term="tclsh" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/tclsh/"/>
     
       <category term="tcl/tk" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/tclsh/tcl-tk/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How To Hide Your Fields So That Anyone Can Find Them</title>
-    <link href="http://192.154.218.26/2021/03/23/How-To-Hide-Your-Fields-So-That-Anyone-Can-Find-Them/"/>
-    <id>http://192.154.218.26/2021/03/23/How-To-Hide-Your-Fields-So-That-Anyone-Can-Find-Them/</id>
-    <published>2021-03-23T09:00:59.000Z</published>
-    <updated>2021-03-23T09:04:54.908Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;In this post I will talk about how I am using the &lt;a href=&quot;https://en.wikipedia.org/wiki/Object-oriented_programming&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
-    
-    
-      <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
-    
-      <category term="SystemVerilog" scheme="http://192.154.218.26/tags/SystemVerilog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How To Model Multiple Reset Signals in UVM Reg</title>
-    <link href="http://192.154.218.26/2021/03/23/How-To-Model-Multiple-Reset-Signals-in-UVM-Reg/"/>
-    <id>http://192.154.218.26/2021/03/23/How-To-Model-Multiple-Reset-Signals-in-UVM-Reg/</id>
-    <published>2021-03-23T08:15:37.000Z</published>
-    <updated>2021-03-23T08:42:15.723Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;UVM registers model comes with a very simple and quite useful feature: &lt;strong&gt;it supports more than one reset
-        
-      
-    
-    </summary>
-    
-      <category term="验证" scheme="http://192.154.218.26/categories/%E9%AA%8C%E8%AF%81/"/>
     
     
       <category term="UVM" scheme="http://192.154.218.26/tags/UVM/"/>
