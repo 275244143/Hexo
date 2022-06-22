@@ -29,6 +29,6 @@
     "hexo-tag-cloud": "^2.1.1",
     "hexo-wordcount": "^6.0.1",
     "hoek": "^4.2.1",
-    "shell-quote": "^1.6.1"
+    "shell-quote": "^1.7.3"
   }
 }
